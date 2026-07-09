@@ -1,73 +1,74 @@
-# NaturalCloud page content
-# Editable via Decap CMS or directly
-
-# Hero Section
-hero_label: "Audit Trail & Reporting"
-title: "NaturalCloud™"
-hero_description: "From analysed data to actionable insight. Certificates, audit trails, and batch-level traceability in a single dashboard."
-hero_image_src: "/assets/logos/NaturalCloud.jpg"
-hero_image_alt: "NaturalCloud™"
-back_link_text: "← Back to Technology"
-back_link_url: "/technology/"
-
-# Pipeline Cards
+hero_label: Audit Trail & Reporting
+title: NaturalCloud™
+hero_description: From analysed data to actionable insight. Certificates, audit
+  trails, and batch-level traceability in a single dashboard.
+back_link_text: ← Back to Technology
+back_link_url: /technology/
+hero_image_src: /assets/logos/NaturalCloud.jpg
+hero_image_alt: NaturalCloud™
 pipeline_cards:
-  - tag: "Pipeline Stage 3"
-    title: "Analyse"
-    subtitle: "Signal evaluation and confidence scoring"
-    description: "Signal strength, replicate consistency, and marker concordance evaluated against product-specific baselines. Confidence scored at every checkpoint. Results flow directly into NaturalCloud™ for classification and reporting."
-    image_src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80"
-    image_alt: "Data analytics dashboard showing statistical charts and trend analysis"
-  - tag: "Pipeline Stage 4"
-    title: "Certify"
-    subtitle: "Automated determination and certificate issuance"
-    description: "Each batch classified as Authenticated, Not Authenticated, or Inconclusive. No human judgment. Full audit trail and Certificate of Analysis issued automatically through NaturalCloud™."
-    image_src: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80"
-    image_alt: "Professional reviewing and signing a Certificate of Analysis"
-
-# Features Section
-features_label: "Platform Capabilities"
-features_title: "What NaturalCloud™ Delivers"
-features_subtitle: "A single platform for every output your traceability programme requires — from batch certificates to long-term analytics."
-
+  - tag: Stage 3
+    title: Analyse
+    subtitle: Signal evaluation and confidence scoring
+    description: Signal strength, replicate consistency, and marker concordance
+      evaluated against product-specific baselines. Confidence scored at every
+      checkpoint. Results flow directly into NaturalCloud™ for classification
+      and reporting.
+    image_src: https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80
+    image_alt: Data analytics dashboard showing statistical charts and trend analysis
+  - tag: Stage 4
+    title: Certify
+    subtitle: Automated determination and certificate issuance
+    description: Each batch classified as Authenticated, Not Authenticated, or
+      Inconclusive. No human judgment. Full audit trail and Certificate of
+      Analysis issued automatically through NaturalCloud™.
+    image_src: https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80
+    image_alt: Professional reviewing and signing a Certificate of Analysis
+features_label: Platform Capabilities
+features_title: What NaturalCloud™ Delivers
+features_subtitle: A single platform for every output your traceability
+  programme requires — from batch certificates to long-term analytics.
 features:
-  - title: "Certificate of Analysis"
-    description: "Branded, batch-specific COA generated automatically from pipeline results. PDF-ready for clients and regulators."
-    image_src: "https://images.unsplash.com/photo-1568667256549-094345857637?w=600&q=80"
-    image_alt: "Official branded report document ready for regulatory review"
-  - title: "Batch Traceability"
-    description: "Full chain-of-custody from sample receipt through extraction, analysis, and reporting. Every data point defensible under regulatory review."
-    image_src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80"
-    image_alt: "Supply chain logistics tracking and batch traceability"
-  - title: "Dashboard Analytics"
-    description: "Real-time visibility across all tested batches. Detection rates, confidence trends, and historical comparisons at a glance."
-    image_src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80"
-    image_alt: "Analytics dashboard with charts showing detection rates and trends"
-  - title: "Audit Trail"
-    description: "Every action logged. Every determination reproducible. Complete data provenance from instrument output to final certificate."
-    image_src: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=600&q=80"
-    image_alt: "Organised document archive and records management system"
-  - title: "Multi-Client Access"
-    description: "Separate client workspaces with role-based permissions. Each client sees only their programme data."
-    image_src: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80"
-    image_alt: "Multiple users collaborating on a shared digital platform"
-  - title: "API Integration"
-    description: "Connect NaturalCloud™ to your existing quality management or ERP systems. Structured data export in standard formats."
-    image_src: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80"
-    image_alt: "Technology integration with API connections and data systems"
-
-# Stats
+  - title: Certificate of Analysis
+    description: Branded, batch-specific COA generated automatically from pipeline
+      results. PDF-ready for clients and regulators.
+    image_src: https://images.unsplash.com/photo-1568667256549-094345857637?w=600&q=80
+    image_alt: Official branded report document ready for regulatory review
+  - title: Batch Traceability
+    description: Full chain-of-custody from sample receipt through extraction,
+      analysis, and reporting. Every data point defensible under regulatory
+      review.
+    image_src: https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80
+    image_alt: Supply chain logistics tracking and batch traceability
+  - title: Dashboard Analytics
+    description: Real-time visibility across all tested batches. Detection rates,
+      confidence trends, and historical comparisons at a glance.
+    image_src: https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80
+    image_alt: Analytics dashboard with charts showing detection rates and trends
+  - title: Audit Trail
+    description: Every action logged. Every determination reproducible. Complete
+      data provenance from instrument output to final certificate.
+    image_src: https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=600&q=80
+    image_alt: Organised document archive and records management system
+  - title: Multi-Client Access
+    description: Separate client workspaces with role-based permissions. Each client
+      sees only their programme data.
+    image_src: https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80
+    image_alt: Multiple users collaborating on a shared digital platform
+  - title: API Integration
+    description: Connect NaturalCloud™ to your existing quality management or ERP
+      systems. Structured data export in standard formats.
+    image_src: https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80
+    image_alt: Technology integration with API connections and data systems
 stats:
-  - strong: "Zero false positives"
-    text: "Across all validated programmes"
-  - strong: "Confidence scored"
-    text: "At every pipeline stage"
-  - strong: "Audit-ready trail"
-    text: "From extraction to certificate"
-  - strong: "Per-product calibration"
-    text: "For your specific formulation"
-
-# CTA
-cta_text: "Your data should be as traceable as your product."
-cta_button_text: "Explore NaturalCloud™ →"
-cta_button_url: "/contact/"
+  - strong: Zero false positives
+    text: Across all validated programmes
+  - strong: Confidence scored
+    text: At every pipeline stage
+  - strong: Audit-ready trail
+    text: From extraction to certificate
+  - strong: Per-product calibration
+    text: For your specific formulation
+cta_text: Your data should be as traceable as your product.
+cta_button_text: Explore NaturalCloud™ →
+cta_button_url: /contact/
