@@ -37,7 +37,7 @@ h1,h2,h3{font-family:'Bebas Neue','Inter',sans-serif;font-weight:400;letter-spac
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 
-.anim{opacity:0}.anim.visible{animation-fill-mode:both}
+.anim{opacity:0}.anim.visible{animation:fadeIn .8s ease forwards}
 .anim-up.visible{animation:fadeUp .8s ease forwards}
 .anim-right.visible{animation:fadeRight .8s ease forwards}
 .anim-left.visible{animation:fadeLeft .8s ease forwards}
