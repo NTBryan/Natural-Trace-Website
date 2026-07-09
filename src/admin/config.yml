@@ -163,20 +163,27 @@ collections:
               - {label: "Question", name: "question", widget: "string"}
               - {label: "Answer", name: "answer", widget: "markdown"}
 
-  # Team members as a separate collection
+  # Team members stored as a single JSON file
   - name: "team"
     label: "Team Members"
-    folder: "src/_data/team"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Name", name: "name", widget: "string"}
-      - {label: "Role", name: "role", widget: "string"}
-      - {label: "Type", name: "type", widget: "select", options: ["leadership", "advisor"]}
-      - {label: "Photo", name: "photo", widget: "image"}
-      - {label: "Bio", name: "bio", widget: "markdown"}
-      - {label: "LinkedIn", name: "linkedin", widget: "string", required: false}
-      - {label: "Order", name: "order", widget: "number"}
+    files:
+      - name: "team-data"
+        label: "All Team Members"
+        file: "src/_data/team.json"
+        fields:
+          - label: "Members"
+            name: "members"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Role", name: "role", widget: "string"}
+              - {label: "Type", name: "type", widget: "select", options: ["leadership", "advisor"]}
+              - {label: "Location", name: "location", widget: "string", required: false}
+              - {label: "Photo", name: "photo", widget: "image"}
+              - {label: "LinkedIn", name: "linkedin", widget: "string", required: false}
+              - {label: "Education", name: "education", widget: "list", required: false, field: {label: "Degree", name: "degree", widget: "string"}}
+              - {label: "Bio", name: "bio", widget: "list", field: {label: "Point", name: "point", widget: "string"}}
+              - {label: "Order", name: "order", widget: "number"}
 
   # Blog posts (future use)
   - name: "blog"
