@@ -65,10 +65,10 @@ mission_cards:
 
 # ─── Compatibility Quiz ───
 compat_label: "Product Compatibility"
-compat_title: "Is Your Product Ready for NaturalTag&#8482;?"
+compat_title: "Is Your Product Ready for NaturalTag™?"
 compat_subtitle: "Find out in 60 seconds if your product can be molecularly tagged for supply chain verification."
 compat_welcome_title: "Check Product Compatibility"
-compat_welcome_desc: "Answer three quick questions about your product to discover the optimal NaturalTag&#8482; integration pathway for your supply chain."
+compat_welcome_desc: "Answer three quick questions about your product to discover the optimal NaturalTag™ integration pathway for your supply chain."
 compat_welcome_cta: "Check Compatibility"
 compat_step1_question: "What type of product do you make?"
 compat_step2_question: "How is your product formulated?"
