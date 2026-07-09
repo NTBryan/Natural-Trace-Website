@@ -1,0 +1,194 @@
+# Decap CMS Configuration for Natural Trace Website
+# Documentation: https://decapcms.org/docs/configuration-options/
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Where uploaded images are stored
+media_folder: "src/assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+# Editorial workflow: draft -> review -> publish
+publish_mode: editorial_workflow
+
+# Site pages collection
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      # HOME PAGE
+      - name: "home"
+        label: "Home"
+        file: "src/_data/home.yml"
+        fields:
+          - {label: "Hero Title", name: "hero_title", widget: "string", default: "Tag. Trace. Trust."}
+          - {label: "Hero Subtitle", name: "hero_subtitle", widget: "text", default: "Molecular authenticity for supply chains."}
+          - {label: "Hero CTA Text", name: "hero_cta", widget: "string", default: "Get Started"}
+          - label: "Mission Cards"
+            name: "mission_cards"
+            widget: "list"
+            max: 3
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+
+      # ABOUT PAGE
+      - name: "about"
+        label: "About"
+        file: "src/_data/about.yml"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string", default: "Our Story"}
+          - {label: "Introduction", name: "intro", widget: "markdown"}
+          - label: "Values"
+            name: "values"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+
+      # SERVICES PAGE
+      - name: "services"
+        label: "Services"
+        file: "src/_data/services.yml"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string", default: "Our Services"}
+          - {label: "Subtitle", name: "subtitle", widget: "text"}
+          - label: "Service Cards"
+            name: "services"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Features", name: "features", widget: "list", field: {label: "Feature", name: "feature", widget: "string"}}
+
+      # NATURALTAG PAGE
+      - name: "naturaltag"
+        label: "NaturalTag"
+        file: "src/_data/naturaltag.yml"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string", default: "NaturalTag"}
+          - {label: "Subtitle", name: "subtitle", widget: "text"}
+          - {label: "Main Description", name: "description", widget: "markdown"}
+          - label: "Features"
+            name: "features"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+
+      # TECHNOLOGY PAGE
+      - name: "technology"
+        label: "Technology"
+        file: "src/_data/technology.yml"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string", default: "NaturalDetect"}
+          - {label: "Subtitle", name: "subtitle", widget: "text"}
+          - {label: "Description", name: "description", widget: "markdown"}
+
+      # NATURALCLOUD PAGE
+      - name: "naturalcloud"
+        label: "NaturalCloud"
+        file: "src/_data/naturalcloud.yml"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string", default: "NaturalCloud"}
+          - {label: "Subtitle", name: "subtitle", widget: "text"}
+          - {label: "Description", name: "description", widget: "markdown"}
+          - label: "Features"
+            name: "features"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+
+      # QUALITY STANDARDS PAGE
+      - name: "quality-standards"
+        label: "Quality Standards"
+        file: "src/_data/quality-standards.yml"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string", default: "Quality Standards"}
+          - {label: "Subtitle", name: "subtitle", widget: "text"}
+          - {label: "Content", name: "content", widget: "markdown"}
+
+      # INDUSTRIES PAGE
+      - name: "industries"
+        label: "Industries"
+        file: "src/_data/industries.yml"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string", default: "Industries"}
+          - {label: "Subtitle", name: "subtitle", widget: "text"}
+          - label: "Industries"
+            name: "industries"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+
+      # CONTACT PAGE
+      - name: "contact"
+        label: "Contact"
+        file: "src/_data/contact.yml"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string", default: "Get in Touch"}
+          - {label: "Subtitle", name: "subtitle", widget: "text"}
+          - {label: "Address", name: "address", widget: "text"}
+
+      # CAREERS PAGE
+      - name: "careers"
+        label: "Careers"
+        file: "src/_data/careers.yml"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string", default: "Careers"}
+          - {label: "Introduction", name: "intro", widget: "markdown"}
+          - label: "Positions"
+            name: "positions"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Department", name: "department", widget: "string"}
+              - {label: "Location", name: "location", widget: "string"}
+              - {label: "Description", name: "description", widget: "markdown"}
+
+      # FAQ PAGE
+      - name: "faq"
+        label: "FAQ"
+        file: "src/_data/faq.yml"
+        fields:
+          - {label: "Page Title", name: "title", widget: "string", default: "Frequently Asked Questions"}
+          - label: "Questions"
+            name: "questions"
+            widget: "list"
+            fields:
+              - {label: "Category", name: "category", widget: "select", options: ["general", "technical", "integration", "detection", "commercial"]}
+              - {label: "Question", name: "question", widget: "string"}
+              - {label: "Answer", name: "answer", widget: "markdown"}
+
+  # Team members as a separate collection
+  - name: "team"
+    label: "Team Members"
+    folder: "src/_data/team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Role", name: "role", widget: "string"}
+      - {label: "Type", name: "type", widget: "select", options: ["leadership", "advisor"]}
+      - {label: "Photo", name: "photo", widget: "image"}
+      - {label: "Bio", name: "bio", widget: "markdown"}
+      - {label: "LinkedIn", name: "linkedin", widget: "string", required: false}
+      - {label: "Order", name: "order", widget: "number"}
+
+  # Blog posts (future use)
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Summary", name: "summary", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list", field: {label: "Tag", name: "tag", widget: "string"}}
