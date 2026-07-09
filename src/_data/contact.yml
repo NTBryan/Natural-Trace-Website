@@ -1,0 +1,51 @@
+section_label: "Get in Touch"
+title: "Ready to Trace Your Product?"
+subtitle: "We help brands verify the origin and authenticity of their products through molecular tagging at source. Get in touch to learn how NaturalTag&trade; can be integrated into your supply chain."
+
+info_items:
+  - label: "Location"
+    description: "Singapore"
+  - label: "What We Do"
+    description: "Supply chain traceability via NaturalTag&trade; integration. We tag your product at source and verify it downstream with NaturalDetect&trade;."
+
+form:
+  title: "Send Us a Message"
+  subtitle: "Fill out the form below and our team will be in touch."
+  first_name_label: "First Name"
+  first_name_placeholder: "Your first name"
+  last_name_label: "Last Name"
+  last_name_placeholder: "Your last name"
+  email_label: "Email"
+  email_placeholder: "your@company.com"
+  company_label: "Company"
+  company_placeholder: "Your company name"
+  inquiry_type_label: "Inquiry Type"
+  inquiry_type_placeholder: "Select an inquiry type"
+  message_label: "Message"
+  message_placeholder: "Tell us about your project or requirements..."
+  submit_text: "Send Message"
+
+inquiry_types:
+  - value: "NaturalTag Integration"
+    label: "NaturalTag&trade; Integration"
+  - value: "Supply Chain Traceability"
+    label: "Supply Chain Traceability"
+  - value: "Custom Strain Tagging"
+    label: "Custom Strain Tagging"
+  - value: "Partnership"
+    label: "Partnership Inquiry"
+  - value: "General"
+    label: "General Inquiry"
+
+success:
+  title: "Message Sent"
+  message: "Thank you for reaching out. Our team will review your inquiry and get back to you shortly."
+
+cta:
+  section_label: "Get Started"
+  title: "Start Your First Test Today"
+  subtitle: "Request a sample kit, schedule a consultation, or explore our testing capabilities."
+  primary_text: "Contact Us &#8594;"
+  primary_href: "mailto:info@naturaltrace.com"
+  secondary_text: "View Services"
+  secondary_href: "/services/"

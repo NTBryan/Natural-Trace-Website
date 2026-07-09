@@ -1,24 +1,23 @@
 <section class="hero">
   <div class="hero-bg" id="heroBg"></div>
   <div class="hero-overlay"></div>
-  <div class="hero-visual"><img src="/assets/images/Ingredients Lab.png" alt="Natural ingredients and laboratory glassware representing molecular authenticity verification" loading="eager"></div>
+  <div class="hero-visual"><img src="{{ home.hero_image }}" alt="{{ home.hero_image_alt }}" loading="eager"></div>
   <div class="hero-content">
-    <div class="hero-badge"><span class="hero-badge-dot"></span>Molecular Authenticity Verification</div>
+    <div class="hero-badge"><span class="hero-badge-dot"></span>{{ home.hero_badge }}</div>
     <h1>
-      <span class="hero-line"><span class="hero-line-inner">Know Exactly What's</span></span>
-      <span class="hero-line"><span class="hero-line-inner"><em>In Your Product</em></span></span>
+      <span class="hero-line"><span class="hero-line-inner">{{ home.hero_title_line1 }}</span></span>
+      <span class="hero-line"><span class="hero-line-inner"><em>{{ home.hero_title_line2 }}</em></span></span>
     </h1>
-    <p class="hero-slogan">Trust. Forged with Us.</p>
-    <p class="hero-desc">Molecular-level testing and standardized analytics for the nutraceutical, food, and supplement industries. Species-level identification you can trust.</p>
+    <p class="hero-slogan">{{ home.hero_slogan }}</p>
+    <p class="hero-desc">{{ home.hero_desc }}</p>
     <div class="hero-actions">
-      <a href="/contact/" class="btn btn-primary" style="cursor:pointer">Request Testing &#8594;</a>
-      <a href="/technology/" class="btn btn-outline" style="cursor:pointer">Explore Our Platform</a>
+      <a href="{{ home.hero_cta_url }}" class="btn btn-primary" style="cursor:pointer">{{ home.hero_cta }} &#8594;</a>
+      <a href="{{ home.hero_cta_secondary_url }}" class="btn btn-outline" style="cursor:pointer">{{ home.hero_cta_secondary }}</a>
     </div>
     <div class="hero-stats">
-      <div class="hero-stat"><h3>Molecular Detection</h3><p>Industry-leading specificity</p></div>
-      <div class="hero-stat"><h3>Precision-Validated</h3><p>Analytically verified results</p></div>
-      <div class="hero-stat"><h3>Non-GMO</h3><p>Food-grade, natural processing aid</p></div>
-      <div class="hero-stat"><h3>ISO Compliant</h3><p>ISO 22174 / ISO 20837 / ISO 17025</p></div>
+      {% for stat in home.hero_stats %}
+      <div class="hero-stat"><h3>{{ stat.title }}</h3><p>{{ stat.description }}</p></div>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -26,14 +25,11 @@
 <div class="trust-bar">
   <div class="container">
     <div class="trust-bar-inner">
-      <span class="trust-label">Our Partners</span>
+      <span class="trust-label">{{ home.trust_label }}</span>
       <div class="trust-logos">
-        <a class="trust-logo" href="https://nutrasteward.com/" target="_blank" rel="noopener"><img src="/assets/partners/NutraSteward.jpg" alt="NutraSteward"></a>
-        <a class="trust-logo" href="https://startupbootcamp.org/" target="_blank" rel="noopener"><img src="/assets/partners/Startupbootcamp.svg" alt="Startup Bootcamp"></a>
-        <a class="trust-logo" href="https://trackvision.ai/" target="_blank" rel="noopener"><img src="/assets/partners/Trackvision AI.png" alt="Trackvision AI"></a>
-        <a class="trust-logo" href="https://www.foodplant.com.sg/" target="_blank" rel="noopener"><img src="/assets/partners/FoodPlant.png" alt="FoodPlant"></a>
-        <a class="trust-logo" href="https://www.blueincube.com/" target="_blank" rel="noopener"><img src="/assets/partners/Blue InCube.png" alt="BlueInCube"></a>
-        <a class="trust-logo" href="https://www.ingredientsnetwork.com/" target="_blank" rel="noopener"><img src="/assets/partners/Ingredients Network.jpg" alt="Ingredients Network"></a>
+        {% for logo in home.trust_logos %}
+        <a class="trust-logo" href="{{ logo.url }}" target="_blank" rel="noopener"><img src="{{ logo.image }}" alt="{{ logo.alt }}"></a>
+        {% endfor %}
       </div>
     </div>
   </div>
@@ -42,31 +38,19 @@
 <section class="mission">
   <div class="container">
     <div style="text-align:center;margin-bottom:1rem">
-      <span class="section-label anim anim-up">What We Deliver</span>
-      <h2 class="section-title anim anim-up delay-1">Science-Backed Supply Chain Integrity</h2>
+      <span class="section-label anim anim-up">{{ home.mission_label }}</span>
+      <h2 class="section-title anim anim-up delay-1">{{ home.mission_title }}</h2>
     </div>
     <div class="mission-grid">
-      <div class="mission-card anim anim-up delay-1">
-        <img class="mission-card-img" src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&q=80" alt="Molecular authenticity verification testing" loading="lazy">
+      {% for card in home.mission_cards %}
+      <div class="mission-card anim anim-up delay-{{ loop.index }}">
+        <img class="mission-card-img" src="{{ card.image }}" alt="{{ card.alt }}" loading="lazy">
         <div class="mission-card-body">
-          <h3>Species-Level Identification</h3>
-          <p>Proprietary molecular assays validated across multiple species with high-discrimination detection. No ambiguity in your results.</p>
+          <h3>{{ card.title }}</h3>
+          <p>{{ card.description }}</p>
         </div>
       </div>
-      <div class="mission-card anim anim-up delay-2">
-        <img class="mission-card-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Data analytics dashboard showing charts and graphs" loading="lazy">
-        <div class="mission-card-body">
-          <h3>Automated Data Pipelines</h3>
-          <p>From raw instrument output to structured Certificate of Analysis -- standardized, reproducible, and audit-ready without manual intervention.</p>
-        </div>
-      </div>
-      <div class="mission-card anim anim-up delay-3">
-        <img class="mission-card-img" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80" alt="Quality inspection checklist and documentation" loading="lazy">
-        <div class="mission-card-body">
-          <h3>End-to-End Traceability</h3>
-          <p>Full chain-of-custody from sample receipt through extraction, analysis, and reporting. Every data point defensible under regulatory review.</p>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -76,9 +60,9 @@
 <section class="compat-section">
   <div class="container">
     <div style="text-align:center;margin-bottom:2rem">
-      <span class="section-label">Product Compatibility</span>
-      <h2 class="section-title" style="color:#fff">Is Your Product Ready for NaturalTag&#8482;?</h2>
-      <p style="color:rgba(255,255,255,.6);max-width:600px;margin:0 auto">Find out in 60 seconds if your product can be molecularly tagged for supply chain verification.</p>
+      <span class="section-label">{{ home.compat_label }}</span>
+      <h2 class="section-title" style="color:#fff">{{ home.compat_title }}</h2>
+      <p style="color:rgba(255,255,255,.6);max-width:600px;margin:0 auto">{{ home.compat_subtitle }}</p>
     </div>
     <div class="compat-quiz" id="compatQuiz">
       <!-- Progress bar -->
@@ -91,48 +75,48 @@
       <div class="compat-screen active" id="compatWelcome">
         <div class="compat-welcome">
           <svg width="64" height="64" viewBox="0 0 64 64" fill="none" style="margin-bottom:1rem"><circle cx="32" cy="32" r="30" stroke="var(--sage)" stroke-width="2.5" fill="rgba(107,114,73,.08)"/><path d="M22 32l6 6 14-14" stroke="var(--sage)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-          <h3>Check Product Compatibility</h3>
-          <p>Answer three quick questions about your product to discover the optimal NaturalTag&#8482; integration pathway for your supply chain.</p>
-          <button class="compat-cta" onclick="compatStart()">Check Compatibility</button>
+          <h3>{{ home.compat_welcome_title }}</h3>
+          <p>{{ home.compat_welcome_desc }}</p>
+          <button class="compat-cta" onclick="compatStart()">{{ home.compat_welcome_cta }}</button>
         </div>
       </div>
 
       <!-- Step 1: Product Category -->
       <div class="compat-screen" id="compatStep1">
-        <p class="compat-q">What type of product do you make?</p>
+        <p class="compat-q">{{ home.compat_step1_question }}</p>
         <div class="compat-grid" id="compatCategories"></div>
         <div class="compat-next-wrap" id="compatNext1">
-          <button class="compat-next" onclick="compatGoStep(2)">Next</button>
+          <button class="compat-next" onclick="compatGoStep(2)">{{ home.compat_btn_next }}</button>
         </div>
       </div>
 
       <!-- Step 2: Formulation -->
       <div class="compat-screen" id="compatStep2">
-        <p class="compat-q">How is your product formulated?</p>
-        <p style="color:var(--muted);font-size:.82rem;margin-top:-.75rem;margin-bottom:1rem">Select all that apply</p>
+        <p class="compat-q">{{ home.compat_step2_question }}</p>
+        <p style="color:var(--muted);font-size:.82rem;margin-top:-.75rem;margin-bottom:1rem">{{ home.compat_step2_hint }}</p>
         <div class="compat-grid compat-grid-3" id="compatFormulations"></div>
         <div class="compat-next-wrap" id="compatNext2">
-          <button class="compat-back" onclick="compatGoStep(1)">Back</button>
-          <button class="compat-next" onclick="compatGoStep(3)">Next</button>
+          <button class="compat-back" onclick="compatGoStep(1)">{{ home.compat_btn_back }}</button>
+          <button class="compat-next" onclick="compatGoStep(3)">{{ home.compat_btn_next }}</button>
         </div>
       </div>
 
       <!-- Step 3: Processing Conditions -->
       <div class="compat-screen" id="compatStep3">
-        <p class="compat-q">What are your processing conditions?</p>
+        <p class="compat-q">{{ home.compat_step3_question }}</p>
         <div class="compat-conditions">
           <div class="compat-condition-group">
-            <h4>Max Processing Temperature</h4>
+            <h4>{{ home.compat_step3_temp_label }}</h4>
             <div class="compat-condition-options" id="compatTempOptions"></div>
           </div>
           <div class="compat-condition-group">
-            <h4>pH Range</h4>
+            <h4>{{ home.compat_step3_ph_label }}</h4>
             <div class="compat-condition-options" id="compatPhOptions"></div>
           </div>
         </div>
         <div class="compat-next-wrap" id="compatNext3">
-          <button class="compat-back" onclick="compatGoStep(2)">Back</button>
-          <button class="compat-next" onclick="compatShowResult()">See Results</button>
+          <button class="compat-back" onclick="compatGoStep(2)">{{ home.compat_btn_back }}</button>
+          <button class="compat-next" onclick="compatShowResult()">{{ home.compat_btn_results }}</button>
         </div>
       </div>
 
@@ -153,14 +137,11 @@
             <p id="compatRecDesc"></p>
           </div>
           <div class="compat-actions" id="compatActions">
-            <button class="compat-restart" onclick="compatReset()">Start Over</button>
-            <button class="compat-cta" href="/contact/" style="font-size:.85rem;padding:.7rem 1.5rem">Get in Touch</button>
+            <button class="compat-restart" onclick="compatReset()">{{ home.compat_result_restart }}</button>
+            <button class="compat-cta" href="{{ home.compat_result_cta_url }}" style="font-size:.85rem;padding:.7rem 1.5rem">{{ home.compat_result_cta }}</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-</div>
-
-<!-- ====== PAGE: ABOUT ====== -->

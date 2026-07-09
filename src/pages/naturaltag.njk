@@ -9,21 +9,20 @@ permalink: /naturaltag/
   <div class="tech-glow"></div>
   <div class="tech-glow-2"></div>
   <div class="container">
-    <a class="privacy-back" href="/technology/" style="cursor:pointer;position:relative;z-index:3;color:var(--sage)">&#8592; Back to Technology</a>
+    <a class="privacy-back" href="{{ naturaltag.back_link_url }}" style="cursor:pointer;position:relative;z-index:3;color:var(--sage)">{{ naturaltag.back_link_text }}</a>
     <div class="tech-grid">
       <div class="tech-content">
-        <span class="section-label anim anim-right">Source-Level Tagging</span>
-        <h2 class="section-title anim anim-right delay-1">NaturalTag&trade;</h2>
-        <p class="section-subtitle anim anim-right delay-2">A food-grade molecular marker embedded into your product at source. Not applied after. Not added later. Formulated in. NaturalTag&trade; is your product's permanent molecular identity.</p>
+        <span class="section-label anim anim-right">{{ naturaltag.hero_label }}</span>
+        <h2 class="section-title anim anim-right delay-1">{{ naturaltag.title }}</h2>
+        <p class="section-subtitle anim anim-right delay-2">{{ naturaltag.subtitle }}</p>
         <div class="tech-features">
-          <div class="tech-feature anim anim-right delay-1"><div class="tech-feature-num">01</div><div><h4>Food-Grade Composition</h4><p>Composed entirely of inactivated probiotic Lactobacillus species already used in food production</p></div></div>
-          <div class="tech-feature anim anim-right delay-2"><div class="tech-feature-num">02</div><div><h4>Non-GMO</h4><p>No genetic modification. Naturally occurring organisms, regulatory-compatible worldwide</p></div></div>
-          <div class="tech-feature anim anim-right delay-3"><div class="tech-feature-num">03</div><div><h4>PCR-Detectable</h4><p>Designed for detection by quantitative PCR at trace concentrations downstream</p></div></div>
-          <div class="tech-feature anim anim-right delay-4"><div class="tech-feature-num">04</div><div><h4>Batch-Level Traceability</h4><p>Each production batch receives a unique marker combination for full chain-of-custody</p></div></div>
+          {% for feature in naturaltag.hero_features %}
+          <div class="tech-feature anim anim-right delay-{{ loop.index }}"><div class="tech-feature-num">{{ feature.num }}</div><div><h4>{{ feature.title }}</h4><p>{{ feature.description }}</p></div></div>
+          {% endfor %}
         </div>
       </div>
       <div class="tech-image-wrapper anim anim-left delay-2">
-        <img src="/assets/logos/NT icon without logo.png" alt="NaturalTag&trade;" loading="lazy">
+        <img src="{{ naturaltag.hero_image_src }}" alt="{{ naturaltag.hero_image_alt }}" loading="lazy">
       </div>
     </div>
   </div>
@@ -33,25 +32,17 @@ permalink: /naturaltag/
 <section class="nt-pipeline pipeline">
   <div class="container">
     <div class="pipeline-header">
-      <span class="section-label anim anim-up">How It Works</span>
-      <h2 class="section-title anim anim-up delay-1" style="color:#fff">From Source to Certainty</h2>
+      <span class="section-label anim anim-up">{{ naturaltag.pipeline_label }}</span>
+      <h2 class="section-title anim anim-up delay-1" style="color:#fff">{{ naturaltag.pipeline_title }}</h2>
     </div>
-    <div class="pipeline-steps" style="grid-template-columns:repeat(3,1fr)">
-      <div class="pipeline-step anim anim-up delay-1">
-        <div class="pipeline-step-num">01</div>
-        <h3>Formulate</h3>
-        <p>NaturalTag&trade; is formulated directly into your product during manufacturing. A blend of inactivated probiotic markers integrated at source. No process changes required.</p>
+    <div class="pipeline-steps" style="grid-template-columns:repeat({{ naturaltag.pipeline_steps | length }},1fr)">
+      {% for step in naturaltag.pipeline_steps %}
+      <div class="pipeline-step anim anim-up delay-{{ loop.index }}">
+        <div class="pipeline-step-num">{{ step.num }}</div>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.description }}</p>
       </div>
-      <div class="pipeline-step anim anim-up delay-2">
-        <div class="pipeline-step-num">02</div>
-        <h3>Embed</h3>
-        <p>The molecular marker becomes part of the product matrix. It survives processing, storage, and transport. The tag cannot be removed, transferred, or counterfeited.</p>
-      </div>
-      <div class="pipeline-step anim anim-up delay-3">
-        <div class="pipeline-step-num">03</div>
-        <h3>Verify</h3>
-        <p>At any point downstream, a sample is tested with NaturalDetect&trade; to confirm origin and authenticity. The tag is the proof.</p>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -60,13 +51,13 @@ permalink: /naturaltag/
 <section class="nt-video-section">
   <div class="container">
     <div class="nt-video-header">
-      <span class="section-label anim anim-up">End-to-End Traceability</span>
-      <h2 class="section-title anim anim-up delay-1" style="color:#fff">Tagged from Source to Shelf</h2>
-      <p class="anim anim-up delay-2">NaturalTag&trade; travels with your product through every stage of the supply chain. NaturalCloud&trade; records the journey.</p>
+      <span class="section-label anim anim-up">{{ naturaltag.video_label }}</span>
+      <h2 class="section-title anim anim-up delay-1" style="color:#fff">{{ naturaltag.video_title }}</h2>
+      <p class="anim anim-up delay-2">{{ naturaltag.video_description }}</p>
     </div>
     <div class="nt-video-wrapper anim anim-up delay-3">
       <video autoplay loop muted playsinline>
-        <source src="/assets/video/NaturalTag Process.mp4" type="video/mp4">
+        <source src="{{ naturaltag.video_src }}" type="video/mp4">
       </video>
     </div>
   </div>
@@ -78,27 +69,27 @@ permalink: /naturaltag/
     <div class="nt-journey-strip anim anim-up">
       <div class="nt-journey-stage">
         <div class="nt-journey-icon"><svg viewBox="0 0 24 24"><path d="M3 21V10l9-7 9 7v11"/><path d="M7 21v-4c0-1 1-2 2-2h1"/><circle cx="12" cy="8" r="0"/><path d="M12 3c-1 4-4 5-6 5"/><path d="M12 3c1 4 4 5 6 5"/><path d="M9 21c1-3 1-6 0-8"/><path d="M15 21c-1-3-1-6 0-8"/><path d="M6 15h12"/></svg></div>
-        <span class="nt-journey-label">Farm</span>
+        <span class="nt-journey-label">{{ naturaltag.journey_stages[0].label }}</span>
       </div>
       <div class="nt-journey-line"></div>
       <div class="nt-journey-stage">
         <div class="nt-journey-icon"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M3 14h18"/><path d="M7 3v5"/><path d="M12 3v5"/><path d="M17 3v5"/><circle cx="7" cy="11" r="1"/><circle cx="12" cy="11" r="1"/><circle cx="17" cy="11" r="1"/></svg></div>
-        <span class="nt-journey-label">Factory</span>
+        <span class="nt-journey-label">{{ naturaltag.journey_stages[1].label }}</span>
       </div>
       <div class="nt-journey-line"></div>
       <div class="nt-journey-stage">
         <div class="nt-journey-icon"><svg viewBox="0 0 24 24"><rect x="2" y="10" width="15" height="8" rx="1"/><path d="M17 14h3l2-4h-5"/><circle cx="6" cy="20" r="2"/><circle cx="18" cy="20" r="2"/><path d="M6 10V7h4l3 3"/></svg></div>
-        <span class="nt-journey-label">Distribution</span>
+        <span class="nt-journey-label">{{ naturaltag.journey_stages[2].label }}</span>
       </div>
       <div class="nt-journey-line"></div>
       <div class="nt-journey-stage">
         <div class="nt-journey-icon"><svg viewBox="0 0 24 24"><path d="M4 21V7l8-4 8 4v14"/><path d="M4 10h16"/><path d="M9 21v-5h6v5"/><path d="M9 14h1"/><path d="M14 14h1"/></svg></div>
-        <span class="nt-journey-label">Retail</span>
+        <span class="nt-journey-label">{{ naturaltag.journey_stages[3].label }}</span>
       </div>
       <div class="nt-journey-line"></div>
       <div class="nt-journey-stage">
         <div class="nt-journey-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5 21c0-4 3-7 7-7s7 3 7 7"/></svg></div>
-        <span class="nt-journey-label">Consumer</span>
+        <span class="nt-journey-label">{{ naturaltag.journey_stages[4].label }}</span>
       </div>
     </div>
   </div>
@@ -107,8 +98,8 @@ permalink: /naturaltag/
 <!-- CTA -->
 <section class="nt-cta-section">
   <div class="container">
-    <p>Your product's identity starts at the source.</p>
-    <a href="/contact/" class="btn btn-primary" style="cursor:pointer">Talk to Us About NaturalTag&trade; &#8594;</a>
+    <p>{{ naturaltag.cta_text }}</p>
+    <a href="{{ naturaltag.cta_button_url }}" class="btn btn-primary" style="cursor:pointer">{{ naturaltag.cta_button_text }}</a>
   </div>
 </section>
 

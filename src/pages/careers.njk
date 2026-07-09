@@ -8,83 +8,90 @@ permalink: /careers/
   <div class="container" style="max-width:900px">
     <a class="privacy-back" href="/home/">&#8592; Back to Home</a>
     <div style="text-align:center;margin-bottom:3rem">
-      <span class="section-label">Join Us</span>
-      <h2 class="section-title">Careers at Natural Trace</h2>
-      <p class="section-subtitle" style="margin:0 auto">We're building the future of supply chain traceability through molecular science. If you're passionate about making global supply chains more transparent and trustworthy, we'd love to hear from you.</p>
+      <span class="section-label">{{ careers.section_label }}</span>
+      <h2 class="section-title">{{ careers.title }}</h2>
+      <p class="section-subtitle" style="margin:0 auto">{{ careers.intro }}</p>
     </div>
 
     <!-- Tab navigation -->
     <div class="careers-tabs">
-      <button class="careers-tab active" onclick="switchCareersTab('openings')">Open Positions</button>
-      <button class="careers-tab" onclick="switchCareersTab('internship')">Internships</button>
+      <button class="careers-tab active" onclick="switchCareersTab('openings')">{{ careers.tab_openings_label }}</button>
+      <button class="careers-tab" onclick="switchCareersTab('internship')">{{ careers.tab_internship_label }}</button>
     </div>
 
     <!-- Tab: Open Positions -->
     <div class="careers-panel active" id="careers-openings">
+      {% if careers.positions | length %}
+      {% for position in careers.positions %}
+      <div style="background:#fff;border-radius:16px;border:1px solid #E5E7EB;padding:2rem;margin-bottom:1.5rem">
+        <h3 style="font-family:'Bebas Neue','Inter',sans-serif;font-size:1.3rem;color:var(--dark);margin-bottom:.5rem">{{ position.title }}</h3>
+        <p style="font-size:.85rem;color:var(--sage);font-weight:600;margin-bottom:.75rem">{{ position.department }} &middot; {{ position.location }}</p>
+        <p style="font-size:.92rem;color:var(--muted);line-height:1.7">{{ position.description | safe }}</p>
+      </div>
+      {% endfor %}
+      {% else %}
       <div style="text-align:center;padding:4rem 2rem;background:#fff;border-radius:16px;border:1px solid #E5E7EB">
         <div style="font-size:2.5rem;margin-bottom:1rem;opacity:.4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
-        <h3 style="font-family:'Bebas Neue','Inter',sans-serif;font-size:1.4rem;color:var(--dark);margin-bottom:.75rem">No Open Positions Right Now</h3>
-        <p style="font-size:.92rem;color:var(--muted);max-width:480px;margin:0 auto;line-height:1.7">We don't have any openings at the moment, but we're always growing. Check back soon or explore our internship programme.</p>
+        <h3 style="font-family:'Bebas Neue','Inter',sans-serif;font-size:1.4rem;color:var(--dark);margin-bottom:.75rem">{{ careers.no_openings.title }}</h3>
+        <p style="font-size:.92rem;color:var(--muted);max-width:480px;margin:0 auto;line-height:1.7">{{ careers.no_openings.description }}</p>
       </div>
+      {% endif %}
     </div>
 
     <!-- Tab: Internship -->
     <div class="careers-panel" id="careers-internship">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start">
         <div>
-          <h3 style="font-family:'Bebas Neue','Inter',sans-serif;font-size:1.3rem;color:var(--dark);margin-bottom:1rem">R&amp;D / Lab Internship</h3>
-          <p style="font-size:.92rem;color:var(--muted);line-height:1.8;margin-bottom:1.5rem">We offer hands-on internship placements in our R&amp;D and laboratory teams. You'll work alongside scientists on real projects involving molecular biology, qPCR assay development, and supply chain traceability.</p>
+          <h3 style="font-family:'Bebas Neue','Inter',sans-serif;font-size:1.3rem;color:var(--dark);margin-bottom:1rem">{{ careers.internship.title | safe }}</h3>
+          <p style="font-size:.92rem;color:var(--muted);line-height:1.8;margin-bottom:1.5rem">{{ careers.internship.description | safe }}</p>
           <div style="font-size:.88rem;color:var(--muted);line-height:1.9">
-            <p style="font-weight:600;color:var(--dark);margin-bottom:.5rem">What you can expect:</p>
-            <p>&#8226; Exposure to qPCR, DNA extraction, and assay design</p>
-            <p>&#8226; Hands-on work with real client data and sample matrices</p>
-            <p>&#8226; Mentorship from experienced research scientists</p>
-            <p>&#8226; Flexible placement duration (min. 3 months)</p>
+            <p style="font-weight:600;color:var(--dark);margin-bottom:.5rem">{{ careers.internship.expectations_label }}</p>
+            {% for item in careers.internship.expectations %}
+            <p>&#8226; {{ item }}</p>
+            {% endfor %}
           </div>
-          <p style="font-size:.85rem;color:var(--sage);font-weight:600;margin-top:1.5rem">Based in Singapore</p>
+          <p style="font-size:.85rem;color:var(--sage);font-weight:600;margin-top:1.5rem">{{ careers.internship.location }}</p>
         </div>
         <div class="contact-form" style="margin:0">
-          <h3>Apply for an Internship</h3>
-          <p>Tell us about yourself and we'll be in touch.</p>
+          <h3>{{ careers.internship_form.title }}</h3>
+          <p>{{ careers.internship_form.subtitle }}</p>
           <form id="internshipForm" onsubmit="return handleInternshipSubmit(event)">
             <div class="form-row">
               <div class="form-group">
-                <label>First Name</label>
-                <input type="text" name="firstName" required placeholder="Your first name">
+                <label>{{ careers.internship_form.first_name_label }}</label>
+                <input type="text" name="firstName" required placeholder="{{ careers.internship_form.first_name_placeholder }}">
               </div>
               <div class="form-group">
-                <label>Last Name</label>
-                <input type="text" name="lastName" required placeholder="Your last name">
+                <label>{{ careers.internship_form.last_name_label }}</label>
+                <input type="text" name="lastName" required placeholder="{{ careers.internship_form.last_name_placeholder }}">
               </div>
             </div>
             <div class="form-group">
-              <label>Email</label>
-              <input type="email" name="email" required placeholder="your@email.com">
+              <label>{{ careers.internship_form.email_label }}</label>
+              <input type="email" name="email" required placeholder="{{ careers.internship_form.email_placeholder }}">
             </div>
             <div class="form-group">
-              <label>University / Institution</label>
-              <input type="text" name="university" required placeholder="Your university or institution">
+              <label>{{ careers.internship_form.university_label }}</label>
+              <input type="text" name="university" required placeholder="{{ careers.internship_form.university_placeholder }}">
             </div>
             <div class="form-group">
-              <label>Area of Interest</label>
+              <label>{{ careers.internship_form.interest_label }}</label>
               <select name="interest" required>
-                <option value="" disabled selected>Select an area</option>
-                <option value="Molecular Biology">Molecular Biology</option>
-                <option value="qPCR / Assay Development">qPCR / Assay Development</option>
-                <option value="DNA Extraction / Sample Processing">DNA Extraction / Sample Processing</option>
-                <option value="Data Analysis">Data Analysis</option>
-                <option value="General Lab Work">General Lab Work</option>
+                <option value="" disabled selected>{{ careers.internship_form.interest_placeholder }}</option>
+                {% for area in careers.areas_of_interest %}
+                <option value="{{ area }}">{{ area }}</option>
+                {% endfor %}
               </select>
             </div>
             <div class="form-group">
-              <label>Tell us about yourself</label>
-              <textarea name="message" required placeholder="Your background, what you're studying, and what you hope to learn..."></textarea>
+              <label>{{ careers.internship_form.message_label }}</label>
+              <textarea name="message" required placeholder="{{ careers.internship_form.message_placeholder }}"></textarea>
             </div>
-            <button type="submit" class="form-submit">Submit Application</button>
+            <button type="submit" class="form-submit">{{ careers.internship_form.submit_text }}</button>
           </form>
           <div class="form-success" id="internshipSuccess">
-            <h4>Application Received</h4>
-            <p>Thank you for your interest in Natural Trace. Our team will review your application and get back to you.</p>
+            <h4>{{ careers.success.title }}</h4>
+            <p>{{ careers.success.message }}</p>
           </div>
         </div>
       </div>

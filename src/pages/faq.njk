@@ -6,172 +6,39 @@ permalink: /faq/
 
 <section class="faq-page-hero">
   <div class="container">
-    <span class="section-label" style="color:var(--sage-light)">SUPPORT</span>
-    <h1>Frequently Asked Questions</h1>
-    <p>Everything you need to know about NaturalTag&#8482; integration, safety, detection, and pricing.</p>
+    <span class="section-label" style="color:var(--sage-light)">{{ faq.section_label }}</span>
+    <h1>{{ faq.title }}</h1>
+    <p>{{ faq.subtitle }}</p>
   </div>
 </section>
 <section class="faq-section">
   <div class="container">
     <div class="faq-categories" id="faqCats">
       <button class="faq-cat-btn active" onclick="filterFaq('all')">All</button>
-      <button class="faq-cat-btn" onclick="filterFaq('regulatory')">Regulatory</button>
-      <button class="faq-cat-btn" onclick="filterFaq('safety')">Safety &amp; Composition</button>
-      <button class="faq-cat-btn" onclick="filterFaq('integration')">Integration</button>
-      <button class="faq-cat-btn" onclick="filterFaq('detection')">Detection &amp; Security</button>
-      <button class="faq-cat-btn" onclick="filterFaq('cost')">Cost &amp; Commitment</button>
+      {% for cat in faq.categories %}
+      <button class="faq-cat-btn" onclick="filterFaq('{{ cat.id }}')">{{ cat.label }}</button>
+      {% endfor %}
     </div>
     <div class="faq-grid" id="faqGrid">
 
-      <div class="faq-item" data-cat="regulatory">
+      {% for q in faq.questions %}
+      <div class="faq-item" data-cat="{{ q.category }}">
         <button class="faq-question" onclick="toggleFaqItem(this)">
-          <span>Is NaturalTag&#8482; approved for use in food products?</span>
+          <span>{{ q.question }}</span>
           <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-answer"><div class="faq-answer-inner">NaturalTag&#8482; is composed entirely of inactivated probiotic Lactobacillus species that are already widely used in food production. These organisms hold Generally Recognised as Safe (GRAS) status and are compatible with major regulatory frameworks. We work with each client to confirm compliance for their specific product category and target markets.</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">{{ q.answer }}</div></div>
       </div>
-
-      <div class="faq-item" data-cat="regulatory">
-        <button class="faq-question" onclick="toggleFaqItem(this)">
-          <span>Does it meet Non-GMO requirements?</span>
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Yes. NaturalTag&#8482; uses naturally occurring organisms with no genetic modification whatsoever. It is fully compatible with Non-GMO certification standards and labelling requirements worldwide.</div></div>
-      </div>
-
-      <div class="faq-item" data-cat="regulatory">
-        <button class="faq-question" onclick="toggleFaqItem(this)">
-          <span>Which countries or regions can I use it in?</span>
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Our probiotic-based markers use organisms with established food-safety status across the EU, US, APAC, and most other jurisdictions. During onboarding, we confirm regulatory alignment for your specific product and destination markets.</div></div>
-      </div>
-
-      <div class="faq-item" data-cat="safety">
-        <button class="faq-question" onclick="toggleFaqItem(this)">
-          <span>What exactly is in the tag?</span>
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">NaturalTag&#8482; is a precisely formulated blend of inactivated (non-living) probiotic markers from Lactobacillus species. The organisms are heat-killed before formulation. There are no synthetic chemicals, dyes, or foreign substances.</div></div>
-      </div>
-
-      <div class="faq-item" data-cat="safety">
-        <button class="faq-question" onclick="toggleFaqItem(this)">
-          <span>Will it affect the taste, texture, or shelf life of my product?</span>
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">No. NaturalTag&#8482; is applied at trace concentrations and is undetectable by sensory evaluation. It does not alter taste, colour, texture, nutritional profile, or shelf life. Independent testing confirms zero impact on product characteristics.</div></div>
-      </div>
-
-      <div class="faq-item" data-cat="safety">
-        <button class="faq-question" onclick="toggleFaqItem(this)">
-          <span>Is it safe for consumers with allergies?</span>
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">NaturalTag&#8482; contains no common allergens. The Lactobacillus species used are standard food-grade probiotics with extensive safety histories. We provide full compositional data during onboarding for your regulatory and allergen review.</div></div>
-      </div>
-
-      <div class="faq-item" data-cat="integration">
-        <button class="faq-question" onclick="toggleFaqItem(this)">
-          <span>Will I need to change my manufacturing process?</span>
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">No process changes required. NaturalTag&#8482; is formulated directly into your existing production workflow &#8212; it integrates at the mixing, blending, or formulation stage. Our team designs the integration point to fit your process, not the other way around.</div></div>
-      </div>
-
-      <div class="faq-item" data-cat="integration">
-        <button class="faq-question" onclick="toggleFaqItem(this)">
-          <span>How long does onboarding take?</span>
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Typical onboarding takes 4&#8211;6 weeks: formulation compatibility testing, tag-assay pairing validation, and integration into your production line. Pilot batches confirm everything works before full deployment.</div></div>
-      </div>
-
-      <div class="faq-item" data-cat="integration">
-        <button class="faq-question" onclick="toggleFaqItem(this)">
-          <span>What about products with complex matrices &#8212; oils, powders, liquids?</span>
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">We have validated NaturalTag&#8482; across multiple matrices including fresh produce, supplements, oils, powders, and liquids. Each product type receives a tailored formulation to ensure tag survival and detectability through processing and storage.</div></div>
-      </div>
-
-      <div class="faq-item" data-cat="detection">
-        <button class="faq-question" onclick="toggleFaqItem(this)">
-          <span>How is the tag detected downstream?</span>
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Detection is performed using NaturalDetect&#8482;, our molecular analytical pipeline. A small sample is collected at any point in the supply chain, the molecular signature is extracted and the tag markers are identified with high specificity. Results are automated &#8212; no subjective interpretation.</div></div>
-      </div>
-
-      <div class="faq-item" data-cat="detection">
-        <button class="faq-question" onclick="toggleFaqItem(this)">
-          <span>Can the tag be removed, transferred, or counterfeited?</span>
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">No. Because NaturalTag&#8482; is embedded into the product matrix during manufacturing, it cannot be washed off, scraped away, or transferred to another product. The tag-assay pairing is proprietary, making replication extremely difficult without access to both the formulation and detection system.</div></div>
-      </div>
-
-      <div class="faq-item" data-cat="detection">
-        <button class="faq-question" onclick="toggleFaqItem(this)">
-          <span>What does a result look like?</span>
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Each tested sample receives a clear determination: Authenticated or Not Authenticated. A Certificate of Analysis is generated automatically through NaturalCloud&#8482;, with full audit trail, signal data, and batch-level traceability.</div></div>
-      </div>
-
-      <div class="faq-item" data-cat="cost">
-        <button class="faq-question" onclick="toggleFaqItem(this)">
-          <span>How is pricing structured?</span>
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Pricing follows a razor-and-blade model: an initial integration fee covers formulation and validation, then ongoing costs scale with production volume. We scope pricing during the feasibility phase so you have full clarity before committing.</div></div>
-      </div>
-
-      <div class="faq-item" data-cat="cost">
-        <button class="faq-question" onclick="toggleFaqItem(this)">
-          <span>Is there a minimum contract length?</span>
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">We offer flexible engagement terms. Most clients start with a pilot phase before moving to a longer-term agreement. Specifics depend on product type and volume &#8212; we discuss this early in the conversation.</div></div>
-      </div>
-
-      <div class="faq-item" data-cat="cost">
-        <button class="faq-question" onclick="toggleFaqItem(this)">
-          <span>What ROI can I expect?</span>
-          <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">NaturalTag&#8482; protects brand value, deters fraud, and provides evidence-grade traceability for regulatory and customer audits. Clients in industries facing counterfeiting, origin disputes, or compliance pressure see the strongest returns. We can walk through a value case specific to your situation.</div></div>
-      </div>
+      {% endfor %}
 
     </div>
   </div>
 </section>
 <section class="faq-cta-bar">
   <div class="container">
-    <h2>Still Have Questions?</h2>
-    <p>Our team is ready to discuss your specific requirements and walk you through the process.</p>
+    <h2>{{ faq.cta_title }}</h2>
+    <p>{{ faq.cta_text }}</p>
     <a href="/contact/" class="btn btn-primary" style="cursor:pointer">Get in Touch &#8594;</a>
   </div>
 </section>
 </div>
-
-<!-- FAQ Schema.org Structured Data for SEO -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type":"Question","name":"Is NaturalTag approved for use in food products?","acceptedAnswer":{"@type":"Answer","text":"NaturalTag is composed entirely of inactivated probiotic Lactobacillus species that are already widely used in food production. These organisms hold Generally Recognised as Safe (GRAS) status and are compatible with major regulatory frameworks."}},
-    {"@type":"Question","name":"Does it meet Non-GMO requirements?","acceptedAnswer":{"@type":"Answer","text":"Yes. NaturalTag uses naturally occurring organisms with no genetic modification whatsoever. It is fully compatible with Non-GMO certification standards and labelling requirements worldwide."}},
-    {"@type":"Question","name":"Which countries or regions can I use it in?","acceptedAnswer":{"@type":"Answer","text":"Our probiotic-based markers use organisms with established food-safety status across the EU, US, APAC, and most other jurisdictions."}},
-    {"@type":"Question","name":"What exactly is in the tag?","acceptedAnswer":{"@type":"Answer","text":"NaturalTag is a precisely formulated blend of inactivated (non-living) probiotic markers from Lactobacillus species. The organisms are heat-killed before formulation. There are no synthetic chemicals, dyes, or foreign substances."}},
-    {"@type":"Question","name":"Will it affect the taste, texture, or shelf life of my product?","acceptedAnswer":{"@type":"Answer","text":"No. NaturalTag is applied at trace concentrations and is undetectable by sensory evaluation. It does not alter taste, colour, texture, nutritional profile, or shelf life."}},
-    {"@type":"Question","name":"Is it safe for consumers with allergies?","acceptedAnswer":{"@type":"Answer","text":"NaturalTag contains no common allergens. The Lactobacillus species used are standard food-grade probiotics with extensive safety histories."}},
-    {"@type":"Question","name":"Will I need to change my manufacturing process?","acceptedAnswer":{"@type":"Answer","text":"No process changes required. NaturalTag is formulated directly into your existing production workflow."}},
-    {"@type":"Question","name":"How long does onboarding take?","acceptedAnswer":{"@type":"Answer","text":"Typical onboarding takes 4-6 weeks: formulation compatibility testing, tag-assay pairing validation, and integration into your production line."}},
-    {"@type":"Question","name":"How is the tag detected downstream?","acceptedAnswer":{"@type":"Answer","text":"Detection is performed using NaturalDetect, our molecular analytical pipeline. A small sample is collected at any point in the supply chain, the molecular signature is extracted and the tag markers are identified with high specificity."}},
-    {"@type":"Question","name":"Can the tag be removed, transferred, or counterfeited?","acceptedAnswer":{"@type":"Answer","text":"No. Because NaturalTag is embedded into the product matrix during manufacturing, it cannot be washed off, scraped away, or transferred to another product."}},
-    {"@type":"Question","name":"How is pricing structured?","acceptedAnswer":{"@type":"Answer","text":"Pricing follows a razor-and-blade model: an initial integration fee covers formulation and validation, then ongoing costs scale with production volume."}},
-    {"@type":"Question","name":"What ROI can I expect?","acceptedAnswer":{"@type":"Answer","text":"NaturalTag protects brand value, deters fraud, and provides evidence-grade traceability for regulatory and customer audits."}}
-  ]
-}
