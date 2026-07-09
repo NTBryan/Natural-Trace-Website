@@ -2,6 +2,22 @@
 layout: base.njk
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ title }}",
+  "datePublished": "{{ date | date("%Y-%m-%d") }}",
+  "author": {"@type": "Organization", "name": "Natural Trace"},
+  "description": "{{ summary }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Natural Trace",
+    "url": "https://naturaltrace.netlify.app"
+  }
+}
+</script>
+
 <section class="insight-post">
   <div class="container">
     <div class="insight-post-header">
