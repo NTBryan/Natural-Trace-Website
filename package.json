@@ -6,6 +6,9 @@
     "start": "npx @11ty/eleventy --serve",
     "build": "npx @11ty/eleventy"
   },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6"
   }

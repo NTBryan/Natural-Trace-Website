@@ -1,0 +1,52 @@
+# Services page content — editable via Decap CMS
+
+# Hero section
+label: "What We Do"
+title: "Protecting Your Product at Every Stage"
+subtitle: "We embed an invisible, food-grade molecular marker into your product at source, then verify its presence at any point downstream. If your product is genuine and unaltered, our marker confirms it."
+
+# Service cards
+services:
+  - title: "Origin Verification"
+    description: "Prove that your product comes from where you say it does. We apply our proprietary marker at your production source, giving you verifiable evidence of origin at any point in the supply chain."
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80"
+    image_alt: "Product origin tracing at source"
+    link_text: "Get started"
+    link_url: "/contact/"
+  - title: "Product Authentication"
+    description: "Know whether your product is still genuinely yours after it leaves your hands. Our detection confirms that the product reaching your customer is the same one you produced."
+    image: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=600&q=80"
+    image_alt: "Authentic product verification"
+    link_text: "Get started"
+    link_url: "/contact/"
+  - title: "Supply Chain Integrity"
+    description: "Detect if your product has been tampered with or substituted by distributors or third parties downstream. Our marker acts as a molecular seal that reveals whether the chain has been broken."
+    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&q=80"
+    image_alt: "Supply chain integrity monitoring"
+    link_text: "Get started"
+    link_url: "/contact/"
+  - title: "Custom Integration"
+    description: "Every product and supply chain is different. We work with you to determine the right tagging points in your production process and tailor our solution to fit your specific needs."
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80"
+    image_alt: "Custom integration with production line"
+    link_text: "Get started"
+    link_url: "/contact/"
+
+# Pipeline section
+pipeline_label: "How It Works"
+pipeline_title: "From Sample to Certificate"
+pipeline_subtitle: "A streamlined four-step process delivers defensible results with full traceability."
+
+pipeline_steps:
+  - number: "1"
+    title: "Sample Submission"
+    description: "Ship your raw materials, intermediates, or finished products with our chain-of-custody kit."
+  - number: "2"
+    title: "DNA Extraction"
+    description: "Validated extraction protocols optimized for complex nutraceutical matrices."
+  - number: "3"
+    title: "Molecular Analysis"
+    description: "Species-specific molecular beacon assays with automated data processing via NaturalDetect™."
+  - number: "4"
+    title: "Results & COA"
+    description: "Branded Certificate of Analysis with full statistical backing."

@@ -8,61 +8,57 @@ permalink: /contact/
   <div class="container">
     <div class="contact-grid">
       <div class="contact-info">
-        <span class="section-label anim anim-up">Get in Touch</span>
-        <h2 class="section-title anim anim-up delay-1">Ready to Trace Your Product?</h2>
-        <p class="section-subtitle anim anim-up delay-2" style="margin-bottom:2.5rem">We help brands verify the origin and authenticity of their products through molecular tagging at source. Get in touch to learn how NaturalTag&trade; can be integrated into your supply chain.</p>
+        <span class="section-label anim anim-up">{{ contact.section_label }}</span>
+        <h2 class="section-title anim anim-up delay-1">{{ contact.title }}</h2>
+        <p class="section-subtitle anim anim-up delay-2" style="margin-bottom:2.5rem">{{ contact.subtitle | safe }}</p>
 
-        <div class="contact-info-item anim anim-up delay-2">
+        {% for item in contact.info_items %}
+        <div class="contact-info-item anim anim-up delay-{{ loop.index + 1 }}">
           <div class="contact-info-item-dot"></div>
-          <div><h4>Location</h4><p>Singapore</p></div>
+          <div><h4>{{ item.label }}</h4><p>{{ item.description | safe }}</p></div>
         </div>
-        <div class="contact-info-item anim anim-up delay-3">
-          <div class="contact-info-item-dot"></div>
-          <div><h4>What We Do</h4><p>Supply chain traceability via NaturalTag&trade; integration. We tag your product at source and verify it downstream with NaturalDetect&trade;.</p></div>
-        </div>
+        {% endfor %}
       </div>
       <div class="contact-form anim anim-left delay-2">
-        <h3>Send Us a Message</h3>
-        <p>Fill out the form below and our team will be in touch.</p>
+        <h3>{{ contact.form.title }}</h3>
+        <p>{{ contact.form.subtitle }}</p>
         <form id="contactForm" onsubmit="return handleContactSubmit(event)">
           <div class="form-row">
             <div class="form-group">
-              <label>First Name</label>
-              <input type="text" name="firstName" required placeholder="Your first name">
+              <label>{{ contact.form.first_name_label }}</label>
+              <input type="text" name="firstName" required placeholder="{{ contact.form.first_name_placeholder }}">
             </div>
             <div class="form-group">
-              <label>Last Name</label>
-              <input type="text" name="lastName" required placeholder="Your last name">
+              <label>{{ contact.form.last_name_label }}</label>
+              <input type="text" name="lastName" required placeholder="{{ contact.form.last_name_placeholder }}">
             </div>
           </div>
           <div class="form-group">
-            <label>Email</label>
-            <input type="email" name="email" required placeholder="your@company.com">
+            <label>{{ contact.form.email_label }}</label>
+            <input type="email" name="email" required placeholder="{{ contact.form.email_placeholder }}">
           </div>
           <div class="form-group">
-            <label>Company</label>
-            <input type="text" name="company" placeholder="Your company name">
+            <label>{{ contact.form.company_label }}</label>
+            <input type="text" name="company" placeholder="{{ contact.form.company_placeholder }}">
           </div>
           <div class="form-group">
-            <label>Inquiry Type</label>
+            <label>{{ contact.form.inquiry_type_label }}</label>
             <select name="inquiryType" required>
-              <option value="" disabled selected>Select an inquiry type</option>
-              <option value="NaturalTag Integration">NaturalTag&trade; Integration</option>
-              <option value="Supply Chain Traceability">Supply Chain Traceability</option>
-              <option value="Custom Strain Tagging">Custom Strain Tagging</option>
-              <option value="Partnership">Partnership Inquiry</option>
-              <option value="General">General Inquiry</option>
+              <option value="" disabled selected>{{ contact.form.inquiry_type_placeholder }}</option>
+              {% for type in contact.inquiry_types %}
+              <option value="{{ type.value }}">{{ type.label | safe }}</option>
+              {% endfor %}
             </select>
           </div>
           <div class="form-group">
-            <label>Message</label>
-            <textarea name="message" required placeholder="Tell us about your project or requirements..."></textarea>
+            <label>{{ contact.form.message_label }}</label>
+            <textarea name="message" required placeholder="{{ contact.form.message_placeholder }}"></textarea>
           </div>
-          <button type="submit" class="form-submit">Send Message</button>
+          <button type="submit" class="form-submit">{{ contact.form.submit_text }}</button>
         </form>
         <div class="form-success" id="formSuccess">
-          <h4>Message Sent</h4>
-          <p>Thank you for reaching out. Our team will review your inquiry and get back to you shortly.</p>
+          <h4>{{ contact.success.title }}</h4>
+          <p>{{ contact.success.message }}</p>
         </div>
       </div>
     </div>
@@ -75,12 +71,12 @@ permalink: /contact/
   <div class="cta-shape cta-shape-2"></div>
   <div class="container">
     <div class="cta-inner">
-      <span class="section-label anim anim-up">Get Started</span>
-      <h2 class="anim anim-up delay-1">Start Your First Test Today</h2>
-      <p class="anim anim-up delay-2">Request a sample kit, schedule a consultation, or explore our testing capabilities.</p>
+      <span class="section-label anim anim-up">{{ contact.cta.section_label }}</span>
+      <h2 class="anim anim-up delay-1">{{ contact.cta.title }}</h2>
+      <p class="anim anim-up delay-2">{{ contact.cta.subtitle }}</p>
       <div class="cta-actions anim anim-up delay-3">
-        <a href="mailto:info@naturaltrace.com" class="btn btn-white">Contact Us &#8594;</a>
-        <a href="/services/" class="btn btn-ghost" style="cursor:pointer">View Services</a>
+        <a href="{{ contact.cta.primary_href }}" class="btn btn-white">{{ contact.cta.primary_text | safe }}</a>
+        <a href="{{ contact.cta.secondary_href }}" class="btn btn-ghost" style="cursor:pointer">{{ contact.cta.secondary_text }}</a>
       </div>
     </div>
   </div>

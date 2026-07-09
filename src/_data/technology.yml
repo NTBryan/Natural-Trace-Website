@@ -1,0 +1,81 @@
+# Technology page content
+# Editable via Decap CMS or directly
+
+# Hero Section
+hero_label: "Our Platform"
+title: "NaturalDetect™"
+subtitle: "Our proprietary detection platform takes samples from intake through to Certificate of Analysis. Standardized, reproducible, and built for regulatory-grade reporting."
+hero_image_src: "/assets/logos/NaturalDetect-white.png"
+hero_image_alt: "NaturalDetect™ platform"
+
+hero_features:
+  - num: "01"
+    title: "Automated Processing"
+    description: "Instrument data flows directly into a standardized analysis pipeline"
+  - num: "02"
+    title: "Built-In Quality Control"
+    description: "Multiple validation checkpoints ensure results meet regulatory standards"
+  - num: "03"
+    title: "High-Confidence Calls"
+    description: "Proprietary analytics deliver clear, defensible identification outcomes"
+  - num: "04"
+    title: "Client-Ready Reporting"
+    description: "Branded Certificates of Analysis generated automatically per sample"
+
+# Pipeline Section
+pipeline_label: "Under the Hood"
+pipeline_title: "Detection Pipeline"
+
+pipeline_steps:
+  - num: "1"
+    title: "Sample Intake"
+    description: "Receive and log samples with full chain-of-custody documentation"
+  - num: "2"
+    title: "Molecular Analysis"
+    description: "Proprietary detection methods identify target markers with high specificity"
+  - num: "3"
+    title: "Quality Assurance"
+    description: "Multi-layered validation ensures reliable, defensible results"
+  - num: "4"
+    title: "Certificate of Analysis"
+    description: "Clear, actionable reports delivered per sample with full traceability"
+
+# Detection Methods Section
+detection_label: "Analytical Capabilities"
+detection_title: "Detection Methods"
+detection_subtitle: "Three tiers of molecular detection to match your verification requirements, from routine screening to definitive identification."
+
+detection_methods:
+  - tier: "Basic"
+    title: "Quantitative PCR"
+    description: "Confirms whether your product contains the expected identity markers. A reliable, scalable way to verify that what's on the label is what's in the product."
+    image_src: "/assets/images/method-qpcr.png"
+    image_alt: "qPCR detection method"
+    capabilities:
+      - "Clear yes-or-no identity confirmation"
+      - "Scalable across large batch volumes"
+      - "Cost-effective routine verification"
+      - "Ideal for ongoing supply chain monitoring"
+  - tier: "Advanced"
+    title: "Digital PCR"
+    description: "Goes beyond detection to tell you exactly how much of a target marker is present. Precision counting at the molecular level for products where the detail matters."
+    image_src: "/assets/images/method-dpcr.png"
+    image_alt: "Digital PCR detection method"
+    capabilities:
+      - "Exact marker quantification, not just presence"
+      - "Unmatched precision across product types"
+      - "Consistent results regardless of product complexity"
+      - "Elevated confidence for high-value products"
+  - tier: "Premium"
+    title: "DNA Sequencing"
+    description: "Reads the actual genetic code of what's in your product. The most definitive level of proof available, delivering evidence that holds up under any scrutiny."
+    image_src: "/assets/images/method-sequencing.png"
+    image_alt: "DNA Sequencing detection method"
+    capabilities:
+      - "Definitive species-level proof of identity"
+      - "Distinguishes between closely related species"
+      - "Gold-standard evidence for regulatory submissions"
+      - "The highest level of certainty available"
+
+# Algorithm Note (contains HTML - use | safe in template)
+algo_note: "Every result, regardless of method, is processed through our <strong>proprietary confidence-calling algorithm</strong> to ensure that what we report meets the highest standard of reliability before it reaches you."

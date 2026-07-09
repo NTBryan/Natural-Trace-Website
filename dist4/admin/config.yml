@@ -1,0 +1,154 @@
+# Decap CMS Configuration for Natural Trace Website
+# Documentation: https://decapcms.org/docs/configuration-options/
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Where uploaded images are stored
+media_folder: "src/assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+# Editorial workflow: draft -> review -> publish
+publish_mode: editorial_workflow
+
+# Site pages collection
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      # HOME PAGE
+      - name: "home"
+        label: "Home"
+        file: "src/_data/home.yml"
+        fields:
+          - {label: "Hero Badge Text", name: "hero_badge", widget: "string"}
+          - {label: "Hero Image", name: "hero_image", widget: "image"}
+          - {label: "Hero Image Alt", name: "hero_image_alt", widget: "string"}
+          - {label: "Hero Title Line 1", name: "hero_title_line1", widget: "string"}
+          - {label: "Hero Title Line 2 (italic)", name: "hero_title_line2", widget: "string"}
+          - {label: "Slogan", name: "hero_slogan", widget: "string"}
+          - {label: "Hero Description", name: "hero_desc", widget: "text"}
+          - {label: "Primary CTA Text", name: "hero_cta", widget: "string"}
+          - {label: "Primary CTA URL", name: "hero_cta_url", widget: "string"}
+          - {label: "Secondary CTA Text", name: "hero_cta_secondary", widget: "string"}
+          - {label: "Secondary CTA URL", name: "hero_cta_secondary_url", widget: "string"}
+          - label: "Hero Stats"
+            name: "hero_stats"
+            widget: "list"
+            max: 4
+            fields:
+              - {label: "Number/Title", name: "title", widget: "string"}
+              - {label: "Label", name: "description", widget: "string"}
+          - {label: "Trust Bar Label", name: "trust_label", widget: "string"}
+          - label: "Trust Logos"
+            name: "trust_logos"
+            widget: "list"
+            fields:
+              - {label: "Link URL", name: "url", widget: "string"}
+              - {label: "Logo Image", name: "image", widget: "image"}
+              - {label: "Alt Text", name: "alt", widget: "string"}
+          - {label: "Mission Section Label", name: "mission_label", widget: "string"}
+          - {label: "Mission Title", name: "mission_title", widget: "string"}
+          - label: "Mission Cards"
+            name: "mission_cards"
+            widget: "list"
+            max: 3
+            fields:
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Image Alt", name: "alt", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - {label: "Quiz Section Label", name: "compat_label", widget: "string"}
+          - {label: "Quiz Title", name: "compat_title", widget: "string"}
+          - {label: "Quiz Subtitle", name: "compat_subtitle", widget: "string"}
+          - {label: "Quiz Welcome Title", name: "compat_welcome_title", widget: "string"}
+          - {label: "Quiz Welcome Description", name: "compat_welcome_desc", widget: "text"}
+          - {label: "Quiz Welcome CTA", name: "compat_welcome_cta", widget: "string"}
+          - {label: "Step 1 Question", name: "compat_step1_question", widget: "string"}
+          - {label: "Step 2 Question", name: "compat_step2_question", widget: "string"}
+          - {label: "Step 2 Hint", name: "compat_step2_hint", widget: "string"}
+          - {label: "Step 3 Question", name: "compat_step3_question", widget: "string"}
+          - {label: "Step 3 Temp Label", name: "compat_step3_temp_label", widget: "string"}
+          - {label: "Step 3 pH Label", name: "compat_step3_ph_label", widget: "string"}
+          - {label: "Next Button", name: "compat_btn_next", widget: "string"}
+          - {label: "Back Button", name: "compat_btn_back", widget: "string"}
+          - {label: "See Results Button", name: "compat_btn_results", widget: "string"}
+          - {label: "Start Over Button", name: "compat_result_restart", widget: "string"}
+          - {label: "Result CTA Text", name: "compat_result_cta", widget: "string"}
+          - {label: "Result CTA URL", name: "compat_result_cta_url", widget: "string"}
+
+      # ABOUT PAGE
+      - name: "about"
+        label: "About"
+        file: "src/_data/about.yml"
+        fields:
+          - {label: "Section Label", name: "label", widget: "string"}
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Introduction", name: "intro", widget: "text"}
+          - {label: "Hero Image Alt", name: "hero_image_alt", widget: "string"}
+          - label: "Highlights"
+            name: "highlights"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - {label: "Approach Section Label", name: "approach_label", widget: "string"}
+          - {label: "Approach Title", name: "approach_title", widget: "string"}
+          - {label: "Approach Subtitle", name: "approach_subtitle", widget: "text"}
+          - label: "Values / Mission Cards"
+            name: "values"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Image Alt", name: "image_alt", widget: "string"}
+
+      # SERVICES PAGE
+      - name: "services"
+        label: "Services"
+        file: "src/_data/services.yml"
+        fields:
+          - {label: "Section Label", name: "label", widget: "string"}
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Subtitle", name: "subtitle", widget: "text"}
+          - label: "Service Cards"
+            name: "services"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Image Alt", name: "image_alt", widget: "string"}
+              - {label: "Link Text", name: "link_text", widget: "string"}
+              - {label: "Link URL", name: "link_url", widget: "string"}
+          - {label: "Pipeline Section Label", name: "pipeline_label", widget: "string"}
+          - {label: "Pipeline Title", name: "pipeline_title", widget: "string"}
+          - {label: "Pipeline Subtitle", name: "pipeline_subtitle", widget: "text"}
+          - label: "Pipeline Steps"
+            name: "pipeline_steps"
+            widget: "list"
+            fields:
+              - {label: "Step Number", name: "number", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+
+      # NATURALTAG PAGE
+      - name: "naturaltag"
+        label: "NaturalTag"
+        file: "src/_data/naturaltag.yml"
+        fields:
+          - {label: "Section Label", name: "hero_label", widget: "string"}
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Subtitle", name: "subtitle", widget: "text"}
+          - {label: "Back Link Text", name: "back_link_text", widget: "string"}
+          - {label: "Back Link URL", name: "back_link_url", widget: "string"}
+          - {label: "Hero Image", name: "hero_image_src", widget: "image"}
+          - {label: "Hero Image Alt", name: "hero_image_alt", widget: "string"}
+          - label: "Key Features"
+            name: "hero_features"
+            widget: "list"
+            fields:
+              - {label: "Number", name: "num", widget: "string"}
+              - {label: 

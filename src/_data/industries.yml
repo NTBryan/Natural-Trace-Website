@@ -1,0 +1,34 @@
+# Industries page content — editable via Decap CMS
+
+# Hero section
+label: "Industries We Serve"
+title: "Built for the Natural Products Ecosystem"
+subtitle: "From raw material sourcing to finished dosage forms, our testing integrates into every stage of the value chain."
+
+# Industry cards
+industries:
+  - name: "Dietary Supplements"
+    description: "Ingredient authentication & label claims"
+    image: "https://images.unsplash.com/photo-1664956618021-73c47736845e?w=500&q=80"
+    image_alt: "Natural supplement capsules with herbal ingredients"
+  - name: "Probiotics"
+    description: "Multi-strain identification panels"
+    image: "https://images.unsplash.com/photo-1581868164904-77b124b80242?w=500&q=80"
+    image_alt: "Fermented kefir in glass jar representing probiotic cultures"
+  - name: "Botanical Extracts"
+    description: "Species purity & adulteration screening"
+    image: "https://images.unsplash.com/photo-1608571423539-e951b9b3871e?w=500&q=80"
+    image_alt: "Amber botanical extract tincture bottle with plant shadows"
+  - name: "Functional Foods"
+    description: "Bioactive ingredient verification"
+    image: "https://images.unsplash.com/photo-1633509817627-5a29634475af?w=500&q=80"
+    image_alt: "Superfood powders on wooden spoons representing functional food ingredients"
+
+# CTA section
+cta_label: "Partnership"
+cta_title: "We Work Across Your Entire Value Chain"
+cta_description: "Whether you're a raw material supplier, contract manufacturer, brand owner, or regulator, our testing platform adapts to your verification needs."
+cta_button_primary_text: "Talk to Our Team"
+cta_button_primary_url: "/contact/"
+cta_button_secondary_text: "View Services"
+cta_button_secondary_url: "/services/"

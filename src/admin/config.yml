@@ -22,37 +22,96 @@ collections:
         label: "Home"
         file: "src/_data/home.yml"
         fields:
-          - {label: "Hero Title", name: "hero_title", widget: "string", default: "Tag. Trace. Trust."}
-          - {label: "Hero Subtitle", name: "hero_subtitle", widget: "text", default: "Molecular authenticity for supply chains."}
-          - {label: "Hero CTA Text", name: "hero_cta", widget: "string", default: "Get Started"}
+          - {label: "Hero Badge Text", name: "hero_badge", widget: "string"}
+          - {label: "Hero Image", name: "hero_image", widget: "image"}
+          - {label: "Hero Image Alt", name: "hero_image_alt", widget: "string"}
+          - {label: "Hero Title Line 1", name: "hero_title_line1", widget: "string"}
+          - {label: "Hero Title Line 2 (italic)", name: "hero_title_line2", widget: "string"}
+          - {label: "Slogan", name: "hero_slogan", widget: "string"}
+          - {label: "Hero Description", name: "hero_desc", widget: "text"}
+          - {label: "Primary CTA Text", name: "hero_cta", widget: "string"}
+          - {label: "Primary CTA URL", name: "hero_cta_url", widget: "string"}
+          - {label: "Secondary CTA Text", name: "hero_cta_secondary", widget: "string"}
+          - {label: "Secondary CTA URL", name: "hero_cta_secondary_url", widget: "string"}
+          - label: "Hero Stats"
+            name: "hero_stats"
+            widget: "list"
+            max: 4
+            fields:
+              - {label: "Number/Title", name: "title", widget: "string"}
+              - {label: "Label", name: "description", widget: "string"}
+          - {label: "Trust Bar Label", name: "trust_label", widget: "string"}
+          - label: "Trust Logos"
+            name: "trust_logos"
+            widget: "list"
+            fields:
+              - {label: "Link URL", name: "url", widget: "string"}
+              - {label: "Logo Image", name: "image", widget: "image"}
+              - {label: "Alt Text", name: "alt", widget: "string"}
+          - {label: "Mission Section Label", name: "mission_label", widget: "string"}
+          - {label: "Mission Title", name: "mission_title", widget: "string"}
           - label: "Mission Cards"
             name: "mission_cards"
             widget: "list"
             max: 3
             fields:
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Image Alt", name: "alt", widget: "string"}
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
+          - {label: "Quiz Section Label", name: "compat_label", widget: "string"}
+          - {label: "Quiz Title", name: "compat_title", widget: "string"}
+          - {label: "Quiz Subtitle", name: "compat_subtitle", widget: "string"}
+          - {label: "Quiz Welcome Title", name: "compat_welcome_title", widget: "string"}
+          - {label: "Quiz Welcome Description", name: "compat_welcome_desc", widget: "text"}
+          - {label: "Quiz Welcome CTA", name: "compat_welcome_cta", widget: "string"}
+          - {label: "Step 1 Question", name: "compat_step1_question", widget: "string"}
+          - {label: "Step 2 Question", name: "compat_step2_question", widget: "string"}
+          - {label: "Step 2 Hint", name: "compat_step2_hint", widget: "string"}
+          - {label: "Step 3 Question", name: "compat_step3_question", widget: "string"}
+          - {label: "Step 3 Temp Label", name: "compat_step3_temp_label", widget: "string"}
+          - {label: "Step 3 pH Label", name: "compat_step3_ph_label", widget: "string"}
+          - {label: "Next Button", name: "compat_btn_next", widget: "string"}
+          - {label: "Back Button", name: "compat_btn_back", widget: "string"}
+          - {label: "See Results Button", name: "compat_btn_results", widget: "string"}
+          - {label: "Start Over Button", name: "compat_result_restart", widget: "string"}
+          - {label: "Result CTA Text", name: "compat_result_cta", widget: "string"}
+          - {label: "Result CTA URL", name: "compat_result_cta_url", widget: "string"}
 
       # ABOUT PAGE
       - name: "about"
         label: "About"
         file: "src/_data/about.yml"
         fields:
-          - {label: "Page Title", name: "title", widget: "string", default: "Our Story"}
-          - {label: "Introduction", name: "intro", widget: "markdown"}
-          - label: "Values"
+          - {label: "Section Label", name: "label", widget: "string"}
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Introduction", name: "intro", widget: "text"}
+          - {label: "Hero Image Alt", name: "hero_image_alt", widget: "string"}
+          - label: "Highlights"
+            name: "highlights"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - {label: "Approach Section Label", name: "approach_label", widget: "string"}
+          - {label: "Approach Title", name: "approach_title", widget: "string"}
+          - {label: "Approach Subtitle", name: "approach_subtitle", widget: "text"}
+          - label: "Values / Mission Cards"
             name: "values"
             widget: "list"
             fields:
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Image Alt", name: "image_alt", widget: "string"}
 
       # SERVICES PAGE
       - name: "services"
         label: "Services"
         file: "src/_data/services.yml"
         fields:
-          - {label: "Page Title", name: "title", widget: "string", default: "Our Services"}
+          - {label: "Section Label", name: "label", widget: "string"}
+          - {label: "Page Title", name: "title", widget: "string"}
           - {label: "Subtitle", name: "subtitle", widget: "text"}
           - label: "Service Cards"
             name: "services"
@@ -60,62 +119,185 @@ collections:
             fields:
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
-              - {label: "Features", name: "features", widget: "list", field: {label: "Feature", name: "feature", widget: "string"}}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Image Alt", name: "image_alt", widget: "string"}
+              - {label: "Link Text", name: "link_text", widget: "string"}
+              - {label: "Link URL", name: "link_url", widget: "string"}
+          - {label: "Pipeline Section Label", name: "pipeline_label", widget: "string"}
+          - {label: "Pipeline Title", name: "pipeline_title", widget: "string"}
+          - {label: "Pipeline Subtitle", name: "pipeline_subtitle", widget: "text"}
+          - label: "Pipeline Steps"
+            name: "pipeline_steps"
+            widget: "list"
+            fields:
+              - {label: "Step Number", name: "number", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
 
       # NATURALTAG PAGE
       - name: "naturaltag"
         label: "NaturalTag"
         file: "src/_data/naturaltag.yml"
         fields:
-          - {label: "Page Title", name: "title", widget: "string", default: "NaturalTag"}
+          - {label: "Section Label", name: "hero_label", widget: "string"}
+          - {label: "Page Title", name: "title", widget: "string"}
           - {label: "Subtitle", name: "subtitle", widget: "text"}
-          - {label: "Main Description", name: "description", widget: "markdown"}
-          - label: "Features"
-            name: "features"
+          - {label: "Back Link Text", name: "back_link_text", widget: "string"}
+          - {label: "Back Link URL", name: "back_link_url", widget: "string"}
+          - {label: "Hero Image", name: "hero_image_src", widget: "image"}
+          - {label: "Hero Image Alt", name: "hero_image_alt", widget: "string"}
+          - label: "Key Features"
+            name: "hero_features"
             widget: "list"
             fields:
+              - {label: "Number", name: "num", widget: "string"}
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
+          - {label: "Pipeline Section Label", name: "pipeline_label", widget: "string"}
+          - {label: "Pipeline Title", name: "pipeline_title", widget: "string"}
+          - label: "Pipeline Steps"
+            name: "pipeline_steps"
+            widget: "list"
+            fields:
+              - {label: "Number", name: "num", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - {label: "Video Section Label", name: "video_label", widget: "string"}
+          - {label: "Video Title", name: "video_title", widget: "string"}
+          - {label: "Video Description", name: "video_description", widget: "text"}
+          - {label: "Video File", name: "video_src", widget: "string"}
+          - label: "Journey Stages"
+            name: "journey_stages"
+            widget: "list"
+            field: {label: "Label", name: "label", widget: "string"}
+          - {label: "CTA Text", name: "cta_text", widget: "string"}
+          - {label: "CTA Button Text", name: "cta_button_text", widget: "string"}
+          - {label: "CTA Button URL", name: "cta_button_url", widget: "string"}
 
       # TECHNOLOGY PAGE
       - name: "technology"
         label: "Technology"
         file: "src/_data/technology.yml"
         fields:
-          - {label: "Page Title", name: "title", widget: "string", default: "NaturalDetect"}
+          - {label: "Section Label", name: "hero_label", widget: "string"}
+          - {label: "Page Title", name: "title", widget: "string"}
           - {label: "Subtitle", name: "subtitle", widget: "text"}
-          - {label: "Description", name: "description", widget: "markdown"}
+          - {label: "Hero Image", name: "hero_image_src", widget: "image"}
+          - {label: "Hero Image Alt", name: "hero_image_alt", widget: "string"}
+          - label: "Key Features"
+            name: "hero_features"
+            widget: "list"
+            fields:
+              - {label: "Number", name: "num", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - {label: "Pipeline Section Label", name: "pipeline_label", widget: "string"}
+          - {label: "Pipeline Title", name: "pipeline_title", widget: "string"}
+          - label: "Pipeline Steps"
+            name: "pipeline_steps"
+            widget: "list"
+            fields:
+              - {label: "Number", name: "num", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - {label: "Detection Section Label", name: "detection_label", widget: "string"}
+          - {label: "Detection Title", name: "detection_title", widget: "string"}
+          - {label: "Detection Subtitle", name: "detection_subtitle", widget: "text"}
+          - label: "Detection Methods"
+            name: "detection_methods"
+            widget: "list"
+            fields:
+              - {label: "Tier", name: "tier", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Image", name: "image_src", widget: "image"}
+              - {label: "Image Alt", name: "image_alt", widget: "string"}
+              - {label: "Capabilities", name: "capabilities", widget: "list", field: {label: "Capability", name: "capability", widget: "string"}}
+          - {label: "Algorithm Note", name: "algo_note", widget: "markdown"}
 
       # NATURALCLOUD PAGE
       - name: "naturalcloud"
         label: "NaturalCloud"
         file: "src/_data/naturalcloud.yml"
         fields:
-          - {label: "Page Title", name: "title", widget: "string", default: "NaturalCloud"}
-          - {label: "Subtitle", name: "subtitle", widget: "text"}
-          - {label: "Description", name: "description", widget: "markdown"}
+          - {label: "Section Label", name: "hero_label", widget: "string"}
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Description", name: "hero_description", widget: "text"}
+          - {label: "Back Link Text", name: "back_link_text", widget: "string"}
+          - {label: "Back Link URL", name: "back_link_url", widget: "string"}
+          - {label: "Hero Image", name: "hero_image_src", widget: "image"}
+          - {label: "Hero Image Alt", name: "hero_image_alt", widget: "string"}
+          - label: "Pipeline Cards"
+            name: "pipeline_cards"
+            widget: "list"
+            fields:
+              - {label: "Tag", name: "tag", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Subtitle", name: "subtitle", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Image", name: "image_src", widget: "image"}
+              - {label: "Image Alt", name: "image_alt", widget: "string"}
+          - {label: "Features Section Label", name: "features_label", widget: "string"}
+          - {label: "Features Title", name: "features_title", widget: "string"}
+          - {label: "Features Subtitle", name: "features_subtitle", widget: "text"}
           - label: "Features"
             name: "features"
             widget: "list"
             fields:
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
+              - {label: "Image", name: "image_src", widget: "image"}
+              - {label: "Image Alt", name: "image_alt", widget: "string"}
+          - label: "Stats"
+            name: "stats"
+            widget: "list"
+            fields:
+              - {label: "Bold Text", name: "strong", widget: "string"}
+              - {label: "Description", name: "text", widget: "string"}
+          - {label: "CTA Text", name: "cta_text", widget: "string"}
+          - {label: "CTA Button Text", name: "cta_button_text", widget: "string"}
+          - {label: "CTA Button URL", name: "cta_button_url", widget: "string"}
 
       # QUALITY STANDARDS PAGE
       - name: "quality-standards"
         label: "Quality Standards"
-        file: "src/_data/quality-standards.yml"
+        file: "src/_data/quality_standards.yml"
         fields:
-          - {label: "Page Title", name: "title", widget: "string", default: "Quality Standards"}
-          - {label: "Subtitle", name: "subtitle", widget: "text"}
-          - {label: "Content", name: "content", widget: "markdown"}
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Back Link Text", name: "back_link_text", widget: "string"}
+              - {label: "Back Link URL", name: "back_link_href", widget: "string"}
+              - {label: "Section Label", name: "section_label", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Subtitle", name: "subtitle", widget: "text"}
+          - label: "Standards"
+            name: "standards"
+            widget: "list"
+            fields:
+              - {label: "Image", name: "image_url", widget: "image"}
+              - {label: "Image Alt", name: "image_alt", widget: "string"}
+              - {label: "Tag", name: "tag", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Subtitle", name: "subtitle", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - label: "Commitment Section"
+            name: "commitment"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "CTA Text", name: "cta_text", widget: "string"}
+              - {label: "CTA URL", name: "cta_href", widget: "string"}
 
       # INDUSTRIES PAGE
       - name: "industries"
         label: "Industries"
         file: "src/_data/industries.yml"
         fields:
-          - {label: "Page Title", name: "title", widget: "string", default: "Industries"}
+          - {label: "Section Label", name: "label", widget: "string"}
+          - {label: "Page Title", name: "title", widget: "string"}
           - {label: "Subtitle", name: "subtitle", widget: "text"}
           - label: "Industries"
             name: "industries"
@@ -123,23 +305,89 @@ collections:
             fields:
               - {label: "Name", name: "name", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Image Alt", name: "image_alt", widget: "string"}
+          - {label: "CTA Section Label", name: "cta_label", widget: "string"}
+          - {label: "CTA Title", name: "cta_title", widget: "string"}
+          - {label: "CTA Description", name: "cta_description", widget: "text"}
+          - {label: "Primary Button Text", name: "cta_button_primary_text", widget: "string"}
+          - {label: "Primary Button URL", name: "cta_button_primary_url", widget: "string"}
+          - {label: "Secondary Button Text", name: "cta_button_secondary_text", widget: "string"}
+          - {label: "Secondary Button URL", name: "cta_button_secondary_url", widget: "string"}
 
       # CONTACT PAGE
       - name: "contact"
         label: "Contact"
         file: "src/_data/contact.yml"
         fields:
-          - {label: "Page Title", name: "title", widget: "string", default: "Get in Touch"}
+          - {label: "Section Label", name: "section_label", widget: "string"}
+          - {label: "Page Title", name: "title", widget: "string"}
           - {label: "Subtitle", name: "subtitle", widget: "text"}
-          - {label: "Address", name: "address", widget: "text"}
+          - label: "Info Items"
+            name: "info_items"
+            widget: "list"
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - label: "Form Settings"
+            name: "form"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Subtitle", name: "subtitle", widget: "string"}
+              - {label: "First Name Label", name: "first_name_label", widget: "string"}
+              - {label: "First Name Placeholder", name: "first_name_placeholder", widget: "string"}
+              - {label: "Last Name Label", name: "last_name_label", widget: "string"}
+              - {label: "Last Name Placeholder", name: "last_name_placeholder", widget: "string"}
+              - {label: "Email Label", name: "email_label", widget: "string"}
+              - {label: "Email Placeholder", name: "email_placeholder", widget: "string"}
+              - {label: "Company Label", name: "company_label", widget: "string"}
+              - {label: "Company Placeholder", name: "company_placeholder", widget: "string"}
+              - {label: "Inquiry Type Label", name: "inquiry_type_label", widget: "string"}
+              - {label: "Inquiry Type Placeholder", name: "inquiry_type_placeholder", widget: "string"}
+              - {label: "Message Label", name: "message_label", widget: "string"}
+              - {label: "Message Placeholder", name: "message_placeholder", widget: "string"}
+              - {label: "Submit Button Text", name: "submit_text", widget: "string"}
+          - label: "Inquiry Types"
+            name: "inquiry_types"
+            widget: "list"
+            fields:
+              - {label: "Value", name: "value", widget: "string"}
+              - {label: "Display Label", name: "label", widget: "string"}
+          - label: "Success Message"
+            name: "success"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Message", name: "message", widget: "text"}
+          - label: "CTA Section"
+            name: "cta"
+            widget: "object"
+            fields:
+              - {label: "Section Label", name: "section_label", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Subtitle", name: "subtitle", widget: "text"}
+              - {label: "Primary Button Text", name: "primary_text", widget: "string"}
+              - {label: "Primary Button URL", name: "primary_href", widget: "string"}
+              - {label: "Secondary Button Text", name: "secondary_text", widget: "string"}
+              - {label: "Secondary Button URL", name: "secondary_href", widget: "string"}
 
       # CAREERS PAGE
       - name: "careers"
         label: "Careers"
         file: "src/_data/careers.yml"
         fields:
-          - {label: "Page Title", name: "title", widget: "string", default: "Careers"}
-          - {label: "Introduction", name: "intro", widget: "markdown"}
+          - {label: "Section Label", name: "section_label", widget: "string"}
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Introduction", name: "intro", widget: "text"}
+          - {label: "Open Positions Tab Label", name: "tab_openings_label", widget: "string"}
+          - {label: "Internships Tab Label", name: "tab_internship_label", widget: "string"}
+          - label: "No Openings Message"
+            name: "no_openings"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
           - label: "Positions"
             name: "positions"
             widget: "list"
@@ -148,13 +396,49 @@ collections:
               - {label: "Department", name: "department", widget: "string"}
               - {label: "Location", name: "location", widget: "string"}
               - {label: "Description", name: "description", widget: "markdown"}
+          - label: "Internship Section"
+            name: "internship"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Expectations Label", name: "expectations_label", widget: "string"}
+              - {label: "Expectations", name: "expectations", widget: "list", field: {label: "Item", name: "item", widget: "string"}}
+              - {label: "Location", name: "location", widget: "string"}
+          - label: "Internship Form"
+            name: "internship_form"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Subtitle", name: "subtitle", widget: "string"}
+              - {label: "Submit Text", name: "submit_text", widget: "string"}
+          - label: "Areas of Interest"
+            name: "areas_of_interest"
+            widget: "list"
+            field: {label: "Area", name: "area", widget: "string"}
+          - label: "Success Message"
+            name: "success"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Message", name: "message", widget: "text"}
 
       # FAQ PAGE
       - name: "faq"
         label: "FAQ"
         file: "src/_data/faq.yml"
         fields:
-          - {label: "Page Title", name: "title", widget: "string", default: "Frequently Asked Questions"}
+          - {label: "Section Label", name: "section_label", widget: "string"}
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Subtitle", name: "subtitle", widget: "text"}
+          - {label: "CTA Title", name: "cta_title", widget: "string"}
+          - {label: "CTA Text", name: "cta_text", widget: "text"}
+          - label: "Categories"
+            name: "categories"
+            widget: "list"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Display Label", name: "label", widget: "string"}
           - label: "Questions"
             name: "questions"
             widget: "list"

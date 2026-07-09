@@ -1,0 +1,37 @@
+# About page content — editable via Decap CMS
+
+# Hero section
+label: "Who We Are"
+title: "Science-Driven Integrity for Natural Products"
+intro: "Natural Trace is a molecular diagnostics company specializing in authenticity verification for the nutraceutical and natural products supply chain. We combine quantitative PCR technology with standardized data pipelines to deliver results that regulators, manufacturers, and consumers can rely on."
+hero_image_alt: "Scientist analyzing samples under laboratory conditions"
+
+# Highlights (capability cards below intro)
+highlights:
+  - title: "Molecular Precision"
+    description: "Species-level ID via validated molecular assays"
+  - title: "Standardized Reporting"
+    description: "Automated data pipelines, zero manual processing"
+  - title: "Natural Products Focus"
+    description: "Purpose-built for nutraceutical matrices"
+  - title: "Supply Chain Trust"
+    description: "End-to-end traceability with full COA"
+
+# Approach / mission section
+approach_label: "Our Approach"
+approach_title: "Tag. Trace. Trust."
+approach_subtitle: "Three pillars that define how we work with partners across the supply chain."
+
+values:
+  - title: "Tag"
+    description: "Products are tagged at source with an inactivated probiotic marker -- a food-grade, non-GMO molecular signature embedded directly into the formulation."
+    image: "https://images.unsplash.com/photo-1563213126-a4273aed2016?w=600&q=80"
+    image_alt: "Probiotic bacteria under electron microscope"
+  - title: "Trace"
+    description: "At any downstream checkpoint, our NaturalDetect™ platform reads the molecular tag and generates a standardized, statistical result."
+    image: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=600&q=80"
+    image_alt: "Researcher examining PCR results on monitor"
+  - title: "Trust"
+    description: "Branded Certificates of Analysis with full statistical backing provide the defensible, regulatory-grade evidence your supply chain demands."
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80"
+    image_alt: "Professional reviewing analytical certificate report"
