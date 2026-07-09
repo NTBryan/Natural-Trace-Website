@@ -86,7 +86,7 @@ nav.scrolled .nav-toggle span{background:var(--dark)}
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:var(--dark);overflow:hidden}
 .hero-bg{position:absolute;inset:0;background-image:url('/assets/images/Ingredients Lab.png');background-size:cover;background-position:center;opacity:.3;will-change:transform}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(107,114,73,.8) 0%,rgba(26,30,46,.92) 100%)}
-.hero-visual{position:absolute;right:12%;top:255px;width:440px;height:400px;border-radius:20px;overflow:hidden;box-shadow:-20px 0 60px rgba(0,0,0,.3);animation:fadeUp 1.2s ease .6s both;z-index:2}
+.hero-visual{position:absolute;right:12%;top:340px;width:440px;height:300px;border-radius:20px;overflow:hidden;box-shadow:-20px 0 60px rgba(0,0,0,.3);animation:fadeUp 1.2s ease .6s both;z-index:2}
 .hero-visual img{width:100%;height:100%;object-fit:cover;object-position:center;filter:sepia(.08) saturate(.9) brightness(.95)}
 .hero-visual::after{content:'';position:absolute;inset:0;border:1px solid rgba(255,255,255,.08);border-radius:20px;pointer-events:none;background:linear-gradient(180deg,rgba(107,114,73,.1) 0%,transparent 40%)}
 @media(min-width:1600px){.hero-visual{right:calc(50% - 540px)}}
