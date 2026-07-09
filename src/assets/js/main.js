@@ -143,37 +143,21 @@ function handleInternshipSubmit(e) {
   return false;
 }
 
-/* Team modal */
-var teamData = {
-  'Julia Lee': {role:'Chief Executive Officer',loc:'Singapore',linkedin:'https://www.linkedin.com/in/xiaoyunlee/',edu:['PhD Life Sciences & Microbiology, University of Lausanne'],bio:['Career spanning microbiology, diagnostics, and commercial strategy across APAC and Europe','Previously Chief Commercial Officer at Natural Trace, instrumental in expanding global reach','Regular speaker at Vitafoods, Fi Europe, FFWS, and SupplySide Global']},
-  'Alrik Tan': {role:'Chief Scientific Officer',loc:'Singapore',linkedin:'https://www.linkedin.com/in/alrik-tan-b083404b/',edu:['Masters Innovation & IP Management, SUSS'],bio:['Recognised on the IAM Strategy 300 list for intellectual property strategy (2024, 2025)','Oversees scientific strategy, assay development, and IP protection']},
-  'Kirsty Hall': {role:'Head of Marketing & Compliance',loc:'Australia',linkedin:'https://www.linkedin.com/in/kirsty-hall-277346171/',edu:['Bachelor of Health Science (Environmental Health), University of Tasmania'],bio:['Leads marketing strategy, brand positioning, and regulatory compliance','Represents Natural Trace at major industry events including SupplySide Global, Fi Europe, and NHP NZ Innovation Expo']},
-  'Alex Bond': {role:'Director of Business Development US',loc:'United States',linkedin:'https://www.linkedin.com/in/alexbond1',edu:['MS International Affairs & Global Enterprise, University of Utah'],bio:['Commercial strategy and market development in life sciences and nutraceuticals','Former co-founder of a dietary supplement manufacturer; BD leadership across international supplement and ingredient companies','Speaks six languages']},
-  'Cindy Seah': {role:'Finance Executive',loc:'Singapore',linkedin:null,edu:null,bio:['Manages financial operations, reporting, and corporate governance','Oversees budgeting, grant compliance, and investor reporting']},
-  'Bryan Yan Ng': {role:'Research & Operations Officer',loc:'Singapore',linkedin:'https://linkedin.com/in/bryan-yan-ng-43020b11a',edu:['Bachelor of Biomedical Science, La Trobe University'],bio:['Leads qPCR assay development, data pipeline validation, and laboratory operations','Developed the NaturalDetect™ confidence-calling pipeline and threshold optimisation system','Manages wet lab protocols, client sample testing, and cross-reactivity analysis']},
-  'Ying Xiang Tan': {role:'Bioinformatics Engineer',loc:'Singapore',linkedin:'https://linkedin.com/in/yingxiangtan',edu:['BSc Mathematical Sciences (Statistics), Nanyang Technological University'],bio:['Designs and maintains bioinformatics pipelines for species identification','Develops computational tools for genomic data analysis and primer design','Supports database architecture and sequence alignment workflows']},
-  'CL Goh': {role:'Co-founder & Executive Director',loc:'Singapore',linkedin:'https://www.linkedin.com/in/clgoh1/',edu:null,bio:['Entrepreneur, corporate and business leader with mergers & acquisitions, strategy and business development expertise','Industrial, robotics, advanced manufacturing, supply chain, health and foodtech','Venture builder and Managing Partner, Blue InCube Ventures']},
-  'Chantal Roth': {role:'Co-founder',loc:'Switzerland',linkedin:'https://www.linkedin.com/in/chantal-roth/',edu:['Doctor of Philosophy (PhD), Computer Science (Computational Biology), ETH Zurich','Master of Science (MSc), Biochemistry, ETH Zurich'],bio:['Senior Scientific Software Engineer at Thermo Fisher Scientific','Specialises in algorithms development, complex problem solving, visualisation, and AI-assisted development']},
-  'Lukas Mueller': {role:'Co-founder',loc:'United States',linkedin:'https://www.linkedin.com/in/lukasmueller/',edu:['PostDoc Plant Biochemistry, Stanford University'],bio:['Professor at Boyce Thompson Institute for Plant Research, Cornell University','Expertise in plant genomics and computational biology']},
-  'Alex Wild': {role:'Advisor',loc:'Switzerland',linkedin:'https://www.linkedin.com/in/alexwild/',edu:['PhD, ETH Zurich','MBA, IMD Business School'],bio:['Global Head of Operations at Givaudan, overseeing manufacturing sites across North America, South America, and Europe','Active in sustainability initiatives and operational excellence programmes']},
-  'Markus Helms': {role:'Advisor',loc:'Singapore',linkedin:'https://www.linkedin.com/in/markus-helms-75b8313b2/',edu:['Master in International Management, ESCP Business School'],bio:['Partner and CFO at Blue InCube, venture builder','Senior advisor and investor']},
-  'Christian Wiegele': {role:'Advisor',loc:'Singapore',linkedin:'https://www.linkedin.com/in/christianwiegele/',edu:['Master\'s, WU Vienna University of Economics and Business'],bio:['Commercial CFO at Perfetti Van Melle','20+ years of commercial finance experience across FMCG']},
-  'Elizabeth Lewis': {role:'Advisor',loc:'United Kingdom',linkedin:'https://www.linkedin.com/in/elizabeth-lewis-1461648/',edu:['Doctor of Philosophy (PhD), Bioinorganic Chemistry, University of York','Master of Science (MSc), Chemistry, Dalhousie University'],bio:['Scientific and Regulatory Adviser at NutraSteward','Expertise in regulatory science and quality standards for food and nutraceuticals']},
-  'Felix Maurer': {role:'Advisor',loc:'Switzerland',linkedin:'https://www.linkedin.com/in/felixmaurer/',edu:['Executive MBA, University of St. Gallen'],bio:['Senior executive in nutraceutical and pharmaceutical supply chain management','Extensive experience in GMP manufacturing and quality systems']},
-  'John Simmons': {role:'Advisor',loc:'United States',linkedin:'https://www.linkedin.com/in/johnsimmons/',edu:['MBA, Harvard Business School'],bio:['Seasoned food and beverage industry executive','Strategic advisor on market entry and distribution partnerships']}
-};
-
-function openTeamModal(name) {
-  var d = teamData[name]; if (!d) return;
-  document.getElementById('modalName').textContent = name;
+/* Team modal — data injected from team.json via template on team page */
+function openTeamModal(idx) {
+  if (typeof teamData === 'undefined' || !teamData[idx]) return;
+  var d = teamData[idx];
+  document.getElementById('modalName').textContent = d.name;
   document.getElementById('modalRole').textContent = d.role;
-  document.getElementById('modalLoc').textContent = d.loc;
-  document.getElementById('modalPhoto').src = '/assets/team/' + (d.role.indexOf('Advisor') >= 0 || d.role.indexOf('Co-founder') >= 0 ? 'Advisors/' : 'Team Members/') + name + '.webp';
+  document.getElementById('modalLoc').textContent = d.location || '';
+  document.getElementById('modalPhoto').src = d.photo;
   var ll = document.getElementById('modalLinkedin');
   if (d.linkedin) { ll.href = d.linkedin; ll.style.display = ''; } else { ll.style.display = 'none'; }
-  var eduHtml = ''; if (d.edu) d.edu.forEach(function(e) { eduHtml += '<li>' + e + '</li>'; });
+  var eduHtml = '';
+  if (d.education && d.education.length) d.education.forEach(function(e) { eduHtml += '<li>' + e + '</li>'; });
   document.getElementById('modalEdu').innerHTML = eduHtml || '<li>Details available on LinkedIn</li>';
-  var bioHtml = ''; if (d.bio) d.bio.forEach(function(b) { bioHtml += '<li>' + b + '</li>'; });
+  var bioHtml = '';
+  if (d.bio && d.bio.length) d.bio.forEach(function(b) { bioHtml += '<li>' + b + '</li>'; });
   document.getElementById('modalBio').innerHTML = bioHtml;
   document.getElementById('teamModal').classList.add('active');
   document.body.style.overflow = 'hidden';
