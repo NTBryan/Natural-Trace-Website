@@ -1,11 +1,29 @@
 /* Scroll animations (multi-page) */
 (function() {
-  var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.anim').forEach(function(el) { obs.observe(el); });
+  function initAnims() {
+    var elems = document.querySelectorAll('.anim');
+    if (!elems.length) return;
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.1 });
+      elems.forEach(function(el) { obs.observe(el); });
+      /* Failsafe: if observer hasn't fired after 2s, force all visible */
+      setTimeout(function() {
+        document.querySelectorAll('.anim:not(.visible)').forEach(function(el) { el.classList.add('visible'); });
+      }, 2000);
+    } else {
+      /* No IntersectionObserver support — show everything */
+      elems.forEach(function(el) { el.classList.add('visible'); });
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAnims);
+  } else {
+    initAnims();
+  }
 })();
 
 /* Splash intro — skippable, cookie-suppressed on repeat visits */
