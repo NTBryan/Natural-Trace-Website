@@ -1,0 +1,39 @@
+---
+layout: base.njk
+---
+
+<section class="insight-post">
+  <div class="container">
+    <div class="insight-post-header">
+      <a href="/insights/" class="back-link">&larr; Back to Insights</a>
+      <span class="section-label anim">Insights</span>
+      <h1 class="anim">{{ title }}</h1>
+      <div class="insight-meta anim">
+        <time datetime="{{ date | date("%Y-%m-%d") }}">{{ date | date("%B %d, %Y") }}</time>
+        {% if author %}<span class="insight-author">by {{ author }}</span>{% endif %}
+      </div>
+      {% if tags %}
+      <div class="insight-tags anim">
+        {% for tag in tags %}
+        <span class="insight-tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+    {% if image %}
+    <div class="insight-featured-image anim">
+      <img src="{{ image }}" alt="{{ title }}">
+    </div>
+    {% endif %}
+
+    <div class="insight-body anim">
+      {{ content | safe }}
+    </div>
+
+    <div class="insight-footer">
+      <a href="/insights/" class="back-link">&larr; All Insights</a>
+      <a href="/contact/" class="cta-link">Get in Touch &rarr;</a>
+    </div>
+  </div>
+</section>

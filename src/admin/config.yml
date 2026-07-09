@@ -469,10 +469,10 @@ collections:
               - {label: "Bio", name: "bio", widget: "list", field: {label: "Point", name: "point", widget: "string"}}
               - {label: "Order", name: "order", widget: "number"}
 
-  # Blog posts (future use)
-  - name: "blog"
-    label: "Blog Posts"
-    folder: "src/blog"
+  # Insights — news, updates, and articles
+  - name: "insights"
+    label: "Insights"
+    folder: "src/insights"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
