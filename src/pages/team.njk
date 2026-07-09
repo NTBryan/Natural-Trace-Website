@@ -1,0 +1,59 @@
+---
+layout: base.njk
+title: "Team"
+permalink: /team/
+---
+
+<section class="privacy-page" style="background:var(--offwhite)">
+  <div class="container">
+    <a class="privacy-back" href="/about/">&#8592; Back to About</a>
+    <div style="text-align:center;margin-bottom:3rem">
+      <span class="section-label">The People Behind Natural Trace</span>
+      <h2 class="section-title">Our Team</h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card"><div class="team-avatar"><img src="Team Photos/Team Members/Julia Lee.webp" alt="Julia Lee"></div><div class="team-card-info"><h4>Julia Lee (Dr)</h4><p class="team-role">Chief Executive Officer</p><p class="team-loc">Singapore</p></div></div>
+      <div class="team-card"><div class="team-avatar"><img src="Team Photos/Team Members/Alrik Tan.webp" alt="Alrik Tan"></div><div class="team-card-info"><h4>Alrik Tan</h4><p class="team-role">Chief Scientific Officer</p><p class="team-loc">Singapore</p></div></div>
+      <div class="team-card"><div class="team-avatar"><img src="Team Photos/Team Members/Kirsty Hall.webp" alt="Kirsty Hall"></div><div class="team-card-info"><h4>Kirsty Hall</h4><p class="team-role">Head of Marketing &amp; Compliance</p><p class="team-loc">Australia</p></div></div>
+      <div class="team-card"><div class="team-avatar"><img src="Team Photos/Team Members/Alex Bond.webp" alt="Alex Bond"></div><div class="team-card-info"><h4>Alex Bond</h4><p class="team-role">Director of Business Development US</p><p class="team-loc">United States</p></div></div>
+      <div class="team-card"><div class="team-avatar"><img src="Team Photos/Team Members/Cindy Seah.webp" alt="Cindy Seah"></div><div class="team-card-info"><h4>Cindy Seah</h4><p class="team-role">Finance Executive</p><p class="team-loc">Singapore</p></div></div>
+      <div class="team-card"><div class="team-avatar"><img src="Team Photos/Team Members/Bryan Yan Ng.webp" alt="Bryan Yan Ng"></div><div class="team-card-info"><h4>Bryan Yan Ng</h4><p class="team-role">Research &amp; Operations Officer</p><p class="team-loc">Singapore</p></div></div>
+      <div class="team-card"><div class="team-avatar"><img src="Team Photos/Team Members/Ying Xiang Tan.webp" alt="Ying Xiang Tan"></div><div class="team-card-info"><h4>Ying Xiang Tan</h4><p class="team-role">Bioinformatics Engineer</p><p class="team-loc">Singapore</p></div></div>
+    </div>
+
+    <div style="text-align:center;margin:4rem 0 2rem">
+      <span class="section-label">Guidance &amp; Expertise</span>
+      <h2 class="section-title" style="font-size:clamp(1.6rem,3vw,2.2rem)">Advisors</h2>
+    </div>
+    <div class="team-grid advisor-grid">
+      <div class="team-card"><div class="team-avatar"><img src="Team Photos/Advisors/CL Goh.webp" alt="CL Goh"></div><div class="team-card-info"><h4>CL Goh</h4><p class="team-role">Co-founder &amp; Executive Director</p></div></div>
+      <div class="team-card"><div class="team-avatar"><img src="Team Photos/Advisors/Chantal Roth.webp" alt="Chantal Roth"></div><div class="team-card-info"><h4>Chantal Roth (Dr)</h4><p class="team-role">Co-founder</p></div></div>
+      <div class="team-card"><div class="team-avatar"><img src="Team Photos/Advisors/Lukas Mueller.webp" alt="Lukas Mueller"></div><div class="team-card-info"><h4>Lukas Mueller (Prof)</h4><p class="team-role">Co-founder</p></div></div>
+      <div class="team-card"><div class="team-avatar"><img src="Team Photos/Advisors/Alex Wild.webp" alt="Alex Wild"></div><div class="team-card-info"><h4>Alex Wild (Dr)</h4><p class="team-role">Advisor</p></div></div>
+      <div class="team-card"><div class="team-avatar"><img src="Team Photos/Advisors/Markus Helms.webp" alt="Markus Helms"></div><div class="team-card-info"><h4>Markus Helms</h4><p class="team-role">Advisor</p></div></div>
+      <div class="team-card"><div class="team-avatar"><img src="Team Photos/Advisors/Christian Wiegele.webp" alt="Christian Wiegele"></div><div class="team-card-info"><h4>Christian Wiegele</h4><p class="team-role">Advisor</p></div></div>
+      <div class="team-card"><div class="team-avatar"><img src="Team Photos/Advisors/Elizabeth Lewis.webp" alt="Elizabeth Lewis"></div><div class="team-card-info"><h4>Elizabeth Lewis (Dr)</h4><p class="team-role">Advisor</p></div></div>
+      <div class="team-card"><div class="team-avatar"><img src="Team Photos/Advisors/Felix Maurer.webp" alt="Felix Maurer"></div><div class="team-card-info"><h4>Felix Maurer (Dr)</h4><p class="team-role">Advisor</p></div></div>
+      <div class="team-card"><div class="team-avatar"><img src="Team Photos/Advisors/John Simmons.webp" alt="John Simmons"></div><div class="team-card-info"><h4>John Simmons</h4><p class="team-role">Advisor</p></div></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- Team Modal -->
+<div class="team-modal-overlay" id="teamModal">
+  <div class="team-modal">
+    <div class="team-modal-photo"><img id="tmPhoto" src="" alt=""></div>
+    <div class="team-modal-body">
+      <button class="team-modal-close" onclick="closeTeamModal()">&times;</button>
+      <h3 id="tmName"></h3>
+      <p class="tm-role" id="tmRole"></p>
+      <p class="tm-loc" id="tmLoc"></p>
+      <div class="tm-edu" id="tmEdu"></div>
+      <ul class="tm-bio" id="tmBio"></ul>
+      <a class="team-modal-linkedin" id="tmLinkedin" href="" target="_blank" rel="noopener" title="LinkedIn">in</a>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ PAGE -->
