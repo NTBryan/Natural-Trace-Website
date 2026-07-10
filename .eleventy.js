@@ -1,6 +1,8 @@
 const yaml = require("js-yaml");
+const { HtmlBasePlugin } = require("@11ty/eleventy");
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addPlugin(HtmlBasePlugin);
   // Enable YAML data files (.yml / .yaml)
   eleventyConfig.addDataExtension("yml,yaml", contents => yaml.load(contents));
 
@@ -37,6 +39,7 @@ module.exports = function(eleventyConfig) {
       includes: "_includes",
       data: "_data"
     },
+    pathPrefix: process.env.PATH_PREFIX || "/",
     templateFormats: ["njk", "md", "html"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk"

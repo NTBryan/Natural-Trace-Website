@@ -97,7 +97,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
 /* Navbar scroll (only on home) */
 window.addEventListener('scroll', () => {
-  if (window.location.pathname === '/' || window.location.pathname === '/home/') {
+  var p = window.location.pathname;
+  if (p === '/' || p.endsWith('/home/') || p.endsWith('/Natural-Trace-Website/')) {
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
   }
 });
