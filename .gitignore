@@ -1,6 +1,7 @@
 node_modules/
 _site/
+_site_*/
 dist/
-dist2/
+dist*/
 build/
 .DS_Store
