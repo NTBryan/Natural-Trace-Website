@@ -12,10 +12,12 @@ permalink: /insights/
       <p class="insights-subtitle anim">The latest from Natural Trace — product developments, industry perspectives, and company news.</p>
     </div>
 
-    {% set postList = collections.insights %}
-    {% if postList.length > 0 %}
+    {% set regularPosts = collections.insightsRegular %}
+    {% set pinnedPosts = collections.insightsPinned %}
+
+    {% if regularPosts.length > 0 or pinnedPosts.length > 0 %}
     <div class="insights-grid">
-      {% for post in postList | reverse %}
+      {% for post in regularPosts %}
       <article class="insight-card anim">
         {% if post.data.image %}
         <div class="insight-card-image">
@@ -25,7 +27,34 @@ permalink: /insights/
         </div>
         {% endif %}
         <div class="insight-card-content">
-          <time datetime="{{ post.date | date("%Y-%m-%d") }}">{{ post.date | date("%B %d, %Y") }}</time>
+          <time datetime="{{ post.date | date('%Y-%m-%d') }}">{{ post.date | date('%B %d, %Y') }}</time>
+          <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+          {% if post.data.summary %}
+          <p>{{ post.data.summary }}</p>
+          {% endif %}
+          {% if post.data.tags %}
+          <div class="insight-tags">
+            {% for tag in post.data.tags %}
+            <span class="insight-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+          <a href="{{ post.url }}" class="read-more">Read more &rarr;</a>
+        </div>
+      </article>
+      {% endfor %}
+
+      {% for post in pinnedPosts %}
+      <article class="insight-card insight-card--pinned anim">
+        {% if post.data.image %}
+        <div class="insight-card-image">
+          <a href="{{ post.url }}">
+            <img src="{{ post.data.image }}" alt="{{ post.data.title }}">
+          </a>
+        </div>
+        {% endif %}
+        <div class="insight-card-content">
+          <time datetime="{{ post.date | date('%Y-%m-%d') }}">{{ post.date | date('%B %d, %Y') }}</time>
           <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
           {% if post.data.summary %}
           <p>{{ post.data.summary }}</p>

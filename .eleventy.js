@@ -6,6 +6,10 @@ module.exports = function(eleventyConfig) {
   // Enable YAML data files (.yml / .yaml)
   eleventyConfig.addDataExtension("yml,yaml", contents => yaml.load(contents));
 
+  // Expose pathPrefix as global data for JS use in templates
+  const prefix = process.env.PATH_PREFIX || "/";
+  eleventyConfig.addGlobalData("sitePathPrefix", prefix);
+
   // Date filter for templates
   eleventyConfig.addFilter("date", (dateObj, format) => {
     const d = new Date(dateObj);
@@ -25,6 +29,20 @@ module.exports = function(eleventyConfig) {
     collection.getFilteredByGlob("src/insights/**/*.md").sort((a, b) => a.date - b.date)
   );
 
+  // Non-pinned insights (newest first)
+  eleventyConfig.addCollection("insightsRegular", collection =>
+    collection.getFilteredByGlob("src/insights/**/*.md")
+      .filter(item => !item.data.pinned)
+      .sort((a, b) => b.date - a.date)
+  );
+
+  // Pinned insights (at bottom)
+  eleventyConfig.addCollection("insightsPinned", collection =>
+    collection.getFilteredByGlob("src/insights/**/*.md")
+      .filter(item => item.data.pinned)
+      .sort((a, b) => a.date - b.date)
+  );
+
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/admin");
   eleventyConfig.addWatchTarget("src/assets/");
@@ -39,7 +57,7 @@ module.exports = function(eleventyConfig) {
       includes: "_includes",
       data: "_data"
     },
-    pathPrefix: process.env.PATH_PREFIX || "/",
+    pathPrefix: prefix,
     templateFormats: ["njk", "md", "html"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk"
