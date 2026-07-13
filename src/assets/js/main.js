@@ -169,7 +169,8 @@ function openTeamModal(idx) {
   document.getElementById('modalName').textContent = d.name;
   document.getElementById('modalRole').textContent = d.role;
   document.getElementById('modalLoc').textContent = d.location || '';
-  document.getElementById('modalPhoto').src = d.photo;
+  var prefix = (typeof basePrefix !== 'undefined' && basePrefix !== '/') ? basePrefix.replace(/\/$/, '') : '';
+  document.getElementById('modalPhoto').src = d.photo.startsWith('/') ? prefix + d.photo : d.photo;
   var ll = document.getElementById('modalLinkedin');
   if (d.linkedin) { ll.href = d.linkedin; ll.style.display = ''; } else { ll.style.display = 'none'; }
   var eduHtml = '';
