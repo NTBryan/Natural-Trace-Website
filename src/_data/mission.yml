@@ -1,0 +1,40 @@
+# Mission & Values page content
+
+# Hero
+label: "Why We Do This"
+title: "Mission & Values"
+back_link_text: "← Back to About"
+back_link_url: "/about/"
+
+# Mission statement
+mission_label: "Our Mission"
+mission_title: "Molecular Truth for Every Supply Chain"
+mission_text: "Natural Trace exists to make supply chain authenticity verifiable, not just claimed. We embed food-grade molecular markers at the source and detect them downstream with standardized, statistically defensible methods. The result: evidence that holds up to scrutiny, from regulators to end consumers."
+
+# Values
+values_label: "What Drives Us"
+values_title: "Our Values"
+values:
+  - title: "Scientific Rigour"
+    description: "Every claim we make is backed by validated assays, statistical confidence intervals, and reproducible methodology. We report what the data shows, including when results are inconclusive."
+    icon: "microscope"
+  - title: "Transparency"
+    description: "Our clients see the full data trail, from raw signal to final call. No black boxes, no opaque scoring. If a result needs context, we provide it."
+    icon: "eye"
+  - title: "Integrity of Evidence"
+    description: "We do not overstate sensitivity, guarantee outcomes, or obscure limitations. False negatives are worse than false positives in authenticity testing, and our system is designed accordingly."
+    icon: "shield"
+  - title: "Partnership Over Transaction"
+    description: "We work alongside manufacturers and brand owners to integrate traceability into existing workflows. Every client matrix is different, and our approach reflects that."
+    icon: "handshake"
+  - title: "Regulatory Readiness"
+    description: "Our methods are built to meet the standards that regulators expect: ISO-aligned protocols, MIQE-compliant reporting, and documentation that survives audit."
+    icon: "document"
+  - title: "Accessible Science"
+    description: "Complex molecular diagnostics should produce simple, actionable answers. Our reporting is designed for decision-makers, not just scientists."
+    icon: "chart"
+
+# CTA
+cta_text: "Ready to bring molecular-level transparency to your supply chain?"
+cta_button_text: "Get in Touch →"
+cta_button_url: "/contact/"

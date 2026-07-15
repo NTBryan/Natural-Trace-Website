@@ -522,7 +522,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 0 2rem}
 /* Responsive */
 @media(max-width:1024px){
   .about-grid,.tech-grid,.contact-grid{grid-template-columns:1fr;gap:3rem}
-  .services-grid,.mission-grid{grid-template-columns:repeat(2,1fr)}
+  .services-grid,.mission-grid,.mission-values-grid{grid-template-columns:repeat(2,1fr)}
   .industries-grid{grid-template-columns:repeat(2,1fr)}
   .pipeline-steps{grid-template-columns:repeat(2,1fr)}
   .detection-methods-grid{grid-template-columns:repeat(2,1fr)}
@@ -539,7 +539,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 0 2rem}
   nav.scrolled .nav-links li{border-bottom-color:rgba(0,0,0,.06)}
   nav.scrolled .nav-links a{color:var(--dark)!important}
   .nav-toggle{display:block}
-  .services-grid,.industries-grid,.mission-grid{grid-template-columns:1fr}
+  .services-grid,.industries-grid,.mission-grid,.mission-values-grid{grid-template-columns:1fr}
   .pipeline-steps{grid-template-columns:1fr}
   .detection-methods-grid{grid-template-columns:1fr}
   .about-highlights{grid-template-columns:1fr}
