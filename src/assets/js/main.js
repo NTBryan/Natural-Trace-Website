@@ -4,16 +4,21 @@
     var elems = document.querySelectorAll('.anim');
     if (!elems.length) return;
     if ('IntersectionObserver' in window) {
+      /* Immediately reveal elements already in the viewport */
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      elems.forEach(function(el) {
+        var rect = el.getBoundingClientRect();
+        if (rect.top < vh && rect.bottom > 0) {
+          el.classList.add('visible');
+        }
+      });
+      /* Observe remaining hidden elements for scroll reveal */
       var obs = new IntersectionObserver(function(entries) {
         entries.forEach(function(e) {
           if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
         });
       }, { threshold: 0.1 });
-      elems.forEach(function(el) { obs.observe(el); });
-      /* Failsafe: if observer hasn't fired after 2s, force all visible */
-      setTimeout(function() {
-        document.querySelectorAll('.anim:not(.visible)').forEach(function(el) { el.classList.add('visible'); });
-      }, 2000);
+      document.querySelectorAll('.anim:not(.visible)').forEach(function(el) { obs.observe(el); });
     } else {
       /* No IntersectionObserver support — show everything */
       elems.forEach(function(el) { el.classList.add('visible'); });
