@@ -4,26 +4,57 @@ title: "Mission & Values"
 permalink: /mission/
 ---
 
-<section class="privacy-page" style="background:var(--offwhite)">
-  <div class="container" style="max-width:960px">
-    <a class="privacy-back" href="{{ mission.back_link_url }}">{{ mission.back_link_text }}</a>
+{# ── Hero Banner ── #}
+<section style="background:var(--dark);padding:8rem 0 4rem;position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(107,114,73,.4) 0%,rgba(26,30,46,.95) 100%)"></div>
+  <div class="container" style="position:relative;z-index:1;text-align:center;max-width:800px">
+    <span class="section-label anim anim-up" style="color:rgba(255,255,255,.7)">{{ mission.label }}</span>
+    <h1 class="section-title anim anim-up delay-1" style="color:#fff;font-size:2.8rem;margin-bottom:1.25rem">{{ mission.title }}</h1>
+    <p class="anim anim-up delay-2" style="font-size:1.1rem;color:rgba(255,255,255,.7);line-height:1.8">{{ mission.hero_subtitle }}</p>
+  </div>
+</section>
 
-    {# Mission Statement #}
-    <div style="text-align:center;margin-bottom:4rem" class="anim">
+{# ── The Problem ── #}
+<section style="padding:5rem 0;background:#fff">
+  <div class="container" style="max-width:820px">
+    <div class="anim anim-up" style="text-align:center;margin-bottom:2.5rem">
+      <span class="section-label">{{ mission.problem_label }}</span>
+      <h2 class="section-title">{{ mission.problem_title }}</h2>
+    </div>
+    <div class="anim anim-up delay-1">
+      <p style="font-size:1.02rem;color:var(--muted);line-height:1.9;margin-bottom:1.5rem">{{ mission.problem_text }}</p>
+      <p style="font-size:1.02rem;color:var(--muted);line-height:1.9">{{ mission.problem_text_2 }}</p>
+    </div>
+  </div>
+</section>
+
+{# ── Mission Statement + Founding Quote ── #}
+<section style="padding:5rem 0;background:var(--offwhite)">
+  <div class="container" style="max-width:820px">
+    <div style="text-align:center;margin-bottom:3rem" class="anim anim-up">
       <span class="section-label">{{ mission.mission_label }}</span>
-      <h1 class="section-title" style="margin-bottom:1.5rem">{{ mission.mission_title }}</h1>
+      <h2 class="section-title" style="margin-bottom:1.5rem">{{ mission.mission_title }}</h2>
       <p style="font-size:1.05rem;color:var(--muted);line-height:1.8;max-width:720px;margin:0 auto">{{ mission.mission_text }}</p>
     </div>
 
-    {# Values #}
-    <div style="text-align:center;margin-bottom:2.5rem" class="anim">
+    {# Pull quote #}
+    <div class="anim anim-up delay-1" style="border-left:3px solid var(--sage);padding:1.5rem 2rem;margin:2.5rem auto;max-width:680px;background:rgba(107,114,73,.04);border-radius:0 12px 12px 0">
+      <p style="font-size:1.05rem;font-style:italic;color:var(--dark);line-height:1.8;margin:0">{{ mission.founding_quote }}</p>
+    </div>
+  </div>
+</section>
+
+{# ── Values ── #}
+<section style="padding:5rem 0;background:#fff">
+  <div class="container" style="max-width:960px">
+    <div style="text-align:center;margin-bottom:2.5rem" class="anim anim-up">
       <span class="section-label">{{ mission.values_label }}</span>
       <h2 class="section-title">{{ mission.values_title }}</h2>
     </div>
 
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:4rem" class="mission-values-grid">
       {% for value in mission.values %}
-      <div class="anim" style="background:#fff;border-radius:16px;padding:2rem;border:1px solid #E5E7EB;transition:transform .4s,box-shadow .4s;text-align:center">
+      <div class="anim" style="background:var(--offwhite);border-radius:16px;padding:2rem;border:1px solid #E5E7EB;transition:transform .4s,box-shadow .4s;text-align:center">
         <div style="width:48px;height:48px;border-radius:12px;background:var(--sage);display:inline-flex;align-items:center;justify-content:center;margin-bottom:1.25rem;margin-left:auto;margin-right:auto">
           {% if value.icon == "microscope" %}
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>
@@ -46,7 +77,7 @@ permalink: /mission/
     </div>
 
     {# CTA #}
-    <div style="text-align:center;padding:3rem 2rem;background:#fff;border-radius:16px;border:1px solid #E5E7EB" class="anim">
+    <div style="text-align:center;padding:3rem 2rem;background:var(--offwhite);border-radius:16px;border:1px solid #E5E7EB" class="anim">
       <p style="font-size:1.05rem;color:var(--muted);margin-bottom:1.5rem">{{ mission.cta_text }}</p>
       <a href="{{ mission.cta_button_url }}" class="btn" style="cursor:pointer;background:var(--sage);color:#fff">{{ mission.cta_button_text }}</a>
     </div>

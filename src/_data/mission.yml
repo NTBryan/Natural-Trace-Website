@@ -3,13 +3,23 @@
 # Hero
 label: "Why We Do This"
 title: "Mission & Values"
+hero_subtitle: "The principles behind every test we run and every result we report."
 back_link_text: "← Back to About"
 back_link_url: "/about/"
+
+# The Problem section
+problem_label: "The Challenge"
+problem_title: "Supply Chains Built on Claims, Not Evidence"
+problem_text: "Across food, nutraceuticals, and natural products, authenticity is typically verified by paperwork: certificates passed between suppliers, distributors, and brands. But documents can be copied, altered, or simply wrong. When a high-value ingredient changes hands three or four times before reaching the consumer, the chain of custody becomes a chain of trust — and trust without evidence is just assumption."
+problem_text_2: "The cost of that gap is real. Brands face recalls, regulatory action, and reputational damage. Consumers lose confidence. And honest producers compete on an uneven playing field against those who cut corners."
 
 # Mission statement
 mission_label: "Our Mission"
 mission_title: "Molecular Truth for Every Supply Chain"
 mission_text: "Natural Trace exists to make supply chain authenticity verifiable, not just claimed. We embed food-grade molecular markers at the source and detect them downstream with standardized, statistically defensible methods. The result: evidence that holds up to scrutiny, from regulators to end consumers."
+
+# Founding quote
+founding_quote: "We started Natural Trace because we believed the natural products industry deserved better than paperwork as proof. Molecular evidence should be the standard, not the exception."
 
 # Values
 values_label: "What Drives Us"
