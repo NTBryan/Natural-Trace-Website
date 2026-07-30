@@ -3,7 +3,7 @@ hero:
   back_link_href: "/technology/"
   section_label: "Quality Framework"
   title: "Built to International Standards"
-  subtitle: "Every stage of the NaturalDetect&trade; pipeline is designed against recognised ISO frameworks for laboratory competence, PCR methodology, and supply chain traceability."
+  subtitle: "Every stage of the NaturalDetect&trade; pipeline is designed against recognised ISO frameworks for PCR methodology, sample preparation, and supply chain traceability."
 
 standards:
   - image_url: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&q=80"
