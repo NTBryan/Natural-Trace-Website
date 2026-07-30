@@ -1,0 +1,52 @@
+# Third-party integrations
+#
+# IMPORTANT: everything in this file is compiled into the public site and is
+# readable by anyone. Only put values here that are safe to publish.
+#
+# A HubSpot portal ID and form GUID are safe to publish — HubSpot designs them
+# to be used from a browser. A HubSpot private-app token, API key, or access
+# token is NOT. Never put one in this file or anywhere else in this repo.
+#
+# Setup instructions: docs/hubspot-setup.md
+
+hubspot:
+  # Master switch. Submissions only go to HubSpot when this is true AND both
+  # portal_id and form_guid are filled in. While it is off, the contact form
+  # falls back to opening the visitor's email client (see fallback below).
+  enabled: false
+
+  # HubSpot Hub ID. Find it in HubSpot under
+  # Settings -> Account Management -> Account Defaults, or in the URL after
+  # /contacts/ when logged in.
+  portal_id: ""
+
+  # The form's GUID. Create a form in HubSpot under Marketing -> Forms, then
+  # take the value from Share -> Embed code, or from the form's URL.
+  form_guid: ""
+
+  # Data centre your HubSpot portal is hosted in: "na1" (default, US) or
+  # "eu1" (EU). Shown in HubSpot URLs, e.g. app-eu1.hubspot.com means eu1.
+  region: "na1"
+
+  # Maps this site's form fields to HubSpot contact property names.
+  # Left of the colon is the field on the website — do not change those.
+  # Right of the colon is the HubSpot internal property name.
+  #
+  # firstname/lastname/email/company/message are HubSpot defaults and work
+  # out of the box. inquiry_type is NOT a default: either create a custom
+  # contact property with that internal name, or leave the value empty ("")
+  # and that field will simply not be sent.
+  field_map:
+    firstName: "firstname"
+    lastName: "lastname"
+    email: "email"
+    company: "company"
+    inquiryType: "inquiry_type"
+    message: "message"
+
+# Used when HubSpot is switched off, not yet configured, or unreachable.
+# The form opens the visitor's email client with their message pre-filled so
+# that an inquiry is never silently lost.
+fallback:
+  email: "info@naturaltrace.com"
+  subject_prefix: "Website inquiry"

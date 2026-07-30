@@ -360,6 +360,20 @@ collections:
             fields:
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Message", name: "message", widget: "text"}
+          - label: "Email Fallback Message"
+            name: "fallback"
+            widget: "object"
+            hint: "Shown when the message is handed to the visitor's email client, which is the current behaviour until HubSpot is switched on."
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Message", name: "message", widget: "text"}
+          - label: "Error Message"
+            name: "error"
+            widget: "object"
+            hint: "Shown if a direct submission is attempted and fails."
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Message", name: "message", widget: "text"}
           - label: "CTA Section"
             name: "cta"
             widget: "object"
@@ -446,6 +460,59 @@ collections:
               - {label: "Category", name: "category", widget: "select", options: ["general", "technical", "integration", "detection", "commercial"]}
               - {label: "Question", name: "question", widget: "string"}
               - {label: "Answer", name: "answer", widget: "markdown"}
+
+  # Integrations — connect the contact form to HubSpot without touching code
+  - name: "integrations"
+    label: "Integrations"
+    files:
+      - name: "hubspot"
+        label: "HubSpot & Contact Form"
+        file: "src/_data/integrations.yml"
+        fields:
+          - label: "HubSpot"
+            name: "hubspot"
+            widget: "object"
+            hint: "Portal ID and Form GUID are safe to publish. NEVER paste a HubSpot private-app token, access token, or API key here — everything in this file is visible to the public."
+            fields:
+              - label: "Send submissions to HubSpot"
+                name: "enabled"
+                widget: "boolean"
+                default: false
+                hint: "Only takes effect once Portal ID and Form GUID are both filled in. While off, the form opens the visitor's email client instead."
+              - label: "Portal ID (Hub ID)"
+                name: "portal_id"
+                widget: "string"
+                required: false
+                hint: "HubSpot: Settings -> Account Management -> Account Defaults."
+              - label: "Form GUID"
+                name: "form_guid"
+                widget: "string"
+                required: false
+                hint: "HubSpot: Marketing -> Forms -> your form -> Share -> Embed code."
+              - label: "Data centre"
+                name: "region"
+                widget: "select"
+                options: ["na1", "eu1"]
+                default: "na1"
+                hint: "na1 for US portals, eu1 if your HubSpot URLs contain app-eu1."
+              - label: "Field mapping"
+                name: "field_map"
+                widget: "object"
+                hint: "HubSpot internal property names. Leave a value empty to stop sending that field. inquiry_type is not a HubSpot default — create it as a custom contact property, or clear it."
+                fields:
+                  - {label: "First name", name: "firstName", widget: "string", required: false}
+                  - {label: "Last name", name: "lastName", widget: "string", required: false}
+                  - {label: "Email", name: "email", widget: "string", required: false}
+                  - {label: "Company", name: "company", widget: "string", required: false}
+                  - {label: "Inquiry type", name: "inquiryType", widget: "string", required: false}
+                  - {label: "Message", name: "message", widget: "string", required: false}
+          - label: "Email fallback"
+            name: "fallback"
+            widget: "object"
+            hint: "Used when HubSpot is off, unconfigured, or unreachable, so an inquiry is never lost."
+            fields:
+              - {label: "Inbox address", name: "email", widget: "string"}
+              - {label: "Subject prefix", name: "subject_prefix", widget: "string"}
 
   # Team members stored as a single JSON file
   - name: "team"
