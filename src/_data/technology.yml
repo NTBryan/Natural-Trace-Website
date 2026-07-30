@@ -4,7 +4,7 @@
 # Hero Section
 hero_label: "Our Platform"
 title: "NaturalDetect™"
-subtitle: "Our proprietary detection platform takes samples from intake through to Certificate of Analysis. Standardized, reproducible, and built for regulatory-grade reporting."
+subtitle: "Our proprietary detection platform takes samples from intake through to Certificate of Authenticity. Standardized, reproducible, and built for regulatory-grade reporting."
 hero_image_src: "/assets/logos/NaturalDetect-white.png"
 hero_image_alt: "NaturalDetect™ platform"
 
@@ -20,7 +20,7 @@ hero_features:
     description: "Proprietary analytics deliver clear, defensible identification outcomes"
   - num: "04"
     title: "Client-Ready Reporting"
-    description: "Branded Certificates of Analysis generated automatically per sample"
+    description: "Branded Certificates of Authenticity generated automatically per sample"
 
 # Pipeline Section
 pipeline_label: "Under the Hood"
@@ -37,7 +37,7 @@ pipeline_steps:
     title: "Quality Assurance"
     description: "Multi-layered validation ensures reliable, defensible results"
   - num: "4"
-    title: "Certificate of Analysis"
+    title: "Certificate of Authenticity"
     description: "Clear, actionable reports delivered per sample with full traceability"
 
 # Detection Methods Section

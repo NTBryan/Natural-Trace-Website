@@ -73,10 +73,10 @@ collections:
           - {label: "Step 3 pH Label", name: "compat_step3_ph_label", widget: "string"}
           - {label: "Next Button", name: "compat_btn_next", widget: "string"}
           - {label: "Back Button", name: "compat_btn_back", widget: "string"}
-          - {label: "See Results Button", name: "compat_btn_results", widget: "string"}
-          - {label: "Start Over Button", name: "compat_result_restart", widget: "string"}
-          - {label: "Result CTA Text", name: "compat_result_cta", widget: "string"}
-          - {label: "Result CTA URL", name: "compat_result_cta_url", widget: "string"}
+          - {label: "Confirmation Heading", name: "compat_confirm_title", widget: "string"}
+          - {label: "Confirmation Body", name: "compat_confirm_desc", widget: "text"}
+          - {label: "Confirmation CTA Text", name: "compat_result_cta", widget: "string"}
+          - {label: "Confirmation CTA URL", name: "compat_result_cta_url", widget: "string"}
 
       # ABOUT PAGE
       - name: "about"

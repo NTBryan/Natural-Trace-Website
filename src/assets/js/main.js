@@ -331,18 +331,18 @@ function filterFaq(cat) {
   ];
 
   var formulations = [
-    { id: 'tablet', name: 'Compressed Tablet', risk: 'LOW', score: 95 },
-    { id: 'capsule', name: 'Hard Capsule', risk: 'LOW', score: 95 },
-    { id: 'softgel', name: 'Softgel', risk: 'MEDIUM-HIGH', score: 68 },
-    { id: 'gummy', name: 'Gummy', risk: 'HIGH', score: 55 },
-    { id: 'chewable', name: 'Chewable', risk: 'LOW-MEDIUM', score: 88 },
-    { id: 'powder', name: 'Powder / Sachet', risk: 'LOW-MEDIUM', score: 88 },
-    { id: 'liquid', name: 'Liquid / Syrup', risk: 'HIGH', score: 55 },
-    { id: 'effervescent', name: 'Effervescent', risk: 'MEDIUM', score: 78 },
-    { id: 'lozenge', name: 'Lozenge', risk: 'VERY HIGH', score: 40 },
-    { id: 'bar', name: 'Bar', risk: 'MEDIUM-HIGH', score: 68 },
-    { id: 'rtd', name: 'RTD Beverage', risk: 'VERY HIGH', score: 40 },
-    { id: 'drops', name: 'Drops', risk: 'MEDIUM', score: 78 }
+    { id: 'tablet', name: 'Compressed Tablet' },
+    { id: 'capsule', name: 'Hard Capsule' },
+    { id: 'softgel', name: 'Softgel' },
+    { id: 'gummy', name: 'Gummy' },
+    { id: 'chewable', name: 'Chewable' },
+    { id: 'powder', name: 'Powder / Sachet' },
+    { id: 'liquid', name: 'Liquid / Syrup' },
+    { id: 'effervescent', name: 'Effervescent' },
+    { id: 'lozenge', name: 'Lozenge' },
+    { id: 'bar', name: 'Bar' },
+    { id: 'rtd', name: 'RTD Beverage' },
+    { id: 'drops', name: 'Drops' }
   ];
 
   var catFormMap = {
@@ -361,17 +361,17 @@ function filterFaq(cat) {
   };
 
   var tempOptions = [
-    { label: 'Below 40°C', mod: 0 },
-    { label: '40–65°C', mod: -5 },
-    { label: '65–100°C', mod: -15 },
-    { label: 'Above 100°C', mod: -25 }
+    { label: 'Below 40°C' },
+    { label: '40–65°C' },
+    { label: '65–100°C' },
+    { label: 'Above 100°C' }
   ];
 
   var phOptions = [
-    { label: 'Neutral (pH 5–8)', mod: 0 },
-    { label: 'Mildly Acidic (pH 4–5)', mod: -5 },
-    { label: 'Very Acidic (pH < 4)', mod: -15 },
-    { label: 'Alkaline (pH > 8)', mod: -10 }
+    { label: 'Neutral (pH 5–8)' },
+    { label: 'Mildly Acidic (pH 4–5)' },
+    { label: 'Very Acidic (pH < 4)' },
+    { label: 'Alkaline (pH > 8)' }
   ];
 
   function el(id) { return document.getElementById(id); }
@@ -482,123 +482,9 @@ function filterFaq(cat) {
     }
   };
 
-  window.compatShowResult = function() {
-    var baseScore = 78;
-    if (state.formulations && state.formulations.length > 0) {
-      baseScore = Math.min.apply(null, state.formulations.map(function(fid) {
-        var f = formulations.find(function(x) { return x.id === fid; });
-        return f ? f.score : 78;
-      }));
-    }
-    var tempMod = state.temp !== null ? tempOptions[state.temp].mod : 0;
-    var phMod = state.ph !== null ? phOptions[state.ph].mod : 0;
-    var score = Math.max(10, Math.min(100, baseScore + tempMod + phMod));
-
+  window.compatShowConfirm = function() {
     el('compatProgress').style.display = 'none';
-    showScreen('compatResult');
-
-    var color, verdict, recTitle, recDesc, tierLabel, tierFill;
-    if (score >= 80) {
-      color = '#4CAF50'; tierLabel = 'Ideal Candidate'; tierFill = 0.95;
-      verdict = 'Your product is ready to be NaturalTagged!';
-      recTitle = 'Direct Integration';
-      recDesc = 'Your product\'s formulation and processing conditions are well-suited for NaturalTag. The molecular marker can be incorporated directly into your manufacturing process with minimal modification.';
-    } else if (score >= 60) {
-      color = 'var(--gold)'; tierLabel = 'Strong Candidate'; tierFill = 0.72;
-      verdict = 'Your product is a strong candidate for NaturalTag!';
-      recTitle = 'Tailored Integration';
-      recDesc = 'Your product is well-suited for NaturalTag with a tailored integration approach to protect the molecular marker during your specific processing conditions.';
-    } else if (score >= 40) {
-      color = 'var(--teal)'; tierLabel = 'Custom Approach'; tierFill = 0.48;
-      verdict = 'Your product can be NaturalTagged with a custom approach!';
-      recTitle = 'Advanced Integration';
-      recDesc = 'Your processing conditions require our advanced integration protocol. We\'ll design a custom strategy optimized for your specific temperature and pH profile.';
-    } else {
-      color = 'var(--sage)'; tierLabel = 'Exploratory'; tierFill = 0.25;
-      verdict = 'Let\'s explore a solution for your product!';
-      recTitle = 'Feasibility Study';
-      recDesc = 'Your product presents unique challenges that our R&D team can investigate. We\'ll conduct a feasibility study to design a tagging strategy tailored to your exact manufacturing process.';
-    }
-
-    el('compatScoreCircle').style.stroke = color;
-    el('compatVerdict').style.color = color;
-
-    // Animate circle to tier level
-    var circumference = 2 * Math.PI * 80;
-    var offset = circumference - tierFill * circumference;
-    setTimeout(function() {
-      el('compatScoreCircle').style.transition = 'stroke-dashoffset 1.5s ease';
-      el('compatScoreCircle').style.strokeDashoffset = offset;
-    }, 200);
-
-    // Show tier label instead of number
-    var numEl = el('compatScoreNum');
-    numEl.style.fontSize = '1.3rem';
-    numEl.style.fontFamily = "'Inter', sans-serif";
-    numEl.style.fontWeight = '700';
-    numEl.style.color = color;
-    numEl.style.lineHeight = '1.2';
-    numEl.style.textAlign = 'center';
-    setTimeout(function() { numEl.textContent = tierLabel; }, 600);
-
-    // Show verdict and recommendation
-    setTimeout(function() {
-      el('compatVerdict').textContent = verdict;
-      el('compatVerdict').style.opacity = '1';
-    }, 800);
-
-    setTimeout(function() {
-      el('compatRecTitle').textContent = recTitle;
-      el('compatRecDesc').textContent = recDesc;
-      el('compatRecCard').style.opacity = '1';
-      el('compatRecCard').style.transform = 'translateY(0)';
-    }, 1200);
-
-    setTimeout(function() {
-      el('compatActions').style.opacity = '1';
-    }, 1600);
-
-    // Confetti for high scores
-    if (score >= 80) {
-      setTimeout(function() { spawnConfetti(); }, 600);
-    }
-  };
-
-  function spawnConfetti() {
-    var container = el('compatResult');
-    var colors = ['#6B7249', '#A29349', '#3B666B', '#4CAF50', '#FFD700'];
-    for (var i = 0; i < 40; i++) {
-      var dot = document.createElement('div');
-      dot.className = 'compat-confetti';
-      dot.style.left = Math.random() * 100 + '%';
-      dot.style.background = colors[Math.floor(Math.random() * colors.length)];
-      dot.style.animationDelay = Math.random() * 0.8 + 's';
-      dot.style.animationDuration = (1.5 + Math.random()) + 's';
-      container.appendChild(dot);
-      setTimeout(function(d) { d.remove(); }.bind(null, dot), 3000);
-    }
-  }
-
-  window.compatReset = function() {
-    state = { step: 0, category: null, formulations: [], temp: null, ph: null };
-    el('compatProgress').style.display = 'none';
-    el('compatNext1').classList.remove('visible');
-    el('compatScoreCircle').style.transition = 'none';
-    el('compatScoreCircle').style.strokeDashoffset = '502.65';
-    var numEl = el('compatScoreNum');
-    numEl.textContent = '';
-    numEl.style.fontSize = '';
-    numEl.style.fontFamily = '';
-    numEl.style.fontWeight = '';
-    numEl.style.color = '';
-    numEl.style.lineHeight = '';
-    numEl.style.textAlign = '';
-    el('compatVerdict').textContent = '';
-    el('compatVerdict').style.opacity = '0';
-    el('compatRecCard').style.opacity = '0';
-    el('compatRecCard').style.transform = 'translateY(20px)';
-    el('compatActions').style.opacity = '0';
-    showScreen('compatWelcome');
+    showScreen('compatConfirm');
   };
 
   function updateProgress(step) {
