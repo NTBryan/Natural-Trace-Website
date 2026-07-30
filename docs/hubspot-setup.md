@@ -66,10 +66,21 @@ site is static and everything in it is readable by anyone who views the page
 source. There is nowhere in this repository that a secret can be stored safely.
 
 If you need the full CRM API rather than the Forms API — custom objects, dedup
-logic, reading data back — that needs a server-side component. The site
-currently deploys to GitHub Pages, which cannot run one. That would mean moving
-hosting (Netlify or Vercel both do it with a small function). It is a hosting
-decision, not a HubSpot one.
+logic, reading data back — that needs a server-side component holding the token,
+which the browser never sees.
+
+That option is open. The site is deployed to **both** Netlify
+(`natural-trace.netlify.app`, which is what the canonical URLs point at) and
+GitHub Pages (`ntbryan.github.io/Natural-Trace-Website/`, built by
+`.github/workflows/deploy.yml`). GitHub Pages cannot run a function, but Netlify
+can, and it is already connected — note that there is no `netlify.toml` in this
+repo, so that connection is configured on Netlify's side and is not visible from
+the code.
+
+So moving to a token-based integration would mean adding a Netlify function and
+treating Netlify as the authoritative host, not migrating hosting from scratch.
+Worth deciding deliberately rather than by accident, since two hosts serving the
+same site is its own loose end.
 
 ### Spam
 
