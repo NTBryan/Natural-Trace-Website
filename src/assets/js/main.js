@@ -136,11 +136,108 @@ const countObs = new IntersectionObserver((entries) => {
 }, {threshold:.5});
 document.querySelectorAll('.count').forEach(el => countObs.observe(el));
 
-/* Contact form */
+/* Contact form
+ *
+ * Where a submission goes is configured in src/_data/integrations.yml and
+ * handed to this file on the form's data- attributes, so turning HubSpot on is
+ * a config change and needs no code change here.
+ *
+ * Until HubSpot is configured, or if a HubSpot request fails, the message is
+ * handed to the visitor's email client. An inquiry is never silently dropped.
+ */
+function readContactConfig(form) {
+  var d = form.dataset;
+  var map = {};
+  try { map = JSON.parse(d.hsMap || '{}') || {}; } catch (err) { map = {}; }
+  var portal = (d.hsPortal || '').trim();
+  var guid = (d.hsForm || '').trim();
+  return {
+    hubspotReady: d.hsEnabled === 'true' && !!portal && !!guid,
+    portal: portal,
+    guid: guid,
+    region: (d.hsRegion || 'na1').trim() || 'na1',
+    map: map,
+    email: (d.fallbackEmail || '').trim(),
+    subject: (d.fallbackSubject || 'Website inquiry').trim()
+  };
+}
+
+function contactFormEndpoint(cfg) {
+  var host = cfg.region === 'na1' ? 'api.hsforms.com' : 'api-' + cfg.region + '.hsforms.com';
+  return 'https://' + host + '/submissions/v3/integration/submit/' + cfg.portal + '/' + cfg.guid;
+}
+
+function showContactState(id) {
+  var form = document.getElementById('contactForm');
+  if (form) form.style.display = 'none';
+  ['formSuccess', 'formFallback', 'formError'].forEach(function(stateId) {
+    var el = document.getElementById(stateId);
+    if (el) el.style.display = (stateId === id) ? 'block' : 'none';
+  });
+}
+
+function submitContactViaEmail(cfg, data) {
+  if (!cfg.email) { showContactState('formError'); return; }
+  var name = [data.get('firstName'), data.get('lastName')].filter(Boolean).join(' ');
+  var body = [
+    'Name: ' + name,
+    'Email: ' + (data.get('email') || ''),
+    'Company: ' + (data.get('company') || ''),
+    'Inquiry type: ' + (data.get('inquiryType') || ''),
+    '',
+    data.get('message') || ''
+  ].join('\n');
+  window.location.href = 'mailto:' + cfg.email +
+    '?subject=' + encodeURIComponent(cfg.subject + (name ? ' - ' + name : '')) +
+    '&body=' + encodeURIComponent(body);
+  showContactState('formFallback');
+}
+
+function submitContactToHubspot(cfg, data, form) {
+  var fields = [];
+  Object.keys(cfg.map).forEach(function(field) {
+    var property = (cfg.map[field] || '').trim();
+    var value = data.get(field);
+    // An empty mapping in integrations.yml means "do not send this field".
+    if (!property || !value) return;
+    fields.push({ objectTypeId: '0-1', name: property, value: String(value) });
+  });
+
+  var btn = form.querySelector('.form-submit');
+  if (btn) btn.disabled = true;
+
+  fetch(contactFormEndpoint(cfg), {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      submittedAt: Date.now(),
+      fields: fields,
+      context: { pageUri: window.location.href, pageName: document.title }
+    })
+  }).then(function(res) {
+    if (!res.ok) throw new Error('HubSpot responded ' + res.status);
+    showContactState('formSuccess');
+  }).catch(function(err) {
+    if (window.console) console.error('Contact form: HubSpot submission failed.', err);
+    submitContactViaEmail(cfg, data);
+  }).then(function() {
+    if (btn) btn.disabled = false;
+  });
+}
+
 function handleContactSubmit(e) {
   e.preventDefault();
-  document.getElementById('contactForm').style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
+  var form = document.getElementById('contactForm');
+  if (!form) return false;
+  var data = new FormData(form);
+
+  // Honeypot: only a bot fills a field a human cannot see. Show the normal
+  // success state so the bot learns nothing, and send nothing.
+  if (data.get('_botcheck')) { showContactState('formSuccess'); return false; }
+
+  var cfg = readContactConfig(form);
+  if (cfg.hubspotReady) { submitContactToHubspot(cfg, data, form); }
+  else { submitContactViaEmail(cfg, data); }
   return false;
 }
 

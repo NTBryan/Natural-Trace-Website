@@ -41,6 +41,18 @@ success:
   title: "Message Sent"
   message: "Thank you for reaching out. Our team will review your inquiry and get back to you shortly."
 
+# Shown when the message is handed to the visitor's email client instead of
+# being submitted directly. This is the current behaviour until HubSpot is
+# configured in _data/integrations.yml.
+fallback:
+  title: "One Last Step"
+  message: "Your email client should now be open with your message ready to send. If nothing opened, email us directly at info@naturaltrace.com and we will pick it up from there."
+
+# Shown if a direct submission is attempted and fails.
+error:
+  title: "Message Not Sent"
+  message: "Something went wrong on our side. Please email us directly at info@naturaltrace.com and we will get back to you."
+
 cta:
   section_label: "Get Started"
   title: "Start Your First Test Today"
