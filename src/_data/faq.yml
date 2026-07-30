@@ -97,7 +97,7 @@ questions:
     question: "What does a result look like?"
     answer: >-
       Each tested sample receives a clear determination: Authenticated or Not
-      Authenticated. A Certificate of Analysis is generated automatically
+      Authenticated. A Certificate of Authenticity is generated automatically
       through NaturalCloud™, with full audit trail, signal data, and
       batch-level traceability.
   - category: commercial

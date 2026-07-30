@@ -21,15 +21,15 @@ pipeline_cards:
     subtitle: Automated determination and certificate issuance
     description: Each batch classified as Authenticated, Not Authenticated, or
       Inconclusive. No human judgment. Full audit trail and Certificate of
-      Analysis issued automatically through NaturalCloud™.
+      Authenticity issued automatically through NaturalCloud™.
     image_src: https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80
-    image_alt: Professional reviewing and signing a Certificate of Analysis
+    image_alt: Professional reviewing and signing a Certificate of Authenticity
 features_label: Platform Capabilities
 features_title: What NaturalCloud™ Delivers
 features_subtitle: A single platform for every output your traceability
   programme requires — from batch certificates to long-term analytics.
 features:
-  - title: Certificate of Analysis
+  - title: Certificate of Authenticity
     description: Branded, batch-specific COA generated automatically from pipeline
       results. PDF-ready for clients and regulators.
     image_src: https://images.unsplash.com/photo-1568667256549-094345857637?w=600&q=80

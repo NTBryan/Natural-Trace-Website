@@ -116,30 +116,16 @@
         </div>
         <div class="compat-next-wrap" id="compatNext3">
           <button class="compat-back" onclick="compatGoStep(2)">{{ home.compat_btn_back }}</button>
-          <button class="compat-next" onclick="compatShowResult()">{{ home.compat_btn_results }}</button>
+          <button class="compat-next" onclick="compatShowConfirm()">{{ home.compat_btn_next }}</button>
         </div>
       </div>
 
-      <!-- Result Screen -->
-      <div class="compat-screen" id="compatResult">
-        <div class="compat-result">
-          <div class="compat-score-wrap">
-            <svg class="compat-score-svg" viewBox="0 0 180 180">
-              <circle class="compat-score-bg" cx="90" cy="90" r="80"/>
-              <circle class="compat-score-fill" id="compatScoreCircle" cx="90" cy="90" r="80" stroke="var(--sage)" stroke-dasharray="502.65" stroke-dashoffset="502.65"/>
-            </svg>
-            <div class="compat-score-num" id="compatScoreNum">0</div>
-          </div>
-          <div class="compat-verdict" id="compatVerdict"></div>
-          <div class="compat-rec" id="compatRec"></div>
-          <div class="compat-rec-card" id="compatRecCard">
-            <h4 id="compatRecTitle"></h4>
-            <p id="compatRecDesc"></p>
-          </div>
-          <div class="compat-actions" id="compatActions">
-            <button class="compat-restart" onclick="compatReset()">{{ home.compat_result_restart }}</button>
-            <a class="compat-cta" href="{{ home.compat_result_cta_url }}" style="font-size:.85rem;padding:.7rem 1.5rem;text-decoration:none;display:inline-block">{{ home.compat_result_cta }}</a>
-          </div>
+      <!-- Confirmation Screen -->
+      <div class="compat-screen" id="compatConfirm">
+        <div class="compat-welcome">
+          <h3>{{ home.compat_confirm_title }}</h3>
+          <p>{{ home.compat_confirm_desc }}</p>
+          <a class="compat-cta" href="{{ home.compat_result_cta_url }}" style="text-decoration:none;display:inline-block">{{ home.compat_result_cta }}</a>
         </div>
       </div>
     </div>

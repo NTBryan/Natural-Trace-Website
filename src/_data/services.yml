@@ -49,4 +49,4 @@ pipeline_steps:
     description: "Species-specific molecular beacon assays with automated data processing via NaturalDetect™."
   - number: "4"
     title: "Results & COA"
-    description: "Branded Certificate of Analysis with full statistical backing."
+    description: "Branded Certificate of Authenticity with full statistical backing."
