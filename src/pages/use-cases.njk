@@ -1,0 +1,51 @@
+---
+layout: base.njk
+title: "Industry Use-Cases"
+summary: "How in-product authentication is applied across dietary supplements, branded ingredients, fresh produce and green coffee supply chains."
+permalink: /industries/use-cases/
+---
+
+<section class="usecases" style="padding-top:9rem">
+  <div class="container">
+    <div class="vp-head">
+      <span class="section-label anim anim-up">{{ usecases.label }}</span>
+      <h2 class="section-title anim anim-up delay-1">{{ usecases.title }}</h2>
+      <p class="section-subtitle anim anim-up delay-2">{{ usecases.subtitle }}</p>
+    </div>
+
+    {% for case in usecases.cases %}
+    <article class="usecase anim anim-up">
+      <div class="usecase-media">
+        <img src="{{ case.image }}" alt="{{ case.image_alt }}" loading="lazy">
+      </div>
+      <div class="usecase-body">
+        <span class="usecase-sector">{{ case.sector }}</span>
+        <h3>{{ case.title }}</h3>
+        <div class="usecase-block">
+          <h4>{{ usecases.challenge_label }}</h4>
+          <p>{{ case.challenge }}</p>
+        </div>
+        <div class="usecase-block">
+          <h4>{{ usecases.solution_label }}</h4>
+          <p>{{ case.solution }}</p>
+        </div>
+        <div class="usecase-block is-outcome">
+          <h4>{{ usecases.outcome_label }}</h4>
+          <p>{{ case.outcome }}</p>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="finalcta">
+  <div class="container">
+    <div class="finalcta-inner anim anim-up">
+      <h2>{{ usecases.cta_title }}</h2>
+      <div class="finalcta-actions">
+        <a href="{{ usecases.cta_url }}" class="btn btn-white" style="cursor:pointer">{{ usecases.cta_title }} &#8594;</a>
+      </div>
+    </div>
+  </div>
+</section>

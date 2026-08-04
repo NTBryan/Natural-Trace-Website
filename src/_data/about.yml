@@ -1,37 +1,72 @@
-# About page content — editable via Decap CMS
+# About Us page — Clean Prototype Copy Guide 2026
 
-# Hero section
-label: "Who We Are"
-title: "Science-Driven Integrity for Natural Products"
-intro: "Natural Trace is a molecular diagnostics company specializing in authenticity verification for the nutraceutical and natural products supply chain. We combine quantitative PCR technology with standardized data pipelines to deliver results that regulators, manufacturers, and consumers can rely on."
-hero_image_alt: "Scientist analyzing samples under laboratory conditions"
+# ─── Hero ───
+label: "About Natural Trace"
+title: "Protecting the Future of Premium Ingredients"
+subtitle: "Every premium ingredient should be able to prove its authenticity."
+intro: "Natural Trace helps food and nutraceutical companies protect the value of their premium ingredients through in-product authentication."
+disciplines: "Life science · Food Science · Bioinformatics"
+intro_secondary: "Combining food science, molecular biology and digital technology, we help businesses verify authenticity, strengthen customer trust and protect commercial value throughout global supply chains."
+hero_image: "https://images.unsplash.com/photo-1651525670054-279c154bc3b6?w=900&q=80"
+hero_image_alt: "Automated food production line"
+hero_cta: "Meet Our Team"
+hero_cta_url: "/team/"
 
-# Highlights (capability cards below intro)
-highlights:
-  - title: "Molecular Precision"
-    description: "Species-level ID via validated molecular assays"
-  - title: "Standardized Reporting"
-    description: "Automated data pipelines, zero manual processing"
-  - title: "Natural Products Focus"
-    description: "Purpose-built for nutraceutical matrices"
-  - title: "Supply Chain Trust"
-    description: "End-to-end traceability with full Certificate of Authenticity"
+# ─── Our Story ───
+story_label: "Our Story"
+story_title: "From a Simple Question to a New Approach"
+story_question: "What happens to an ingredient's identity once it leaves the control of the company that created it?"
+story_body:
+  - "Behind every differentiated ingredient is significant investment in research, formulation, manufacturing, intellectual property, and customer trust. Yet once that ingredient enters a wider production network, proving that it is still present, and distinguishing it from generic alternatives, can become increasingly difficult."
+  - "That challenge inspired Natural Trace."
+  - "Founded in Singapore in 2021, Natural Trace set out to create a new approach to authentication: one in which a unique, verifiable identity is incorporated directly into the ingredient."
+  - "Today, our technology helps companies protect their ingredients, verify manufacturing sources, and investigate products when identity or presence is questioned."
 
-# Approach / mission section
-approach_label: "Our Approach"
-approach_title: "Tag. Trace. Trust."
-approach_subtitle: "Three pillars that define how we work with partners across the supply chain."
+# ─── Why We Exist ───
+why_label: "Why We Exist"
+why_title: "Science that Protects Commercial Value"
+why_body:
+  - "Global supply chains have become increasingly complex. Documentation records what should have happened. Natural Trace adds evidence that proves it."
+  - "We exist to help companies protect the value behind differentiated ingredients through objective, science-based verification."
+  - "By combining in-product identity with proprietary laboratory detection, Natural Trace gives businesses an additional way to protect intellectual property, strengthen manufacturing control, and support confidence across commercial relationships."
 
-values:
-  - title: "Tag"
-    description: "Products are tagged at source with an inactivated probiotic marker -- a food-grade, non-GMO molecular signature embedded directly into the formulation."
-    image: "https://images.unsplash.com/photo-1563213126-a4273aed2016?w=600&q=80"
-    image_alt: "Probiotic bacteria under electron microscope"
-  - title: "Trace"
-    description: "At any downstream checkpoint, our NaturalDetect™ platform reads the molecular tag and generates a standardized, statistical result."
-    image: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=600&q=80"
-    image_alt: "Researcher examining PCR results on monitor"
-  - title: "Trust"
-    description: "Branded Certificates of Analysis with full statistical backing provide the defensible, regulatory-grade evidence your supply chain demands."
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80"
-    image_alt: "Professional reviewing analytical certificate report"
+# ─── Vision & Mission ───
+vision_label: "Our Vision"
+vision_text: "A world where every great product comes with trusted provenance story"
+mission_label: "Our Mission"
+mission_text: "To become the global leader for in-product authentication for food and nutraceutical ingredients."
+mission_body: "By making authentication practical and commercially scalable, we help businesses protect premium ingredients, verify authorised manufacturing and build trust throughout global supply chains."
+
+# ─── What Makes Us Different ───
+different_label: "What Makes Us Different"
+different_title: "Identity That Stays With the Product"
+different_cards:
+  - title: "Identity Built into the Ingredient"
+    body: "Traditional authentication relies on packaging, labels or paperwork that can become separated from the product. NaturalTag™ becomes part of the ingredient itself, allowing identity to travel with the product throughout manufacturing and distribution."
+  - title: "Branded Ingredient Differentiation"
+    body: "Many premium ingredients become difficult to distinguish once incorporated into finished products. Natural Trace gives ingredients a unique, detectable identity that allows companies to objectively verify the presence of their branded ingredient downstream."
+  - title: "Downstream Verification"
+    body: "Conventional analytical testing can confirm chemical composition but often cannot verify the specific commercial source of an ingredient. Natural Trace enables objective verification of authorised ingredients throughout the supply chain using proprietary detection methods."
+  - title: "Production-Source Identification"
+    body: "Knowing what is in a product is only part of the picture. Natural Trace can help distinguish authorised manufacturing from unauthorised production by assigning unique authentication identities to approved manufacturing sources."
+
+# ─── Why Customers Choose Natural Trace ───
+# CLAIM REVIEW: every bullet in this block was flagged in the 30 July copy review
+# and has NOT been cleared. Do not publish without sign-off. See the change log.
+choose_label: "Why Customers Choose Natural Trace"
+choose_title: "Built for Industry, Built for Confidence"
+choose_groups:
+  - title: "Designed for Industry"
+    items:
+      - "100% natural, food-grade authentication"          # CLAIM REVIEW
+      - "Compatible with existing manufacturing"
+      - "Added at parts-per-million with no impact on taste, appearance or functionality."   # CLAIM REVIEW
+      - "Validated across 20+ food and ingredient matrices."                                 # CLAIM REVIEW
+  - title: "Built for Confidence"
+    items:
+      - "Manufactured in ISO 22000, SFA and FDA-registered facilities"   # CLAIM REVIEW
+      - "Self-determined FDA GRAS status"                               # CLAIM REVIEW
+      - "Detectable after commercial manufacturing using proprietary PCR methods."
+
+cta_title: "Request a Compatibility Assessment"
+cta_url: "/contact/"

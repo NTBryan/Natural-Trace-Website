@@ -1,0 +1,21 @@
+# NaturalDetect™ — Clean Prototype Copy Guide 2026
+label: "Solutions"
+title: "NaturalDetect™"
+hero: "Verify Products with Scientific Confidence"
+intro: "NaturalDetect™ is a proprietary PCR-based laboratory test that confirms whether a product contains the authentic NaturalTag™ signature."
+hero_image: "https://images.unsplash.com/photo-1710141530542-f792450e736e?w=900&q=80"
+hero_image_alt: "Bulk ingredient sacks awaiting verification in a warehouse"
+
+features_title: "NaturalDetect™ Features"
+features:
+  - "Rapid laboratory verification"
+  - "Objective scientific evidence"
+  - "High PCR analytical sensitivity"
+  - "Client ready Certificate of Analysis reporting"                                                # CLAIM REVIEW — canon is Certificate of Authenticity
+  - "Testing available at Natural Trace Singapore Lab or partnered third-party laboratories"
+  - "Standards compliance: ISO 22174, ISO 17025, ISO20837, ISO21571 and MIQE 2.0 Guidelines"        # CLAIM REVIEW — 17025 and MIQE 2.0 were retired 30 July
+
+cta_primary: "Request a Compatibility Assessment"
+cta_primary_url: "/contact/"
+cta_secondary: "Learn more about testing"
+cta_secondary_url: "/faq/"

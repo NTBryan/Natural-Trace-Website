@@ -1,123 +1,72 @@
+# FAQ — Clean Prototype Copy Guide 2026
+section_label: "FAQ"
 title: "Frequently Asked Questions"
-subtitle: "Everything you need to know about NaturalTag™ integration, safety, detection, and pricing."
-section_label: "SUPPORT"
-cta_title: "Still Have Questions?"
-cta_text: "Our team is ready to discuss your specific requirements and walk you through the process."
+subtitle: "Regulatory status, safety, integration and detection — answered."
+
 categories:
-  - id: general
+  - id: "regulatory"
     label: "Regulatory"
-  - id: technical
-    label: "Safety & Composition"
-  - id: integration
+  - id: "safety"
+    label: "Safety"
+  - id: "integration"
     label: "Integration"
-  - id: detection
-    label: "Detection & Security"
-  - id: commercial
-    label: "Cost & Commitment"
+  - id: "detection"
+    label: "Detection"
+
 questions:
-  - category: general
+  # ── Regulatory ──
+  - category: "regulatory"
     question: "Is NaturalTag™ approved for use in food products?"
-    answer: >-
-      NaturalTag™ is composed entirely of inactivated probiotic Lactobacillus
-      species that are already widely used in food production. These organisms
-      hold Generally Recognised as Safe (GRAS) status and are compatible with
-      major regulatory frameworks. We work with each client to confirm
-      compliance for their specific product category and target markets.
-  - category: general
+    # CLAIM REVIEW: "compatible with global food regulatory frameworks" was flagged 30 July
+    answer: "NaturalTag™ is composed entirely of inactivated probiotics that are already widely used in food and dietary supplement production. These inactivated probiotics are compatible with global food regulatory frameworks."
+  - category: "regulatory"
     question: "Does it meet Non-GMO requirements?"
-    answer: >-
-      Yes. NaturalTag™ uses naturally occurring organisms with no genetic
-      modification whatsoever. It is fully compatible with Non-GMO
-      certification standards and labelling requirements worldwide.
-  - category: general
+    answer: "Yes. NaturalTag™ uses naturally occurring organisms with no genetic modification. Fully compatible with Non-GMO certification standards."
+  - category: "regulatory"
     question: "Which countries or regions can I use it in?"
-    answer: >-
-      Our probiotic-based markers use organisms with established food-safety
-      status across the EU, US, APAC, and most other jurisdictions. During
-      onboarding, we confirm regulatory alignment for your specific product
-      and destination markets.
-  - category: technical
-    question: "What exactly is in the tag?"
-    answer: >-
-      NaturalTag™ is a precisely formulated blend of inactivated (non-living)
-      probiotic markers from Lactobacillus species. The organisms are
-      heat-killed before formulation. There are no synthetic chemicals, dyes,
-      or foreign substances.
-  - category: technical
-    question: "Will it affect the taste, texture, or shelf life of my product?"
-    answer: >-
-      No. NaturalTag™ is applied at trace concentrations and is undetectable
-      by sensory evaluation. It does not alter taste, colour, texture,
-      nutritional profile, or shelf life. Independent testing confirms zero
-      impact on product characteristics.
-  - category: technical
+    # CLAIM REVIEW: highest-risk item in the 30 July review. Contradicts the About Us page.
+    answer: "NaturalTag has established food-safety status across the EU, US, APAC, and many other jurisdictions."
+
+  # ── Safety ──
+  - category: "safety"
+    question: "What exactly is in the NaturalTag™?"
+    answer: "A proprietary formulated blend of inactivated (non-living) probiotics. No synthetic chemicals, dyes, or foreign substances."
+  - category: "safety"
+    question: "Will it affect taste, texture, or shelf life?"
+    # CLAIM REVIEW: sensory panel claim and "zero impact" absolute both flagged 30 July
+    answer: "No. Applied at trace parts-per-million concentrations, undetectable by sensory evaluation. Zero impact on product characteristics."
+  - category: "safety"
     question: "Is it safe for consumers with allergies?"
-    answer: >-
-      NaturalTag™ contains no common allergens. The Lactobacillus species used
-      are standard food-grade probiotics with extensive safety histories. We
-      provide full compositional data during onboarding for your regulatory
-      and allergen review.
-  - category: integration
+    answer: "Contains no common allergens. Standard food-grade probiotics with extensive safety histories."
+
+  # ── Integration ──
+  - category: "integration"
     question: "Will I need to change my manufacturing process?"
-    answer: >-
-      No process changes required. NaturalTag™ is formulated directly into
-      your existing production workflow — it integrates at the mixing,
-      blending, or formulation stage. Our team designs the integration point
-      to fit your process, not the other way around.
-  - category: integration
+    answer: "NaturalTag integrates into existing mixing and formulation processes with minimal process disruption."
+  - category: "integration"
     question: "How long does onboarding take?"
-    answer: >-
-      Typical onboarding takes 4–6 weeks: formulation compatibility testing,
-      tag-assay pairing validation, and integration into your production line.
-      Pilot batches confirm everything works before full deployment.
-  - category: integration
-    question: "What about products with complex matrices — oils, powders, liquids?"
-    answer: >-
-      We have validated NaturalTag™ across multiple matrices including fresh
-      produce, supplements, oils, powders, and liquids. Each product type
-      receives a tailored formulation to ensure tag survival and detectability
-      through processing and storage.
-  - category: detection
-    question: "How is the tag detected downstream?"
-    answer: >-
-      Detection is performed using NaturalDetect™, our molecular analytical
-      pipeline. A small sample is collected at any point in the supply chain,
-      the molecular signature is extracted and the tag markers are identified
-      with high specificity. Results are automated — no subjective
-      interpretation.
-  - category: detection
-    question: "Can the tag be removed, transferred, or counterfeited?"
-    answer: >-
-      No. Because NaturalTag™ is embedded into the product matrix during
-      manufacturing, it cannot be washed off, scraped away, or transferred to
-      another product. The tag-assay pairing is proprietary, making
-      replication extremely difficult without access to both the formulation
-      and detection system.
-  - category: detection
+    answer: "Typical onboarding takes 4–6 weeks: compatibility testing, validation, and integration."
+  - category: "integration"
+    question: "Can it be used in complex matrices, such as oils, powders, and liquids?"
+    answer: "NaturalTag™ has been validated across multiple matrices."
+
+  # ── Detection ──
+  - category: "detection"
+    question: "How is the NaturalTag™ detected downstream?"
+    answer: "NaturalTag™ is detected by collecting a product sample and analysing it using our proprietary NaturalDetect™ test method. The test confirms whether the authentic NaturalTag™ signature is present with high specificity, providing objective results without the need for subjective interpretation."
+  - category: "detection"
+    question: "Can the NaturalTag™ be removed, transferred, or counterfeited?"
+    # CLAIM REVIEW: prohibited impossibility claim, retired 30 July
+    answer: "No. NaturalTag™ is incorporated directly into the product during manufacturing, becoming part of the product matrix. It cannot be replicated or removed."
+  - category: "detection"
     question: "What does a result look like?"
-    answer: >-
-      Each tested sample receives a clear determination: Authenticated or Not
-      Authenticated. A Certificate of Authenticity is generated automatically
-      through NaturalCloud™, with full audit trail, signal data, and
-      batch-level traceability.
-  - category: commercial
-    question: "How is pricing structured?"
-    answer: >-
-      Pricing follows a razor-and-blade model: an initial integration fee
-      covers formulation and validation, then ongoing costs scale with
-      production volume. We scope pricing during the feasibility phase so you
-      have full clarity before committing.
-  - category: commercial
-    question: "Is there a minimum contract length?"
-    answer: >-
-      We offer flexible engagement terms. Most clients start with a pilot
-      phase before moving to a longer-term agreement. Specifics depend on
-      product type and volume — we discuss this early in the conversation.
-  - category: commercial
-    question: "What ROI can I expect?"
-    answer: >-
-      NaturalTag™ protects brand value, deters fraud, and provides
-      evidence-grade traceability for regulatory and customer audits. Clients
-      in industries facing counterfeiting, origin disputes, or compliance
-      pressure see the strongest returns. We can walk through a value case
-      specific to your situation.
+    # CLAIM REVIEW: the calling pipeline has a third verdict (Inconclusive); "certificate of analysis" should be Certificate of Authenticity
+    answer: "NaturalDetect™ provides a clear binary result: Authenticated or Not Authenticated. A certificate of analysis is generated automatically via NaturalCloud™."
+  - category: "detection"
+    question: "For how long can the NaturalTag™ be detected?"
+    # CLAIM REVIEW: longest completed study window is far shorter than typical shelf life
+    answer: "NaturalTag™ remains detectable throughout the standard shelf life of tagged products."
+
+cta_title: "Still Have Questions?"
+cta_text: "Our team can walk you through compatibility, validation and reporting for your specific product."
+cta_button: "Talk to our team"

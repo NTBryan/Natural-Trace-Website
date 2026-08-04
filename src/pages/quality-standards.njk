@@ -1,53 +1,18 @@
 ---
-layout: base.njk
-title: "Quality Standards"
-summary: "Our testing methods align with ISO 22174, ISO 20837, and MIQE guidelines for nucleic acid detection in food and natural products."
 permalink: /quality-standards/
+eleventyExcludeFromCollections: true
 ---
-
-<section class="qs-hero-section">
-  <div class="qs-glow"></div>
-  <div class="container">
-    <a class="privacy-back" href="{{ quality_standards.hero.back_link_href }}" style="cursor:pointer">{{ quality_standards.hero.back_link_text | safe }}</a>
-    <div class="qs-hero">
-      <span class="section-label anim anim-up">{{ quality_standards.hero.section_label }}</span>
-      <h2 class="section-title anim anim-up delay-1" style="color:#fff">{{ quality_standards.hero.title }}</h2>
-      <p class="anim anim-up delay-2">{{ quality_standards.hero.subtitle | safe }}</p>
-    </div>
-  </div>
-</section>
-
-<section class="qs-standards">
-  <div class="container">
-    <div class="qs-grid">
-
-      {% for standard in quality_standards.standards %}
-      <div class="qs-card{% if loop.index % 2 == 0 %} qs-card-reverse{% endif %} anim anim-up delay-{% if loop.index % 2 == 1 %}1{% else %}2{% endif %}">
-        <div class="qs-card-img">
-          <img src="{{ standard.image_url }}" alt="{{ standard.image_alt }}" loading="lazy">
-        </div>
-        <div class="qs-card-body">
-          <span class="qs-tag">{{ standard.tag }}</span>
-          <h3>{{ standard.title | safe }}</h3>
-          <p class="qs-card-subtitle">{{ standard.subtitle | safe }}</p>
-          <p>{{ standard.description | safe }}</p>
-        </div>
-      </div>
-      {% endfor %}
-
-    </div>
-  </div>
-</section>
-
-<section class="qs-commitment">
-  <div class="container">
-    <div class="qs-commitment-inner anim anim-up">
-      <h3>{{ quality_standards.commitment.title }}</h3>
-      <p>{{ quality_standards.commitment.description }}</p>
-      <a href="{{ quality_standards.commitment.cta_href }}" class="btn btn-primary" style="cursor:pointer">{{ quality_standards.commitment.cta_text | safe }}</a>
-    </div>
-  </div>
-</section>
-</div>
-
-<!-- ====== PAGE: INDUSTRIES ====== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="0; url=/naturaldetect/">
+<link rel="canonical" href="{{ site.url }}/naturaldetect/">
+<meta name="robots" content="noindex">
+<title>Redirecting to NaturalDetect</title>
+</head>
+<body>
+<p>This page has moved. <a href="/naturaldetect/">Continue to NaturalDetect</a>.</p>
+<script>window.location.replace("/naturaldetect/");</script>
+</body>
+</html>

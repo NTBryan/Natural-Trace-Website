@@ -5,3 +5,7 @@ dist/
 dist*/
 build/
 .DS_Store
+_build*/
+_preview*/
+_pv/
+_to_delete/

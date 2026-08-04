@@ -25,7 +25,7 @@ permalink: /careers/
       {% if careers.positions | length %}
       {% for position in careers.positions %}
       <div style="background:#fff;border-radius:16px;border:1px solid #E5E7EB;padding:2rem;margin-bottom:1.5rem">
-        <h3 style="font-family:'Bebas Neue','Inter',sans-serif;font-size:1.3rem;color:var(--dark);margin-bottom:.5rem">{{ position.title }}</h3>
+        <h3 style="font-family:'Montserrat',sans-serif;font-size:1.3rem;color:var(--dark);margin-bottom:.5rem">{{ position.title }}</h3>
         <p style="font-size:.85rem;color:var(--sage);font-weight:600;margin-bottom:.75rem">{{ position.department }} &middot; {{ position.location }}</p>
         <p style="font-size:.92rem;color:var(--muted);line-height:1.7">{{ position.description | safe }}</p>
       </div>
@@ -33,7 +33,7 @@ permalink: /careers/
       {% else %}
       <div style="text-align:center;padding:4rem 2rem;background:#fff;border-radius:16px;border:1px solid #E5E7EB">
         <div style="font-size:2.5rem;margin-bottom:1rem;opacity:.4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
-        <h3 style="font-family:'Bebas Neue','Inter',sans-serif;font-size:1.4rem;color:var(--dark);margin-bottom:.75rem">{{ careers.no_openings.title }}</h3>
+        <h3 style="font-family:'Montserrat',sans-serif;font-size:1.4rem;color:var(--dark);margin-bottom:.75rem">{{ careers.no_openings.title }}</h3>
         <p style="font-size:.92rem;color:var(--muted);max-width:480px;margin:0 auto;line-height:1.7">{{ careers.no_openings.description }}</p>
       </div>
       {% endif %}
@@ -43,7 +43,7 @@ permalink: /careers/
     <div class="careers-panel" id="careers-internship">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start">
         <div>
-          <h3 style="font-family:'Bebas Neue','Inter',sans-serif;font-size:1.3rem;color:var(--dark);margin-bottom:1rem">{{ careers.internship.title | safe }}</h3>
+          <h3 style="font-family:'Montserrat',sans-serif;font-size:1.3rem;color:var(--dark);margin-bottom:1rem">{{ careers.internship.title | safe }}</h3>
           <p style="font-size:.92rem;color:var(--muted);line-height:1.8;margin-bottom:1.5rem">{{ careers.internship.description | safe }}</p>
           <div style="font-size:.88rem;color:var(--muted);line-height:1.9">
             <p style="font-weight:600;color:var(--dark);margin-bottom:.5rem">{{ careers.internship.expectations_label }}</p>
@@ -100,6 +100,3 @@ permalink: /careers/
 
   </div>
 </section>
-</div>
-
-<!-- ====== PAGE: PRIVACY ====== -->

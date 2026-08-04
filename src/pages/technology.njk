@@ -1,74 +1,18 @@
 ---
-layout: base.njk
-title: "Technology"
-summary: "Our detection platform combines quantitative PCR, digital PCR, and Sanger sequencing with a proprietary confidence-calling algorithm for defensible results."
 permalink: /technology/
+eleventyExcludeFromCollections: true
 ---
-
-<section class="technology">
-  <div class="tech-glow"></div>
-  <div class="tech-glow-2"></div>
-  <div class="container">
-    <div class="tech-grid">
-      <div class="tech-content">
-        <span class="section-label anim anim-right">{{ technology.hero_label }}</span>
-        <h2 class="section-title anim anim-right delay-1">{{ technology.title }}</h2>
-        <p class="section-subtitle anim anim-right delay-2">{{ technology.subtitle }}</p>
-        <div class="tech-features">
-          {% for feature in technology.hero_features %}
-          <div class="tech-feature anim anim-right delay-{{ loop.index }}"><div class="tech-feature-num">{{ feature.num }}</div><div><h4>{{ feature.title }}</h4><p>{{ feature.description }}</p></div></div>
-          {% endfor %}
-        </div>
-      </div>
-      <div class="tech-image-wrapper anim anim-left delay-2">
-        <img src="{{ technology.hero_image_src }}" alt="{{ technology.hero_image_alt }}" loading="lazy">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="pipeline">
-  <div class="container">
-    <div class="pipeline-header">
-      <span class="section-label anim anim-up">{{ technology.pipeline_label }}</span>
-      <h2 class="section-title anim anim-up delay-1" style="color:#fff">{{ technology.pipeline_title }}</h2>
-    </div>
-    <div class="pipeline-steps">
-      {% for step in technology.pipeline_steps %}
-      <div class="pipeline-step anim anim-up delay-{{ loop.index }}"><div class="pipeline-step-num">{{ step.num }}</div><h3>{{ step.title }}</h3><p>{{ step.description }}</p></div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="detection-methods">
-  <div class="container">
-    <div class="detection-methods-header">
-      <span class="section-label anim anim-up">{{ technology.detection_label }}</span>
-      <h2 class="section-title anim anim-up delay-1" style="color:#fff">{{ technology.detection_title }}</h2>
-      <p class="section-subtitle anim anim-up delay-2">{{ technology.detection_subtitle }}</p>
-    </div>
-    <div class="detection-methods-grid">
-      {% for method in technology.detection_methods %}
-      <div class="method-card {{ method.tier | lower }} anim anim-up delay-{{ loop.index }}">
-        <span class="method-tier {{ method.tier | lower }}">{{ method.tier }}</span>
-        <div class="method-icon"><img src="{{ method.image_src }}" alt="{{ method.image_alt }}"></div>
-        <h3>{{ method.title }}</h3>
-        <p class="method-desc">{{ method.description }}</p>
-        <ul>
-          {% for cap in method.capabilities %}
-          <li>{{ cap }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-      {% endfor %}
-    </div>
-    <div class="detection-algo-note anim anim-up delay-3">
-      <p>{{ technology.algo_note | safe }}</p>
-    </div>
-  </div>
-</section>
-
-</div>
-
-<!-- ====== PAGE: NATURALCLOUD ====== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="0; url=/naturaldetect/">
+<link rel="canonical" href="{{ site.url }}/naturaldetect/">
+<meta name="robots" content="noindex">
+<title>Redirecting to NaturalDetect</title>
+</head>
+<body>
+<p>This page has moved. <a href="/naturaldetect/">Continue to NaturalDetect</a>.</p>
+<script>window.location.replace("/naturaldetect/");</script>
+</body>
+</html>

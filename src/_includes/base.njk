@@ -3,20 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{% if title %}{{ title }} | {% endif %}Natural Trace — Tag. Trace. Trust.</title>
-{% if summary %}<meta name="description" content="{{ summary }}">{% endif %}
+<title>{% if title %}{{ title }} | {% endif %}Natural Trace — In-Product Authentication for Food &amp; Nutraceutical Ingredients</title>
+<meta name="description" content="{{ summary or site.default_summary }}">
 <meta property="og:title" content="{% if title %}{{ title }} | {% endif %}Natural Trace">
-{% if summary %}<meta property="og:description" content="{{ summary }}">{% endif %}
+<meta property="og:description" content="{{ summary or site.default_summary }}">
 <meta property="og:type" content="{% if layout == 'layouts/post.njk' %}article{% else %}website{% endif %}">
-<meta property="og:url" content="https://natural-trace.netlify.app{{ page.url }}">
-{% if image %}<meta property="og:image" content="https://natural-trace.netlify.app{{ image }}">{% endif %}
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+{% if image %}<meta property="og:image" content="{{ site.url }}{{ image }}">{% endif %}
 <meta property="og:site_name" content="Natural Trace">
 <meta name="twitter:card" content="summary_large_image">
 {% if layout == "layouts/post.njk" and author %}<meta name="author" content="{{ author }}">{% endif %}
-<link rel="canonical" href="https://natural-trace.netlify.app{{ page.url }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
 <link rel="icon" type="image/png" href="/assets/logos/NT icon without logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/styles.css">
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>

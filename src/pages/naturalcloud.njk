@@ -1,92 +1,40 @@
 ---
 layout: base.njk
-title: "NaturalCloud"
-summary: "NaturalCloud provides a secure audit trail dashboard for tracking tagging, testing, and certification across your supply chain."
+title: "NaturalCloud™"
+summary: "NaturalCloud™ securely stores authentication records and NaturalDetect™ test results, giving companies a centralized view of verification activity."
 permalink: /naturalcloud/
 ---
 
-<section class="nc-hero-section">
-  <div class="nc-glow"></div>
-  <div class="nc-glow-2"></div>
+<section class="challenge" style="padding-top:9rem">
   <div class="container">
-    <a class="privacy-back" href="{{ naturalcloud.back_link_url }}" style="cursor:pointer">{{ naturalcloud.back_link_text }}</a>
-    <div class="nc-hero nc-hero-grid">
-      <div class="nc-hero-content">
-        <span class="section-label anim anim-right">{{ naturalcloud.hero_label }}</span>
-        <h2 class="section-title anim anim-right delay-1" style="color:#fff">{{ naturalcloud.title }}</h2>
-        <p class="anim anim-right delay-2">{{ naturalcloud.hero_description }}</p>
+    <div class="challenge-grid">
+      <div class="challenge-text">
+        <span class="section-label anim anim-up">{{ naturalcloud.label }}</span>
+        <h2 class="section-title anim anim-up delay-1">{{ naturalcloud.title }}</h2>
+        <p class="section-subtitle anim anim-up delay-2">{{ naturalcloud.hero }}</p>
+        <p class="challenge-lead anim anim-up delay-3" style="margin-top:1.5rem">{{ naturalcloud.intro }}</p>
+        <p class="challenge-sub anim anim-up delay-3">{{ naturalcloud.features_title }}</p>
+        <ul class="challenge-list anim anim-up delay-4">
+          {% for item in naturalcloud.features %}<li>{{ item }}</li>{% endfor %}
+        </ul>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem">
+          <a href="{{ naturalcloud.cta_primary_url }}" class="btn btn-primary anim anim-up delay-4" style="cursor:pointer">{{ naturalcloud.cta_primary }} &#8594;</a>
+        </div>
       </div>
-      <div class="nc-hero-logo anim anim-left delay-2">
-        <img src="{{ naturalcloud.hero_image_src }}" alt="{{ naturalcloud.hero_image_alt }}" loading="lazy">
+      <div class="challenge-media anim anim-left delay-2">
+        <img src="{{ naturalcloud.hero_image }}" alt="{{ naturalcloud.hero_image_alt }}" loading="lazy">
       </div>
     </div>
   </div>
 </section>
 
-<section class="nc-pipeline">
+<section class="finalcta">
   <div class="container">
-    <div class="nc-pipeline-grid">
-      {% for card in naturalcloud.pipeline_cards %}
-      <div class="nc-card{% if loop.index is even %} nc-card-reverse{% endif %} anim anim-up delay-{{ loop.index }}">
-        <div class="nc-card-img">
-          <img src="{{ card.image_src }}" alt="{{ card.image_alt }}" loading="lazy">
-        </div>
-        <div class="nc-card-body">
-          <span class="nc-tag">{{ card.tag }}</span>
-          <h3>{{ card.title }}</h3>
-          <p class="nc-card-subtitle">{{ card.subtitle }}</p>
-          <p>{{ card.description }}</p>
-        </div>
+    <div class="finalcta-inner anim anim-up">
+      <h2>{{ naturalcloud.cta_secondary }}</h2>
+      <div class="finalcta-actions">
+        <a href="{{ naturalcloud.cta_primary_url }}" class="btn btn-white" style="cursor:pointer">{{ naturalcloud.cta_primary }} &#8594;</a>
       </div>
-      {% endfor %}
     </div>
   </div>
 </section>
-
-<section class="nc-features-section">
-  <div class="nc-glow"></div>
-  <div class="container">
-    <div class="nc-features-header">
-      <span class="section-label anim anim-up">{{ naturalcloud.features_label }}</span>
-      <h2 class="section-title anim anim-up delay-1" style="color:#fff">{{ naturalcloud.features_title }}</h2>
-      <p class="section-subtitle anim anim-up delay-2" style="color:rgba(255,255,255,.55);margin:0 auto">{{ naturalcloud.features_subtitle }}</p>
-    </div>
-
-    <div class="nc-features-grid">
-      {% for feature in naturalcloud.features %}
-      {% set d = (loop.index0 % 3) + 1 %}
-      <div class="nc-feature-card anim anim-up delay-{{ d }}">
-        <div class="nc-feature-card-img">
-          <img src="{{ feature.image_src }}" alt="{{ feature.image_alt }}" loading="lazy">
-        </div>
-        <div class="nc-feature-card-body">
-          <h3>{{ feature.title }}</h3>
-          <p>{{ feature.description }}</p>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-
-    <div class="nc-stats">
-      {% for stat in naturalcloud.stats %}
-      <div class="nc-stat anim anim-up delay-{{ loop.index }}">
-        <p><strong>{{ stat.strong }}</strong>{{ stat.text }}</p>
-      </div>
-      {% endfor %}
-    </div>
-
-  </div>
-</section>
-
-<section class="nc-cta">
-  <div class="container">
-    <div class="nc-cta-inner anim anim-up">
-      <p>{{ naturalcloud.cta_text }}</p>
-      <a href="{{ naturalcloud.cta_button_url }}" class="btn btn-primary" style="cursor:pointer">{{ naturalcloud.cta_button_text }}</a>
-    </div>
-  </div>
-</section>
-
-</div>
-
-<!-- ====== PAGE: QUALITY STANDARDS ====== -->

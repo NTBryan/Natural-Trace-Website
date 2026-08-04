@@ -1,5 +1,5 @@
 <section class="hero">
-  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-bg" id="heroBg" style="background-image:url('{{ home.hero_bg_image }}')"></div>
   <div class="hero-overlay"></div>
   <div class="hero-visual"><img src="{{ home.hero_image }}" alt="{{ home.hero_image_alt }}" loading="eager"></div>
   <div class="hero-content">
@@ -14,14 +14,101 @@
       <a href="{{ home.hero_cta_url }}" class="btn btn-primary" style="cursor:pointer">{{ home.hero_cta }} &#8594;</a>
       <a href="{{ home.hero_cta_secondary_url }}" class="btn btn-outline" style="cursor:pointer">{{ home.hero_cta_secondary }}</a>
     </div>
-    <div class="hero-stats">
-      {% for stat in home.hero_stats %}
-      <div class="hero-stat"><h3>{{ stat.title }}</h3><p>{{ stat.description }}</p></div>
+    <div class="hero-points">
+      {% for point in home.hero_points %}<span class="hero-point">{{ point }}</span>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Section 2 — The Challenge -->
+<section class="challenge" id="challenge">
+  <div class="container">
+    <div class="challenge-grid">
+      <div class="challenge-text">
+        <span class="section-label anim anim-up">{{ home.challenge_label }}</span>
+        <h2 class="section-title anim anim-up delay-1">{{ home.challenge_title }}</h2>
+        <p class="challenge-lead anim anim-up delay-2">{{ home.challenge_lead }}</p>
+        <p class="challenge-sub anim anim-up delay-2">{{ home.challenge_list_label }}</p>
+        <ul class="challenge-list anim anim-up delay-3">
+          {% for item in home.challenge_list %}<li>{{ item }}</li>{% endfor %}
+        </ul>
+        <p class="challenge-close anim anim-up delay-4">{{ home.challenge_close }}</p>
+      </div>
+      <div class="challenge-media anim anim-left delay-2">
+        <img src="{{ home.challenge_image }}" alt="{{ home.challenge_image_alt }}" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 3 — Value Proposition -->
+<section class="valueprop" id="value">
+  <div class="container">
+    <div class="vp-head">
+      <span class="section-label anim anim-up">{{ home.vp_label }}</span>
+      <h2 class="section-title anim anim-up delay-1">{{ home.vp_title }}</h2>
+      <p class="section-subtitle anim anim-up delay-2">{{ home.vp_subtitle }}</p>
+    </div>
+    <div class="vp-grid">
+      {% for card in home.vp_cards %}
+      <article class="vp-card anim anim-up delay-{{ loop.index }}">
+        <span class="vp-num">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+        <h3>{{ card.title }}</h3>
+        <div class="vp-block">
+          <span class="vp-block-label">{{ home.vp_problem_label }}</span>
+          <p>{{ card.problem }}</p>
+        </div>
+        <div class="vp-block is-value">
+          <span class="vp-block-label">{{ home.vp_value_label }}</span>
+          <p>{{ card.value }}</p>
+        </div>
+      </article>
       {% endfor %}
     </div>
   </div>
 </section>
 
+<!-- Section 4 — How It Works -->
+<section class="howitworks" id="how-it-works">
+  <div class="container">
+    <div class="how-head">
+      <span class="section-label anim anim-up">{{ home.how_label }}</span>
+      <h2 class="section-title anim anim-up delay-1">{{ home.how_title }}</h2>
+    </div>
+    <div class="how-grid">
+      {% for step in home.how_steps %}
+      <div class="how-step anim anim-up delay-{{ loop.index }}">
+        <div class="how-step-num">{{ step.num }}</div>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="how-features anim anim-up delay-4">
+      {% for feature in home.how_features %}<span class="how-feature">{{ feature }}</span>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Section 5 — Industry Tiles -->
+<section class="home-industries" id="industries">
+  <div class="container">
+    <div class="industries-header">
+      <span class="section-label anim anim-up">{{ home.industries_label }}</span>
+      <h2 class="section-title anim anim-up delay-1">{{ home.industries_title }}</h2>
+    </div>
+    <div class="industries-grid">
+      {% for industry in home.industry_tiles %}
+      <a class="industry-card anim anim-scale delay-{{ loop.index }}" href="{{ industry.url }}">
+        <img src="{{ industry.image }}" alt="{{ industry.image_alt }}" loading="lazy">
+        <div class="industry-card-overlay"><h3>{{ industry.name }}</h3><p>{{ industry.description }}</p></div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Partners Trust Bar -->
 <div class="trust-bar">
   <div class="container">
     <div class="trust-bar-inner">
@@ -35,26 +122,19 @@
   </div>
 </div>
 
-<section class="mission">
+<!-- Final Call to Action -->
+<section class="finalcta">
   <div class="container">
-    <div style="text-align:center;margin-bottom:1rem">
-      <span class="section-label anim anim-up">{{ home.mission_label }}</span>
-      <h2 class="section-title anim anim-up delay-1">{{ home.mission_title }}</h2>
-    </div>
-    <div class="mission-grid">
-      {% for card in home.mission_cards %}
-      <div class="mission-card anim anim-up delay-{{ loop.index }}">
-        <img class="mission-card-img" src="{{ card.image }}" alt="{{ card.alt }}" loading="lazy">
-        <div class="mission-card-body">
-          <h3>{{ card.title }}</h3>
-          <p>{{ card.description }}</p>
-        </div>
+    <div class="finalcta-inner anim anim-up">
+      <h2>{{ home.final_cta_title }}</h2>
+      <p>{{ home.final_cta_text }}</p>
+      <div class="finalcta-actions">
+        <a href="{{ home.final_cta_primary_url }}" class="btn btn-white" style="cursor:pointer">{{ home.final_cta_primary }} &#8594;</a>
+        <a href="{{ home.final_cta_secondary_url }}" class="btn btn-ghost" style="cursor:pointer">{{ home.final_cta_secondary }}</a>
       </div>
-      {% endfor %}
     </div>
   </div>
 </section>
-
 
 <!-- Compatibility Quiz -->
 <section class="compat-section">

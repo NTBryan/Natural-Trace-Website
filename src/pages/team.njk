@@ -8,9 +8,10 @@ permalink: /team/
 <section class="privacy-page" style="background:var(--offwhite)">
   <div class="container">
     <a class="privacy-back" href="/about/">&#8592; Back to About</a>
-    <div style="text-align:center;margin-bottom:3rem">
-      <span class="section-label">The People Behind Natural Trace</span>
-      <h2 class="section-title">Our Team</h2>
+    <div style="text-align:center;margin-bottom:3rem;max-width:760px;margin-left:auto;margin-right:auto">
+      <span class="section-label">{{ team.leadership_label }}</span>
+      <h2 class="section-title">{{ team.hero_title }}</h2>
+      <p class="section-subtitle" style="margin:0 auto">{{ team.hero_subtitle }}</p>
     </div>
     <div class="team-grid">
       {% for member in team.members %}{% if member.type == "leadership" %}
@@ -27,7 +28,7 @@ permalink: /team/
 
     <div style="text-align:center;margin:4rem 0 2rem">
       <span class="section-label">Guidance &amp; Expertise</span>
-      <h2 class="section-title" style="font-size:clamp(1.6rem,3vw,2.2rem)">Advisors</h2>
+      <h2 class="section-title" style="font-size:clamp(1.5rem,2.8vw,2rem)">{{ team.advisors_label }}</h2>
     </div>
     <div class="team-grid advisor-grid">
       {% for member in team.members %}{% if member.type == "advisor" %}
@@ -63,3 +64,14 @@ permalink: /team/
 var teamData = {{ team.members | dump | safe }};
 var basePrefix = "{{ sitePathPrefix }}";
 </script>
+
+<section class="finalcta">
+  <div class="container">
+    <div class="finalcta-inner anim anim-up">
+      <h2>{{ team.cta_text }}</h2>
+      <div class="finalcta-actions">
+        <a href="{{ team.cta_url }}" class="btn btn-white" style="cursor:pointer">Request a Compatibility Assessment &#8594;</a>
+      </div>
+    </div>
+  </div>
+</section>

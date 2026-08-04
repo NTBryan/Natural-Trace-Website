@@ -1,50 +1,18 @@
 ---
-layout: base.njk
-title: "Services"
-summary: "Origin verification, product authentication, and supply chain traceability services using food-grade molecular tagging and standardized detection."
 permalink: /services/
+eleventyExcludeFromCollections: true
 ---
-
-<section class="services">
-  <div class="container">
-    <div class="services-header">
-      <span class="section-label anim anim-up">{{ services.label }}</span>
-      <h2 class="section-title anim anim-up delay-1">{{ services.title }}</h2>
-      <p class="section-subtitle anim anim-up delay-2">{{ services.subtitle }}</p>
-    </div>
-    <div class="services-grid">
-      {% for service in services.services %}
-      <div class="service-card anim anim-up delay-{{ loop.index }}">
-        <div class="service-card-img-wrap"><img class="service-card-img" src="{{ service.image }}" alt="{{ service.image_alt }}" loading="lazy"></div>
-        <div class="service-card-body">
-          <h3>{{ service.title }}</h3>
-          <p>{{ service.description }}</p>
-          <a href="{{ service.link_url }}" class="service-card-link" style="cursor:pointer">{{ service.link_text }} &#8594;</a>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section style="padding:5rem 0;background:var(--offwhite)">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:3rem">
-      <span class="section-label anim anim-up">{{ services.pipeline_label }}</span>
-      <h2 class="section-title anim anim-up delay-1">{{ services.pipeline_title }}</h2>
-      <p class="section-subtitle anim anim-up delay-2" style="margin:0 auto">{{ services.pipeline_subtitle }}</p>
-    </div>
-    <div class="pipeline-steps" style="background:none">
-      {% for step in services.pipeline_steps %}
-      <div style="text-align:center;padding:2rem 1rem;background:#fff;border-radius:16px;box-shadow:var(--shadow);transition:transform .4s" class="anim anim-up delay-{{ loop.index }}" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
-        <div style="width:56px;height:56px;margin:0 auto 1.25rem;background:linear-gradient(135deg,var(--sage),var(--sage-light));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue','Inter',sans-serif;font-size:1.3rem;font-weight:700;color:#fff">{{ step.number }}</div>
-        <h3 style="font-family:'Inter',sans-serif;font-size:.95rem;font-weight:700;margin-bottom:.5rem">{{ step.title }}</h3>
-        <p style="font-size:.82rem;color:var(--muted);max-width:200px;margin:0 auto">{{ step.description | safe }}</p>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-</div>
-
-<!-- ====== PAGE: NATURALTAG ====== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="0; url=/naturaltag/">
+<link rel="canonical" href="{{ site.url }}/naturaltag/">
+<meta name="robots" content="noindex">
+<title>Redirecting to Solutions</title>
+</head>
+<body>
+<p>This page has moved. <a href="/naturaltag/">Continue to Solutions</a>.</p>
+<script>window.location.replace("/naturaltag/");</script>
+</body>
+</html>

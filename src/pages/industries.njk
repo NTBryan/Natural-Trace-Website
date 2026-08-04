@@ -1,20 +1,20 @@
 ---
 layout: base.njk
 title: "Industries"
-summary: "Molecular traceability solutions for nutraceuticals, food ingredients, supplements, and natural product supply chains."
+summary: "In-product authentication for nutraceuticals and dietary supplements, branded ingredients, functional foods and agri-food supply chains."
 permalink: /industries/
 ---
 
-<section class="industries">
+<section class="home-industries" style="padding-top:9rem">
   <div class="container">
     <div class="industries-header">
       <span class="section-label anim anim-up">{{ industries.label }}</span>
       <h2 class="section-title anim anim-up delay-1">{{ industries.title }}</h2>
-      <p class="section-subtitle anim anim-up delay-2">{{ industries.subtitle }}</p>
+      <p class="section-subtitle anim anim-up delay-2" style="margin:0 auto">{{ industries.subtitle }}</p>
     </div>
     <div class="industries-grid">
       {% for industry in industries.industries %}
-      <div class="industry-card anim anim-scale delay-{{ loop.index }}">
+      <div class="industry-card anim anim-scale delay-{{ loop.index }}" id="{{ industry.id }}">
         <img src="{{ industry.image }}" alt="{{ industry.image_alt }}" loading="lazy">
         <div class="industry-card-overlay"><h3>{{ industry.name }}</h3><p>{{ industry.description }}</p></div>
       </div>
@@ -23,22 +23,15 @@ permalink: /industries/
   </div>
 </section>
 
-<section class="cta-section">
-  <div class="cta-bg"></div>
-  <div class="cta-shape cta-shape-1"></div>
-  <div class="cta-shape cta-shape-2"></div>
+<section class="finalcta">
   <div class="container">
-    <div class="cta-inner">
-      <span class="section-label anim anim-up">{{ industries.cta_label }}</span>
-      <h2 class="anim anim-up delay-1">{{ industries.cta_title }}</h2>
-      <p class="anim anim-up delay-2">{{ industries.cta_description }}</p>
-      <div class="cta-actions anim anim-up delay-3">
+    <div class="finalcta-inner anim anim-up">
+      <h2>{{ industries.cta_title }}</h2>
+      <p>{{ industries.cta_description }}</p>
+      <div class="finalcta-actions">
         <a href="{{ industries.cta_button_primary_url }}" class="btn btn-white" style="cursor:pointer">{{ industries.cta_button_primary_text }} &#8594;</a>
         <a href="{{ industries.cta_button_secondary_url }}" class="btn btn-ghost" style="cursor:pointer">{{ industries.cta_button_secondary_text }}</a>
       </div>
     </div>
   </div>
 </section>
-</div>
-
-<!-- ====== PAGE: CONTACT ====== -->

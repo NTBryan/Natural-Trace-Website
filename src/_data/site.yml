@@ -1,0 +1,7 @@
+# Site-wide settings — editable via Decap CMS
+name: "Natural Trace"
+tagline: "In-Product Authentication for Food & Nutraceutical Ingredients"
+# Canonical origin used for canonical links and Open Graph tags.
+# Change this to https://natural-trace.com when the domain is cut over.
+url: "https://ntbryan.github.io/Natural-Trace-Website"
+default_summary: "Natural Trace is the in-product authentication platform for food and nutraceutical ingredients. Protect branded ingredients, confirm authorised manufacturing and investigate suspicious products."

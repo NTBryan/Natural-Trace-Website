@@ -43,8 +43,11 @@ module.exports = function(eleventyConfig) {
       .sort((a, b) => a.date - b.date)
   );
 
-  eleventyConfig.addPassthroughCopy("src/assets");
-  eleventyConfig.addPassthroughCopy("src/admin");
+  // SKIP_ASSETS=1 builds HTML only (fast local previews). CI never sets it.
+  if (process.env.SKIP_ASSETS !== "1") {
+    eleventyConfig.addPassthroughCopy("src/assets");
+    eleventyConfig.addPassthroughCopy("src/admin");
+  }
   eleventyConfig.addWatchTarget("src/assets/");
 
   eleventyConfig.ignores.add("src/admin/**");
