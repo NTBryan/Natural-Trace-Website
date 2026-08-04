@@ -72,7 +72,7 @@ permalink: /about/
       <span class="section-label anim anim-up">{{ about.different_label }}</span>
       <h2 class="section-title anim anim-up delay-1">{{ about.different_title }}</h2>
     </div>
-    <div class="vp-grid" style="grid-template-columns:repeat(2,1fr)">
+    <div class="vp-grid about-grid-2">
       {% for card in about.different_cards %}
       <article class="vp-card anim anim-up delay-{{ loop.index }}">
         <span class="vp-num">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
@@ -90,7 +90,7 @@ permalink: /about/
       <span class="section-label anim anim-up">{{ about.choose_label }}</span>
       <h2 class="section-title anim anim-up delay-1">{{ about.choose_title }}</h2>
     </div>
-    <div class="vp-grid" style="grid-template-columns:repeat(2,1fr);max-width:900px;margin:0 auto">
+    <div class="vp-grid about-grid-2" style="max-width:900px;margin:0 auto">
       {% for group in about.choose_groups %}
       <article class="vp-card anim anim-up delay-{{ loop.index }}">
         <h3>{{ group.title }}</h3>

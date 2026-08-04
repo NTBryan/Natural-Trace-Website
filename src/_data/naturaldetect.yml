@@ -3,8 +3,8 @@ label: "Solutions"
 title: "NaturalDetect™"
 hero: "Verify Products with Scientific Confidence"
 intro: "NaturalDetect™ is a proprietary PCR-based laboratory test that confirms whether a product contains the authentic NaturalTag™ signature."
-hero_image: "https://images.unsplash.com/photo-1710141530542-f792450e736e?w=900&q=80"
-hero_image_alt: "Bulk ingredient sacks awaiting verification in a warehouse"
+hero_logo: "/assets/logos/NaturalDetect.png"
+hero_logo_alt: "NaturalDetect"
 
 features_title: "NaturalDetect™ Features"
 features:

@@ -817,3 +817,36 @@ footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 0 2rem}
   .hero-content{grid-template-columns:1fr}
   .hero-visual{display:none}
 }
+
+
+/* Value Proposition: 5 cards on a 6-column grid — 3 across, then 2 across full
+   width. Avoids the empty sixth cell left by a plain 3-column grid. */
+.vp-grid{grid-template-columns:repeat(6,1fr)}
+.vp-card{grid-column:span 2}
+.vp-card:nth-child(4),.vp-card:nth-child(5){grid-column:span 3}
+.vp-card:nth-child(4) .vp-block p,.vp-card:nth-child(5) .vp-block p{max-width:46ch}
+@media(max-width:980px){
+  .vp-grid{grid-template-columns:repeat(2,1fr)}
+  .vp-card,.vp-card:nth-child(4),.vp-card:nth-child(5){grid-column:span 1}
+  .vp-card:nth-child(5){grid-column:1 / -1}
+  .vp-card:nth-child(5) .vp-block p{max-width:none}
+}
+@media(max-width:640px){
+  .vp-grid{grid-template-columns:1fr}
+  .vp-card:nth-child(5){grid-column:span 1}
+}
+/* About page reuses .vp-grid for 2-up and 4-up blocks — keep those even */
+.about-grid-2 .vp-card,.about-grid-2 .vp-card:nth-child(4),.about-grid-2 .vp-card:nth-child(5){grid-column:span 3}
+@media(max-width:980px){.about-grid-2 .vp-card,.about-grid-2 .vp-card:nth-child(4),.about-grid-2 .vp-card:nth-child(5){grid-column:span 1}}
+
+/* Solutions pages: product logo panel in place of a stock photo */
+.solution-mark{display:flex;align-items:center;justify-content:center;padding:clamp(2rem,5vw,4rem);border-radius:24px;background:linear-gradient(150deg,#FFFFFF 0%,var(--offwhite) 55%,var(--soft-sage) 100%);border:1px solid rgba(107,114,73,.14);box-shadow:var(--shadow);aspect-ratio:4/3;position:relative;overflow:hidden}
+.solution-mark::after{content:'';position:absolute;right:-90px;bottom:-90px;width:280px;height:280px;border-radius:50%;background:rgba(107,114,73,.06)}
+.solution-mark img{position:relative;width:100%;max-width:340px;height:auto;object-fit:contain}
+.solution-mark.is-icon img{max-width:190px}
+
+
+/* .btn-outline is white-on-dark and disappears on light sections. This is the
+   light-background equivalent. */
+.btn-line{background:transparent;color:var(--sage-dark);border:1.5px solid rgba(107,114,73,.4)}
+.btn-line:hover{border-color:var(--sage);background:rgba(107,114,73,.07);transform:translateY(-3px)}

@@ -180,8 +180,8 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Hero Line", name: "hero", widget: "string"}
           - {label: "Intro", name: "intro", widget: "text"}
-          - {label: "Hero Image", name: "hero_image", widget: "image"}
-          - {label: "Hero Image Alt", name: "hero_image_alt", widget: "string"}
+          - {label: "Product Logo", name: "hero_logo", widget: "image"}
+          - {label: "Product Logo Alt", name: "hero_logo_alt", widget: "string"}
           - {label: "Why Heading", name: "why_title", widget: "string"}
           - {label: "Why Items", name: "why_items", widget: "list", field: {label: "Item", name: "item", widget: "string"}}
           - {label: "Features Heading", name: "features_title", widget: "string"}
@@ -209,8 +209,8 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Hero Line", name: "hero", widget: "string"}
           - {label: "Intro", name: "intro", widget: "text"}
-          - {label: "Hero Image", name: "hero_image", widget: "image"}
-          - {label: "Hero Image Alt", name: "hero_image_alt", widget: "string"}
+          - {label: "Product Logo", name: "hero_logo", widget: "image"}
+          - {label: "Product Logo Alt", name: "hero_logo_alt", widget: "string"}
           - {label: "Features Heading", name: "features_title", widget: "string"}
           - {label: "Features", name: "features", widget: "list", field: {label: "Feature", name: "feature", widget: "string"}}
           - {label: "Primary CTA", name: "cta_primary", widget: "string"}
@@ -227,8 +227,8 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Hero Line", name: "hero", widget: "string"}
           - {label: "Intro", name: "intro", widget: "text"}
-          - {label: "Hero Image", name: "hero_image", widget: "image"}
-          - {label: "Hero Image Alt", name: "hero_image_alt", widget: "string"}
+          - {label: "Product Logo", name: "hero_logo", widget: "image"}
+          - {label: "Product Logo Alt", name: "hero_logo_alt", widget: "string"}
           - {label: "Benefits Heading", name: "features_title", widget: "string"}
           - {label: "Benefits", name: "features", widget: "list", field: {label: "Benefit", name: "benefit", widget: "string"}}
           - {label: "Primary CTA", name: "cta_primary", widget: "string"}

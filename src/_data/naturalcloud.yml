@@ -3,8 +3,8 @@ label: "Solutions"
 title: "NaturalCloud™"
 hero: "Authentication Data That Works for Your Business"
 intro: "NaturalCloud™ is the digital platform that securely stores authentication records and NaturalDetect™ test results, giving companies a centralized view of verification activity across their supply chain."
-hero_image: "https://images.unsplash.com/photo-1759272840538-ae4b07214c71?w=900&q=80"
-hero_image_alt: "Shipping containers stacked at a port at sunset"
+hero_logo: "/assets/logos/NaturalCloud.png"
+hero_logo_alt: "NaturalCloud"
 
 features_title: "Benefits"
 features:
