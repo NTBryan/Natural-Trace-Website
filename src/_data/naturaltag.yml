@@ -3,10 +3,9 @@ label: "Solutions"
 title: "NaturalTag™"
 hero: "Authentication Built Into Your Product"
 intro: "NaturalTag™ is a food-grade, in-product authentication tag made from inactivated probiotics. Incorporated in small quantities directly into products during manufacturing, it provides a permanent product identity that enables objective authentication beyond packaging and documentation."
-# TODO: no NaturalTag product logo exists. Using the Natural Trace leaf mark as a
-# placeholder — ask marketing whether a NaturalTag lockup is being made.
-hero_logo: "/assets/logos/NT icon without logo.png"
-hero_logo_alt: "Natural Trace mark"
+# NaturalTag carries the Natural Trace mark; there is no separate product lockup.
+hero_logo: "/assets/logos/NT-logo-transparent.png"
+hero_logo_alt: "NaturalTag, carrying the Natural Trace mark"
 
 why_title: "Why NaturalTag™?"
 why_items:
