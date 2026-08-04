@@ -800,3 +800,20 @@ footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 0 2rem}
   .challenge{padding:4rem 0}
   .valueprop,.howitworks,.home-industries,.finalcta,.usecases{padding:4rem 0}
 }
+
+
+/* Hero: two-column grid. Replaces the absolutely-positioned visual, which
+   overlapped the headline between roughly 1150px and 1600px viewport width. */
+.hero-content{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,400px);gap:clamp(1.75rem,3vw,3.5rem);align-items:center}
+/* Sized so "Protect the Ingredients" holds one line inside the narrower copy column */
+.hero h1{font-size:clamp(2.2rem,3.4vw,3.3rem)}
+.hero-line-inner{white-space:nowrap}
+@media(max-width:640px){.hero-line-inner{white-space:normal}}
+@media(max-width:520px){.hero h1{font-size:1.95rem}.hero-slogan{font-size:1rem}}
+.hero-copy{min-width:0}
+.hero h1{max-width:none}
+.hero-visual{position:static;right:auto;top:auto;width:100%;height:auto;aspect-ratio:11/10;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+@media(max-width:1080px){
+  .hero-content{grid-template-columns:1fr}
+  .hero-visual{display:none}
+}

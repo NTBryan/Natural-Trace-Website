@@ -1,22 +1,24 @@
 <section class="hero">
   <div class="hero-bg" id="heroBg" style="background-image:url('{{ home.hero_bg_image }}')"></div>
   <div class="hero-overlay"></div>
-  <div class="hero-visual"><img src="{{ home.hero_image }}" alt="{{ home.hero_image_alt }}" loading="eager"></div>
   <div class="hero-content">
-    <div class="hero-badge"><span class="hero-badge-dot"></span>{{ home.hero_badge }}</div>
-    <h1>
-      <span class="hero-line"><span class="hero-line-inner">{{ home.hero_title_line1 }}</span></span>
-      <span class="hero-line"><span class="hero-line-inner"><em>{{ home.hero_title_line2 }}</em></span></span>
-    </h1>
-    <p class="hero-slogan">{{ home.hero_slogan }}</p>
-    <p class="hero-desc">{{ home.hero_desc }}</p>
-    <div class="hero-actions">
-      <a href="{{ home.hero_cta_url }}" class="btn btn-primary" style="cursor:pointer">{{ home.hero_cta }} &#8594;</a>
-      <a href="{{ home.hero_cta_secondary_url }}" class="btn btn-outline" style="cursor:pointer">{{ home.hero_cta_secondary }}</a>
+    <div class="hero-copy">
+      <div class="hero-badge"><span class="hero-badge-dot"></span>{{ home.hero_badge }}</div>
+      <h1>
+        <span class="hero-line"><span class="hero-line-inner">{{ home.hero_title_line1 }}</span></span>
+        <span class="hero-line"><span class="hero-line-inner"><em>{{ home.hero_title_line2 }}</em></span></span>
+      </h1>
+      <p class="hero-slogan">{{ home.hero_slogan }}</p>
+      <p class="hero-desc">{{ home.hero_desc }}</p>
+      <div class="hero-actions">
+        <a href="{{ home.hero_cta_url }}" class="btn btn-primary" style="cursor:pointer">{{ home.hero_cta }} &#8594;</a>
+        <a href="{{ home.hero_cta_secondary_url }}" class="btn btn-outline" style="cursor:pointer">{{ home.hero_cta_secondary }}</a>
+      </div>
+      <div class="hero-points">
+        {% for point in home.hero_points %}<span class="hero-point">{{ point }}</span>{% endfor %}
+      </div>
     </div>
-    <div class="hero-points">
-      {% for point in home.hero_points %}<span class="hero-point">{{ point }}</span>{% endfor %}
-    </div>
+    <div class="hero-visual"><img src="{{ home.hero_image }}" alt="{{ home.hero_image_alt }}" loading="eager"></div>
   </div>
 </section>
 
