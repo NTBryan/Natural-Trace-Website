@@ -707,9 +707,9 @@ footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 0 2rem}
    ============================================================ */
 
 /* Hero supporting points */
-.hero-points{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.75rem;max-width:640px}
-.hero-point{font-size:.82rem;font-weight:500;color:rgba(255,255,255,.85);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:100px;padding:.45rem 1rem;backdrop-filter:blur(6px)}
-.hero-point:last-child{background:rgba(162,147,73,.18);border-color:rgba(191,176,96,.45);color:#EFE9CF}
+
+
+
 
 /* Section 2 — The Challenge */
 .challenge{padding:6rem 0;background:var(--offwhite)}
@@ -751,8 +751,8 @@ footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 0 2rem}
 .how-step-num{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--dark);font-size:.95rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem}
 .how-step h3{color:#fff;font-size:1.02rem;font-weight:700;margin-bottom:.6rem;letter-spacing:-.01em}
 .how-step p{color:rgba(255,255,255,.62);font-size:.88rem;line-height:1.65}
-.how-features{display:flex;flex-wrap:wrap;justify-content:center;gap:.65rem;margin-top:3.25rem}
-.how-feature{font-size:.83rem;font-weight:500;color:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);border-radius:100px;padding:.55rem 1.15rem}
+
+
 
 /* Section 5 — Industry tiles on home */
 .home-industries{padding:6rem 0;background:var(--offwhite)}
@@ -858,4 +858,25 @@ footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 0 2rem}
 @media(max-width:520px){
   .hero-eyebrow{font-size:.8rem;gap:.65rem;margin-bottom:1.1rem}
   .hero-eyebrow::before{width:24px}
+}
+
+
+/* Hero supporting claims. Two even columns under a hairline, so nothing dangles
+   at a wrap point the way inline dividers do. */
+.hero-claims{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem 2.25rem;max-width:620px;margin-top:2.1rem;padding-top:1.6rem;border-top:1px solid rgba(255,255,255,.15);font-size:.9rem;line-height:1.45;color:rgba(255,255,255,.76);animation:fadeUp .9s ease 1s both}
+.hero-claims li.is-closer{grid-column:1 / -1;margin-top:.3rem;color:var(--gold-light);font-weight:600}
+
+/* How It Works supporting facts: two ruled columns instead of chips. */
+.how-facts{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:0 3.5rem;margin:3.25rem auto 0;max-width:880px}
+.how-facts li{padding:.95rem .25rem;border-top:1px solid rgba(255,255,255,.1);font-size:.9rem;line-height:1.5;color:rgba(255,255,255,.72)}
+.how-facts li:nth-last-child(-n+2){border-bottom:1px solid rgba(255,255,255,.1)}
+
+@media(max-width:760px){
+  .how-facts{grid-template-columns:1fr;gap:0}
+  .how-facts li:nth-last-child(-n+2){border-bottom:none}
+  .how-facts li:last-child{border-bottom:1px solid rgba(255,255,255,.1)}
+}
+@media(max-width:520px){
+  .hero-claims{font-size:.84rem;gap:.35rem .85rem;margin-top:1.6rem}
+  .hero-claims li{padding-right:.85rem}
 }

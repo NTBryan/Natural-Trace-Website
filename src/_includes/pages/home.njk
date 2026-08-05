@@ -13,9 +13,9 @@
         <a href="{{ home.hero_cta_url }}" class="btn btn-primary" style="cursor:pointer">{{ home.hero_cta }} &#8594;</a>
         <a href="{{ home.hero_cta_secondary_url }}" class="btn btn-outline" style="cursor:pointer">{{ home.hero_cta_secondary }}</a>
       </div>
-      <div class="hero-points">
-        {% for point in home.hero_points %}<span class="hero-point">{{ point }}</span>{% endfor %}
-      </div>
+      <ul class="hero-claims">
+        {% for point in home.hero_points %}<li{% if loop.last %} class="is-closer"{% endif %}>{{ point }}</li>{% endfor %}
+      </ul>
     </div>
     <div class="hero-visual"><img src="{{ home.hero_image }}" alt="{{ home.hero_image_alt }}" loading="eager"></div>
   </div>
@@ -85,9 +85,9 @@
       </div>
       {% endfor %}
     </div>
-    <div class="how-features anim anim-up delay-4">
-      {% for feature in home.how_features %}<span class="how-feature">{{ feature }}</span>{% endfor %}
-    </div>
+    <ul class="how-facts anim anim-up delay-4">
+      {% for feature in home.how_features %}<li>{{ feature }}</li>{% endfor %}
+    </ul>
   </div>
 </section>
 
