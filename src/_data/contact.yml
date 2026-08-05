@@ -46,18 +46,18 @@ success:
 # configured in _data/integrations.yml.
 fallback:
   title: "One Last Step"
-  message: "Your email client should now be open with your message ready to send. If nothing opened, email us directly at info@naturaltrace.com and we will pick it up from there."
+  message: "Your email client should now be open with your message ready to send. If nothing opened, email us directly at info@natural-trace.com and we will pick it up from there."
 
 # Shown if a direct submission is attempted and fails.
 error:
   title: "Message Not Sent"
-  message: "Something went wrong on our side. Please email us directly at info@naturaltrace.com and we will get back to you."
+  message: "Something went wrong on our side. Please email us directly at info@natural-trace.com and we will get back to you."
 
 cta:
   section_label: "Get Started"
   title: "Start Your First Test Today"
   subtitle: "Schedule a consultation, discuss a compatibility project, or explore our testing capabilities."
   primary_text: "Contact Us &#8594;"
-  primary_href: "mailto:info@naturaltrace.com"
+  primary_href: "mailto:info@natural-trace.com"
   secondary_text: "View Services"
   secondary_href: "/services/"

@@ -48,5 +48,5 @@ hubspot:
 # The form opens the visitor's email client with their message pre-filled so
 # that an inquiry is never silently lost.
 fallback:
-  email: "info@naturaltrace.com"
+  email: "info@natural-trace.com"
   subject_prefix: "Website inquiry"
