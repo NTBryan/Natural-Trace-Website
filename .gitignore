@@ -1,11 +1,20 @@
+# dependencies
 node_modules/
+
+# build output
 _site/
-_site_*/
+_site*/
+
+# local scratch: preview builds, staging copies, anything prefixed with an underscore
+_build*/
+_pv*/
+_preview*/
+_localpreview/
+_to_delete/
+
+# misc
 dist/
 dist*/
 build/
 .DS_Store
-_build*/
-_preview*/
-_pv/
-_to_delete/
+Thumbs.db

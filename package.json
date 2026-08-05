@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Natural Trace corporate website",
   "scripts": {
-    "start": "npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy"
+    "start": "eleventy --serve --port 8080",
+    "preview": "eleventy --serve --port 8080",
+    "build": "eleventy"
   },
   "dependencies": {
     "js-yaml": "^4.1.0"
