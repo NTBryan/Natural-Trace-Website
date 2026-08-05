@@ -30,14 +30,13 @@ collections:
         label: "Home"
         file: "src/_data/home.yml"
         fields:
-          - {label: "Hero Badge", name: "hero_badge", widget: "string"}
           - {label: "Hero Background Image", name: "hero_bg_image", widget: "image"}
           - {label: "Hero Background Alt", name: "hero_bg_image_alt", widget: "string"}
           - {label: "Hero Image", name: "hero_image", widget: "image"}
           - {label: "Hero Image Alt", name: "hero_image_alt", widget: "string"}
           - {label: "Hero Title Line 1", name: "hero_title_line1", widget: "string"}
           - {label: "Hero Title Line 2 (italic)", name: "hero_title_line2", widget: "string"}
-          - {label: "Hero Sub-line", name: "hero_slogan", widget: "string"}
+          - {label: "Hero Category Line", name: "hero_slogan", widget: "string"}
           - {label: "Hero Description", name: "hero_desc", widget: "text"}
           - {label: "Hero Points", name: "hero_points", widget: "list", field: {label: "Point", name: "point", widget: "string"}}
           - {label: "Primary CTA Text", name: "hero_cta", widget: "string"}

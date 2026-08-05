@@ -2,13 +2,13 @@
 # Editable via Decap CMS or directly
 
 # ─── Hero Section ───
-hero_badge: "In-Product Authentication Platform"
 hero_bg_image: "https://images.unsplash.com/photo-1759272840538-ae4b07214c71?w=1800&q=80"
 hero_bg_image_alt: "Shipping containers stacked at a port at sunset"
 hero_image: "https://images.unsplash.com/photo-1763668331599-487470fb85b2?w=900&q=80"
 hero_image_alt: "Supplement bottle with a blank label, awaiting its identity"
 hero_title_line1: "Protect the Ingredients"
 hero_title_line2: "Behind Your Brand"
+# Category line, shown above the headline
 hero_slogan: "In-Product Authentication for Food & Nutraceutical Ingredients"
 hero_desc: "Natural Trace gives every ingredient a unique, detectable identity."
 hero_points:
