@@ -21,9 +21,30 @@ collections:
         file: "src/_data/site.yml"
         fields:
           - {label: "Site Name", name: "name", widget: "string"}
+          - {label: "Legal Name", name: "legal_name", widget: "string"}
           - {label: "Tagline", name: "tagline", widget: "string"}
           - {label: "Canonical URL (no trailing slash)", name: "url", widget: "string"}
           - {label: "Default Meta Description", name: "default_summary", widget: "text"}
+          - {label: "Founding Year", name: "founding_year", widget: "string"}
+          - {label: "City", name: "locality", widget: "string"}
+          - {label: "Country Code", name: "country", widget: "string"}
+          - {label: "Contact Email", name: "email", widget: "string"}
+          - {label: "Logo", name: "logo", widget: "image"}
+          - {label: "Social Profile URLs", name: "social", widget: "list", field: {label: "URL", name: "url", widget: "string"}}
+          - {label: "Allow AI crawlers", name: "allow_ai_crawlers", widget: "boolean", hint: "Lets ChatGPT, Claude, Perplexity and Google AI read the site"}
+
+      # ── SEO: page titles and meta descriptions ──
+      - name: "seo"
+        label: "SEO — titles & descriptions"
+        file: "src/_data/seo.yml"
+        fields:
+          - label: "Pages"
+            name: "pages"
+            widget: "list"
+            fields:
+              - {label: "URL", name: "url", widget: "string", hint: "With leading and trailing slash, e.g. /about/"}
+              - {label: "Page Title", name: "title", widget: "string"}
+              - {label: "Meta Description", name: "description", widget: "text", hint: "Aim for 150-160 characters. Shorter wastes the search snippet, longer gets cut off."}
 
       # ── HOME ──
       - name: "home"

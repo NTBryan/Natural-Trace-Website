@@ -1,0 +1,47 @@
+{#- Organisation + WebSite structured data, emitted on every page.
+    Facts only: name, founding year, location, contact, profiles. No capability
+    claims here, so nothing in this block needs claim sign-off. -#}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": {{ (site.url + "/#organization") | dump | safe }},
+      "name": {{ site.name | dump | safe }},
+      "legalName": {{ site.legal_name | dump | safe }},
+      "url": {{ site.url | dump | safe }},
+      "logo": {{ (site.url + site.logo) | dump | safe }},
+      "description": {{ site.default_summary | dump | safe }},
+      "foundingDate": {{ site.founding_year | dump | safe }},
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": {{ site.locality | dump | safe }},
+        "addressCountry": {{ site.country | dump | safe }}
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": {{ site.email | dump | safe }}
+      },
+      "sameAs": [{% for s in site.social %}{{ s | dump | safe }}{% if not loop.last %},{% endif %}{% endfor %}]
+    },
+    {
+      "@type": "WebSite",
+      "@id": {{ (site.url + "/#website") | dump | safe }},
+      "url": {{ site.url | dump | safe }},
+      "name": {{ site.name | dump | safe }},
+      "publisher": { "@id": {{ (site.url + "/#organization") | dump | safe }} }
+    },
+    {
+      "@type": "WebPage",
+      "@id": {{ (site.url + page.url) | dump | safe }},
+      "url": {{ (site.url + page.url) | dump | safe }},
+      "name": {{ seoTitle | dump | safe }},
+      "description": {{ seoDescription | dump | safe }},
+      "isPartOf": { "@id": {{ (site.url + "/#website") | dump | safe }} },
+      "about": { "@id": {{ (site.url + "/#organization") | dump | safe }} }
+    }
+  ]
+}
+</script>

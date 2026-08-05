@@ -2,7 +2,63 @@
 permalink: /robots.txt
 eleventyExcludeFromCollections: true
 ---
+# {{ site.name }} — {{ site.url }}
+
 User-agent: *
 Allow: /
+Disallow: /admin/
+
+{% if site.allow_ai_crawlers %}
+# Answer engines and AI assistants are allowed. Buyers rarely search for
+# "in-product authentication" by name, so assistants are a real discovery path.
+# Flip site.allow_ai_crawlers to false in src/_data/site.yml to block them.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+{% else %}
+User-agent: GPTBot
+Disallow: /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+{% endif %}
 
 Sitemap: {{ site.url }}/sitemap.xml

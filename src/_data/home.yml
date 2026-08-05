@@ -8,10 +8,9 @@ hero_image: "https://images.unsplash.com/photo-1763668331599-487470fb85b2?w=900&
 hero_image_alt: "Supplement bottle with a blank label, awaiting its identity"
 hero_title_line1: "Protect the Ingredients"
 hero_title_line2: "Behind Your Brand"
-# Category line above the headline. Deliberately unqualified: the copy guide
-# says "for Food & Nutraceutical Ingredients", which reads as a hard boundary
-# and under-describes matrices already listed on the NaturalTag page.
-hero_slogan: "In-Product Authentication"
+# Category line above the headline. Verbatim from the copy guide positioning
+# statement. Do not shorten without Kirsty's sign-off.
+hero_slogan: "In-Product Authentication for Food & Nutraceutical Ingredients"
 hero_desc: "Natural Trace gives every ingredient a unique, detectable identity."
 # Rendered as a single sentence: items joined with commas and "and", then the
 # coda after a dash. Kirsty wrote these as five short lines; the fifth is a coda,

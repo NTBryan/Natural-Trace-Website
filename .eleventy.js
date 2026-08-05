@@ -24,6 +24,11 @@ module.exports = function(eleventyConfig) {
     return d.toLocaleDateString();
   });
 
+  // Per-page SEO lookup from src/_data/seo.yml, keyed by URL
+  eleventyConfig.addFilter("seoLookup", (pages, url) =>
+    (pages || []).find(p => p.url === url) || {}
+  );
+
   // Insights collection (blog posts from src/insights/)
   eleventyConfig.addCollection("insights", collection =>
     collection.getFilteredByGlob("src/insights/**/*.md").sort((a, b) => a.date - b.date)

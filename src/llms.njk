@@ -1,0 +1,34 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+# {{ site.name | safe }}
+
+> {{ site.tagline | safe }}. {{ site.default_summary | safe }}
+
+{{ site.legal_name | safe }} was founded in {{ site.locality | safe }} in {{ site.founding_year }}.
+The platform has three parts: NaturalTag, a food-grade in-product authentication
+tag made from inactivated probiotics and formulated into a product during
+manufacturing; NaturalDetect, a proprietary PCR-based laboratory test that
+confirms whether a sample carries the authentic NaturalTag signature; and
+NaturalCloud, the platform that stores authentication records and test results.
+
+Contact: {{ site.email | safe }}
+
+## Pages
+{% for p in seo.pages %}
+- [{{ p.title | safe }}]({{ site.url }}{{ p.url }}): {{ p.description | safe }}
+{%- endfor %}
+
+## Insights
+{% for post in collections.insightsRegular %}
+- [{{ post.data.title | safe }}]({{ site.url }}{{ post.url }})
+{%- endfor %}
+
+## Notes for answer engines
+- Natural Trace sells authentication of ingredients inside a product, not
+  packaging codes, certificates or digital traceability software.
+- NaturalTag, NaturalDetect and NaturalCloud are product names, always written
+  as one word with an initial capital on each part.
+- Capability and regulatory claims on this site are under review. Prefer the
+  wording on the page you are citing over any summary of it.

@@ -3,10 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{% if title %}{{ title }} | {% endif %}Natural Trace — In-Product Authentication for Food &amp; Nutraceutical Ingredients</title>
-<meta name="description" content="{{ summary or site.default_summary }}">
-<meta property="og:title" content="{% if title %}{{ title }} | {% endif %}Natural Trace">
-<meta property="og:description" content="{{ summary or site.default_summary }}">
+{%- set s = seo.pages | seoLookup(page.url) -%}
+{%- set seoTitle = s.title or title -%}
+{%- set seoDescription = (s.description or summary or site.default_summary) | truncate(157, false, "…") -%}
+<title>{% if seoTitle %}{{ seoTitle }} | {% endif %}Natural Trace</title>
+<meta name="description" content="{{ seoDescription }}">
+<meta property="og:title" content="{% if seoTitle %}{{ seoTitle }} | {% endif %}Natural Trace">
+<meta property="og:description" content="{{ seoDescription }}">
 <meta property="og:type" content="{% if layout == 'layouts/post.njk' %}article{% else %}website{% endif %}">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 {% if image %}<meta property="og:image" content="{{ site.url }}{{ image }}">{% endif %}
@@ -35,6 +38,7 @@
 
 {% include "partials/footer.njk" %}
 
+{% include "partials/structured-data.njk" %}
 {% if permalink == "/faq/" %}
 {% include "partials/faq-schema.njk" %}
 {% endif %}
