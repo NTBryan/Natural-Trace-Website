@@ -861,10 +861,10 @@ footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 0 2rem}
 }
 
 
-/* Hero supporting claims. Two even columns under a hairline, so nothing dangles
-   at a wrap point the way inline dividers do. */
-.hero-claims{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem 2.25rem;max-width:620px;margin-top:2.1rem;padding-top:1.6rem;border-top:1px solid rgba(255,255,255,.15);font-size:.9rem;line-height:1.45;color:rgba(255,255,255,.76);animation:fadeUp .9s ease 1s both}
-.hero-claims li.is-closer{grid-column:1 / -1;margin-top:.3rem;color:var(--gold-light);font-weight:600}
+/* Hero supporting claims, set as one sentence. A list left the fifth line
+   orphaned, because it is a coda rather than a fifth peer. */
+.hero-claims{max-width:600px;margin:-1.2rem 0 2.2rem;font-size:.95rem;line-height:1.7;color:rgba(255,255,255,.62);animation:fadeUp .9s ease .85s both}
+.hero-claims span{color:var(--gold-light);font-weight:600}
 
 /* How It Works supporting facts: two ruled columns instead of chips. */
 .how-facts{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:0 3.5rem;margin:3.25rem auto 0;max-width:880px}

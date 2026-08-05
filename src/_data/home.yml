@@ -8,15 +8,20 @@ hero_image: "https://images.unsplash.com/photo-1763668331599-487470fb85b2?w=900&
 hero_image_alt: "Supplement bottle with a blank label, awaiting its identity"
 hero_title_line1: "Protect the Ingredients"
 hero_title_line2: "Behind Your Brand"
-# Category line, shown above the headline
-hero_slogan: "In-Product Authentication for Food & Nutraceutical Ingredients"
+# Category line above the headline. Deliberately unqualified: the copy guide
+# says "for Food & Nutraceutical Ingredients", which reads as a hard boundary
+# and under-describes matrices already listed on the NaturalTag page.
+hero_slogan: "In-Product Authentication"
 hero_desc: "Natural Trace gives every ingredient a unique, detectable identity."
-hero_points:
+# Rendered as a single sentence: items joined with commas and "and", then the
+# coda after a dash. Kirsty wrote these as five short lines; the fifth is a coda,
+# not a peer, which is why it read as an orphan when they were set as a list.
+hero_claims:
   - "Verify presence"
-  - "Protect branded ingredients"
-  - "Confirm authorised manufacturing"
-  - "Investigate suspicious products"
-  - "All through the supply chain"
+  - "protect branded ingredients"
+  - "confirm authorised manufacturing"
+  - "investigate suspicious products"
+hero_claims_coda: "all through the supply chain"
 hero_cta: "Request a Compatibility Assessment"
 hero_cta_url: "/contact/"
 hero_cta_secondary: "Talk to our team"
