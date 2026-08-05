@@ -50,3 +50,22 @@ hubspot:
 fallback:
   email: "info@natural-trace.com"
   subject_prefix: "Website inquiry"
+
+# ─── Sitewide behaviour tracking ───
+# The HubSpot tracking script runs on every page once portal_id above is set
+# AND the visitor has accepted cookies. It sets cookies, so it must not load
+# before consent: the privacy policy promises consent, and the 30 July review
+# recorded the missing banner as an open defect. The banner below closes that.
+tracking:
+  # Master switch for the sitewide script. Needs hubspot.portal_id as well.
+  enabled: true
+
+consent:
+  # Set false to remove the banner. Doing so also stops tracking loading at all,
+  # because there would be no consent to rely on.
+  enabled: true
+  message: "We use cookies to understand how visitors use this site. You can decline and everything will still work."
+  accept_label: "Accept"
+  decline_label: "Decline"
+  policy_label: "Privacy Policy"
+  policy_url: "/privacy/"

@@ -880,3 +880,17 @@ footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 0 2rem}
   .hero-claims{font-size:.84rem;gap:.35rem .85rem;margin-top:1.6rem}
   .hero-claims li{padding-right:.85rem}
 }
+
+
+/* Cookie consent bar. Nothing that sets a cookie loads before a choice. */
+.consent{position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:9998;max-width:640px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:1rem;justify-content:space-between;background:var(--dark);color:rgba(255,255,255,.82);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:1.1rem 1.35rem;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+.consent[hidden]{display:none}
+.consent p{font-size:.86rem;line-height:1.6;margin:0;flex:1 1 300px}
+.consent a{color:var(--gold-light);text-decoration:underline;text-underline-offset:2px}
+.consent-actions{display:flex;gap:.6rem;flex:0 0 auto}
+.consent button{font-family:'Montserrat',sans-serif;font-size:.83rem;font-weight:600;padding:.55rem 1.2rem;border-radius:8px;cursor:pointer;transition:all .25s;border:1px solid transparent}
+.consent-accept{background:var(--sage);color:#fff}
+.consent-accept:hover{background:var(--sage-light)}
+.consent-decline{background:transparent;color:rgba(255,255,255,.75);border-color:rgba(255,255,255,.22)}
+.consent-decline:hover{border-color:rgba(255,255,255,.5);color:#fff}
+@media(max-width:520px){.consent{padding:1rem}.consent-actions{width:100%}.consent button{flex:1}}

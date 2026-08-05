@@ -426,6 +426,22 @@ collections:
               - {label: "Subject prefix", name: "subject_prefix", widget: "string"}
 
   # Team members stored as a single JSON file
+          - label: "Sitewide Tracking"
+            name: "tracking"
+            widget: "object"
+            fields:
+              - {label: "Enabled", name: "enabled", widget: "boolean", hint: "Also needs a HubSpot Portal ID above, and visitor consent"}
+          - label: "Cookie Consent Banner"
+            name: "consent"
+            widget: "object"
+            fields:
+              - {label: "Show banner", name: "enabled", widget: "boolean"}
+              - {label: "Message", name: "message", widget: "text"}
+              - {label: "Accept button", name: "accept_label", widget: "string"}
+              - {label: "Decline button", name: "decline_label", widget: "string"}
+              - {label: "Policy link text", name: "policy_label", widget: "string"}
+              - {label: "Policy link URL", name: "policy_url", widget: "string"}
+
   - name: "team"
     label: "Team Members"
     files:

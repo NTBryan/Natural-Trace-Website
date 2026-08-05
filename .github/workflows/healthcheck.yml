@@ -1,0 +1,37 @@
+name: Health check
+
+# Runs on every push, and weekly on its own so problems that appear without a
+# code change — a dead outbound link, an expired partner site — surface anyway.
+# A failed scheduled run emails whoever owns the repository.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 1 * * 1"   # Mondays, 01:00 UTC (09:00 Singapore)
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm install
+
+      - name: Build
+        run: npx @11ty/eleventy
+
+      - name: Check pages, links, SEO and structured data
+        run: node scripts/healthcheck.mjs _site
+
+      # Outbound links are only checked on the schedule and on demand, so a
+      # third party being briefly down cannot block a deploy.
+      - name: Check outbound links
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: node scripts/healthcheck.mjs _site --external

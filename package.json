@@ -5,7 +5,9 @@
   "scripts": {
     "start": "eleventy --serve --port 8080",
     "preview": "eleventy --serve --port 8080",
-    "build": "eleventy"
+    "build": "eleventy",
+    "check": "eleventy && node scripts/healthcheck.mjs _site",
+    "check:external": "eleventy && node scripts/healthcheck.mjs _site --external"
   },
   "dependencies": {
     "js-yaml": "^4.1.0"
