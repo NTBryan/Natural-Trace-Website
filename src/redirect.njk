@@ -1,0 +1,22 @@
+---
+pagination:
+  data: redirects.rules
+  size: 1
+  alias: rule
+permalink: "{{ rule.from }}index.html"
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="0; url={{ rule.to }}">
+<link rel="canonical" href="{{ site.url }}{{ rule.to }}">
+<meta name="robots" content="noindex, follow">
+<title>Redirecting</title>
+</head>
+<body>
+<p>This page has moved. <a href="{{ rule.to }}">Continue to the new page</a>.</p>
+<script>window.location.replace("{{ rule.to }}");</script>
+</body>
+</html>

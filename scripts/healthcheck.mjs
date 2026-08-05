@@ -78,6 +78,22 @@ for (const f of pages) {
   }
 }
 
+// ── 4b. every redirect target resolves, and no stub leaks into the sitemap
+const sitemap = await readFile(join(ROOT, 'sitemap.xml'), 'utf8').catch(() => '');
+let stubs = 0;
+for (const f of pages) {
+  const html = await readFile(f, 'utf8');
+  const m = html.match(/http-equiv="refresh" content="0; url=([^"]+)"/);
+  if (!m) continue;
+  stubs++;
+  const from = '/' + relative(ROOT, f).replace(/index\.html$/, '').replace(/\\/g, '/');
+  const target = m[1].split('#')[0];
+  const abs = join(ROOT, target);
+  if (!existsSync(abs) && !existsSync(join(abs, 'index.html'))) note(`redirect ${from} points at missing ${m[1]}`);
+  if (sitemap.includes(`<loc>${''}` ) && sitemap.includes(from + '</loc>')) note(`redirect stub in sitemap: ${from}`);
+}
+console.log(`  ${stubs} redirect stubs`);
+
 // ── 5. the contact form still exists and still has somewhere to send to
 const contact = await readFile(join(ROOT, 'contact/index.html'), 'utf8').catch(() => '');
 if (!/<form/i.test(contact)) note('contact page has no <form>');
