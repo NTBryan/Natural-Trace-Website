@@ -5,10 +5,14 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# actions: read is required by actions/deploy-pages v4 and above. Without it the
+# deploy job cannot read the build job's artifact, and it hangs until it aborts
+# with "Timeout reached". That is exactly how run #21 failed on 6 Aug 2026.
 permissions:
   contents: read
   pages: write
   id-token: write
+  actions: read
 
 concurrency:
   group: pages
@@ -31,7 +35,7 @@ jobs:
           NODE_ENV: production
           PATH_PREFIX: /Natural-Trace-Website/
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
@@ -43,4 +47,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
