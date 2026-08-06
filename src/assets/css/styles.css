@@ -101,10 +101,21 @@ nav.scrolled .nav-toggle span{background:var(--dark)}
 
 /* Partners */
 .trust-bar{background:#fff;border-bottom:1px solid #E5E7EB;padding:2.5rem 0;overflow:hidden}
-.trust-bar-inner{display:flex;flex-direction:column;align-items:center;gap:1.5rem}
-.trust-label{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:#9CA3AF;white-space:nowrap}
-.trust-logos{display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap;justify-content:center}
-.trust-logo{display:inline-flex;align-items:center;justify-content:center;height:44px;transition:transform .3s ease}
+.trust-label{display:block;text-align:center;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:#9CA3AF;white-space:nowrap;margin-bottom:1.75rem}
+.trust-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
+.trust-track{display:flex;width:max-content;animation:trustRail 48s linear infinite}
+.trust-set{display:flex;align-items:center}
+/* Hovering or tabbing into the rail stops it, so a logo can actually be clicked. */
+.trust-marquee:hover .trust-track,.trust-track:focus-within{animation-play-state:paused}
+@keyframes trustRail{from{transform:translateX(0)}to{transform:translateX(-25%)}}
+@media(prefers-reduced-motion:reduce){
+  .trust-marquee{-webkit-mask-image:none;mask-image:none}
+  .trust-track{animation:none;width:auto;flex-wrap:wrap;justify-content:center}
+  .trust-set+.trust-set{display:none}
+  .trust-set{flex-wrap:wrap;justify-content:center}
+}
+.trust-logo{display:inline-flex;align-items:center;justify-content:center;height:44px;margin-right:4.5rem;transition:transform .3s ease}
+@media(max-width:640px){.trust-logo{margin-right:3rem}}
 .trust-logo img{height:40px;width:auto;max-width:140px;display:block;object-fit:contain;filter:grayscale(100%) opacity(.45);transition:filter .4s ease,transform .3s ease}
 .trust-logo:hover img{filter:grayscale(0%) opacity(1);transform:scale(1.08)}
 

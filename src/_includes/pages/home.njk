@@ -111,13 +111,30 @@
 <!-- Partners Trust Bar -->
 <div class="trust-bar">
   <div class="container">
-    <div class="trust-bar-inner">
-      <span class="trust-label">{{ home.trust_label }}</span>
-      <div class="trust-logos">
+    <span class="trust-label">{{ home.trust_label }}</span>
+  </div>
+  {#
+    Continuous logo rail. The set is repeated four times and the track slides by
+    exactly one set (25% of four), so the loop is seamless. Four copies rather
+    than two because the loop only stays gapless while (copies - 1) sets are
+    wider than the viewport; one set is roughly 1500px, so two copies would tear
+    on anything above about 1500px wide.
+
+    Spacing is margin-right on each logo, not flex gap. With gap, half the track
+    is one set plus half a gap, and the loop jumps by that half gap every cycle.
+
+    Copies 2 to 4 are hidden from screen readers and skipped by the tab key, so
+    the eight partners are announced once, not thirty-two times.
+  #}
+  <div class="trust-marquee">
+    <div class="trust-track">
+      {% for i in range(0, 4) %}
+      <div class="trust-set"{% if i > 0 %} aria-hidden="true"{% endif %}>
         {% for logo in home.trust_logos %}
-        <a class="trust-logo" href="{{ logo.url }}" target="_blank" rel="noopener"><img src="{{ logo.image }}" alt="{{ logo.alt }}"></a>
+        <a class="trust-logo" href="{{ logo.url }}" target="_blank" rel="noopener"{% if i > 0 %} tabindex="-1"{% endif %}><img src="{{ logo.image }}" alt="{% if i == 0 %}{{ logo.alt }}{% endif %}"></a>
         {% endfor %}
       </div>
+      {% endfor %}
     </div>
   </div>
 </div>
