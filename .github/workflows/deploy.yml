@@ -48,3 +48,14 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v5
+        with:
+          # GitHub was not rejecting our deployments, it was taking longer than
+          # deploy-pages was willing to wait. Runs #21 and #22 both sat at
+          # deployment_queued for about four minutes, moved to
+          # deployment_in_progress, and were still in progress when the action
+          # hit its 10 minute default and cancelled them. Nothing was ever
+          # published. 30 minutes gives the Pages pipeline room to finish.
+          timeout: 1800000
+          # One status poll every 15 seconds instead of every 5. The default
+          # wrote 240 lines of "Current status" into the log for a single run.
+          reporting_interval: 15000
