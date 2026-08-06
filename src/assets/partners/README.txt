@@ -11,7 +11,7 @@ Every logo shown in the "Our Partners" bar on the home page lives in this folder
 
    ```yaml
      - url: "https://example.com/"
-       image: "/assets/partner-logos/Example.png"
+       image: "/assets/partners/Example.png"
        alt: "Example Ltd"
    ```
 

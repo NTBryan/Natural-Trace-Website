@@ -63,7 +63,10 @@ for (const f of pages) {
   }
 
   // ── 3. SEO basics. Redirect stubs are noindex by design, so they are exempt.
-  const noindex = /name="robots"[^>]*noindex/.test(html);
+  // data-hold="site" is the site-wide search hold, not a page that is meant to
+  // stay out of the index. Keep checking those pages, or the hold would quietly
+  // switch off every SEO check on the site.
+  const noindex = /name="robots"[^>]*noindex/.test(html) && !/data-hold="site"/.test(html);
   if (!noindex) {
   if (!/<title>.{10,}<\/title>/s.test(html)) note(`missing or thin <title>: ${page}`);
   const desc = html.match(/<meta name="description" content="([^"]*)"/);

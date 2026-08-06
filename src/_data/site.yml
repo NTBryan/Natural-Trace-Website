@@ -19,6 +19,16 @@ social:
   - "https://www.linkedin.com/company/natural-trace/"
   - "https://www.youtube.com/@naturaltrace8510"
 
+# Search visibility holding switch.
+# false = the whole site is kept out of Google and every other search engine:
+#         robots.txt disallows everything and every page carries a noindex tag.
+#         The site still works and anyone with the link can read it.
+# Set this to true only once the copy claims are signed off. Sixteen claims are
+# still flagged CLAIM REVIEW in the data files, including FDA GRAS status, ISO
+# 17025, MIQE 2.0 and the sensory panel and matrix-count statements. An indexed
+# claim is cached and quotable; a retraction is not.
+search_indexable: false
+
 # Crawler policy
 # AI assistants are a route to discovery for a category most buyers cannot name
 # yet, so the answer engines are allowed. Set allow_ai_crawlers to false to

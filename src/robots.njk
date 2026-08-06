@@ -4,6 +4,12 @@ eleventyExcludeFromCollections: true
 ---
 # {{ site.name }}: {{ site.url }}
 
+{% if not site.search_indexable %}
+# Search visibility is held off while the copy claims are under review.
+# Flip search_indexable to true in src/_data/site.yml to open the site up.
+User-agent: *
+Disallow: /
+{% else %}
 User-agent: *
 Allow: /
 Disallow: /admin/
@@ -62,3 +68,4 @@ Disallow: /
 {% endif %}
 
 Sitemap: {{ site.url }}/sitemap.xml
+{% endif %}

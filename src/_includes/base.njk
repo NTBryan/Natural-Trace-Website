@@ -8,6 +8,10 @@
 {%- set seoDescription = (s.description or summary or site.default_summary) | truncate(157, false, "…") -%}
 <title>{% if seoTitle %}{{ seoTitle }} | {% endif %}Natural Trace</title>
 <meta name="description" content="{{ seoDescription }}">
+{% if not site.search_indexable %}{# Holding switch in src/_data/site.yml. data-hold marks this as the
+   site-wide hold rather than a genuinely noindex page, so the health check
+   still validates titles, descriptions and canonicals underneath it. #}
+<meta name="robots" content="noindex, nofollow" data-hold="site">{% endif %}
 <meta property="og:title" content="{% if seoTitle %}{{ seoTitle }} | {% endif %}Natural Trace">
 <meta property="og:description" content="{{ seoDescription }}">
 <meta property="og:type" content="{% if layout == 'layouts/post.njk' %}article{% else %}website{% endif %}">
