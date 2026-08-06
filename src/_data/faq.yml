@@ -1,7 +1,7 @@
-# FAQ — Clean Prototype Copy Guide 2026
+# FAQ: Clean Prototype Copy Guide 2026
 section_label: "FAQ"
 title: "Frequently Asked Questions"
-subtitle: "Regulatory status, safety, integration and detection — answered."
+subtitle: "Answers on regulatory status, safety, integration and detection."
 
 categories:
   - id: "regulatory"
@@ -14,7 +14,7 @@ categories:
     label: "Detection"
 
 questions:
-  # ── Regulatory ──
+  # Regulatory
   - category: "regulatory"
     question: "Is NaturalTag™ approved for use in food products?"
     # CLAIM REVIEW: "compatible with global food regulatory frameworks" was flagged 30 July
@@ -27,7 +27,7 @@ questions:
     # CLAIM REVIEW: highest-risk item in the 30 July review. Contradicts the About Us page.
     answer: "NaturalTag has established food-safety status across the EU, US, APAC, and many other jurisdictions."
 
-  # ── Safety ──
+  # Safety
   - category: "safety"
     question: "What exactly is in the NaturalTag™?"
     answer: "A proprietary formulated blend of inactivated (non-living) probiotics. No synthetic chemicals, dyes, or foreign substances."
@@ -39,18 +39,18 @@ questions:
     question: "Is it safe for consumers with allergies?"
     answer: "Contains no common allergens. Standard food-grade probiotics with extensive safety histories."
 
-  # ── Integration ──
+  # Integration
   - category: "integration"
     question: "Will I need to change my manufacturing process?"
     answer: "NaturalTag integrates into existing mixing and formulation processes with minimal process disruption."
   - category: "integration"
     question: "How long does onboarding take?"
-    answer: "Typical onboarding takes 4–6 weeks: compatibility testing, validation, and integration."
+    answer: "Typical onboarding takes 4 to 6 weeks: compatibility testing, validation, and integration."
   - category: "integration"
     question: "Can it be used in complex matrices, such as oils, powders, and liquids?"
     answer: "NaturalTag™ has been validated across multiple matrices."
 
-  # ── Detection ──
+  # Detection
   - category: "detection"
     question: "How is the NaturalTag™ detected downstream?"
     answer: "NaturalTag™ is detected by collecting a product sample and analysing it using our proprietary NaturalDetect™ test method. The test confirms whether the authentic NaturalTag™ signature is present with high specificity, providing objective results without the need for subjective interpretation."

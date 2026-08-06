@@ -5,12 +5,12 @@ node_modules/
 _site/
 _site*/
 
-# local scratch: preview builds, staging copies, anything prefixed with an underscore
-_build*/
-_pv*/
-_preview*/
-_localpreview/
-_to_delete/
+# local scratch. Anything at the repo root starting with an underscore is a
+# throwaway: preview builds, staging copies, tarballs. Leading slash matters,
+# without it this would also swallow src/_data and src/_includes.
+/_*/
+/_*.tgz
+/_*.zip
 
 # misc
 dist/

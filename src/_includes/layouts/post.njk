@@ -22,14 +22,14 @@ layout: base.njk
   <div class="container">
     <div class="insight-post-header">
       <a href="/insights/" class="back-link">&larr; Back to Insights</a>
-      <span class="section-label anim">Insights</span>
-      <h1 class="anim">{{ title }}</h1>
-      <div class="insight-meta anim">
+      <span class="section-label">Insights</span>
+      <h1>{{ title }}</h1>
+      <div class="insight-meta">
         <time datetime="{{ date | date("%Y-%m-%d") }}">{{ date | date("%B %d, %Y") }}</time>
         {% if author %}<span class="insight-author">by {{ author }}</span>{% endif %}
       </div>
       {% if tags %}
-      <div class="insight-tags anim">
+      <div class="insight-tags">
         {% for tag in tags %}
         <span class="insight-tag">{{ tag }}</span>
         {% endfor %}
@@ -38,12 +38,12 @@ layout: base.njk
     </div>
 
     {% if image %}
-    <div class="insight-featured-image anim">
+    <div class="insight-featured-image">
       <img src="{{ image }}" alt="{{ title }}">
     </div>
     {% endif %}
 
-    <div class="insight-body anim">
+    <div class="insight-body">
       {{ content | safe }}
     </div>
 

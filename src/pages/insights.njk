@@ -8,9 +8,9 @@ permalink: /insights/
 <section class="insights-listing">
   <div class="container">
     <div class="insights-header">
-      <span class="section-label anim">Insights</span>
-      <h1 class="anim">News & Updates</h1>
-      <p class="insights-subtitle anim">The latest from Natural Trace — product developments, industry perspectives, and company news.</p>
+      <span class="section-label">Insights</span>
+      <h1>News & Updates</h1>
+      <p class="insights-subtitle">The latest from Natural Trace: product developments, industry perspectives and company news.</p>
     </div>
 
     {% set regularPosts = collections.insightsRegular %}
@@ -19,7 +19,7 @@ permalink: /insights/
     {% if regularPosts.length > 0 or pinnedPosts.length > 0 %}
     <div class="insights-grid">
       {% for post in regularPosts %}
-      <article class="insight-card anim">
+      <article class="insight-card">
         {% if post.data.image %}
         <div class="insight-card-image">
           <a href="{{ post.url }}">
@@ -46,7 +46,7 @@ permalink: /insights/
       {% endfor %}
 
       {% for post in pinnedPosts %}
-      <article class="insight-card insight-card--pinned anim">
+      <article class="insight-card insight-card--pinned">
         {% if post.data.image %}
         <div class="insight-card-image">
           <a href="{{ post.url }}">
@@ -73,7 +73,7 @@ permalink: /insights/
       {% endfor %}
     </div>
     {% else %}
-    <div class="insights-empty anim">
+    <div class="insights-empty">
       <h2>Coming Soon</h2>
       <p>We're preparing our first insights. Check back soon for news, updates, and industry perspectives from the Natural Trace team.</p>
     </div>

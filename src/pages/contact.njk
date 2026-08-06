@@ -9,18 +9,18 @@ permalink: /contact/
   <div class="container">
     <div class="contact-grid">
       <div class="contact-info">
-        <span class="section-label anim anim-up">{{ contact.section_label }}</span>
-        <h2 class="section-title anim anim-up delay-1">{{ contact.title }}</h2>
-        <p class="section-subtitle anim anim-up delay-2" style="margin-bottom:2.5rem">{{ contact.subtitle | safe }}</p>
+        <span class="section-label">{{ contact.section_label }}</span>
+        <h2 class="section-title">{{ contact.title }}</h2>
+        <p class="section-subtitle" style="margin-bottom:2.5rem">{{ contact.subtitle | safe }}</p>
 
         {% for item in contact.info_items %}
-        <div class="contact-info-item anim anim-up delay-{{ loop.index + 1 }}">
+        <div class="contact-info-item delay-{{ loop.index + 1 }}">
           <div class="contact-info-item-dot"></div>
           <div><h4>{{ item.label }}</h4><p>{{ item.description | safe }}</p></div>
         </div>
         {% endfor %}
       </div>
-      <div class="contact-form anim anim-left delay-2">
+      <div class="contact-form">
         <h3>{{ contact.form.title }}</h3>
         <p>{{ contact.form.subtitle }}</p>
         <form id="contactForm"
@@ -93,10 +93,10 @@ permalink: /contact/
   <div class="cta-shape cta-shape-2"></div>
   <div class="container">
     <div class="cta-inner">
-      <span class="section-label anim anim-up">{{ contact.cta.section_label }}</span>
-      <h2 class="anim anim-up delay-1">{{ contact.cta.title }}</h2>
-      <p class="anim anim-up delay-2">{{ contact.cta.subtitle }}</p>
-      <div class="cta-actions anim anim-up delay-3">
+      <span class="section-label">{{ contact.cta.section_label }}</span>
+      <h2>{{ contact.cta.title }}</h2>
+      <p>{{ contact.cta.subtitle }}</p>
+      <div class="cta-actions">
         <a href="{{ contact.cta.primary_href }}" class="btn btn-white">{{ contact.cta.primary_text | safe }}</a>
         <a href="{{ contact.cta.secondary_href }}" class="btn btn-ghost" style="cursor:pointer">{{ contact.cta.secondary_text }}</a>
       </div>

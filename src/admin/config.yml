@@ -15,7 +15,7 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      # ── SITE SETTINGS ──
+      # SITE SETTINGS
       - name: "site"
         label: "Site Settings"
         file: "src/_data/site.yml"
@@ -33,9 +33,9 @@ collections:
           - {label: "Social Profile URLs", name: "social", widget: "list", field: {label: "URL", name: "url", widget: "string"}}
           - {label: "Allow AI crawlers", name: "allow_ai_crawlers", widget: "boolean", hint: "Lets ChatGPT, Claude, Perplexity and Google AI read the site"}
 
-      # ── SEO: page titles and meta descriptions ──
+      # SEO: page titles and meta descriptions
       - name: "seo"
-        label: "SEO — titles & descriptions"
+        label: "SEO: titles and descriptions"
         file: "src/_data/seo.yml"
         fields:
           - label: "Pages"
@@ -46,7 +46,7 @@ collections:
               - {label: "Page Title", name: "title", widget: "string"}
               - {label: "Meta Description", name: "description", widget: "text", hint: "Aim for 150-160 characters. Shorter wastes the search snippet, longer gets cut off."}
 
-      # ── HOME ──
+      # HOME
       - name: "home"
         label: "Home"
         file: "src/_data/home.yml"
@@ -66,21 +66,21 @@ collections:
           - {label: "Secondary CTA Text", name: "hero_cta_secondary", widget: "string"}
           - {label: "Secondary CTA URL", name: "hero_cta_secondary_url", widget: "string"}
 
-          - {label: "Challenge — Label", name: "challenge_label", widget: "string"}
-          - {label: "Challenge — Headline", name: "challenge_title", widget: "string"}
-          - {label: "Challenge — Lead Paragraph", name: "challenge_lead", widget: "text"}
-          - {label: "Challenge — List Heading", name: "challenge_list_label", widget: "string"}
-          - {label: "Challenge — List", name: "challenge_list", widget: "list", field: {label: "Item", name: "item", widget: "string"}}
-          - {label: "Challenge — Closing Statement", name: "challenge_close", widget: "text"}
-          - {label: "Challenge — Image", name: "challenge_image", widget: "image"}
-          - {label: "Challenge — Image Alt", name: "challenge_image_alt", widget: "string"}
+          - {label: "Challenge: Label", name: "challenge_label", widget: "string"}
+          - {label: "Challenge: Headline", name: "challenge_title", widget: "string"}
+          - {label: "Challenge: Lead Paragraph", name: "challenge_lead", widget: "text"}
+          - {label: "Challenge: List Heading", name: "challenge_list_label", widget: "string"}
+          - {label: "Challenge: List", name: "challenge_list", widget: "list", field: {label: "Item", name: "item", widget: "string"}}
+          - {label: "Challenge: Closing Statement", name: "challenge_close", widget: "text"}
+          - {label: "Challenge: Image", name: "challenge_image", widget: "image"}
+          - {label: "Challenge: Image Alt", name: "challenge_image_alt", widget: "string"}
 
-          - {label: "Value Prop — Label", name: "vp_label", widget: "string"}
-          - {label: "Value Prop — Headline", name: "vp_title", widget: "string"}
-          - {label: "Value Prop — Subcopy", name: "vp_subtitle", widget: "text"}
-          - {label: "Value Prop — Problem Label", name: "vp_problem_label", widget: "string"}
-          - {label: "Value Prop — Value Label", name: "vp_value_label", widget: "string"}
-          - label: "Value Prop — Cards"
+          - {label: "Value Prop: Label", name: "vp_label", widget: "string"}
+          - {label: "Value Prop: Headline", name: "vp_title", widget: "string"}
+          - {label: "Value Prop: Subcopy", name: "vp_subtitle", widget: "text"}
+          - {label: "Value Prop: Problem Label", name: "vp_problem_label", widget: "string"}
+          - {label: "Value Prop: Value Label", name: "vp_value_label", widget: "string"}
+          - label: "Value Prop: Cards"
             name: "vp_cards"
             widget: "list"
             fields:
@@ -88,20 +88,20 @@ collections:
               - {label: "Customer Problem", name: "problem", widget: "text"}
               - {label: "Natural Trace Value", name: "value", widget: "text"}
 
-          - {label: "How It Works — Label", name: "how_label", widget: "string"}
-          - {label: "How It Works — Headline", name: "how_title", widget: "string"}
-          - label: "How It Works — Steps"
+          - {label: "How It Works: Label", name: "how_label", widget: "string"}
+          - {label: "How It Works: Headline", name: "how_title", widget: "string"}
+          - label: "How It Works: Steps"
             name: "how_steps"
             widget: "list"
             fields:
               - {label: "Number", name: "num", widget: "string"}
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
-          - {label: "How It Works — Feature Chips", name: "how_features", widget: "list", field: {label: "Feature", name: "feature", widget: "string"}}
+          - {label: "How It Works: Feature Chips", name: "how_features", widget: "list", field: {label: "Feature", name: "feature", widget: "string"}}
 
-          - {label: "Industries — Label", name: "industries_label", widget: "string"}
-          - {label: "Industries — Headline", name: "industries_title", widget: "text"}
-          - label: "Industries — Tiles"
+          - {label: "Industries: Label", name: "industries_label", widget: "string"}
+          - {label: "Industries: Headline", name: "industries_title", widget: "text"}
+          - label: "Industries: Tiles"
             name: "industry_tiles"
             widget: "list"
             fields:
@@ -111,8 +111,8 @@ collections:
               - {label: "Image Alt", name: "image_alt", widget: "string"}
               - {label: "Link URL", name: "url", widget: "string"}
 
-          - {label: "Partners — Label", name: "trust_label", widget: "string"}
-          - label: "Partners — Logos"
+          - {label: "Partners: Label", name: "trust_label", widget: "string"}
+          - label: "Partners: Logos"
             name: "trust_logos"
             widget: "list"
             fields:
@@ -120,33 +120,33 @@ collections:
               - {label: "Logo", name: "image", widget: "image"}
               - {label: "Alt Text", name: "alt", widget: "string"}
 
-          - {label: "Final CTA — Headline", name: "final_cta_title", widget: "string"}
-          - {label: "Final CTA — Text", name: "final_cta_text", widget: "text"}
-          - {label: "Final CTA — Primary Button", name: "final_cta_primary", widget: "string"}
-          - {label: "Final CTA — Primary URL", name: "final_cta_primary_url", widget: "string"}
-          - {label: "Final CTA — Secondary Button", name: "final_cta_secondary", widget: "string"}
-          - {label: "Final CTA — Secondary URL", name: "final_cta_secondary_url", widget: "string"}
+          - {label: "Final CTA: Headline", name: "final_cta_title", widget: "string"}
+          - {label: "Final CTA: Text", name: "final_cta_text", widget: "text"}
+          - {label: "Final CTA: Primary Button", name: "final_cta_primary", widget: "string"}
+          - {label: "Final CTA: Primary URL", name: "final_cta_primary_url", widget: "string"}
+          - {label: "Final CTA: Secondary Button", name: "final_cta_secondary", widget: "string"}
+          - {label: "Final CTA: Secondary URL", name: "final_cta_secondary_url", widget: "string"}
 
-          - {label: "Quiz — Label", name: "compat_label", widget: "string"}
-          - {label: "Quiz — Title", name: "compat_title", widget: "string"}
-          - {label: "Quiz — Subtitle", name: "compat_subtitle", widget: "text"}
-          - {label: "Quiz — Welcome Title", name: "compat_welcome_title", widget: "string"}
-          - {label: "Quiz — Welcome Description", name: "compat_welcome_desc", widget: "text"}
-          - {label: "Quiz — Welcome Button", name: "compat_welcome_cta", widget: "string"}
-          - {label: "Quiz — Step 1 Question", name: "compat_step1_question", widget: "string"}
-          - {label: "Quiz — Step 2 Question", name: "compat_step2_question", widget: "string"}
-          - {label: "Quiz — Step 2 Hint", name: "compat_step2_hint", widget: "string"}
-          - {label: "Quiz — Step 3 Question", name: "compat_step3_question", widget: "string"}
-          - {label: "Quiz — Temperature Label", name: "compat_step3_temp_label", widget: "string"}
-          - {label: "Quiz — pH Label", name: "compat_step3_ph_label", widget: "string"}
-          - {label: "Quiz — Next Button", name: "compat_btn_next", widget: "string"}
-          - {label: "Quiz — Back Button", name: "compat_btn_back", widget: "string"}
-          - {label: "Quiz — Confirm Title", name: "compat_confirm_title", widget: "string"}
-          - {label: "Quiz — Confirm Description", name: "compat_confirm_desc", widget: "text"}
-          - {label: "Quiz — Result CTA", name: "compat_result_cta", widget: "string"}
-          - {label: "Quiz — Result CTA URL", name: "compat_result_cta_url", widget: "string"}
+          - {label: "Quiz: Label", name: "compat_label", widget: "string"}
+          - {label: "Quiz: Title", name: "compat_title", widget: "string"}
+          - {label: "Quiz: Subtitle", name: "compat_subtitle", widget: "text"}
+          - {label: "Quiz: Welcome Title", name: "compat_welcome_title", widget: "string"}
+          - {label: "Quiz: Welcome Description", name: "compat_welcome_desc", widget: "text"}
+          - {label: "Quiz: Welcome Button", name: "compat_welcome_cta", widget: "string"}
+          - {label: "Quiz: Step 1 Question", name: "compat_step1_question", widget: "string"}
+          - {label: "Quiz: Step 2 Question", name: "compat_step2_question", widget: "string"}
+          - {label: "Quiz: Step 2 Hint", name: "compat_step2_hint", widget: "string"}
+          - {label: "Quiz: Step 3 Question", name: "compat_step3_question", widget: "string"}
+          - {label: "Quiz: Temperature Label", name: "compat_step3_temp_label", widget: "string"}
+          - {label: "Quiz: pH Label", name: "compat_step3_ph_label", widget: "string"}
+          - {label: "Quiz: Next Button", name: "compat_btn_next", widget: "string"}
+          - {label: "Quiz: Back Button", name: "compat_btn_back", widget: "string"}
+          - {label: "Quiz: Confirm Title", name: "compat_confirm_title", widget: "string"}
+          - {label: "Quiz: Confirm Description", name: "compat_confirm_desc", widget: "text"}
+          - {label: "Quiz: Result CTA", name: "compat_result_cta", widget: "string"}
+          - {label: "Quiz: Result CTA URL", name: "compat_result_cta_url", widget: "string"}
 
-      # ── ABOUT ──
+      # ABOUT
       - name: "about"
         label: "About Us"
         file: "src/_data/about.yml"
@@ -161,29 +161,29 @@ collections:
           - {label: "Hero Image Alt", name: "hero_image_alt", widget: "string"}
           - {label: "Hero CTA Text", name: "hero_cta", widget: "string"}
           - {label: "Hero CTA URL", name: "hero_cta_url", widget: "string"}
-          - {label: "Story — Label", name: "story_label", widget: "string"}
-          - {label: "Story — Headline", name: "story_title", widget: "string"}
-          - {label: "Story — Opening Question", name: "story_question", widget: "text"}
-          - {label: "Story — Paragraphs", name: "story_body", widget: "list", field: {label: "Paragraph", name: "para", widget: "text"}}
-          - {label: "Why We Exist — Label", name: "why_label", widget: "string"}
-          - {label: "Why We Exist — Headline", name: "why_title", widget: "string"}
-          - {label: "Why We Exist — Paragraphs", name: "why_body", widget: "list", field: {label: "Paragraph", name: "para", widget: "text"}}
+          - {label: "Story: Label", name: "story_label", widget: "string"}
+          - {label: "Story: Headline", name: "story_title", widget: "string"}
+          - {label: "Story: Opening Question", name: "story_question", widget: "text"}
+          - {label: "Story: Paragraphs", name: "story_body", widget: "list", field: {label: "Paragraph", name: "para", widget: "text"}}
+          - {label: "Why We Exist: Label", name: "why_label", widget: "string"}
+          - {label: "Why We Exist: Headline", name: "why_title", widget: "string"}
+          - {label: "Why We Exist: Paragraphs", name: "why_body", widget: "list", field: {label: "Paragraph", name: "para", widget: "text"}}
           - {label: "Vision Label", name: "vision_label", widget: "string"}
           - {label: "Vision Text", name: "vision_text", widget: "text"}
           - {label: "Mission Label", name: "mission_label", widget: "string"}
           - {label: "Mission Text", name: "mission_text", widget: "text"}
           - {label: "Mission Body", name: "mission_body", widget: "text"}
-          - {label: "Different — Label", name: "different_label", widget: "string"}
-          - {label: "Different — Headline", name: "different_title", widget: "string"}
-          - label: "Different — Cards"
+          - {label: "Different: Label", name: "different_label", widget: "string"}
+          - {label: "Different: Headline", name: "different_title", widget: "string"}
+          - label: "Different: Cards"
             name: "different_cards"
             widget: "list"
             fields:
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Body", name: "body", widget: "text"}
-          - {label: "Why Choose — Label", name: "choose_label", widget: "string"}
-          - {label: "Why Choose — Headline", name: "choose_title", widget: "string"}
-          - label: "Why Choose — Groups"
+          - {label: "Why Choose: Label", name: "choose_label", widget: "string"}
+          - {label: "Why Choose: Headline", name: "choose_title", widget: "string"}
+          - label: "Why Choose: Groups"
             name: "choose_groups"
             widget: "list"
             fields:
@@ -192,9 +192,9 @@ collections:
           - {label: "CTA Title", name: "cta_title", widget: "string"}
           - {label: "CTA URL", name: "cta_url", widget: "string"}
 
-      # ── SOLUTIONS: NATURALTAG ──
+      # SOLUTIONS: NATURALTAG
       - name: "naturaltag"
-        label: "Solutions — NaturalTag"
+        label: "Solutions: NaturalTag"
         file: "src/_data/naturaltag.yml"
         fields:
           - {label: "Label", name: "label", widget: "string"}
@@ -221,9 +221,9 @@ collections:
           - {label: "CTA Text", name: "cta_text", widget: "string"}
           - {label: "CTA URL", name: "cta_url", widget: "string"}
 
-      # ── SOLUTIONS: NATURALDETECT ──
+      # SOLUTIONS: NATURALDETECT
       - name: "naturaldetect"
-        label: "Solutions — NaturalDetect"
+        label: "Solutions: NaturalDetect"
         file: "src/_data/naturaldetect.yml"
         fields:
           - {label: "Label", name: "label", widget: "string"}
@@ -239,9 +239,9 @@ collections:
           - {label: "Secondary CTA", name: "cta_secondary", widget: "string"}
           - {label: "Secondary CTA URL", name: "cta_secondary_url", widget: "string"}
 
-      # ── SOLUTIONS: NATURALCLOUD ──
+      # SOLUTIONS: NATURALCLOUD
       - name: "naturalcloud"
-        label: "Solutions — NaturalCloud"
+        label: "Solutions: NaturalCloud"
         file: "src/_data/naturalcloud.yml"
         fields:
           - {label: "Label", name: "label", widget: "string"}
@@ -257,7 +257,7 @@ collections:
           - {label: "Secondary CTA", name: "cta_secondary", widget: "string"}
           - {label: "Secondary CTA URL", name: "cta_secondary_url", widget: "string"}
 
-      # ── INDUSTRIES ──
+      # INDUSTRIES
       - name: "industries"
         label: "Industries"
         file: "src/_data/industries.yml"
@@ -282,7 +282,7 @@ collections:
           - {label: "CTA Secondary Text", name: "cta_button_secondary_text", widget: "string"}
           - {label: "CTA Secondary URL", name: "cta_button_secondary_url", widget: "string"}
 
-      # ── INDUSTRY USE-CASES ──
+      # INDUSTRY USE-CASES
       - name: "usecases"
         label: "Industry Use-Cases"
         file: "src/_data/usecases.yml"
@@ -307,7 +307,7 @@ collections:
           - {label: "CTA Title", name: "cta_title", widget: "string"}
           - {label: "CTA URL", name: "cta_url", widget: "string"}
 
-      # ── CAREERS ──
+      # CAREERS
       - name: "careers"
         label: "Careers"
         file: "src/_data/careers.yml"
@@ -333,7 +333,7 @@ collections:
               - {label: "Location", name: "location", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
 
-      # ── CONTACT ──
+      # CONTACT
       - name: "contact"
         label: "Contact"
         file: "src/_data/contact.yml"
@@ -348,7 +348,7 @@ collections:
               - {label: "Label", name: "label", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
 
-      # ── FAQ ──
+      # FAQ
       - name: "faq"
         label: "FAQ"
         file: "src/_data/faq.yml"
@@ -383,7 +383,7 @@ collections:
           - label: "HubSpot"
             name: "hubspot"
             widget: "object"
-            hint: "Portal ID and Form GUID are safe to publish. NEVER paste a HubSpot private-app token, access token, or API key here — everything in this file is visible to the public."
+            hint: "Portal ID and Form GUID are safe to publish. NEVER paste a HubSpot private-app token, access token, or API key here. Everything in this file is visible to the public."
             fields:
               - label: "Send submissions to HubSpot"
                 name: "enabled"
@@ -409,7 +409,7 @@ collections:
               - label: "Field mapping"
                 name: "field_map"
                 widget: "object"
-                hint: "HubSpot internal property names. Leave a value empty to stop sending that field. inquiry_type is not a HubSpot default — create it as a custom contact property, or clear it."
+                hint: "HubSpot internal property names. Leave a value empty to stop sending that field. inquiry_type is not a HubSpot default, so create it as a custom contact property or clear it."
                 fields:
                   - {label: "First name", name: "firstName", widget: "string", required: false}
                   - {label: "Last name", name: "lastName", widget: "string", required: false}
@@ -469,7 +469,7 @@ collections:
               - {label: "Bio", name: "bio", widget: "list", field: {label: "Point", name: "point", widget: "string"}}
               - {label: "Order", name: "order", widget: "number"}
 
-  # Insights — news, updates, and articles
+  # Insights: news, updates, and articles
   - name: "insights"
     label: "Insights"
     folder: "src/insights"

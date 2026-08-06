@@ -1,20 +1,21 @@
-# Home page content — Clean Prototype Copy Guide 2026
+# Home page content: Clean Prototype Copy Guide 2026
 # Editable via Decap CMS or directly
 
-# ─── Hero Section ───
+# Hero Section
 hero_bg_image: "https://images.unsplash.com/photo-1759272840538-ae4b07214c71?w=1800&q=80"
 hero_bg_image_alt: "Shipping containers stacked at a port at sunset"
 hero_image: "https://images.unsplash.com/photo-1763668331599-487470fb85b2?w=900&q=80"
 hero_image_alt: "Supplement bottle with a blank label, awaiting its identity"
 hero_title_line1: "Protect the Ingredients"
 hero_title_line2: "Behind Your Brand"
-# Category line above the headline. Verbatim from the copy guide positioning
-# statement. Do not shorten without Kirsty's sign-off.
+# Positioning statement, verbatim from the copy guide. Do not shorten without
+# Kirsty's sign-off. Rendered in bold at the start of the hero lead paragraph,
+# directly under the headline.
 hero_slogan: "In-Product Authentication for Food & Nutraceutical Ingredients"
 hero_desc: "Natural Trace gives every ingredient a unique, detectable identity."
 # Rendered as a single sentence: items joined with commas and "and", then the
-# coda after a dash. Kirsty wrote these as five short lines; the fifth is a coda,
-# not a peer, which is why it read as an orphan when they were set as a list.
+# coda after a comma. Kirsty wrote these as five short lines; the fifth is a
+# coda, not a peer, which is why it read as an orphan when set as a list.
 hero_claims:
   - "Verify presence"
   - "protect branded ingredients"
@@ -26,7 +27,7 @@ hero_cta_url: "/contact/"
 hero_cta_secondary: "Talk to our team"
 hero_cta_secondary_url: "/contact/"
 
-# ─── Section 2 — The Challenge ───
+# Section 2: The Challenge
 challenge_label: "The Challenge"
 challenge_title: "Your Product is Unique. Can You Prove It's Yours?"
 challenge_lead: "Traditional ingredient and botanical testing can be inconclusive. Packaging can be replaced. Documentation can be copied. Certificates can be separated from the product. Natural Trace incorporates authentication directly into the product itself, so proof remains with it throughout its journey."
@@ -42,19 +43,19 @@ challenge_close: "Natural Trace incorporates a detectable authentication tag dir
 challenge_image: "https://images.unsplash.com/photo-1710141530542-f792450e736e?w=900&q=80"
 challenge_image_alt: "Bulk ingredient sacks stacked in a distribution warehouse"
 
-# ─── Section 3 — Value Proposition ───
+# Section 3: Value Proposition
 vp_label: "Value Proposition"
 vp_title: "Proof That Travels With Your Ingredients"
-vp_subtitle: "Independent, scientific evidence that confirms what's really in your supply chain — not just what the paperwork says."
+vp_subtitle: "Independent, scientific evidence that confirms what's really in your supply chain, not just what the paperwork says."
 vp_problem_label: "Customer problem"
 vp_value_label: "Natural Trace value"
 vp_cards:
   - title: "Verify Ingredient Authenticity"
     problem: "Ingredients can be substituted, diluted, adulterated, or falsely labelled before they reach you."
-    value: "Confirm an ingredient or finished product is genuine by detecting its embedded identity — not just its label."
+    value: "Confirm an ingredient or finished product is genuine by detecting its embedded identity, not just its label."
   - title: "Confirm Authorized Manufacturing"
     problem: "Contract manufacturers may overproduce, substitute materials, use undeclared facilities, or divert product into unauthorized channels."
-    value: "Verify what was actually produced, with which materials, by which authorized partner — and that production stayed within the approved process."
+    value: "Verify what was actually produced, with which materials, by which authorized partner, and that production stayed within the approved process."
   - title: "Trace Physical Custody, Not Just Paperwork"
     problem: "Documents can be lost, altered, or disconnected from the physical product as it moves through the supply chain."
     value: "Confirm the true origin, custody, movement, and destination of the physical product itself."
@@ -65,7 +66,7 @@ vp_cards:
     problem: "Counterfeit, diverted, or grey-market products erode revenue, reputation, and customer trust."
     value: "Distinguish genuine products from unauthorized ones and strengthen confidence across the supply chain."
 
-# ─── Section 4 — How It Works ───
+# Section 4: How It Works
 how_label: "How It Works"
 how_title: "Four Steps From Ingredient to Evidence"
 how_steps:
@@ -89,7 +90,7 @@ how_features:
   - "Compatible with existing manufacturing"
   - "Designed for commercial scale"
 
-# ─── Section 5 — Industry Tiles ───
+# Section 5: Industry Tiles
 industries_label: "Industries"
 industries_title: "The first authentication platform validated for premium food and nutraceutical ingredients."
 industry_tiles:
@@ -114,30 +115,37 @@ industry_tiles:
     image_alt: "Freshly harvested strawberries"
     url: "/industries/#agri-food"
 
-# ─── Partners Trust Bar ───
+# Partners Trust Bar
 trust_label: "Our Partners"
 trust_logos:
   - url: "https://www.blueincube.com/"
-    image: "/assets/partners/Blue InCube.png"
+    image: "/assets/partner-logos/Blue InCube.png"
     alt: "Blue InCube"
   - url: "https://nutrasteward.com/"
-    image: "/assets/partners/NutraSteward.jpg"
+    image: "/assets/partner-logos/NutraSteward.jpg"
     alt: "NutraSteward"
   - url: "https://www.foodplant.com.sg/"
-    image: "/assets/partners/FoodPlant.png"
+    image: "/assets/partner-logos/FoodPlant.png"
     alt: "FoodPlant"
   - url: "https://trackvision.ai/"
-    image: "/assets/partners/Trackvision AI.png"
+    image: "/assets/partner-logos/Trackvision AI.png"
     alt: "TrackVision"
   - url: "https://startupbootcamp.org/"
-    image: "/assets/partners/Startupbootcamp.svg"
+    image: "/assets/partner-logos/Startupbootcamp.svg"
     alt: "Startupbootcamp"
   - url: "https://www.ingredientsnetwork.com/"
-    image: "/assets/partners/Ingredients Network.jpg"
+    image: "/assets/partner-logos/Ingredients Network.jpg"
     alt: "Ingredients Network"
-# TODO: Chemet and CRN logos are listed in the copy guide but no asset has been supplied.
+  - url: "https://chemetindia.com/"
+    image: "/assets/partner-logos/Chemet.png"
+    alt: "Chemet"
+  - url: "https://crnusa.org/"
+    image: "/assets/partner-logos/CRN.png"
+    alt: "Council for Responsible Nutrition"
+# To add a partner: drop the logo file into src/assets/partner-logos/ and add a
+# url / image / alt block above. See the README in that folder.
 
-# ─── Final Call to Action ───
+# Final Call to Action
 final_cta_title: "Ready to protect your products with confidence?"
 final_cta_text: "Whether you're protecting a premium ingredient, verifying manufacturing partners or investigating suspicious products, Natural Trace can help."
 final_cta_primary: "Request a Compatibility Assessment"
@@ -145,7 +153,7 @@ final_cta_primary_url: "/contact/"
 final_cta_secondary: "Talk to our team"
 final_cta_secondary_url: "/contact/"
 
-# ─── Compatibility Quiz ───
+# Compatibility Quiz
 compat_label: "Product Compatibility"
 compat_title: "Assess My Product"
 compat_subtitle: "Find out in 60 seconds whether Natural Trace is compatible with your product."

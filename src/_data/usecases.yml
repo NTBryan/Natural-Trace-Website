@@ -1,4 +1,4 @@
-# Industry Use-Cases — Clean Prototype Copy Guide 2026
+# Industry Use-Cases: Clean Prototype Copy Guide 2026
 label: "Industry Use-Cases"
 title: "Authentication in Practice"
 subtitle: "Four applications of in-product authentication across supplements, branded ingredients and agri-food supply chains."
@@ -18,14 +18,14 @@ cases:
     outcome: "The company strengthened manufacturing oversight and supported investigations when questions arose."
     image: "https://images.unsplash.com/photo-1651525670054-279c154bc3b6?w=800&q=80"
     image_alt: "Food production line machinery"
-  - sector: "Agri-food — Fresh Produce"
+  - sector: "Agri-food: Fresh Produce"
     title: "Fruit Identity"
     challenge: "An Australian premium berry farm wanted to prove the origin of its produce after it left the farm when growing under license."
     solution: "NaturalTag was applied to pre-harvest treatments, allowing fruit to be authenticated later in the supply chain."
     outcome: "The grower strengthened provenance verification and increased confidence for brand owners, customers and exporters."
     image: "https://images.unsplash.com/photo-1560296134-8f592589dff3?w=800&q=80"
     image_alt: "Freshly harvested strawberries"
-  - sector: "Agri-food — Green Coffee"
+  - sector: "Agri-food: Green Coffee"
     title: "Cross-Border Verification"
     challenge: "A coffee farm wanted to maintain confidence in product authenticity as green coffee beans passed through multiple international trading partners."
     solution: "Coffee is tagged before export, enabling samples collected overseas to be authenticated."

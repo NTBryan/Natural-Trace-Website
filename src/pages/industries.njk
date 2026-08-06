@@ -8,13 +8,13 @@ permalink: /industries/
 <section class="home-industries" style="padding-top:9rem">
   <div class="container">
     <div class="industries-header">
-      <span class="section-label anim anim-up">{{ industries.label }}</span>
-      <h2 class="section-title anim anim-up delay-1">{{ industries.title }}</h2>
-      <p class="section-subtitle anim anim-up delay-2" style="margin:0 auto">{{ industries.subtitle }}</p>
+      <span class="section-label">{{ industries.label }}</span>
+      <h2 class="section-title">{{ industries.title }}</h2>
+      <p class="section-subtitle" style="margin:0 auto">{{ industries.subtitle }}</p>
     </div>
     <div class="industries-grid">
       {% for industry in industries.industries %}
-      <div class="industry-card anim anim-scale delay-{{ loop.index }}" id="{{ industry.id }}">
+      <div class="industry-card delay-{{ loop.index }}" id="{{ industry.id }}">
         <img src="{{ industry.image }}" alt="{{ industry.image_alt }}" loading="lazy">
         <div class="industry-card-overlay"><h3>{{ industry.name }}</h3><p>{{ industry.description }}</p></div>
       </div>
@@ -25,7 +25,7 @@ permalink: /industries/
 
 <section class="finalcta">
   <div class="container">
-    <div class="finalcta-inner anim anim-up">
+    <div class="finalcta-inner">
       <h2>{{ industries.cta_title }}</h2>
       <p>{{ industries.cta_description }}</p>
       <div class="finalcta-actions">

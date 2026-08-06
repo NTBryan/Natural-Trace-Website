@@ -8,13 +8,13 @@ permalink: /industries/use-cases/
 <section class="usecases" style="padding-top:9rem">
   <div class="container">
     <div class="vp-head">
-      <span class="section-label anim anim-up">{{ usecases.label }}</span>
-      <h2 class="section-title anim anim-up delay-1">{{ usecases.title }}</h2>
-      <p class="section-subtitle anim anim-up delay-2">{{ usecases.subtitle }}</p>
+      <span class="section-label">{{ usecases.label }}</span>
+      <h2 class="section-title">{{ usecases.title }}</h2>
+      <p class="section-subtitle">{{ usecases.subtitle }}</p>
     </div>
 
     {% for case in usecases.cases %}
-    <article class="usecase anim anim-up">
+    <article class="usecase">
       <div class="usecase-media">
         <img src="{{ case.image }}" alt="{{ case.image_alt }}" loading="lazy">
       </div>
@@ -41,7 +41,7 @@ permalink: /industries/use-cases/
 
 <section class="finalcta">
   <div class="container">
-    <div class="finalcta-inner anim anim-up">
+    <div class="finalcta-inner">
       <h2>{{ usecases.cta_title }}</h2>
       <div class="finalcta-actions">
         <a href="{{ usecases.cta_url }}" class="btn btn-white" style="cursor:pointer">{{ usecases.cta_title }} &#8594;</a>

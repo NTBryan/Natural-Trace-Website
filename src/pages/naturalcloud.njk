@@ -9,19 +9,19 @@ permalink: /naturalcloud/
   <div class="container">
     <div class="challenge-grid">
       <div class="challenge-text">
-        <span class="section-label anim anim-up">{{ naturalcloud.label }}</span>
-        <h2 class="section-title anim anim-up delay-1">{{ naturalcloud.title }}</h2>
-        <p class="section-subtitle anim anim-up delay-2">{{ naturalcloud.hero }}</p>
-        <p class="challenge-lead anim anim-up delay-3" style="margin-top:1.5rem">{{ naturalcloud.intro }}</p>
-        <p class="challenge-sub anim anim-up delay-3">{{ naturalcloud.features_title }}</p>
-        <ul class="challenge-list anim anim-up delay-4">
+        <span class="section-label">{{ naturalcloud.label }}</span>
+        <h2 class="section-title">{{ naturalcloud.title }}</h2>
+        <p class="section-subtitle">{{ naturalcloud.hero }}</p>
+        <p class="challenge-lead" style="margin-top:1.5rem">{{ naturalcloud.intro }}</p>
+        <p class="challenge-sub">{{ naturalcloud.features_title }}</p>
+        <ul class="challenge-list">
           {% for item in naturalcloud.features %}<li>{{ item }}</li>{% endfor %}
         </ul>
         <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem">
-          <a href="{{ naturalcloud.cta_primary_url }}" class="btn btn-primary anim anim-up delay-4" style="cursor:pointer">{{ naturalcloud.cta_primary }} &#8594;</a>
+          <a href="{{ naturalcloud.cta_primary_url }}" class="btn btn-primary" style="cursor:pointer">{{ naturalcloud.cta_primary }} &#8594;</a>
         </div>
       </div>
-      <div class="solution-mark anim anim-left delay-2">
+      <div class="solution-mark">
         <img src="{{ naturalcloud.hero_logo }}" alt="{{ naturalcloud.hero_logo_alt }}" loading="lazy">
       </div>
     </div>
@@ -30,7 +30,7 @@ permalink: /naturalcloud/
 
 <section class="finalcta">
   <div class="container">
-    <div class="finalcta-inner anim anim-up">
+    <div class="finalcta-inner">
       <h2>{{ naturalcloud.cta_secondary }}</h2>
       <div class="finalcta-actions">
         <a href="{{ naturalcloud.cta_primary_url }}" class="btn btn-white" style="cursor:pointer">{{ naturalcloud.cta_primary }} &#8594;</a>

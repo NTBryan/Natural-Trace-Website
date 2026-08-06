@@ -14,7 +14,7 @@
 
 rules:
 
-  # ── Pages ──
+  # Pages
   # old slug was misspelt
   - from: "/fqas/"
     to: "/faq/"
@@ -43,7 +43,7 @@ rules:
   - from: "/test-page-1/"
     to: "/"
 
-  # ── Articles: not yet migrated, all land on the Insights index ──
+  # Articles: not yet migrated, all land on the Insights index
   - from: "/dietary-supplement-recalls-tackling-fraud-counterfeits-and-fake-ingredients/"
     to: "/insights/"
   - from: "/views-from-natural-trace-rise-in-food-fraud-suspicions/"
@@ -77,7 +77,7 @@ rules:
   - from: "/natural-trace-announces-new-co-ceo-structure-to-accelerate-next-phase-of-global-growth/"
     to: "/insights/"
 
-  # ── WordPress taxonomy ──
+  # WordPress taxonomy
   - from: "/category/news/"
     to: "/insights/"
   - from: "/category/press-release/"

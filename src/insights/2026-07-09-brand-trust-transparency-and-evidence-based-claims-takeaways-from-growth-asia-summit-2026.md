@@ -25,15 +25,15 @@ For brands in the nutraceutical, dietary supplement, and functional food space, 
 
 Key themes from Day 1:
 
-- **Transparency as a baseline** — Consumers now expect full visibility into where ingredients come from and how products are made. "Trust us" is no longer enough.
-- **Evidence over marketing** — Science-based claims backed by traceable, auditable data are becoming the standard for market differentiation.
-- **Supply chain verification at batch level** — Brands that can prove origin and authenticity at the batch level hold a competitive advantage in regulatory compliance and consumer confidence.
+- **Transparency as a baseline.** Consumers now expect full visibility into where ingredients come from and how products are made. "Trust us" is no longer enough.
+- **Evidence over marketing.** Science-based claims backed by traceable, auditable data are becoming the standard for market differentiation.
+- **Supply chain verification at batch level.** Brands that can prove origin and authenticity at the batch level hold a competitive advantage in regulatory compliance and consumer confidence.
 
 ## How Molecular Traceability Fits In
 
 At Natural Trace, we are building the tools to meet this demand. Our platform embeds food-grade, non-GMO DNA markers directly into products at the source, then verifies their presence downstream using validated molecular detection methods.
 
-This gives brands batch-level, PCR-verified proof of origin and authenticity — not a paper trail, but molecular evidence.
+This gives brands batch-level, PCR-verified proof of origin and authenticity, not a paper trail but molecular evidence.
 
 ## Looking Ahead
 

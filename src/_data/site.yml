@@ -1,4 +1,4 @@
-# Site-wide settings — editable via Decap CMS
+# Site-wide settings: editable via Decap CMS
 name: "Natural Trace"
 legal_name: "Natural Trace Pte Ltd"
 tagline: "In-Product Authentication for Food & Nutraceutical Ingredients"
@@ -9,7 +9,7 @@ url: "https://ntbryan.github.io/Natural-Trace-Website"
 
 default_summary: "Natural Trace is the in-product authentication platform for food and nutraceutical ingredients. Protect branded ingredients, confirm authorised manufacturing and investigate suspicious products."
 
-# ─── Organisation facts, used for structured data ───
+# Organisation facts, used for structured data
 founding_year: "2021"
 locality: "Singapore"
 country: "SG"
@@ -19,7 +19,7 @@ social:
   - "https://www.linkedin.com/company/natural-trace/"
   - "https://www.youtube.com/@naturaltrace8510"
 
-# ─── Crawler policy ───
+# Crawler policy
 # AI assistants are a route to discovery for a category most buyers cannot name
 # yet, so the answer engines are allowed. Set allow_ai_crawlers to false to
 # block them instead.

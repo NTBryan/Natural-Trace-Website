@@ -9,15 +9,15 @@ permalink: /about/
   <div class="container">
     <div class="challenge-grid">
       <div class="challenge-text">
-        <span class="section-label anim anim-up">{{ about.label }}</span>
-        <h2 class="section-title anim anim-up delay-1">{{ about.title }}</h2>
-        <p class="section-subtitle anim anim-up delay-2">{{ about.subtitle }}</p>
-        <p class="challenge-lead anim anim-up delay-3" style="margin-top:1.5rem">{{ about.intro }}</p>
-        <p class="challenge-sub anim anim-up delay-3">{{ about.disciplines }}</p>
-        <p class="challenge-lead anim anim-up delay-4">{{ about.intro_secondary }}</p>
-        <a href="{{ about.hero_cta_url }}" class="btn btn-primary anim anim-up delay-4" style="cursor:pointer">{{ about.hero_cta }} &#8594;</a>
+        <span class="section-label">{{ about.label }}</span>
+        <h2 class="section-title">{{ about.title }}</h2>
+        <p class="section-subtitle">{{ about.subtitle }}</p>
+        <p class="challenge-lead" style="margin-top:1.5rem">{{ about.intro }}</p>
+        <p class="challenge-sub">{{ about.disciplines }}</p>
+        <p class="challenge-lead">{{ about.intro_secondary }}</p>
+        <a href="{{ about.hero_cta_url }}" class="btn btn-primary" style="cursor:pointer">{{ about.hero_cta }} &#8594;</a>
       </div>
-      <div class="challenge-media anim anim-left delay-2">
+      <div class="challenge-media">
         <img src="{{ about.hero_image }}" alt="{{ about.hero_image_alt }}" loading="lazy">
       </div>
     </div>
@@ -27,13 +27,13 @@ permalink: /about/
 <section class="valueprop" id="story">
   <div class="container">
     <div class="vp-head">
-      <span class="section-label anim anim-up">{{ about.story_label }}</span>
-      <h2 class="section-title anim anim-up delay-1">{{ about.story_title }}</h2>
+      <span class="section-label">{{ about.story_label }}</span>
+      <h2 class="section-title">{{ about.story_title }}</h2>
     </div>
     <div style="max-width:780px;margin:0 auto">
-      <p class="challenge-close anim anim-up delay-2" style="margin-top:0;font-size:1.1rem;font-weight:600">{{ about.story_question }}</p>
+      <p class="challenge-close" style="margin-top:0;font-size:1.1rem;font-weight:600">{{ about.story_question }}</p>
       {% for para in about.story_body %}
-      <p class="challenge-lead anim anim-up delay-3" style="margin-bottom:1.15rem">{{ para }}</p>
+      <p class="challenge-lead" style="margin-bottom:1.15rem">{{ para }}</p>
       {% endfor %}
     </div>
   </div>
@@ -42,15 +42,15 @@ permalink: /about/
 <section class="howitworks" id="why-we-exist">
   <div class="container">
     <div class="how-head">
-      <span class="section-label anim anim-up">{{ about.why_label }}</span>
-      <h2 class="section-title anim anim-up delay-1">{{ about.why_title }}</h2>
+      <span class="section-label">{{ about.why_label }}</span>
+      <h2 class="section-title">{{ about.why_title }}</h2>
     </div>
     <div style="max-width:760px;margin:0 auto">
       {% for para in about.why_body %}
-      <p class="anim anim-up delay-2" style="color:rgba(255,255,255,.72);font-size:.98rem;line-height:1.85;margin-bottom:1.15rem">{{ para }}</p>
+      <p  style="color:rgba(255,255,255,.72);font-size:.98rem;line-height:1.85;margin-bottom:1.15rem">{{ para }}</p>
       {% endfor %}
     </div>
-    <div class="how-grid anim anim-up delay-3" style="grid-template-columns:repeat(2,1fr);margin-top:3.5rem;max-width:900px;margin-left:auto;margin-right:auto">
+    <div class="how-grid" style="grid-template-columns:repeat(2,1fr);margin-top:3.5rem;max-width:900px;margin-left:auto;margin-right:auto">
       <div class="how-step">
         <div class="how-step-num">&#9679;</div>
         <h3>{{ about.vision_label }}</h3>
@@ -69,12 +69,12 @@ permalink: /about/
 <section class="valueprop" id="different">
   <div class="container">
     <div class="vp-head">
-      <span class="section-label anim anim-up">{{ about.different_label }}</span>
-      <h2 class="section-title anim anim-up delay-1">{{ about.different_title }}</h2>
+      <span class="section-label">{{ about.different_label }}</span>
+      <h2 class="section-title">{{ about.different_title }}</h2>
     </div>
     <div class="vp-grid about-grid-2">
       {% for card in about.different_cards %}
-      <article class="vp-card anim anim-up delay-{{ loop.index }}">
+      <article class="vp-card delay-{{ loop.index }}">
         <span class="vp-num">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
         <h3>{{ card.title }}</h3>
         <div class="vp-block"><p>{{ card.body }}</p></div>
@@ -87,12 +87,12 @@ permalink: /about/
 <section class="home-industries" id="why-choose">
   <div class="container">
     <div class="industries-header">
-      <span class="section-label anim anim-up">{{ about.choose_label }}</span>
-      <h2 class="section-title anim anim-up delay-1">{{ about.choose_title }}</h2>
+      <span class="section-label">{{ about.choose_label }}</span>
+      <h2 class="section-title">{{ about.choose_title }}</h2>
     </div>
     <div class="vp-grid about-grid-2" style="max-width:900px;margin:0 auto">
       {% for group in about.choose_groups %}
-      <article class="vp-card anim anim-up delay-{{ loop.index }}">
+      <article class="vp-card delay-{{ loop.index }}">
         <h3>{{ group.title }}</h3>
         <ul class="sol-list" style="grid-template-columns:1fr;margin-top:0">
           {% for item in group.items %}<li>{{ item }}</li>{% endfor %}
@@ -105,7 +105,7 @@ permalink: /about/
 
 <section class="finalcta">
   <div class="container">
-    <div class="finalcta-inner anim anim-up">
+    <div class="finalcta-inner">
       <h2>{{ about.cta_title }}</h2>
       <div class="finalcta-actions">
         <a href="{{ about.cta_url }}" class="btn btn-white" style="cursor:pointer">{{ about.cta_title }} &#8594;</a>

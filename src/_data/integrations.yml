@@ -3,7 +3,7 @@
 # IMPORTANT: everything in this file is compiled into the public site and is
 # readable by anyone. Only put values here that are safe to publish.
 #
-# A HubSpot portal ID and form GUID are safe to publish — HubSpot designs them
+# A HubSpot portal ID and form GUID are safe to publish. HubSpot designs them
 # to be used from a browser. A HubSpot private-app token, API key, or access
 # token is NOT. Never put one in this file or anywhere else in this repo.
 #
@@ -29,7 +29,7 @@ hubspot:
   region: "na1"
 
   # Maps this site's form fields to HubSpot contact property names.
-  # Left of the colon is the field on the website — do not change those.
+  # Left of the colon is the field on the website. Do not change those.
   # Right of the colon is the HubSpot internal property name.
   #
   # firstname/lastname/email/company/message are HubSpot defaults and work
@@ -51,7 +51,7 @@ fallback:
   email: "info@natural-trace.com"
   subject_prefix: "Website inquiry"
 
-# ─── Sitewide behaviour tracking ───
+# Sitewide behaviour tracking
 # The HubSpot tracking script runs on every page once portal_id above is set
 # AND the visitor has accepted cookies. It sets cookies, so it must not load
 # before consent: the privacy policy promises consent, and the 30 July review

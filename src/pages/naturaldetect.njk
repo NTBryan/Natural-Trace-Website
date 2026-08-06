@@ -9,20 +9,20 @@ permalink: /naturaldetect/
   <div class="container">
     <div class="challenge-grid">
       <div class="challenge-text">
-        <span class="section-label anim anim-up">{{ naturaldetect.label }}</span>
-        <h2 class="section-title anim anim-up delay-1">{{ naturaldetect.title }}</h2>
-        <p class="section-subtitle anim anim-up delay-2">{{ naturaldetect.hero }}</p>
-        <p class="challenge-lead anim anim-up delay-3" style="margin-top:1.5rem">{{ naturaldetect.intro }}</p>
-        <p class="challenge-sub anim anim-up delay-3">{{ naturaldetect.features_title }}</p>
-        <ul class="challenge-list anim anim-up delay-4">
+        <span class="section-label">{{ naturaldetect.label }}</span>
+        <h2 class="section-title">{{ naturaldetect.title }}</h2>
+        <p class="section-subtitle">{{ naturaldetect.hero }}</p>
+        <p class="challenge-lead" style="margin-top:1.5rem">{{ naturaldetect.intro }}</p>
+        <p class="challenge-sub">{{ naturaldetect.features_title }}</p>
+        <ul class="challenge-list">
           {% for item in naturaldetect.features %}<li>{{ item }}</li>{% endfor %}
         </ul>
         <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem">
-          <a href="{{ naturaldetect.cta_primary_url }}" class="btn btn-primary anim anim-up delay-4" style="cursor:pointer">{{ naturaldetect.cta_primary }} &#8594;</a>
-          <a href="{{ naturaldetect.cta_secondary_url }}" class="btn btn-line anim anim-up delay-4" style="cursor:pointer">{{ naturaldetect.cta_secondary }}</a>
+          <a href="{{ naturaldetect.cta_primary_url }}" class="btn btn-primary" style="cursor:pointer">{{ naturaldetect.cta_primary }} &#8594;</a>
+          <a href="{{ naturaldetect.cta_secondary_url }}" class="btn btn-line" style="cursor:pointer">{{ naturaldetect.cta_secondary }}</a>
         </div>
       </div>
-      <div class="solution-mark anim anim-left delay-2">
+      <div class="solution-mark">
         <img src="{{ naturaldetect.hero_logo }}" alt="{{ naturaldetect.hero_logo_alt }}" loading="lazy">
       </div>
     </div>
@@ -31,7 +31,7 @@ permalink: /naturaldetect/
 
 <section class="finalcta">
   <div class="container">
-    <div class="finalcta-inner anim anim-up">
+    <div class="finalcta-inner">
       <h2>{{ naturaldetect.cta_primary }}</h2>
       <p>Send us your product details and one of our scientists will review compatibility with you.</p>
       <div class="finalcta-actions">

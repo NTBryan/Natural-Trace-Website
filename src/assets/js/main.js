@@ -1,37 +1,7 @@
-/* Scroll animations (multi-page) */
-(function() {
-  function initAnims() {
-    var elems = document.querySelectorAll('.anim');
-    if (!elems.length) return;
-    if ('IntersectionObserver' in window) {
-      /* Immediately reveal elements already in the viewport */
-      var vh = window.innerHeight || document.documentElement.clientHeight;
-      elems.forEach(function(el) {
-        var rect = el.getBoundingClientRect();
-        if (rect.top < vh && rect.bottom > 0) {
-          el.classList.add('visible');
-        }
-      });
-      /* Observe remaining hidden elements for scroll reveal */
-      var obs = new IntersectionObserver(function(entries) {
-        entries.forEach(function(e) {
-          if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
-        });
-      }, { threshold: 0.1 });
-      document.querySelectorAll('.anim:not(.visible)').forEach(function(el) { obs.observe(el); });
-    } else {
-      /* No IntersectionObserver support — show everything */
-      elems.forEach(function(el) { el.classList.add('visible'); });
-    }
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initAnims);
-  } else {
-    initAnims();
-  }
-})();
+/* Scroll-reveal animations were removed on 6 Aug 2026. Sections are painted by
+   the browser on load rather than faded in by JavaScript as you scroll. */
 
-/* Splash intro — skippable, cookie-suppressed on repeat visits */
+/* Splash intro: skippable, cookie-suppressed on repeat visits */
 (function(){
   var o = document.getElementById('splashOverlay');
   var v = document.getElementById('splashVideo');
@@ -39,7 +9,7 @@
   var skip = document.getElementById('splashSkip');
   if(!o) return;
 
-  /* Check cookie — skip intro entirely on repeat visits */
+  /* Check cookie: skip intro entirely on repeat visits */
   if(document.cookie.indexOf('nt_intro_seen=1') !== -1){
     o.remove();
     document.body.classList.remove('splash-active');
@@ -52,7 +22,7 @@
     o.classList.add('fade-out');
     document.body.classList.remove('splash-active');
     setTimeout(function(){ o.remove(); }, 700);
-    /* Set cookie — expires in 30 days */
+    /* Set cookie: expires in 30 days */
     document.cookie = 'nt_intro_seen=1;path=/;max-age=' + (30*24*60*60) + ';SameSite=Lax';
   }
 
@@ -108,33 +78,9 @@ window.addEventListener('scroll', () => {
   }
 });
 
-/* Parallax hero */
-window.addEventListener('scroll', () => {
-  const bg = document.getElementById('heroBg');
-  if (bg) bg.style.transform = 'translateY(' + (window.scrollY * 0.35) + 'px)';
-});
-
-/* Counter animation */
-const countObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const el = e.target;
-      const target = +el.dataset.target;
-      const dur = 2000;
-      const start = performance.now();
-      const animate = (now) => {
-        const p = Math.min((now - start) / dur, 1);
-        const eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.floor(eased * target);
-        if (p < 1) requestAnimationFrame(animate);
-        else el.textContent = target;
-      };
-      requestAnimationFrame(animate);
-      countObs.unobserve(el);
-    }
-  });
-}, {threshold:.5});
-document.querySelectorAll('.count').forEach(el => countObs.observe(el));
+/* Parallax hero and the scroll-driven counter were removed on 6 Aug 2026.
+   The parallax wrote a transform on every scroll event with no throttling, and
+   nothing on the site uses the .count element the counter observed. */
 
 /* Contact form
  *
@@ -264,7 +210,7 @@ function handleInternshipSubmit(e) {
   return false;
 }
 
-/* Team modal — data injected from team.json via template on team page */
+/* Team modal: data injected from team.json via template on team page */
 function openTeamModal(idx) {
   if (typeof teamData === 'undefined' || !teamData[idx]) return;
   var d = teamData[idx];
@@ -362,14 +308,14 @@ function filterFaq(cat) {
 
   var tempOptions = [
     { label: 'Below 40°C' },
-    { label: '40–65°C' },
-    { label: '65–100°C' },
+    { label: '40-65°C' },
+    { label: '65-100°C' },
     { label: 'Above 100°C' }
   ];
 
   var phOptions = [
-    { label: 'Neutral (pH 5–8)' },
-    { label: 'Mildly Acidic (pH 4–5)' },
+    { label: 'Neutral (pH 5-8)' },
+    { label: 'Mildly Acidic (pH 4-5)' },
     { label: 'Very Acidic (pH < 4)' },
     { label: 'Alkaline (pH > 8)' }
   ];
