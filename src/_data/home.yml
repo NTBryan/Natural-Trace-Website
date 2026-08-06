@@ -48,7 +48,7 @@ vp_label: "Value Proposition"
 vp_title: "Proof That Travels With Your Ingredients"
 vp_subtitle: "Independent, scientific evidence that confirms what's really in your supply chain, not just what the paperwork says."
 vp_problem_label: "Customer problem"
-vp_value_label: "Natural Trace value"
+vp_value_label: "Our value"
 vp_cards:
   - title: "Verify Ingredient Authenticity"
     problem: "Ingredients can be substituted, diluted, adulterated, or falsely labelled before they reach you."

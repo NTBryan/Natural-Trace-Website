@@ -36,23 +36,32 @@
     dismiss();
   });
 
-  /* Try autoplay with audio; if blocked, mute and show hint */
+  /* Start muted. The old code tried sound first and muted only after the
+     browser rejected it, which is what stalled the load: Chrome defers the
+     download for an autoplay element it will not play. Muted always plays, and
+     the hint invites the visitor to turn sound on. */
+  v.muted = true;
+  if(hint) hint.style.display = 'block';
   var playAttempt = v.play();
   if(playAttempt !== undefined){
-    playAttempt.catch(function(){
-      v.muted = true;
-      v.play();
-      if(hint) hint.style.display = 'block';
-    });
+    /* Muted autoplay should never be refused. If it somehow is, do not leave
+       the visitor looking at a black screen. */
+    playAttempt.catch(dismiss);
   }
+
+  /* Nobody should stare at an empty overlay because a file did not arrive. */
+  v.addEventListener('error', dismiss);
+  v.addEventListener('stalled', function(){ if(v.readyState === 0) dismiss(); });
+  setTimeout(function(){ if(v.readyState === 0) dismiss(); }, 5000);
 
   o.addEventListener('click', function(){
     if(v.muted){ v.muted = false; if(hint) hint.style.display = 'none'; }
     else dismiss();
   });
 
-  /* Fallback timeout */
-  setTimeout(dismiss, 15000);
+  /* Hard stop. The clip runs six seconds, so this only fires if 'ended' never
+     does. It was 15 seconds, which is a long time to look at nothing. */
+  setTimeout(dismiss, 9000);
 })();
 
 /* Active nav state */
