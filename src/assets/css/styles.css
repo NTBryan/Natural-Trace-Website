@@ -102,7 +102,13 @@ nav.scrolled .nav-toggle span{background:var(--dark)}
 /* Partners */
 .trust-bar{background:#fff;border-bottom:1px solid #E5E7EB;padding:2.5rem 0;overflow:hidden}
 .trust-label{display:block;text-align:center;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:#9CA3AF;white-space:nowrap;margin-bottom:1.75rem}
-.trust-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
+/* The visible window MUST stay narrower than one set of logos. If it is wider,
+   the tail of one set and the head of the next are on screen together and the
+   same partner appears at both ends of the rail. Eight logos make a set about
+   1528px wide, so 960px leaves a wide margin and still holds five logos at a
+   time. If partners ever drop below six, drop this figure to match: measure one
+   .trust-set in devtools and keep this number below it. */
+.trust-marquee{max-width:960px;margin:0 auto;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
 .trust-track{display:flex;width:max-content;animation:trustRail 48s linear infinite}
 .trust-set{display:flex;align-items:center}
 /* Hovering or tabbing into the rail stops it, so a logo can actually be clicked. */
