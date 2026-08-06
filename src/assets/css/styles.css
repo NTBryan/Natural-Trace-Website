@@ -891,3 +891,13 @@ footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 0 2rem}
 .consent-decline{background:transparent;color:rgba(255,255,255,.75);border-color:rgba(255,255,255,.22)}
 .consent-decline:hover{border-color:rgba(255,255,255,.5);color:#fff}
 @media(max-width:520px){.consent{padding:1rem}.consent-actions{width:100%}.consent button{flex:1}}
+
+
+/* Link out to a section that used to live on this page. Quiet on purpose: it is
+   a route onward, not a call to action competing with the buttons. */
+.section-more{margin-top:2.5rem;text-align:center;font-size:.95rem}
+.section-more a{color:var(--sage-dark);font-weight:600;border-bottom:1px solid rgba(107,114,73,.35);padding-bottom:2px;transition:border-color .25s ease}
+.section-more a:hover{border-bottom-color:var(--sage)}
+.finalcta-alt{margin-top:1.6rem;font-size:.92rem}
+.finalcta-alt a{color:rgba(255,255,255,.72);border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:2px;transition:color .25s ease,border-color .25s ease}
+.finalcta-alt a:hover{color:#fff;border-bottom-color:rgba(255,255,255,.7)}

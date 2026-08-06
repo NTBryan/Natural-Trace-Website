@@ -86,18 +86,7 @@ collections:
             fields:
               - {label: "Card Title", name: "title", widget: "string"}
               - {label: "Customer Problem", name: "problem", widget: "text"}
-              - {label: "Natural Trace Value", name: "value", widget: "text"}
-
-          - {label: "How It Works: Label", name: "how_label", widget: "string"}
-          - {label: "How It Works: Headline", name: "how_title", widget: "string"}
-          - label: "How It Works: Steps"
-            name: "how_steps"
-            widget: "list"
-            fields:
-              - {label: "Number", name: "num", widget: "string"}
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-          - {label: "How It Works: Feature Chips", name: "how_features", widget: "list", field: {label: "Feature", name: "feature", widget: "string"}}
+              - {label: "Our value", name: "value", widget: "text"}
 
           - {label: "Industries: Label", name: "industries_label", widget: "string"}
           - {label: "Industries: Headline", name: "industries_title", widget: "text"}
@@ -127,6 +116,12 @@ collections:
           - {label: "Final CTA: Secondary Button", name: "final_cta_secondary", widget: "string"}
           - {label: "Final CTA: Secondary URL", name: "final_cta_secondary_url", widget: "string"}
 
+
+      # ASSESS. The compatibility quiz, moved off the home page on 6 Aug 2026.
+      - name: "assess"
+        label: "Assess My Product (quiz)"
+        file: "src/_data/assess.yml"
+        fields:
           - {label: "Quiz: Label", name: "compat_label", widget: "string"}
           - {label: "Quiz: Title", name: "compat_title", widget: "string"}
           - {label: "Quiz: Subtitle", name: "compat_subtitle", widget: "text"}
@@ -220,6 +215,17 @@ collections:
           - {label: "Video File Path", name: "video_src", widget: "string"}
           - {label: "CTA Text", name: "cta_text", widget: "string"}
           - {label: "CTA URL", name: "cta_url", widget: "string"}
+
+          - {label: "How It Works: Label", name: "how_label", widget: "string"}
+          - {label: "How It Works: Headline", name: "how_title", widget: "string"}
+          - label: "How It Works: Steps"
+            name: "how_steps"
+            widget: "list"
+            fields:
+              - {label: "Number", name: "num", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - {label: "How It Works: Feature Chips", name: "how_features", widget: "list", field: {label: "Feature", name: "feature", widget: "string"}}
 
       # SOLUTIONS: NATURALDETECT
       - name: "naturaldetect"

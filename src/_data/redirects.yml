@@ -26,7 +26,7 @@ rules:
   - from: "/our-products/"
     to: "/naturaltag/"
   - from: "/what-we-do/how-it-works/"
-    to: "/#how-it-works"
+    to: "/naturaltag/#how-it-works"
   - from: "/resources/"
     to: "/insights/"
   - from: "/contact-us/"

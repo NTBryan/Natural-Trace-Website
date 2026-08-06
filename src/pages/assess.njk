@@ -1,0 +1,89 @@
+---
+layout: base.njk
+permalink: /assess/
+title: "Assess My Product"
+summary: "Check in 60 seconds whether Natural Trace is compatible with your product. Answer three questions about category, formulation and processing conditions."
+---
+{#
+  The compatibility quiz. It used to sit at the bottom of the home page, directly
+  underneath the final call to action: two calls to action stacked on each other
+  and about 780px of scrolling. On its own page it has a URL that can be sent to
+  a prospect, and the home page is a page and a half shorter.
+
+  Copy lives in src/_data/assess.yml. The quiz behaviour is in main.js and is
+  guarded on the presence of #compatQuiz, so it is inert on every other page.
+#}
+<section class="compat-section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2rem">
+      <span class="section-label">{{ assess.compat_label }}</span>
+      <h2 class="section-title" style="color:#fff">{{ assess.compat_title }}</h2>
+      <p style="color:rgba(255,255,255,.6);max-width:600px;margin:0 auto">{{ assess.compat_subtitle }}</p>
+    </div>
+    <div class="compat-quiz" id="compatQuiz">
+      <!-- Progress bar -->
+      <div class="compat-progress" id="compatProgress" style="display:none">
+        <span class="compat-step-label" id="compatStepLabel">Step 1 of 3</span>
+        <div class="compat-progress-bar"><div class="compat-progress-fill" id="compatProgressFill" style="width:33%"></div></div>
+      </div>
+
+      <!-- Welcome Screen -->
+      <div class="compat-screen active" id="compatWelcome">
+        <div class="compat-welcome">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" style="margin-bottom:1rem"><circle cx="32" cy="32" r="30" stroke="var(--sage)" stroke-width="2.5" fill="rgba(107,114,73,.08)"/><path d="M22 32l6 6 14-14" stroke="var(--sage)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          <h3>{{ assess.compat_welcome_title }}</h3>
+          <p>{{ assess.compat_welcome_desc }}</p>
+          <button class="compat-cta" onclick="compatStart()">{{ assess.compat_welcome_cta }}</button>
+        </div>
+      </div>
+
+      <!-- Step 1: Product Category -->
+      <div class="compat-screen" id="compatStep1">
+        <p class="compat-q">{{ assess.compat_step1_question }}</p>
+        <div class="compat-grid" id="compatCategories"></div>
+        <div class="compat-next-wrap" id="compatNext1">
+          <button class="compat-next" onclick="compatGoStep(2)">{{ assess.compat_btn_next }}</button>
+        </div>
+      </div>
+
+      <!-- Step 2: Formulation -->
+      <div class="compat-screen" id="compatStep2">
+        <p class="compat-q">{{ assess.compat_step2_question }}</p>
+        <p style="color:var(--muted);font-size:.82rem;margin-top:-.75rem;margin-bottom:1rem">{{ assess.compat_step2_hint }}</p>
+        <div class="compat-grid compat-grid-3" id="compatFormulations"></div>
+        <div class="compat-next-wrap" id="compatNext2">
+          <button class="compat-back" onclick="compatGoStep(1)">{{ assess.compat_btn_back }}</button>
+          <button class="compat-next" onclick="compatGoStep(3)">{{ assess.compat_btn_next }}</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Processing Conditions -->
+      <div class="compat-screen" id="compatStep3">
+        <p class="compat-q">{{ assess.compat_step3_question }}</p>
+        <div class="compat-conditions">
+          <div class="compat-condition-group">
+            <h4>{{ assess.compat_step3_temp_label }}</h4>
+            <div class="compat-condition-options" id="compatTempOptions"></div>
+          </div>
+          <div class="compat-condition-group">
+            <h4>{{ assess.compat_step3_ph_label }}</h4>
+            <div class="compat-condition-options" id="compatPhOptions"></div>
+          </div>
+        </div>
+        <div class="compat-next-wrap" id="compatNext3">
+          <button class="compat-back" onclick="compatGoStep(2)">{{ assess.compat_btn_back }}</button>
+          <button class="compat-next" onclick="compatShowConfirm()">{{ assess.compat_btn_next }}</button>
+        </div>
+      </div>
+
+      <!-- Confirmation Screen -->
+      <div class="compat-screen" id="compatConfirm">
+        <div class="compat-welcome">
+          <h3>{{ assess.compat_confirm_title }}</h3>
+          <p>{{ assess.compat_confirm_desc }}</p>
+          <a class="compat-cta" href="{{ assess.compat_result_cta_url }}" style="text-decoration:none;display:inline-block">{{ assess.compat_result_cta }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

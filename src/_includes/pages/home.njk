@@ -51,7 +51,7 @@
     </div>
     <div class="vp-grid">
       {% for card in home.vp_cards %}
-      <article class="vp-card delay-{{ loop.index }}">
+      <article class="vp-card">
         <span class="vp-num">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
         <h3>{{ card.title }}</h3>
         <div class="vp-block">
@@ -65,28 +65,7 @@
       </article>
       {% endfor %}
     </div>
-  </div>
-</section>
-
-<!-- Section 4: How It Works -->
-<section class="howitworks" id="how-it-works">
-  <div class="container">
-    <div class="how-head">
-      <span class="section-label">{{ home.how_label }}</span>
-      <h2 class="section-title">{{ home.how_title }}</h2>
-    </div>
-    <div class="how-grid">
-      {% for step in home.how_steps %}
-      <div class="how-step delay-{{ loop.index }}">
-        <div class="how-step-num">{{ step.num }}</div>
-        <h3>{{ step.title }}</h3>
-        <p>{{ step.description }}</p>
-      </div>
-      {% endfor %}
-    </div>
-    <ul class="how-facts">
-      {% for feature in home.how_features %}<li>{{ feature }}</li>{% endfor %}
-    </ul>
+    <p class="section-more"><a href="/naturaltag/#how-it-works">See how it works, four steps from ingredient to evidence &#8594;</a></p>
   </div>
 </section>
 
@@ -99,7 +78,7 @@
     </div>
     <div class="industries-grid">
       {% for industry in home.industry_tiles %}
-      <a class="industry-card delay-{{ loop.index }}" href="{{ industry.url }}">
+      <a class="industry-card" href="{{ industry.url }}">
         <img src="{{ industry.image }}" alt="{{ industry.image_alt }}" loading="lazy">
         <div class="industry-card-overlay"><h3>{{ industry.name }}</h3><p>{{ industry.description }}</p></div>
       </a>
@@ -149,82 +128,7 @@
         <a href="{{ home.final_cta_primary_url }}" class="btn btn-white" style="cursor:pointer">{{ home.final_cta_primary }} &#8594;</a>
         <a href="{{ home.final_cta_secondary_url }}" class="btn btn-ghost" style="cursor:pointer">{{ home.final_cta_secondary }}</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- Compatibility Quiz -->
-<section class="compat-section">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:2rem">
-      <span class="section-label">{{ home.compat_label }}</span>
-      <h2 class="section-title" style="color:#fff">{{ home.compat_title }}</h2>
-      <p style="color:rgba(255,255,255,.6);max-width:600px;margin:0 auto">{{ home.compat_subtitle }}</p>
-    </div>
-    <div class="compat-quiz" id="compatQuiz">
-      <!-- Progress bar -->
-      <div class="compat-progress" id="compatProgress" style="display:none">
-        <span class="compat-step-label" id="compatStepLabel">Step 1 of 3</span>
-        <div class="compat-progress-bar"><div class="compat-progress-fill" id="compatProgressFill" style="width:33%"></div></div>
-      </div>
-
-      <!-- Welcome Screen -->
-      <div class="compat-screen active" id="compatWelcome">
-        <div class="compat-welcome">
-          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" style="margin-bottom:1rem"><circle cx="32" cy="32" r="30" stroke="var(--sage)" stroke-width="2.5" fill="rgba(107,114,73,.08)"/><path d="M22 32l6 6 14-14" stroke="var(--sage)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-          <h3>{{ home.compat_welcome_title }}</h3>
-          <p>{{ home.compat_welcome_desc }}</p>
-          <button class="compat-cta" onclick="compatStart()">{{ home.compat_welcome_cta }}</button>
-        </div>
-      </div>
-
-      <!-- Step 1: Product Category -->
-      <div class="compat-screen" id="compatStep1">
-        <p class="compat-q">{{ home.compat_step1_question }}</p>
-        <div class="compat-grid" id="compatCategories"></div>
-        <div class="compat-next-wrap" id="compatNext1">
-          <button class="compat-next" onclick="compatGoStep(2)">{{ home.compat_btn_next }}</button>
-        </div>
-      </div>
-
-      <!-- Step 2: Formulation -->
-      <div class="compat-screen" id="compatStep2">
-        <p class="compat-q">{{ home.compat_step2_question }}</p>
-        <p style="color:var(--muted);font-size:.82rem;margin-top:-.75rem;margin-bottom:1rem">{{ home.compat_step2_hint }}</p>
-        <div class="compat-grid compat-grid-3" id="compatFormulations"></div>
-        <div class="compat-next-wrap" id="compatNext2">
-          <button class="compat-back" onclick="compatGoStep(1)">{{ home.compat_btn_back }}</button>
-          <button class="compat-next" onclick="compatGoStep(3)">{{ home.compat_btn_next }}</button>
-        </div>
-      </div>
-
-      <!-- Step 3: Processing Conditions -->
-      <div class="compat-screen" id="compatStep3">
-        <p class="compat-q">{{ home.compat_step3_question }}</p>
-        <div class="compat-conditions">
-          <div class="compat-condition-group">
-            <h4>{{ home.compat_step3_temp_label }}</h4>
-            <div class="compat-condition-options" id="compatTempOptions"></div>
-          </div>
-          <div class="compat-condition-group">
-            <h4>{{ home.compat_step3_ph_label }}</h4>
-            <div class="compat-condition-options" id="compatPhOptions"></div>
-          </div>
-        </div>
-        <div class="compat-next-wrap" id="compatNext3">
-          <button class="compat-back" onclick="compatGoStep(2)">{{ home.compat_btn_back }}</button>
-          <button class="compat-next" onclick="compatShowConfirm()">{{ home.compat_btn_next }}</button>
-        </div>
-      </div>
-
-      <!-- Confirmation Screen -->
-      <div class="compat-screen" id="compatConfirm">
-        <div class="compat-welcome">
-          <h3>{{ home.compat_confirm_title }}</h3>
-          <p>{{ home.compat_confirm_desc }}</p>
-          <a class="compat-cta" href="{{ home.compat_result_cta_url }}" style="text-decoration:none;display:inline-block">{{ home.compat_result_cta }}</a>
-        </div>
-      </div>
+      <p class="finalcta-alt"><a href="/assess/">Or check your product yourself in 60 seconds &#8594;</a></p>
     </div>
   </div>
 </section>

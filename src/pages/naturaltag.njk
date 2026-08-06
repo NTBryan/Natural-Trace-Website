@@ -41,6 +41,29 @@ permalink: /naturaltag/
   </div>
 </section>
 
+<!-- How It Works. Moved here from the home page on 6 Aug 2026. Anchor id kept
+     as how-it-works so /naturaltag/#how-it-works lands on it. -->
+<section class="howitworks" id="how-it-works">
+  <div class="container">
+    <div class="how-head">
+      <span class="section-label">{{ naturaltag.how_label }}</span>
+      <h2 class="section-title">{{ naturaltag.how_title }}</h2>
+    </div>
+    <div class="how-grid">
+      {% for step in naturaltag.how_steps %}
+      <div class="how-step">
+        <div class="how-step-num">{{ step.num }}</div>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <ul class="how-facts">
+      {% for feature in naturaltag.how_features %}<li>{{ feature }}</li>{% endfor %}
+    </ul>
+  </div>
+</section>
+
 <section class="howitworks">
   <div class="container">
     <div class="how-head">
@@ -50,7 +73,7 @@ permalink: /naturaltag/
     </div>
     <div class="how-grid" style="grid-template-columns:repeat(3,1fr)">
       {% for m in naturaltag.matrices %}
-      <div class="how-step delay-{{ loop.index }}">
+      <div class="how-step">
         <h3>{{ m.group }}</h3>
         <p>{{ m.items }}</p>
       </div>

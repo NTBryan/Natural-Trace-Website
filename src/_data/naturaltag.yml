@@ -43,3 +43,30 @@ video_src: "/assets/video/NaturalTag Process.mp4"
 
 cta_text: "Request a Compatibility Assessment"
 cta_url: "/contact/"
+
+# How It Works. Moved off the home page on 6 Aug 2026 to shorten it. The four
+# steps span the whole platform, not just NaturalTag, which is why step 04 names
+# NaturalDetect and NaturalCloud. It lives here because NaturalTag is where the
+# chain starts. The home page links to it at /naturaltag/#how-it-works.
+how_label: "How It Works"
+how_title: "Four Steps From Ingredient to Evidence"
+how_steps:
+  - num: "01"
+    title: "Tag"
+    description: "Add NaturalTag™ into your ingredient during production."
+  - num: "02"
+    title: "Produce"
+    description: "Manufacture and distribute as normal."
+  - num: "03"
+    title: "Test"
+    description: "Test any sample whenever authenticity is questioned."
+  - num: "04"
+    title: "Authenticate"
+    description: "Confirm authenticity using NaturalDetect™ testing and manage results through NaturalCloud™."
+how_features:
+  - "Invisible at recommended use levels"
+  - "Food-grade authentication"
+  - "No impact on product performance"
+  - "Detectable even after cooking or blending into final product"
+  - "Compatible with existing manufacturing"
+  - "Designed for commercial scale"
