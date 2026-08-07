@@ -30,8 +30,11 @@ layout: base.njk
       </div>
       {% if tags %}
       <div class="insight-tags">
+        {#- A tag is a link only once enough articles share it to justify a page.
+            See the threshold in .eleventy.js. Below it the tag still labels the
+            article, it just does not lead anywhere empty. -#}
         {% for tag in tags %}
-        <span class="insight-tag">{{ tag }}</span>
+        {% if tag in collections.tagsWithPages %}<a class="insight-tag" href="/insights/tag/{{ tag | tagSlug }}/">{{ tag }}</a>{% else %}<span class="insight-tag">{{ tag }}</span>{% endif %}
         {% endfor %}
       </div>
       {% endif %}

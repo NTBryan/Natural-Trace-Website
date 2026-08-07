@@ -48,6 +48,56 @@ module.exports = function(eleventyConfig) {
       .sort((a, b) => a.date - b.date)
   );
 
+  /*
+   * Tag archives, but only for tags that have earned one.
+   *
+   * A page per tag sounds free and is not. Three articles currently carry 14
+   * distinct tags, every one of them used exactly once, so a page per tag would
+   * mean 14 pages each listing a single article. Search engines treat that as
+   * thin content and it competes with the articles it is supposed to help. The
+   * old WordPress site had 90 tag URLs across 16 articles for exactly this
+   * reason, and all 90 now redirect to the Insights index.
+   *
+   * So a tag gets a page once TAG_PAGE_MIN articles share it. Below that the tag
+   * still shows on the article, it just is not a link. Raise the threshold if
+   * the archive grows and the pages still feel thin.
+   */
+  const TAG_PAGE_MIN = 3;
+
+  eleventyConfig.addFilter("tagSlug", tag =>
+    String(tag).toLowerCase().trim()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+  );
+
+  eleventyConfig.addCollection("tagPages", collection => {
+    const posts = collection.getFilteredByGlob("src/insights/**/*.md");
+    const byTag = new Map();
+    for (const post of posts) {
+      for (const tag of post.data.tags || []) {
+        if (!byTag.has(tag)) byTag.set(tag, []);
+        byTag.get(tag).push(post);
+      }
+    }
+    return [...byTag.entries()]
+      .filter(([, items]) => items.length >= TAG_PAGE_MIN)
+      .map(([tag, items]) => ({
+        tag,
+        slug: tag.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""),
+        posts: items.sort((a, b) => b.date - a.date),
+      }))
+      .sort((a, b) => a.tag.localeCompare(b.tag));
+  });
+
+  /* Which tags currently have a page, so an article can link only those. */
+  eleventyConfig.addCollection("tagsWithPages", collection => {
+    const counts = new Map();
+    for (const post of collection.getFilteredByGlob("src/insights/**/*.md")) {
+      for (const tag of post.data.tags || []) counts.set(tag, (counts.get(tag) || 0) + 1);
+    }
+    return [...counts.entries()].filter(([, n]) => n >= TAG_PAGE_MIN).map(([tag]) => tag);
+  });
+
   // SKIP_ASSETS=1 builds HTML only (fast local previews). CI never sets it.
   if (process.env.SKIP_ASSETS !== "1") {
     eleventyConfig.addPassthroughCopy("src/assets");

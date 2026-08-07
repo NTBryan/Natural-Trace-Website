@@ -1,0 +1,45 @@
+---
+layout: base.njk
+pagination:
+  data: collections.tagPages
+  size: 1
+  alias: t
+permalink: "/insights/tag/{{ t.slug }}/"
+eleventyComputed:
+  title: "{{ t.tag }}"
+  summary: "Natural Trace articles tagged {{ t.tag }}. {{ t.posts.length }} pieces on {{ t.tag | lower }}, covering in-product authentication for food and nutraceutical ingredients."
+---
+{#
+  One page per tag, generated only for tags that clear the threshold in
+  .eleventy.js. See the comment there for why the threshold exists.
+#}
+<section class="insights-hero">
+  <div class="container">
+    <div class="insights-header">
+      <a class="privacy-back" href="/insights/">Back to Insights</a>
+      <span class="section-label">Tagged</span>
+      <h1 class="section-title">{{ t.tag }}</h1>
+      <p class="section-subtitle">{{ t.posts.length }} article{% if t.posts.length != 1 %}s{% endif %} on this topic.</p>
+    </div>
+  </div>
+</section>
+
+<section class="insights-list">
+  <div class="container">
+    <div class="insights-grid">
+      {% for post in t.posts %}
+      <article class="insight-card">
+        {% if post.data.image %}
+        <a href="{{ post.url }}" class="insight-card-image"><img src="{{ post.data.image }}" alt="{{ post.data.title }}" loading="lazy"></a>
+        {% endif %}
+        <div class="insight-card-body">
+          <time datetime="{{ post.date | date("%Y-%m-%d") }}">{{ post.date | date("%B %d, %Y") }}</time>
+          <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+          <p>{{ post.data.summary }}</p>
+          <a href="{{ post.url }}" class="read-more">Read more</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
