@@ -14,17 +14,16 @@ hubspot:
   # portal_id and form_guid are filled in. While it is off, the contact form
   # falls back to opening the visitor's email client (see fallback below).
   #
-  # STILL FALSE ON PURPOSE, 7 Aug 2026. The portal and form below are correct
-  # and verified: posting to them returns a field-level validation error rather
-  # than a 404, which only happens when HubSpot has found the form.
-  #
-  # What the form currently demands:
+  # Switched on 7 Aug 2026, after the contact page was changed to match what the
+  # form on HubSpot's side actually demands:
   #   company, firstname, lastname, message, email, jobtitle   all required
   #
-  # The website form does not collect jobtitle, so every submission would be
-  # rejected and would silently fall back to email. Make jobtitle optional in
-  # HubSpot, or add a Job Title field to the contact page, then set this to true.
-  enabled: false
+  # Job Title was added to the contact page and Company made required, because a
+  # blank value is never sent and HubSpot rejects the submission when a required
+  # field is absent. Both jobtitle and inquiry_type were confirmed to be accepted
+  # by posting a deliberately incomplete payload: the only complaint that came
+  # back was the one field held out on purpose.
+  enabled: true
 
   # HubSpot Hub ID. Find it in HubSpot under
   # Settings -> Account Management -> Account Defaults, or in the URL after
@@ -55,6 +54,7 @@ hubspot:
     lastName: "lastname"
     email: "email"
     company: "company"
+    jobTitle: "jobtitle"
     inquiryType: "inquiry_type"
     message: "message"
 

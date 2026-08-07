@@ -19,6 +19,8 @@ form:
   email_placeholder: "your@company.com"
   company_label: "Company"
   company_placeholder: "Your company name"
+  job_title_label: "Job Title"
+  job_title_placeholder: "Your role"
   inquiry_type_label: "Inquiry Type"
   inquiry_type_placeholder: "Select an inquiry type"
   message_label: "Message"

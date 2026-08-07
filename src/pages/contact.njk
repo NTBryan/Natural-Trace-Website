@@ -46,9 +46,22 @@ permalink: /contact/
             <label>{{ contact.form.email_label }}</label>
             <input type="email" name="email" required placeholder="{{ contact.form.email_placeholder }}">
           </div>
-          <div class="form-group">
-            <label>{{ contact.form.company_label }}</label>
-            <input type="text" name="company" placeholder="{{ contact.form.company_placeholder }}">
+          {#
+            Company and Job Title share a row, so adding a field does not make
+            the form any taller. Both are marked required because HubSpot marks
+            them required on its side: a blank value is not sent at all, and
+            HubSpot then rejects the whole submission. Better to ask here than
+            to fail after the visitor has pressed Send.
+          #}
+          <div class="form-row">
+            <div class="form-group">
+              <label>{{ contact.form.company_label }}</label>
+              <input type="text" name="company" required placeholder="{{ contact.form.company_placeholder }}">
+            </div>
+            <div class="form-group">
+              <label>{{ contact.form.job_title_label }}</label>
+              <input type="text" name="jobTitle" required placeholder="{{ contact.form.job_title_placeholder }}">
+            </div>
           </div>
           <div class="form-group">
             <label>{{ contact.form.inquiry_type_label }}</label>
