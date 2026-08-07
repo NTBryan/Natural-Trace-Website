@@ -356,6 +356,51 @@ collections:
               - {label: "Location", name: "location", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
 
+          # The internship side of the page, and the form on it. Same gap as the
+          # contact form had: all of this reads as editable copy and none of it
+          # was reachable from the panel.
+          - label: "Internship: intro"
+            name: "internship"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Heading", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Expectations heading", name: "expectations_label", widget: "string"}
+              - {label: "Expectations", name: "expectations", widget: "list", field: {label: "Item", name: "item", widget: "string"}}
+              - {label: "Location", name: "location", widget: "string"}
+
+          - label: "Internship: application form"
+            name: "internship_form"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Form Heading", name: "title", widget: "string"}
+              - {label: "Form Intro", name: "subtitle", widget: "text"}
+              - {label: "First Name: label", name: "first_name_label", widget: "string"}
+              - {label: "First Name: placeholder", name: "first_name_placeholder", widget: "string"}
+              - {label: "Last Name: label", name: "last_name_label", widget: "string"}
+              - {label: "Last Name: placeholder", name: "last_name_placeholder", widget: "string"}
+              - {label: "Email: label", name: "email_label", widget: "string"}
+              - {label: "Email: placeholder", name: "email_placeholder", widget: "string"}
+              - {label: "University: label", name: "university_label", widget: "string"}
+              - {label: "University: placeholder", name: "university_placeholder", widget: "string"}
+              - {label: "Area of interest: label", name: "interest_label", widget: "string"}
+              - {label: "Area of interest: placeholder", name: "interest_placeholder", widget: "string"}
+              - {label: "Message: label", name: "message_label", widget: "string"}
+              - {label: "Message: placeholder", name: "message_placeholder", widget: "string"}
+              - {label: "Submit button", name: "submit_text", widget: "string"}
+
+          - {label: "Internship: areas of interest", name: "areas_of_interest", widget: "list", field: {label: "Area", name: "area", widget: "string"}}
+
+          - label: "Internship: after sending"
+            name: "success"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Heading", name: "title", widget: "string"}
+              - {label: "Message", name: "message", widget: "text"}
+
       # CONTACT
       - name: "contact"
         label: "Contact"
@@ -370,6 +415,82 @@ collections:
             fields:
               - {label: "Label", name: "label", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
+
+          # The form itself. Every label and placeholder on the contact form is
+          # here. Renaming a field is a copy change, not a developer change.
+          - label: "Contact Form"
+            name: "form"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Form Heading", name: "title", widget: "string"}
+              - {label: "Form Intro", name: "subtitle", widget: "text"}
+              - {label: "First Name: label", name: "first_name_label", widget: "string"}
+              - {label: "First Name: placeholder", name: "first_name_placeholder", widget: "string"}
+              - {label: "Last Name: label", name: "last_name_label", widget: "string"}
+              - {label: "Last Name: placeholder", name: "last_name_placeholder", widget: "string"}
+              - {label: "Email: label", name: "email_label", widget: "string"}
+              - {label: "Email: placeholder", name: "email_placeholder", widget: "string"}
+              - {label: "Company: label", name: "company_label", widget: "string"}
+              - {label: "Company: placeholder", name: "company_placeholder", widget: "string"}
+              - {label: "Job Title: label", name: "job_title_label", widget: "string"}
+              - {label: "Job Title: placeholder", name: "job_title_placeholder", widget: "string"}
+              - {label: "Inquiry Type: label", name: "inquiry_type_label", widget: "string"}
+              - {label: "Inquiry Type: placeholder", name: "inquiry_type_placeholder", widget: "string"}
+              - {label: "Message: label", name: "message_label", widget: "string"}
+              - {label: "Message: placeholder", name: "message_placeholder", widget: "string"}
+              - {label: "Submit button", name: "submit_text", widget: "string"}
+
+          # WARNING: "Value sent to HubSpot" is data, not copy. It is written to
+          # the inquiry_type property on the contact record. Changing it changes
+          # what future enquiries are filed as, and does not rename anything
+          # already in HubSpot. Change the visible label freely; change the value
+          # only deliberately.
+          - label: "Inquiry Type options"
+            name: "inquiry_types"
+            widget: "list"
+            fields:
+              - {label: "Value sent to HubSpot", name: "value", widget: "string"}
+              - {label: "Label shown to the visitor", name: "label", widget: "string"}
+
+          - label: "After sending: success"
+            name: "success"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Heading", name: "title", widget: "string"}
+              - {label: "Message", name: "message", widget: "text"}
+
+          # Shown when the enquiry is handed to the visitor's email client
+          # instead of going straight to HubSpot.
+          - label: "After sending: email fallback"
+            name: "fallback"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Heading", name: "title", widget: "string"}
+              - {label: "Message", name: "message", widget: "text"}
+
+          - label: "After sending: failure"
+            name: "error"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Heading", name: "title", widget: "string"}
+              - {label: "Message", name: "message", widget: "text"}
+
+          - label: "Closing call to action"
+            name: "cta"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Section Label", name: "section_label", widget: "string"}
+              - {label: "Heading", name: "title", widget: "string"}
+              - {label: "Subcopy", name: "subtitle", widget: "text"}
+              - {label: "Primary button text", name: "primary_text", widget: "string"}
+              - {label: "Primary button link", name: "primary_href", widget: "string"}
+              - {label: "Secondary button text", name: "secondary_text", widget: "string"}
+              - {label: "Secondary button link", name: "secondary_href", widget: "string"}
 
       # FAQ
       - name: "faq"

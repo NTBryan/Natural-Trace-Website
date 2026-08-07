@@ -30,6 +30,13 @@ jobs:
       - name: Check pages, links, SEO and structured data
         run: node scripts/healthcheck.mjs _site
 
+      # Catches the admin panel drifting away from the data it edits: a field
+      # offered in the panel that no longer exists in the file would silently
+      # write a key nothing reads. Also lists anything not editable from the
+      # panel, which does not fail the build but is worth seeing.
+      - name: Check the admin panel matches the data files
+        run: node scripts/cms-audit.mjs
+
       # Outbound links are only checked on the schedule and on demand, so a
       # third party being briefly down cannot block a deploy.
       - name: Check outbound links

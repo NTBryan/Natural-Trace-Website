@@ -62,4 +62,4 @@ cta:
   primary_text: "Contact Us &#8594;"
   primary_href: "mailto:info@natural-trace.com"
   secondary_text: "View Services"
-  secondary_href: "/services/"
+  secondary_href: "/naturaltag/"   # was /services/, which is only a redirect to here
