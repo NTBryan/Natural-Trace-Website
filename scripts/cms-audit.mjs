@@ -42,12 +42,16 @@ let missing = 0, unexposed = 0, deliberate = 0;
 
 /* Field names the panel offers, flattened. An object widget nests; a list of
    objects describes each item, not a key of its own, so it stops there. */
+const enumerated = new Set();   // object widgets that spell out their own fields
 function offered(fields, prefix = "") {
   const out = [];
   for (const f of fields || []) {
     const path = prefix ? `${prefix}.${f.name}` : f.name;
     out.push(path);
-    if (f.widget === "object" && f.fields) out.push(...offered(f.fields, path));
+    if (f.widget === "object" && f.fields) {
+      enumerated.add(path);
+      out.push(...offered(f.fields, path));
+    }
   }
   return out;
 }
@@ -71,6 +75,7 @@ for (const coll of cfg.collections || []) {
       continue;
     }
     const data = yaml.load(readFileSync(file.file, "utf8")) || {};
+    enumerated.clear();
     const inPanel = new Set(offered(file.fields));
     const inFile = new Set(present(data));
 
@@ -80,8 +85,13 @@ for (const coll of cfg.collections || []) {
     for (const k of inFile) {
       // a nested key is covered if its parent object is offered
       if (inPanel.has(k)) continue;
+      // A key is covered by its parent only when the parent is offered as a
+      // whole. If the parent is an object widget that lists its own fields, the
+      // panel is claiming to cover each one, so a child it never mentions is a
+      // gap. Without this, jobTitle sat unexposed inside field_map for a day and
+      // the audit reported everything clean.
       const parent = k.split(".").slice(0, -1).join(".");
-      if (parent && inPanel.has(parent)) continue;
+      if (parent && inPanel.has(parent) && !enumerated.has(parent)) continue;
       const why = (DELIBERATE[file.file] || {})[k];
       if (why) { console.log(`BY DESIGN  ${file.file}: "${k}" — ${why}`); deliberate++; continue; }
       console.log(`UNEXPOSED  ${file.file}: "${k}" cannot be changed in the admin panel`);

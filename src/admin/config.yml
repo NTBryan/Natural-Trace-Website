@@ -55,13 +55,37 @@ collections:
         label: "SEO: titles and descriptions"
         file: "src/_data/seo.yml"
         fields:
-          - label: "Pages"
+          # "url" is how an entry is matched to a page. It was a free text box,
+          # which meant a typo silently detached a page's title and description
+          # with nothing to show for it. It is a picker now, so it can only ever
+          # be a page that exists.
+          - label: "Search engine listings"
             name: "pages"
             widget: "list"
+            collapsed: true
+            summary: "{{fields.url}}  {{fields.title}}"
             fields:
-              - {label: "URL", name: "url", widget: "string", hint: "With leading and trailing slash, e.g. /about/"}
-              - {label: "Page Title", name: "title", widget: "string"}
-              - {label: "Meta Description", name: "description", widget: "text", hint: "Aim for 150-160 characters. Shorter wastes the search snippet, longer gets cut off."}
+              - label: "Which page"
+                name: "url"
+                widget: "select"
+                hint: "Pick the page these words describe. If a new page has been added and is not in this list, a developer needs to add it."
+                options:
+                  - {label: "Home", value: "/"}
+                  - {label: "About Us", value: "/about/"}
+                  - {label: "NaturalTag", value: "/naturaltag/"}
+                  - {label: "NaturalDetect", value: "/naturaldetect/"}
+                  - {label: "NaturalCloud", value: "/naturalcloud/"}
+                  - {label: "Industries", value: "/industries/"}
+                  - {label: "Industry Use-Cases", value: "/industries/use-cases/"}
+                  - {label: "FAQ", value: "/faq/"}
+                  - {label: "Team", value: "/team/"}
+                  - {label: "Careers", value: "/careers/"}
+                  - {label: "Insights", value: "/insights/"}
+                  - {label: "Assess My Product", value: "/assess/"}
+                  - {label: "Contact", value: "/contact/"}
+                  - {label: "Privacy Policy", value: "/privacy/"}
+              - {label: "Headline in Google results", name: "title", widget: "string", hint: "What someone sees as the blue clickable line on a search results page. Around 60 characters before Google trims it."}
+              - {label: "Description in Google results", name: "description", widget: "text", hint: "The grey paragraph under the headline. Aim for 150 to 160 characters: shorter wastes the space, longer gets cut off mid-sentence."}
 
       # HOME
       - name: "home"
@@ -100,6 +124,7 @@ collections:
           - label: "Value Prop: Cards"
             name: "vp_cards"
             widget: "list"
+            summary: "{{fields.title}}"
             fields:
               - {label: "Card Title", name: "title", widget: "string"}
               - {label: "Customer Problem", name: "problem", widget: "text"}
@@ -110,6 +135,7 @@ collections:
           - label: "Industries: Tiles"
             name: "industry_tiles"
             widget: "list"
+            summary: "{{fields.name}}"
             fields:
               - {label: "Name", name: "name", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
@@ -121,6 +147,7 @@ collections:
           - label: "Partners: Logos"
             name: "trust_logos"
             widget: "list"
+            summary: "{{fields.alt}}"
             fields:
               - {label: "Website URL", name: "url", widget: "string"}
               - {label: "Logo", name: "image", widget: "image"}
@@ -190,6 +217,7 @@ collections:
           - label: "Different: Cards"
             name: "different_cards"
             widget: "list"
+            summary: "{{fields.title}}"
             fields:
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Body", name: "body", widget: "text"}
@@ -198,6 +226,7 @@ collections:
           - label: "Why Choose: Groups"
             name: "choose_groups"
             widget: "list"
+            summary: "{{fields.title}}"
             fields:
               - {label: "Group Title", name: "title", widget: "string"}
               - {label: "Items", name: "items", widget: "list", field: {label: "Item", name: "item", widget: "string"}}
@@ -223,6 +252,7 @@ collections:
           - label: "Matrices"
             name: "matrices"
             widget: "list"
+            summary: "{{fields.group}}"
             fields:
               - {label: "Group", name: "group", widget: "string"}
               - {label: "Items", name: "items", widget: "text"}
@@ -238,6 +268,7 @@ collections:
           - label: "How It Works: Steps"
             name: "how_steps"
             widget: "list"
+            summary: "{{fields.num}} — {{fields.title}}"
             fields:
               - {label: "Number", name: "num", widget: "string"}
               - {label: "Title", name: "title", widget: "string"}
@@ -291,8 +322,9 @@ collections:
           - label: "Industries"
             name: "industries"
             widget: "list"
+            summary: "{{fields.name}}"
             fields:
-              - {label: "Anchor ID", name: "id", widget: "string"}
+              - {label: "Internal name", name: "id", widget: "string", hint: "Used in links that jump straight to this industry, e.g. /industries/#agri-food. Changing it breaks those links."}
               - {label: "Name", name: "name", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
               - {label: "Image", name: "image", widget: "image"}
@@ -316,6 +348,7 @@ collections:
           - label: "Use Cases"
             name: "cases"
             widget: "list"
+            summary: "{{fields.sector}} — {{fields.title}}"
             fields:
               - {label: "Sector", name: "sector", widget: "string"}
               - {label: "Title", name: "title", widget: "string"}
@@ -349,6 +382,7 @@ collections:
           - label: "Open Positions"
             name: "positions"
             widget: "list"
+            summary: "{{fields.title}} ({{fields.location}})"
             required: false
             fields:
               - {label: "Title", name: "title", widget: "string"}
@@ -412,6 +446,7 @@ collections:
           - label: "Info Items"
             name: "info_items"
             widget: "list"
+            summary: "{{fields.label}}"
             fields:
               - {label: "Label", name: "label", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
@@ -449,6 +484,7 @@ collections:
           - label: "Inquiry Type options"
             name: "inquiry_types"
             widget: "list"
+            summary: "{{fields.label}}"
             fields:
               - {label: "Value sent to HubSpot", name: "value", widget: "string"}
               - {label: "Label shown to the visitor", name: "label", widget: "string"}
@@ -503,14 +539,20 @@ collections:
           - label: "Categories"
             name: "categories"
             widget: "list"
+            summary: "{{fields.label}}"
             fields:
-              - {label: "ID", name: "id", widget: "string"}
-              - {label: "Label", name: "label", widget: "string"}
+              - {label: "Internal name", name: "id", widget: "string", hint: "Used to link questions to this tab. Changing it detaches every question filed under it, so leave it alone unless you are also updating the questions."}
+              - {label: "Tab name visitors see", name: "label", widget: "string"}
           - label: "Questions"
             name: "questions"
             widget: "list"
+            summary: "{{fields.question}}"
             fields:
-              - {label: "Category ID", name: "category", widget: "string"}
+              - label: "Which tab"
+                name: "category"
+                widget: "select"
+                hint: "The tab this question appears under. These match the internal names above."
+                options: ["regulatory", "safety", "integration", "detection"]
               - {label: "Question", name: "question", widget: "string"}
               - {label: "Answer", name: "answer", widget: "text"}
           - {label: "CTA Title", name: "cta_title", widget: "string"}
@@ -547,18 +589,19 @@ collections:
               - label: "Data centre"
                 name: "region"
                 widget: "select"
-                options: ["na1", "eu1"]
+                options: ["na1", "na2", "eu1"]
                 default: "na1"
-                hint: "na1 for US portals, eu1 if your HubSpot URLs contain app-eu1."
+                hint: "Natural Trace is on na2. Read it off HubSpot's own embed code, or the app URL: app-eu1 means eu1. Getting this wrong sends enquiries to a region that has never heard of the form."
               - label: "Field mapping"
                 name: "field_map"
                 widget: "object"
-                hint: "HubSpot internal property names. Leave a value empty to stop sending that field. inquiry_type is not a HubSpot default, so create it as a custom contact property or clear it."
+                hint: "The names these fields have inside HubSpot. Do not change them unless HubSpot has been changed to match, or enquiries stop arriving. Leave one empty to stop sending that field."
                 fields:
                   - {label: "First name", name: "firstName", widget: "string", required: false}
                   - {label: "Last name", name: "lastName", widget: "string", required: false}
                   - {label: "Email", name: "email", widget: "string", required: false}
                   - {label: "Company", name: "company", widget: "string", required: false}
+                  - {label: "Job title", name: "jobTitle", widget: "string", required: false}
                   - {label: "Inquiry type", name: "inquiryType", widget: "string", required: false}
                   - {label: "Message", name: "message", widget: "string", required: false}
           - label: "Email fallback"
@@ -602,16 +645,17 @@ collections:
           - label: "Members"
             name: "members"
             widget: "list"
+            summary: "{{fields.name}} — {{fields.role}}"
             fields:
               - {label: "Name", name: "name", widget: "string"}
               - {label: "Role", name: "role", widget: "string"}
-              - {label: "Type", name: "type", widget: "select", options: ["leadership", "advisor"]}
+              - {label: "Shown under", name: "type", widget: "select", options: ["leadership", "advisor"], hint: "Which section of the Team page this person appears in."}
               - {label: "Location", name: "location", widget: "string", required: false}
               - {label: "Photo", name: "photo", widget: "image"}
               - {label: "LinkedIn", name: "linkedin", widget: "string", required: false}
               - {label: "Education", name: "education", widget: "list", required: false, field: {label: "Degree", name: "degree", widget: "string"}}
               - {label: "Bio", name: "bio", widget: "list", field: {label: "Point", name: "point", widget: "string"}}
-              - {label: "Order", name: "order", widget: "number"}
+              - {label: "Position in the list", name: "order", widget: "number", hint: "Lower numbers appear first. Only matters relative to the other people in the same section."}
 
   # Insights: news, updates, and articles
   - name: "insights"
