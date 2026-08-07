@@ -4,7 +4,7 @@ compatibility_date = "2026-01-01"
 
 [vars]
 # Public. This is the Client ID of the GitHub OAuth App, not a secret.
-GITHUB_CLIENT_ID = "REPLACE_WITH_CLIENT_ID"
+GITHUB_CLIENT_ID = "Ov23liBrjVszAH9CI7PP"
 
 # Only these origins may receive a token. Keep this tight. Add the production
 # domain at cutover and remove anything that is no longer used.
