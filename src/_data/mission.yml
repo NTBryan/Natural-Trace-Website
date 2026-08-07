@@ -4,7 +4,7 @@
 label: "Why We Do This"
 title: "Mission & Values"
 hero_subtitle: "The principles behind every test we run and every result we report."
-back_link_text: "← Back to About"
+back_link_text: "Back to About"
 back_link_url: "/about/"
 
 # The Problem section
@@ -46,5 +46,5 @@ values:
 
 # CTA
 cta_text: "Ready to bring molecular-level transparency to your supply chain?"
-cta_button_text: "Get in Touch →"
+cta_button_text: "Get in Touch"
 cta_button_url: "/contact/"

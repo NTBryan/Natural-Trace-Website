@@ -1,5 +1,5 @@
 hero:
-  back_link_text: "&#8592; Back to Technology"
+  back_link_text: "Back to Technology"
   back_link_href: "/technology/"
   section_label: "Quality Framework"
   title: "Built to International Standards"
@@ -40,5 +40,5 @@ standards:
 commitment:
   title: "Standards Are Not Aspirational"
   description: "We do not reference ISO standards as marketing language. Each standard listed above has a direct mapping to a documented procedure in our analytical workflow. Our detection pipeline, from sample extraction through to Certificate of Authenticity, is designed so that every step can be audited against these frameworks."
-  cta_text: "Discuss Our Quality Framework &#8594;"
+  cta_text: "Discuss Our Quality Framework"
   cta_href: "/contact/"

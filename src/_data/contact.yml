@@ -59,7 +59,7 @@ cta:
   section_label: "Get Started"
   title: "Start Your First Test Today"
   subtitle: "Schedule a consultation, discuss a compatibility project, or explore our testing capabilities."
-  primary_text: "Contact Us &#8594;"
+  primary_text: "Contact Us"
   primary_href: "mailto:info@natural-trace.com"
   secondary_text: "View Services"
   secondary_href: "/naturaltag/"   # was /services/, which is only a redirect to here

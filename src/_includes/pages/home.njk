@@ -12,7 +12,7 @@
       <p class="hero-lead"><strong>{{ home.hero_slogan }}.</strong> {{ home.hero_desc }}</p>
       <p class="hero-claims">{% for c in home.hero_claims %}{{ c }}{% if loop.revindex0 == 1 %} and {% elif not loop.last %}, {% endif %}{% endfor %}{% if home.hero_claims_coda %}, <span>{{ home.hero_claims_coda }}</span>{% endif %}.</p>
       <div class="hero-actions">
-        <a href="{{ home.hero_cta_url }}" class="btn btn-primary" style="cursor:pointer">{{ home.hero_cta }} &#8594;</a>
+        <a href="{{ home.hero_cta_url }}" class="btn btn-primary" style="cursor:pointer">{{ home.hero_cta }}</a>
         <a href="{{ home.hero_cta_secondary_url }}" class="btn btn-outline" style="cursor:pointer">{{ home.hero_cta_secondary }}</a>
       </div>
     </div>
@@ -65,7 +65,7 @@
       </article>
       {% endfor %}
     </div>
-    <p class="section-more"><a href="/naturaltag/#how-it-works">See how it works, four steps from ingredient to evidence &#8594;</a></p>
+    <p class="section-more"><a href="/naturaltag/#how-it-works">See how it works, four steps from ingredient to evidence</a></p>
   </div>
 </section>
 
@@ -125,10 +125,10 @@
       <h2>{{ home.final_cta_title }}</h2>
       <p>{{ home.final_cta_text }}</p>
       <div class="finalcta-actions">
-        <a href="{{ home.final_cta_primary_url }}" class="btn btn-white" style="cursor:pointer">{{ home.final_cta_primary }} &#8594;</a>
+        <a href="{{ home.final_cta_primary_url }}" class="btn btn-white" style="cursor:pointer">{{ home.final_cta_primary }}</a>
         <a href="{{ home.final_cta_secondary_url }}" class="btn btn-ghost" style="cursor:pointer">{{ home.final_cta_secondary }}</a>
       </div>
-      <p class="finalcta-alt"><a href="/assess/">Or check your product yourself in 60 seconds &#8594;</a></p>
+      <p class="finalcta-alt"><a href="/assess/">Or check your product yourself in 60 seconds</a></p>
     </div>
   </div>
 </section>
