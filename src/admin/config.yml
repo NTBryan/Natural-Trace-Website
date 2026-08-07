@@ -2,9 +2,26 @@
 # Content model matches the Clean Prototype Website Copy Guide 2026.
 # Documentation: https://decapcms.org/docs/configuration-options/
 
+# Authentication. Changed from git-gateway on 7 Aug 2026.
+#
+# git-gateway is a Netlify service and Netlify has deprecated it. It also only
+# ever worked on the Netlify URL: on GitHub Pages the /admin page loaded and then
+# could not log anyone in, because the /.netlify/identity endpoint it needs does
+# not exist there.
+#
+# The GitHub backend talks to GitHub directly. The one thing a browser cannot do
+# is exchange the login code for a token, because that needs a client secret, so
+# base_url points at a small handler we run ourselves. Source is in oauth/,
+# setup is in docs/cms-auth-setup.md.
+#
+# repo must be updated when this repository moves to a company organisation.
+# base_url must be updated once the handler is deployed; until then, login fails.
 backend:
-  name: git-gateway
+  name: github
+  repo: NTBryan/Natural-Trace-Website
   branch: main
+  base_url: https://natural-trace-cms-auth.REPLACE-WITH-YOUR-SUBDOMAIN.workers.dev
+  auth_endpoint: auth
 
 media_folder: "src/assets/images/uploads"
 public_folder: "/assets/images/uploads"
