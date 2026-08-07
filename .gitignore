@@ -18,3 +18,15 @@ dist*/
 build/
 .DS_Store
 Thumbs.db
+
+# Orphaned page data and artwork. /mission/, /quality-standards/, /services/ and
+# /technology/ are redirect stubs now, and no template reads any of these files.
+# They were removed on 6 Aug, then a `git add -A src` quietly put them back on
+# 7 Aug, which is what these lines are here to stop. Kept on disk in case a
+# Technology page returns; kept out of the repo so 5.6MB of unreferenced images
+# is not shipped on every deploy. They remain in git history either way.
+/src/_data/mission.yml
+/src/_data/quality_standards.yml
+/src/_data/services.yml
+/src/_data/technology.yml
+/src/assets/images/*.webp
