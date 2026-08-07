@@ -71,7 +71,7 @@ which the browser never sees.
 
 That option is open. The site is deployed to **both** Netlify
 (`natural-trace.netlify.app`, which is what the canonical URLs point at) and
-GitHub Pages (`ntbryan.github.io/Natural-Trace-Website/`, built by
+GitHub Pages (`natural-trace.github.io/Natural-Trace-Website/`, built by
 `.github/workflows/deploy.yml`). GitHub Pages cannot run a function, but Netlify
 can, and it is already connected — note that there is no `netlify.toml` in this
 repo, so that connection is configured on Netlify's side and is not visible from

@@ -26,72 +26,94 @@ else about the site depends on it.
 
 ## What you need to do once
 
-Three steps. After this, editors just click "Login with GitHub".
+**Do these in order.** The Worker has to exist before you can register the OAuth
+App, because GitHub will not accept a callback URL until it is a real address.
+Registering first and inventing a URL fails with "Callback URL must be a valid
+URL".
 
-### 1. Register a GitHub OAuth App
+### 1. Deploy the handler first, with placeholder values
 
-GitHub → Settings → Developer settings → OAuth Apps → New OAuth App.
-
-| Field | Value |
-| --- | --- |
-| Application name | Natural Trace CMS |
-| Homepage URL | `https://ntbryan.github.io/Natural-Trace-Website/` |
-| Authorization callback URL | `https://natural-trace-cms-auth.<your-subdomain>.workers.dev/callback` |
-
-You get a **Client ID** and can generate a **Client Secret**. The Client ID is
-public and goes in `oauth/wrangler.toml`. The Client Secret is a password: it
-goes into Cloudflare in step 2 and must never be pasted into this repository, a
-chat, or an email.
-
-Register the app under a **company GitHub organisation**, not a personal
-account. If it is personal, the CMS stops working the day that account is
-closed.
-
-### 2. Deploy the handler
-
-Once, from the `oauth/` folder, with Node installed:
+From the `oauth/` folder, with Node installed:
 
 ```
 npm install -g wrangler
 wrangler login
+wrangler deploy
 ```
 
-Edit `wrangler.toml` and set `GITHUB_CLIENT_ID` to the Client ID from step 1.
-Then:
+It deploys even though `GITHUB_CLIENT_ID` is still the placeholder and there is
+no secret yet. It will not work yet either. The only thing you need from this
+step is the URL wrangler prints at the end, which looks like:
+
+```
+https://natural-trace-cms-auth.<your-cloudflare-subdomain>.workers.dev
+```
+
+Your Cloudflare subdomain is whatever you chose when you created the account.
+Copy the whole URL exactly as printed.
+
+Put the Cloudflare account in the company's name, not a personal one.
+
+### 2. Register a GitHub OAuth App
+
+GitHub → your organisation → Settings → Developer settings → OAuth Apps → New
+OAuth App. Register it **under the Natural-Trace organisation**, not your
+personal account, or the CMS stops working the day that account closes.
+
+| Field | Value |
+| --- | --- |
+| Application name | Natural Trace CMS |
+| Homepage URL | `https://natural-trace.github.io/Natural-Trace-Website/` |
+| Authorization callback URL | the URL from step 1, with `/callback` on the end |
+
+So the callback is the real deployed address, for example
+`https://natural-trace-cms-auth.natural-trace.workers.dev/callback`. Anything in
+angle brackets is a placeholder to replace, not something to paste.
+
+You now have a **Client ID**, and can generate a **Client Secret**. The Client ID
+is public and goes in `wrangler.toml`. The Client Secret is a password: it goes
+into Cloudflare in step 3 and must never be pasted into this repository, a chat,
+or an email.
+
+The callback URL can be edited later, so if you have already registered an app
+with the wrong URL, fix it there rather than making a second one.
+
+### 3. Give the handler its credentials
+
+In `oauth/wrangler.toml`, set `GITHUB_CLIENT_ID` to the Client ID. Then:
 
 ```
 wrangler secret put GITHUB_CLIENT_SECRET     # paste the secret when prompted
 wrangler deploy
 ```
 
-Wrangler prints the deployed URL. It looks like
-`https://natural-trace-cms-auth.<subdomain>.workers.dev`.
+### 4. Point the CMS at it
 
-Cloudflare's Workers plan is $5 a month, which is less than the Netlify plan this
-replaces, and the account should be in the company's name. Check whether the free
-tier's terms permit commercial use before relying on it; the paid plan removes
-the question.
-
-### 3. Point the CMS at it
-
-In `src/admin/config.yml`, set `base_url` to the URL wrangler printed, with no
+In `src/admin/config.yml`, set `base_url` to the URL from step 1, with no
 trailing slash and no path:
 
 ```yaml
 backend:
   name: github
-  repo: NTBryan/Natural-Trace-Website
+  repo: Natural-Trace/Natural-Trace-Website
   branch: main
-  base_url: https://natural-trace-cms-auth.<subdomain>.workers.dev
+  base_url: https://natural-trace-cms-auth.<your-cloudflare-subdomain>.workers.dev
   auth_endpoint: auth
 ```
 
-Also add the site's origin to `ALLOWED_ORIGINS` in `wrangler.toml` and redeploy.
-That list is what stops the handler being used to hand tokens to someone else's
-website. It should contain the live site and nothing else, plus
-`http://localhost:8080` while anyone is working locally.
+Check that `ALLOWED_ORIGINS` in `wrangler.toml` lists the live site. That list is
+what stops the handler handing tokens to someone else's website, so keep it to
+the sites that actually exist, plus `http://localhost:8080` while anyone is
+working locally.
 
 Commit, push, and the admin panel works.
+
+## Cost
+
+Cloudflare's Workers free tier covers 100,000 requests a day, which is far beyond
+anything a handful of editors signing in will ever use. Confirm the free tier's
+terms permit commercial use before relying on it; the paid plan is $5 a month and
+removes the question. Either way it is less than the Netlify plan it replaces.
 
 ## Giving someone access
 

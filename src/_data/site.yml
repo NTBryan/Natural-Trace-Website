@@ -4,8 +4,11 @@ legal_name: "Natural Trace Pte Ltd"
 tagline: "In-Product Authentication for Food & Nutraceutical Ingredients"
 
 # Canonical origin used for canonical links, Open Graph, sitemap and robots.
+# Moved to the Natural-Trace organisation on 7 Aug 2026. The old
+# ntbryan.github.io address is a 404 now, not a redirect, so this had to change
+# with the transfer or every page would have been pointing at a dead URL.
 # Change this to https://natural-trace.com when the domain is cut over.
-url: "https://ntbryan.github.io/Natural-Trace-Website"
+url: "https://natural-trace.github.io/Natural-Trace-Website"
 
 default_summary: "Natural Trace is the in-product authentication platform for food and nutraceutical ingredients. Protect branded ingredients, confirm authorised manufacturing and investigate suspicious products."
 

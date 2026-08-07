@@ -18,7 +18,7 @@
 # base_url must be updated once the handler is deployed; until then, login fails.
 backend:
   name: github
-  repo: NTBryan/Natural-Trace-Website
+  repo: Natural-Trace/Natural-Trace-Website
   branch: main
   base_url: https://natural-trace-cms-auth.REPLACE-WITH-YOUR-SUBDOMAIN.workers.dev
   auth_endpoint: auth
