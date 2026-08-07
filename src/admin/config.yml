@@ -20,7 +20,7 @@ backend:
   name: github
   repo: Natural-Trace/Natural-Trace-Website
   branch: main
-  base_url: https://natural-trace-cms-auth.REPLACE-WITH-YOUR-SUBDOMAIN.workers.dev
+  base_url: https://natural-trace-cms-auth.natural-trace.workers.dev
   auth_endpoint: auth
 
 media_folder: "src/assets/images/uploads"

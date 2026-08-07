@@ -46,11 +46,13 @@ no secret yet. It will not work yet either. The only thing you need from this
 step is the URL wrangler prints at the end, which looks like:
 
 ```
-https://natural-trace-cms-auth.<your-cloudflare-subdomain>.workers.dev
+https://natural-trace-cms-auth.natural-trace.workers.dev
 ```
 
-Your Cloudflare subdomain is whatever you chose when you created the account.
-Copy the whole URL exactly as printed.
+Deployed on 7 Aug 2026 as
+`https://natural-trace-cms-auth.natural-trace.workers.dev`. The `natural-trace`
+part is the account-wide workers.dev subdomain, shared by anything else Natural
+Trace deploys on Cloudflare. Changing it breaks every worker URL under it.
 
 Put the Cloudflare account in the company's name, not a personal one.
 
@@ -97,7 +99,7 @@ backend:
   name: github
   repo: Natural-Trace/Natural-Trace-Website
   branch: main
-  base_url: https://natural-trace-cms-auth.<your-cloudflare-subdomain>.workers.dev
+  base_url: https://natural-trace-cms-auth.natural-trace.workers.dev
   auth_endpoint: auth
 ```
 
