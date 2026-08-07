@@ -4,8 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {%- set s = seo.pages | seoLookup(page.url) -%}
-{%- set seoTitle = s.title or title -%}
-{%- set seoDescription = (s.description or summary or site.default_summary) | truncate(157, false, "…") -%}
+{#- Order of preference: the entry in seo.yml, then anything the page sets for
+    itself (Insights articles do this), then the page title and summary. So an
+    article gets sensible search wording with no extra work, and can override it
+    when the headline that reads well on the page is not the one that reads well
+    in Google. -#}
+{%- set seoTitle = s.title or seo_title or title -%}
+{%- set seoDescription = (s.description or seo_description or summary or site.default_summary) | truncate(157, false, "…") -%}
 <title>{% if seoTitle %}{{ seoTitle }} | {% endif %}Natural Trace</title>
 <meta name="description" content="{{ seoDescription }}">
 {% if not site.search_indexable %}{# Holding switch in src/_data/site.yml. data-hold marks this as the

@@ -144,14 +144,17 @@ collections:
               - {label: "Link URL", name: "url", widget: "string"}
 
           - {label: "Partners: Label", name: "trust_label", widget: "string"}
-          - label: "Partners: Logos"
+          - label: "Partner logos"
             name: "trust_logos"
+            label_singular: "partner"
             widget: "list"
+            collapsed: true
             summary: "{{fields.alt}}"
+            hint: "The rail on the home page. It scrolls, so it holds as many as you add. Below about six the rail can show the same logo twice at both ends, so tell a developer if the list ever gets that short."
             fields:
-              - {label: "Website URL", name: "url", widget: "string"}
-              - {label: "Logo", name: "image", widget: "image"}
-              - {label: "Alt Text", name: "alt", widget: "string"}
+              - {label: "Their website", name: "url", widget: "string", hint: "Full address, starting https://. Clicking the logo opens this in a new tab."}
+              - {label: "Logo", name: "image", widget: "image", media_folder: "/src/assets/partners", public_folder: "/assets/partners", hint: "Trim the empty space around the logo before uploading, or it renders smaller than the ones beside it. PNG with a transparent background is best."}
+              - {label: "Company name", name: "alt", widget: "string", hint: "Read aloud by screen readers, and shown if the image fails to load."}
 
           - {label: "Final CTA: Headline", name: "final_cta_title", widget: "string"}
           - {label: "Final CTA: Text", name: "final_cta_text", widget: "text"}
@@ -642,32 +645,42 @@ collections:
           - {label: "Advisors Section Label", name: "advisors_label", widget: "string"}
           - {label: "CTA Text", name: "cta_text", widget: "string"}
           - {label: "CTA URL", name: "cta_url", widget: "string"}
-          - label: "Members"
+          - label: "Team members and advisors"
             name: "members"
+            label_singular: "person"
             widget: "list"
+            collapsed: true
             summary: "{{fields.name}} — {{fields.role}}"
             fields:
               - {label: "Name", name: "name", widget: "string"}
               - {label: "Role", name: "role", widget: "string"}
               - {label: "Shown under", name: "type", widget: "select", options: ["leadership", "advisor"], hint: "Which section of the Team page this person appears in."}
               - {label: "Location", name: "location", widget: "string", required: false}
-              - {label: "Photo", name: "photo", widget: "image"}
-              - {label: "LinkedIn", name: "linkedin", widget: "string", required: false}
+              - {label: "Photo", name: "photo", widget: "image", media_folder: "/src/assets/team", public_folder: "/assets/team", hint: "A square headshot works best. It is cropped to a circle."}
+              - {label: "LinkedIn profile", name: "linkedin", widget: "string", required: false, hint: "Full address, starting https://. Leave empty and no icon appears."}
               - {label: "Education", name: "education", widget: "list", required: false, field: {label: "Degree", name: "degree", widget: "string"}}
-              - {label: "Bio", name: "bio", widget: "list", field: {label: "Point", name: "point", widget: "string"}}
+              - {label: "Biography", name: "bio", widget: "list", hint: "One point per line. They appear as separate paragraphs when someone opens this person.", field: {label: "Paragraph", name: "point", widget: "string"}}
               - {label: "Position in the list", name: "order", widget: "number", hint: "Lower numbers appear first. Only matters relative to the other people in the same section."}
 
   # Insights: news, updates, and articles
   - name: "insights"
-    label: "Insights"
+    label: "Insights articles"
+    label_singular: "article"
     folder: "src/insights"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}}"
+    sortable_fields: ["date", "title"]
+    media_folder: "/src/assets/images/insights"
+    public_folder: "/assets/images/insights"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Author", name: "author", widget: "string"}
-      - {label: "Featured Image", name: "image", widget: "image", required: false}
-      - {label: "Summary", name: "summary", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list", field: {label: "Tag", name: "tag", widget: "string"}}
+      - {label: "Headline", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime", hint: "Articles are listed newest first. Post-dating one does not hide it."}
+      - {label: "Author", name: "author", widget: "string", default: "Natural Trace Team"}
+      - {label: "Pin to the top of Insights", name: "pinned", widget: "boolean", default: false, required: false, hint: "Pinned articles sit above the rest regardless of date. Use sparingly, or nothing stands out."}
+      - {label: "Header image", name: "image", widget: "image", required: false, hint: "Shown at the top of the article and on its card. Landscape works best, around 1200px wide."}
+      - {label: "Summary", name: "summary", widget: "text", hint: "The paragraph on the article's card. Also used as the Google description unless you set one below."}
+      - {label: "Article", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list", required: false, field: {label: "Tag", name: "tag", widget: "string"}}
+      - {label: "Google headline (optional)", name: "seo_title", widget: "string", required: false, hint: "Only if the headline above is not what you want appearing in search results. Leave empty to use the headline."}
+      - {label: "Google description (optional)", name: "seo_description", widget: "text", required: false, hint: "Only if the summary above is not right for search results. Aim for 150 to 160 characters. Leave empty to use the summary."}
