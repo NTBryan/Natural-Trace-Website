@@ -65,6 +65,15 @@ fallback:
   email: "info@natural-trace.com"
   subject_prefix: "Website inquiry"
 
+# The internship form on the Careers page has no CRM behind it: it opens the
+# applicant's email client. The address used to be written into
+# assets/js/main.js, which meant changing it needed a developer and nobody
+# would notice it was wrong until applications stopped arriving. It lives here
+# now so it can be changed from the CMS panel.
+careers:
+  internship_email: "info@natural-trace.com"
+  internship_subject_prefix: "Internship Application"
+
 # Sitewide behaviour tracking
 # The HubSpot tracking script runs on every page once portal_id above is set
 # AND the visitor has accepted cookies. It sets cookies, so it must not load

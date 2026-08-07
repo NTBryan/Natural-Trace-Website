@@ -23,6 +23,25 @@ backend:
   base_url: https://natural-trace-cms-auth.natural-trace.workers.dev
   auth_endpoint: auth
 
+# Branding. `logo` is the only appearance setting Decap supports; everything
+# else about how this panel looks is in admin/theme.css.
+# https://decapcms.org/docs/configuration-options/#logo
+#
+# The paths are relative to /admin/, so they survive the site moving to a
+# custom domain. The white wordmark is used because both the login screen and
+# the header are dark (see theme.css).
+logo:
+  src: "../assets/logos/NT-logo-white.png"
+  show_in_header: true
+
+# site_url puts a "back to site" link on the login screen. display_url puts the
+# site address in the header while logged in, so an editor always has one click
+# back to what they are editing.
+# https://decapcms.org/docs/configuration-options/#site-url
+site_url: "https://natural-trace.github.io/Natural-Trace-Website"
+display_url: "https://natural-trace.github.io/Natural-Trace-Website"
+locale: "en"
+
 media_folder: "src/assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
@@ -614,8 +633,13 @@ collections:
             fields:
               - {label: "Inbox address", name: "email", widget: "string"}
               - {label: "Subject prefix", name: "subject_prefix", widget: "string"}
-
-  # Team members stored as a single JSON file
+          - label: "Internship applications"
+            name: "careers"
+            widget: "object"
+            hint: "The internship form on the Careers page opens the applicant's email client. This is the address it writes to."
+            fields:
+              - {label: "Applications go to", name: "internship_email", widget: "string"}
+              - {label: "Subject prefix", name: "internship_subject_prefix", widget: "string"}
           - label: "Sitewide Tracking"
             name: "tracking"
             widget: "object"

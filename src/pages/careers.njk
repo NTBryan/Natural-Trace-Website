@@ -56,7 +56,9 @@ permalink: /careers/
         <div class="contact-form" style="margin:0">
           <h3>{{ careers.internship_form.title }}</h3>
           <p>{{ careers.internship_form.subtitle }}</p>
-          <form id="internshipForm" onsubmit="return handleInternshipSubmit(event)">
+          <form id="internshipForm" onsubmit="return handleInternshipSubmit(event)"
+                data-internship-email="{{ integrations.careers.internship_email }}"
+                data-internship-subject="{{ integrations.careers.internship_subject_prefix }}">
             <div class="form-row">
               <div class="form-group">
                 <label>{{ careers.internship_form.first_name_label }}</label>

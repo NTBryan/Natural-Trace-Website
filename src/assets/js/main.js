@@ -78,6 +78,7 @@ function submitContactViaEmail(cfg, data) {
     'Name: ' + name,
     'Email: ' + (data.get('email') || ''),
     'Company: ' + (data.get('company') || ''),
+    'Job title: ' + (data.get('jobTitle') || ''),
     'Inquiry type: ' + (data.get('inquiryType') || ''),
     '',
     data.get('message') || ''
@@ -147,13 +148,19 @@ function handleInternshipSubmit(e) {
   e.preventDefault();
   var form = document.getElementById('internshipForm');
   var data = new FormData(form);
+  /* Address and subject come from _data/integrations.yml via the form's data
+     attributes, so they can be changed in the CMS without touching this file.
+     The fallback here is only a guard against the attribute going missing. */
+  var to = (form.dataset.internshipEmail || '').trim() || 'info@natural-trace.com';
+  var subjectPrefix = (form.dataset.internshipSubject || '').trim() || 'Internship Application';
   var body = 'New internship application from ' + data.get('firstName') + ' ' + data.get('lastName') +
     '%0D%0AEmail: ' + data.get('email') +
     '%0D%0AUniversity: ' + data.get('university') +
     '%0D%0AArea of Interest: ' + data.get('interest') +
     '%0D%0A%0D%0A' + data.get('message');
-  window.location.href = 'mailto:alrik@natural-trace.com?subject=Internship Application - ' +
-    encodeURIComponent(data.get('firstName') + ' ' + data.get('lastName')) + '&body=' + body;
+  window.location.href = 'mailto:' + to + '?subject=' +
+    encodeURIComponent(subjectPrefix + ' - ' + data.get('firstName') + ' ' + data.get('lastName')) +
+    '&body=' + body;
   form.style.display = 'none';
   document.getElementById('internshipSuccess').style.display = 'block';
   return false;
