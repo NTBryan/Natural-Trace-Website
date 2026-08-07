@@ -13,20 +13,34 @@ hubspot:
   # Master switch. Submissions only go to HubSpot when this is true AND both
   # portal_id and form_guid are filled in. While it is off, the contact form
   # falls back to opening the visitor's email client (see fallback below).
+  #
+  # STILL FALSE ON PURPOSE, 7 Aug 2026. The portal and form below are correct
+  # and verified: posting to them returns a field-level validation error rather
+  # than a 404, which only happens when HubSpot has found the form.
+  #
+  # What the form currently demands:
+  #   company, firstname, lastname, message, email, jobtitle   all required
+  #
+  # The website form does not collect jobtitle, so every submission would be
+  # rejected and would silently fall back to email. Make jobtitle optional in
+  # HubSpot, or add a Job Title field to the contact page, then set this to true.
   enabled: false
 
   # HubSpot Hub ID. Find it in HubSpot under
   # Settings -> Account Management -> Account Defaults, or in the URL after
   # /contacts/ when logged in.
-  portal_id: ""
+  portal_id: "23458507"
 
   # The form's GUID. Create a form in HubSpot under Marketing -> Forms, then
   # take the value from Share -> Embed code, or from the form's URL.
-  form_guid: ""
+  form_guid: "cd8bec61-cb79-4cf5-8100-553d068bb2db"
 
-  # Data centre your HubSpot portal is hosted in: "na1" (default, US) or
-  # "eu1" (EU). Shown in HubSpot URLs, e.g. app-eu1.hubspot.com means eu1.
-  region: "na1"
+  # Data centre the portal is hosted in. Natural Trace is on na2. Others are
+  # na1 (the original US region, which uses unsuffixed hostnames) and eu1.
+  # It is visible in HubSpot's own embed code and in app URLs.
+  # Getting it wrong sends submissions to a region that has never heard of the
+  # form, so it fails rather than misfiling anything.
+  region: "na2"
 
   # Maps this site's form fields to HubSpot contact property names.
   # Left of the colon is the field on the website. Do not change those.

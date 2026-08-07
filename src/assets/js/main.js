@@ -1,68 +1,8 @@
 /* Scroll-reveal animations were removed on 6 Aug 2026. Sections are painted by
    the browser on load rather than faded in by JavaScript as you scroll. */
 
-/* Splash intro: skippable, cookie-suppressed on repeat visits */
-(function(){
-  var o = document.getElementById('splashOverlay');
-  var v = document.getElementById('splashVideo');
-  var hint = document.getElementById('splashUnmute');
-  var skip = document.getElementById('splashSkip');
-  if(!o) return;
-
-  /* Check cookie: skip intro entirely on repeat visits */
-  if(document.cookie.indexOf('nt_intro_seen=1') !== -1){
-    o.remove();
-    document.body.classList.remove('splash-active');
-    return;
-  }
-
-  function dismiss(){
-    if(o._dismissed) return;
-    o._dismissed = true;
-    o.classList.add('fade-out');
-    document.body.classList.remove('splash-active');
-    setTimeout(function(){ o.remove(); }, 700);
-    /* Set cookie: expires in 30 days */
-    document.cookie = 'nt_intro_seen=1;path=/;max-age=' + (30*24*60*60) + ';SameSite=Lax';
-  }
-
-  if(!v) { dismiss(); return; }
-
-  v.addEventListener('ended', dismiss);
-
-  /* Skip button */
-  if(skip) skip.addEventListener('click', function(e){
-    e.stopPropagation();
-    dismiss();
-  });
-
-  /* Start muted. The old code tried sound first and muted only after the
-     browser rejected it, which is what stalled the load: Chrome defers the
-     download for an autoplay element it will not play. Muted always plays, and
-     the hint invites the visitor to turn sound on. */
-  v.muted = true;
-  if(hint) hint.style.display = 'block';
-  var playAttempt = v.play();
-  if(playAttempt !== undefined){
-    /* Muted autoplay should never be refused. If it somehow is, do not leave
-       the visitor looking at a black screen. */
-    playAttempt.catch(dismiss);
-  }
-
-  /* Nobody should stare at an empty overlay because a file did not arrive. */
-  v.addEventListener('error', dismiss);
-  v.addEventListener('stalled', function(){ if(v.readyState === 0) dismiss(); });
-  setTimeout(function(){ if(v.readyState === 0) dismiss(); }, 5000);
-
-  o.addEventListener('click', function(){
-    if(v.muted){ v.muted = false; if(hint) hint.style.display = 'none'; }
-    else dismiss();
-  });
-
-  /* Hard stop. The clip runs six seconds, so this only fires if 'ended' never
-     does. It was 15 seconds, which is a long time to look at nothing. */
-  setTimeout(dismiss, 9000);
-})();
+/* The splash intro was removed on 7 Aug 2026. The home page opens on the
+   hero. */
 
 /* Active nav state */
 window.addEventListener('DOMContentLoaded', function() {

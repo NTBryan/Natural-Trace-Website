@@ -23,7 +23,12 @@
     var s = document.createElement('script');
     s.id = 'hs-script-loader';
     s.async = true; s.defer = true; s.type = 'text/javascript';
-    s.src = '//js' + (REGION === 'eu1' ? '-eu1' : '') + '.hs-scripts.com/' + PORTAL + '.js';
+    /* na1 is the original region and uses the bare hostname. Every other
+       region suffixes it: na2 -> js-na2, eu1 -> js-eu1. This used to special
+       case eu1 only, which would have quietly loaded the wrong region's script
+       for the na2 portal. Verified: js-na2.hs-scripts.com/23458507.js is 200,
+       js.hs-scripts.com/23458507.js is a 307 redirect. */
+    s.src = '//js' + (REGION === 'na1' ? '' : '-' + REGION) + '.hs-scripts.com/' + PORTAL + '.js';
     document.head.appendChild(s);
   }
 

@@ -1,13 +1,10 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+/* scrollbar-gutter reserves the scrollbar's width whether or not one is shown,
+   so the page can never change width underneath the visitor. It went in to fix
+   the jump the splash overlay caused. The splash is gone, but keeping it means
+   no modal or overflow lock can reintroduce that jump later. */
 html{scroll-behavior:smooth;scrollbar-gutter:stable}
 body{font-family:'Montserrat',-apple-system,sans-serif;color:#2C3345;line-height:1.6;background:#FAFBFC;overflow-x:hidden}
-body.splash-active{overflow:hidden}
-/* Splash intro */
-.splash-overlay{position:fixed;inset:0;z-index:99999;background:var(--dark);display:flex;align-items:center;justify-content:center;transition:opacity .6s ease}
-.splash-overlay video{width:100%;height:100%;object-fit:cover}
-.splash-overlay.fade-out{opacity:0;pointer-events:none}
-.splash-skip{position:absolute;bottom:2rem;right:2rem;color:rgba(255,255,255,.6);font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:500;cursor:pointer;z-index:100000;padding:.5rem 1.2rem;border:1px solid rgba(255,255,255,.2);border-radius:6px;background:rgba(0,0,0,.3);backdrop-filter:blur(8px);transition:all .3s;letter-spacing:.04em}
-.splash-skip:hover{color:#fff;border-color:rgba(255,255,255,.5);background:rgba(0,0,0,.5)}
 img{max-width:100%;height:auto;display:block}
 a{text-decoration:none;color:inherit}
 :root{
