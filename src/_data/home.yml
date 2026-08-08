@@ -16,16 +16,20 @@ hero_desc: "Natural Trace gives every ingredient a unique, detectable identity."
 # Rendered as a single sentence: items joined with commas and "and", then the
 # coda after a comma. Kirsty wrote these as five short lines; the fifth is a
 # coda, not a peer, which is why it read as an orphan when set as a list.
+# These read as a ticked list now rather than one running sentence, so each one
+# starts with a capital. The wording is unchanged: the mockup says "Investigate
+# Counterfeit Products", which is a stronger claim than "suspicious", and that
+# is not a change to make without asking.
 hero_claims:
   - "Verify presence"
-  - "protect branded ingredients"
-  - "confirm authorised manufacturing"
-  - "investigate suspicious products"
+  - "Protect branded ingredients"
+  - "Confirm authorised manufacturing"
+  - "Investigate suspicious products"
 hero_claims_coda: "all through the supply chain"
 hero_cta: "Request a Compatibility Assessment"
 hero_cta_url: "/contact/"
 hero_cta_secondary: "How it works"
-hero_cta_secondary_url: "/naturaltag/#how-it-works"
+hero_cta_secondary_url: "#how-it-works"
 
 # Section 2: The Challenge
 challenge_label: "The Challenge"
@@ -65,6 +69,38 @@ vp_cards:
   - title: "Protect Brand & Commercial Value"
     problem: "Counterfeit, diverted, or grey-market products erode revenue, reputation, and customer trust."
     value: "Distinguish genuine products from unauthorized ones and strengthen confidence across the supply chain."
+
+# Section 4: How It Works
+# Moved here from the NaturalTag page on 8 Aug. Kirsty flagged that Section 4 of
+# the approved copy was missing from the homepage and that this was it.
+#
+# The four steps sit on one row and the detail below is a disclosure, so the
+# section costs about one screen rather than four. It is a <details> element,
+# not a hover: hover does not exist on a phone and cannot be reached from a
+# keyboard.
+how_label: "How It Works"
+how_title: "Four Steps From Ingredient to Evidence"
+how_steps:
+  - num: "01"
+    title: "Tag"
+    description: "Add NaturalTag™ into your ingredient during production."
+  - num: "02"
+    title: "Produce"
+    description: "Manufacture and distribute as normal."
+  - num: "03"
+    title: "Test"
+    description: "Test any sample whenever authenticity is questioned."
+  - num: "04"
+    title: "Authenticate"
+    description: "Confirm authenticity using NaturalDetect™ testing and manage results through NaturalCloud™."
+how_features_label: "What that means in practice"
+how_features:
+  - "Invisible at recommended use levels"
+  - "Food-grade authentication"
+  - "No impact on product performance"
+  - "Detectable even after cooking or blending into final product"
+  - "Compatible with existing manufacturing"
+  - "Designed for commercial scale"
 
 # Section 5: Industry Tiles
 industries_label: "Industries"

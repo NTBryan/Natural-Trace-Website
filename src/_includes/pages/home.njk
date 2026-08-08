@@ -1,6 +1,7 @@
-<section class="hero">
-  <div class="hero-bg" id="heroBg" style="background-image:url('{{ home.hero_bg_image }}')"></div>
-  <div class="hero-overlay"></div>
+{# White hero, 8 Aug, from Kirsty's mockup. The photographic background and
+   its dark overlay are gone; hero_bg_image is left in the data and in the CMS
+   because reverting is then a template change, not a content migration. #}
+<section class="hero hero-light">
   <div class="hero-content">
     <div class="hero-copy">
       <h1>
@@ -10,10 +11,14 @@
       {# Kirsty's positioning line, verbatim, now opening the lead paragraph.
          It used to sit above the H1 as an eyebrow label. #}
       <p class="hero-lead"><strong>{{ home.hero_slogan }}.</strong> {{ home.hero_desc }}</p>
-      <p class="hero-claims">{% for c in home.hero_claims %}{{ c }}{% if loop.revindex0 == 1 %} and {% elif not loop.last %}, {% endif %}{% endfor %}{% if home.hero_claims_coda %}, <span>{{ home.hero_claims_coda }}</span>{% endif %}.</p>
+      {# The mockup shows these as a ticked list rather than one long sentence. #}
+      <ul class="hero-ticks">
+        {% for c in home.hero_claims %}<li>{{ c }}</li>{% endfor %}
+      </ul>
+      {% if home.hero_claims_coda %}<p class="hero-ticks-coda">...{{ home.hero_claims_coda }}.</p>{% endif %}
       <div class="hero-actions">
         <a href="{{ home.hero_cta_url }}" class="btn btn-primary" style="cursor:pointer">{{ home.hero_cta }}</a>
-        <a href="{{ home.hero_cta_secondary_url }}" class="btn btn-outline" style="cursor:pointer">{{ home.hero_cta_secondary }}</a>
+        <a href="{{ home.hero_cta_secondary_url }}" class="btn btn-outline-dark" style="cursor:pointer">{{ home.hero_cta_secondary }}</a>
       </div>
     </div>
     <div class="hero-visual"><img src="{{ home.hero_image }}" alt="{{ home.hero_image_alt }}" loading="eager"></div>
@@ -66,6 +71,40 @@
       {% endfor %}
     </div>
     <p class="section-more"><a href="/naturaltag/#how-it-works">See how it works, four steps from ingredient to evidence</a></p>
+  </div>
+</section>
+
+<!-- Section 4: How It Works -->
+{# Compact on purpose. Four steps across one row, and the detail behind a
+   disclosure, so the section costs roughly one screen instead of four.
+
+   <details> and <summary> are used rather than a hover or a scripted panel:
+   they work with a tap, they work from a keyboard, a screen reader announces
+   the open and closed state, and the text is in the page whether or not it is
+   showing. A hover would fail all four. #}
+<section class="howitworks howitworks-compact" id="how-it-works">
+  <div class="container">
+    <div class="how-head">
+      <span class="section-label">{{ home.how_label }}</span>
+      <h2 class="section-title">{{ home.how_title }}</h2>
+    </div>
+    <ol class="how-grid how-grid-compact">
+      {% for step in home.how_steps %}
+      <li class="how-step">
+        <div class="how-step-num">{{ step.num }}</div>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.description }}</p>
+      </li>
+      {% endfor %}
+    </ol>
+    {% if home.how_features %}
+    <details class="how-more">
+      <summary>{{ home.how_features_label }}</summary>
+      <ul class="how-facts">
+        {% for feature in home.how_features %}<li>{{ feature }}</li>{% endfor %}
+      </ul>
+    </details>
+    {% endif %}
   </div>
 </section>
 

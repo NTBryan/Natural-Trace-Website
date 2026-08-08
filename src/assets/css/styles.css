@@ -967,3 +967,107 @@ footer{background:var(--teal);color:rgba(255,255,255,.75);padding:4rem 0 2rem}
 @media(max-width:900px){
   .how-grid{grid-template-columns:repeat(2,1fr)}
 }
+
+/* ===========================================================================
+   White hero, and How It Works as Section 4. 8 August 2026.
+   =========================================================================== */
+
+/* The hero was a photograph under a dark olive-to-navy overlay. Kirsty's
+   mockup is white and minimal, so the photograph and the overlay are gone
+   rather than lightened. Everything is scoped to .hero-light, and the markup
+   for the background is what was removed, so reverting is one template edit.
+
+   Two knock-on changes this forces, both handled below:
+   the navigation sits on this hero and was white-on-dark, and the secondary
+   button was a white outline that is invisible on white. */
+
+.hero.hero-light{
+  min-height:auto;
+  background:#fff;
+  background-image:radial-gradient(1100px 460px at 78% 12%, rgba(107,114,73,.07), transparent 70%);
+}
+.hero.hero-light .hero-content{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  gap:4rem;
+  align-items:center;
+  padding:10rem 2rem 6rem;
+}
+.hero.hero-light .hero-copy{max-width:none}
+.hero.hero-light h1{color:var(--dark);max-width:none;margin-bottom:1.5rem}
+/* The gold gradient was picked to glow on a dark ground. On white it washes
+   out, so the second line runs sage into gold instead. */
+.hero.hero-light h1 em{background:linear-gradient(120deg,var(--sage),var(--gold));-webkit-background-clip:text;background-clip:text}
+.hero.hero-light .hero-lead{color:var(--text);max-width:520px}
+.hero.hero-light .hero-lead strong{color:var(--dark)}
+
+/* The four claims were one run-on sentence. The mockup ticks them. */
+.hero-ticks{list-style:none;margin:2rem 0 .35rem;padding:0;display:grid;gap:.6rem}
+.hero-ticks li{position:relative;padding-left:1.9rem;font-size:1rem;color:var(--text);line-height:1.5}
+.hero-ticks li::before{
+  content:'';position:absolute;left:.15rem;top:.28rem;width:.42rem;height:.78rem;
+  border:solid var(--teal);border-width:0 2.5px 2.5px 0;transform:rotate(45deg);
+}
+.hero-ticks-coda{margin:0 0 2.25rem 1.9rem;font-size:.95rem;color:var(--muted)}
+
+.hero.hero-light .hero-actions{margin-top:.5rem}
+/* .btn-outline is a white border for dark backgrounds. This is its counterpart. */
+.btn-outline-dark{background:transparent;color:var(--dark);border:1.5px solid rgba(26,30,46,.22)}
+.btn-outline-dark:hover{border-color:var(--sage);color:var(--sage-dark);background:rgba(107,114,73,.05);transform:translateY(-3px)}
+
+/* The product shot moves into the grid instead of being pinned to the viewport,
+   and loses the drop shadow and sepia that were there to lift it off the dark. */
+.hero.hero-light .hero-visual{
+  position:relative;right:auto;top:auto;width:100%;height:auto;aspect-ratio:5/4;
+  box-shadow:0 24px 60px rgba(26,30,46,.10);border:1px solid rgba(26,30,46,.06);
+}
+.hero.hero-light .hero-visual img{filter:none}
+.hero.hero-light .hero-visual::after{border-color:rgba(26,30,46,.05);background:none}
+
+@media(min-width:1600px){.hero.hero-light .hero-visual{right:auto;top:auto}}
+@media(max-width:1100px){.hero.hero-light .hero-visual{width:100%;height:auto}}
+@media(max-width:900px){
+  .hero.hero-light .hero-content{grid-template-columns:1fr;gap:2.5rem;padding:7.5rem 2rem 4rem}
+  .hero.hero-light .hero-visual{display:block;max-width:420px}
+}
+
+/* The navigation is transparent until it scrolls, and used the white logo with
+   white links because it was sitting on a dark hero. On a white one it has to
+   start in its scrolled colours. Scoped to the body class so every other page
+   keeps the treatment it has. */
+body.hero-is-light nav:not(.scrolled) .logo-color{display:block}
+body.hero-is-light nav:not(.scrolled) .logo-white{display:none}
+body.hero-is-light nav:not(.scrolled) .nav-links a{color:#4B5563}
+body.hero-is-light nav:not(.scrolled) .nav-links a:hover{color:var(--sage)}
+body.hero-is-light nav:not(.scrolled) .nav-toggle span{background:var(--dark)}
+
+/* How It Works, Section 4 of the copy, now on the homepage.
+   Compact by design: the request was to cut the amount of scrolling. */
+.howitworks-compact{padding:4.5rem 0}
+.howitworks-compact .how-head{text-align:center;max-width:720px;margin:0 auto 2.5rem}
+.how-grid-compact{list-style:none;padding:0;margin:0}
+.how-grid-compact .how-step{padding:1.4rem 1.25rem}
+.how-grid-compact .how-step h3{margin:.5rem 0 .35rem}
+.how-grid-compact .how-step p{font-size:.88rem;line-height:1.55}
+
+/* The detail behind a disclosure. Native <details>, so it opens on tap and on
+   Enter, and assistive technology announces its state without any script. */
+.how-more{max-width:880px;margin:2.25rem auto 0;border-top:1px solid rgba(255,255,255,.12);padding-top:1.1rem}
+.how-more summary{
+  cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:.55rem;
+  font-size:.95rem;font-weight:600;color:#fff;padding:.35rem 0;
+}
+.how-more summary::-webkit-details-marker{display:none}
+.how-more summary::after{
+  content:'';width:.5rem;height:.5rem;border:solid rgba(255,255,255,.75);
+  border-width:0 2px 2px 0;transform:rotate(45deg) translateY(-2px);transition:transform .25s;
+}
+.how-more[open] summary::after{transform:rotate(-135deg) translateY(-2px)}
+.how-more summary:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:4px}
+.how-more .how-facts{margin-top:1.1rem}
+
+/* Anchor targets were landing underneath the fixed navigation, so the first
+   line of a section was hidden. Applies to the new "How it works" button, the
+   "Contact Us" button that now points at the form, and every other in-page
+   link. The value is the nav height plus a little air. */
+section[id],[id].anchor-target{scroll-margin-top:96px}

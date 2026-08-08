@@ -149,6 +149,20 @@ collections:
               - {label: "Customer Problem", name: "problem", widget: "text"}
               - {label: "Our value", name: "value", widget: "text"}
 
+          - {label: "How It Works: Label", name: "how_label", widget: "string"}
+          - {label: "How It Works: Headline", name: "how_title", widget: "string"}
+          - label: "How It Works: Steps"
+            name: "how_steps"
+            widget: "list"
+            label_singular: "step"
+            collapsed: true
+            summary: "{{fields.num}} {{fields.title}}"
+            fields:
+              - {label: "Number", name: "num", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - {label: "How It Works: Detail Link Text", name: "how_features_label", widget: "string", hint: "The line a visitor clicks to open the list below it."}
+          - {label: "How It Works: Detail Points", name: "how_features", widget: "list", field: {label: "Point", name: "point", widget: "string"}}
           - {label: "Industries: Label", name: "industries_label", widget: "string"}
           - {label: "Industries: Headline", name: "industries_title", widget: "text"}
           - label: "Industries: Tiles"
@@ -289,19 +303,6 @@ collections:
           - {label: "CTA Text", name: "cta_text", widget: "string"}
           - {label: "CTA URL", name: "cta_url", widget: "string"}
 
-          - {label: "How It Works: Label", name: "how_label", widget: "string"}
-          - {label: "How It Works: Headline", name: "how_title", widget: "string"}
-          - label: "How It Works: Steps"
-            name: "how_steps"
-            widget: "list"
-            summary: "{{fields.num}} — {{fields.title}}"
-            fields:
-              - {label: "Number", name: "num", widget: "string"}
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-          - {label: "How It Works: Feature Chips", name: "how_features", widget: "list", field: {label: "Feature", name: "feature", widget: "string"}}
-
-      # SOLUTIONS: NATURALDETECT
       - name: "naturaldetect"
         label: "Solutions: NaturalDetect"
         file: "src/_data/naturaldetect.yml"
