@@ -5,12 +5,22 @@ node_modules/
 _site/
 _site*/
 
-# local scratch. Anything at the repo root starting with an underscore is a
-# throwaway: preview builds, staging copies, tarballs. Leading slash matters,
-# without it this would also swallow src/_data and src/_includes.
-/_*/
-/_*.tgz
-/_*.zip
+# Local scratch. Anything at the repo root starting with an underscore is a
+# throwaway: preview builds, staging copies, tarballs, logs.
+#
+# The leading slash matters. Without it this would also swallow src/_data and
+# src/_includes, which are real source.
+#
+# This used to be three narrower patterns, /_*/ and /_*.tgz and /_*.zip, which
+# caught scratch directories and tarballs but not scratch files. Sixty-four of
+# them had accumulated at the root by 8 Aug: build logs, a dumped stylesheet,
+# marker files. None were tracked, but they made the folder hard to read.
+/_*
+
+# Per-machine tool settings. settings.local.json records which commands this
+# machine has approved; it is personal to whoever is sitting at it and would
+# only cause conflicts if it were shared.
+.claude/
 
 # misc
 dist/
