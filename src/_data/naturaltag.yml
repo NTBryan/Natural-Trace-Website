@@ -27,6 +27,7 @@ features:
   - "Robust stability, survives supply chain handling"                                  # CLAIM REVIEW
   - "Manufactured in Singapore in SFA, ISO22000, GMP, FDA registered facility"          # CLAIM REVIEW
 
+matrices_label: "Food Matrices"
 matrices_title: "Food Matrices Validated"
 matrices:
   - group: "Nutraceuticals"
@@ -37,7 +38,7 @@ matrices:
     items: "Fruits, Seafood, Nuts, Agri-chemicals"
 
 video_label: "End-to-End Traceability"
-video_title: "Tagged from Source to Shelf"
+video_title: "Authentication Across the Supply Chain"
 video_description: "NaturalTag™ travels with your product through every stage of the supply chain. NaturalCloud™ records the journey."
 video_src: "/assets/video/NaturalTag Process.mp4"
 

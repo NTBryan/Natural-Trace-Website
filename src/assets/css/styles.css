@@ -17,7 +17,7 @@ a{text-decoration:none;color:inherit}
 }
 h1,h2,h3{font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:-.02em;line-height:1.15}
 .container{max-width:1200px;margin:0 auto;padding:0 2rem}
-.section-label{font-family:'Montserrat',sans-serif;display:block;font-size:.82rem;font-weight:600;letter-spacing:0;text-transform:none;color:var(--muted);margin-bottom:.55rem}
+.section-label{font-family:'Montserrat',sans-serif;display:block;font-size:.95rem;font-weight:600;letter-spacing:0;text-transform:none;color:var(--muted);margin-bottom:.55rem}
 .section-title{font-size:clamp(1.9rem,3.6vw,2.6rem);color:var(--dark);line-height:1.18;margin-bottom:1.25rem;letter-spacing:-.025em}
 .section-subtitle{font-size:1.1rem;color:var(--muted);max-width:640px;line-height:1.7}
 
@@ -119,8 +119,8 @@ nav.scrolled .nav-toggle span{background:var(--dark)}
 }
 .trust-logo{display:inline-flex;align-items:center;justify-content:center;height:44px;margin-right:4.5rem;transition:transform .3s ease}
 @media(max-width:640px){.trust-logo{margin-right:3rem}}
-.trust-logo img{height:40px;width:auto;max-width:140px;display:block;object-fit:contain;filter:grayscale(100%) opacity(.45);transition:filter .4s ease,transform .3s ease}
-.trust-logo:hover img{filter:grayscale(0%) opacity(1);transform:scale(1.08)}
+.trust-logo img{height:40px;width:auto;max-width:140px;display:block;object-fit:contain;filter:none;opacity:.92;transition:opacity .3s ease,transform .3s ease}
+.trust-logo:hover img{opacity:1;transform:scale(1.08)}
 
 /* About */
 .about{padding:7rem 0;background:#fff}
@@ -409,7 +409,7 @@ nav.scrolled .nav-toggle span{background:var(--dark)}
 .cta-shape-2{width:200px;height:200px;bottom:-60px;right:-40px;animation-delay:3s}
 .cta-inner{position:relative;z-index:2;text-align:center;max-width:700px;margin:0 auto}
 .cta-inner .section-label{color:rgba(255,255,255,.5)}
-.cta-inner h2{font-size:clamp(2rem,4vw,2.8rem);color:#fff;margin-bottom:1.25rem}
+.cta-inner h2{font-size:clamp(2rem,4vw,2.8rem);color:#fff;margin-bottom:1.25rem;letter-spacing:-.005em;line-height:1.25;text-wrap:balance}
 .cta-inner p{font-size:1.1rem;color:rgba(255,255,255,.6);margin-bottom:2.5rem;line-height:1.7}
 .cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 .btn-white{background:#fff;color:var(--sage-dark);padding:.9rem 2.5rem;border-radius:10px;font-weight:700;border:none}
@@ -500,7 +500,7 @@ nav.scrolled .nav-toggle span{background:var(--dark)}
 @media(max-width:640px){.team-modal{flex-direction:column}.team-modal-photo{width:100%;min-height:200px;max-height:240px}}
 
 /* Footer */
-footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 0 2rem}
+footer{background:var(--teal);color:rgba(255,255,255,.75);padding:4rem 0 2rem}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
 .footer-brand-logo{height:40px;width:auto;margin-bottom:1rem;opacity:.7}
 .footer-brand p{font-size:.85rem;line-height:1.7;max-width:300px}
@@ -625,7 +625,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 0 2rem}
 
 /* FAQ Page */
 /* FAQ Page */
-.faq-page-hero{padding:8rem 0 4rem;background:var(--dark);text-align:center}
+.faq-page-hero{padding:8rem 0 4rem;background:var(--teal);text-align:center}
 .faq-page-hero h1{color:#fff;font-size:clamp(2.5rem,5vw,3.5rem);margin-bottom:1rem}
 .faq-page-hero p{color:rgba(255,255,255,.6);font-size:1.1rem;max-width:600px;margin:0 auto}
 .faq-section{padding:4rem 0 5rem;background:var(--offwhite)}
@@ -778,13 +778,13 @@ footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 0 2rem}
 
 /* Solutions feature lists */
 .sol-list{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem 2rem;margin-top:1.5rem}
-.sol-list li{list-style:none;position:relative;padding-left:1.6rem;font-size:.92rem;line-height:1.6;color:var(--muted)}
+.sol-list li{list-style:none;position:relative;padding-left:1.6rem;font-size:.95rem;line-height:1.65;color:var(--text)}
 .sol-list li::before{content:'';position:absolute;left:0;top:.5rem;width:7px;height:7px;border-radius:50%;background:var(--sage)}
 
 @media(max-width:980px){
   .challenge-grid{grid-template-columns:1fr;gap:2.5rem}
   .vp-grid{grid-template-columns:repeat(2,1fr)}
-  .how-grid{grid-template-columns:repeat(2,1fr)}
+  .how-grid{grid-template-columns:repeat(4,1fr);gap:.9rem}
   .usecase{grid-template-columns:1fr;gap:1.75rem}
   .usecase:nth-child(even) .usecase-media{order:0}
   .sol-list{grid-template-columns:1fr}
@@ -862,7 +862,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 0 2rem}
 
 /* How It Works supporting facts: two ruled columns instead of chips. */
 .how-facts{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:0 3.5rem;margin:3.25rem auto 0;max-width:880px}
-.how-facts li{padding:.95rem .25rem;border-top:1px solid rgba(255,255,255,.1);font-size:.9rem;line-height:1.5;color:rgba(255,255,255,.72)}
+.how-facts li{padding:.95rem .25rem;border-top:1px solid rgba(255,255,255,.1);font-size:.92rem;line-height:1.55;color:#fff;font-weight:600}
 .how-facts li:nth-last-child(-n+2){border-bottom:1px solid rgba(255,255,255,.1)}
 
 @media(max-width:760px){
@@ -898,6 +898,72 @@ footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 0 2rem}
 /* .finalcta p already sets margin:0 auto 2rem, and (0,1,1) beats (0,1,0), so a
    bare .finalcta-alt rule was being ignored and the link sat flush against the
    buttons. Matching the element as well takes it to (0,2,1). */
-.finalcta p.finalcta-alt{margin:2.75rem auto 0;font-size:.92rem}
+.finalcta p.finalcta-alt{margin:2.75rem auto 0;font-size:1.05rem}
 .finalcta-alt a{color:rgba(255,255,255,.72);border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:2px;transition:color .25s ease,border-color .25s ease}
 .finalcta-alt a:hover{color:#fff;border-bottom-color:rgba(255,255,255,.7)}
+
+
+/* ===========================================================================
+   Kirsty's review, 8 August 2026. Item numbers match the tracker.
+   =========================================================================== */
+
+/* A10  The About hero subtitle was set in the muted grey used for secondary
+        text, which made the line read as a caption rather than as part of the
+        opening statement. Same weight as before, the colour is what changes. */
+.section-subtitle-strong{color:var(--text)}
+
+/* A12  Long headings were breaking wherever the box happened to end. */
+.section-title{text-wrap:balance}
+
+/* A13  More air after the opening paragraph of Our Story. */
+.vp-head + div > .challenge-lead:first-of-type{margin-bottom:2.1rem}
+
+/* A14  Why We Exist: teal instead of the navy, and a larger heading.
+        Scoped by id because the .howitworks class is also used twice on the
+        NaturalTag page, which Kirsty did not ask to change. */
+#why-we-exist{background:var(--teal)}
+#why-we-exist .section-title{font-size:clamp(2.2rem,4.4vw,3rem)}
+
+/* A17  The 01-04 counters are replaced by a branded mark. A proper icon set is
+        still waiting on artwork, so this is a brand shape, not a placeholder
+        number. */
+.vp-mark{display:block;width:14px;height:14px;margin-bottom:1rem;background:linear-gradient(135deg,var(--gold),var(--sage));border-radius:3px;transform:rotate(45deg)}
+
+/* A21  Food matrices, promoted out of a bullet into its own section. */
+.matrices-section{padding:5rem 0;background:var(--offwhite)}
+.matrices-section .industries-header{text-align:center;max-width:760px;margin:0 auto 2.5rem}
+.matrix-chips{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;max-width:820px;margin:0 auto;padding:0}
+.matrix-chips li{font-size:.92rem;font-weight:600;color:var(--teal);background:rgba(59,102,107,.09);border:1px solid rgba(59,102,107,.18);border-radius:999px;padding:.55rem 1.15rem}
+
+/* A26  Keeps "Product Authentication" together on the Careers heading. */
+.nowrap{white-space:nowrap}
+
+/* A27  The three solution pages shared one hero. Each now carries its product
+        colour, as a tint behind it and on the eyebrow, rather than a full
+        colour block that would fight the photography below. */
+.hero-tag{background:linear-gradient(180deg,rgba(107,114,73,.13),var(--offwhite) 78%)}
+.hero-tag .section-label{color:var(--sage-dark)}
+.hero-detect{background:linear-gradient(180deg,rgba(59,102,107,.13),var(--offwhite) 78%)}
+.hero-detect .section-label{color:var(--teal)}
+.hero-cloud{background:linear-gradient(180deg,rgba(162,147,73,.15),var(--offwhite) 78%)}
+.hero-cloud .section-label{color:#8A7C33}
+
+/* A28 A32 A33  The one line that says what each product does was set at the
+        same size and grey as ordinary supporting text. */
+.hero-tag .section-subtitle,
+.hero-detect .section-subtitle,
+.hero-cloud .section-subtitle{font-size:1.45rem;line-height:1.45;font-weight:700;max-width:720px}
+.hero-tag .section-subtitle{color:var(--sage-dark)}
+.hero-detect .section-subtitle{color:var(--teal)}
+.hero-cloud .section-subtitle{color:#8A7C33}
+
+/* A22  Education sat in a flex column above the bullets and was being fed bare
+        list items by the script, so the first line rendered unlike everything
+        under it. It is a labelled line now and the bullets below are uniform. */
+.team-modal-body .tm-edu-item{display:block;font-size:.88rem;color:var(--teal);font-weight:600;line-height:1.6}
+.team-modal-body .tm-bio li{font-size:.88rem;color:#333;line-height:1.65;margin-bottom:.5rem;font-weight:400}
+.team-modal-body .tm-bio li:first-child{font-weight:400}
+
+@media(max-width:900px){
+  .how-grid{grid-template-columns:repeat(2,1fr)}
+}

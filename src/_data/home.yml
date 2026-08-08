@@ -24,8 +24,8 @@ hero_claims:
 hero_claims_coda: "all through the supply chain"
 hero_cta: "Request a Compatibility Assessment"
 hero_cta_url: "/contact/"
-hero_cta_secondary: "Talk to our team"
-hero_cta_secondary_url: "/contact/"
+hero_cta_secondary: "How it works"
+hero_cta_secondary_url: "/naturaltag/#how-it-works"
 
 # Section 2: The Challenge
 challenge_label: "The Challenge"
@@ -68,7 +68,7 @@ vp_cards:
 
 # Section 5: Industry Tiles
 industries_label: "Industries"
-industries_title: "The first authentication platform validated for premium food and nutraceutical ingredients."
+industries_title: "The First Authentication Platform Validated for Premium Food and Nutraceutical Ingredients."
 industry_tiles:
   - name: "Nutraceuticals & Dietary Supplements"
     description: "Protect premium ingredients from counterfeiting and substitution."
@@ -126,6 +126,6 @@ final_cta_title: "Ready to protect your products with confidence?"
 final_cta_text: "Whether you're protecting a premium ingredient, verifying manufacturing partners or investigating suspicious products, Natural Trace can help."
 final_cta_primary: "Request a Compatibility Assessment"
 final_cta_primary_url: "/contact/"
-final_cta_secondary: "Talk to our team"
+final_cta_secondary: ""            # blank hides the second button entirely
 final_cta_secondary_url: "/contact/"
 

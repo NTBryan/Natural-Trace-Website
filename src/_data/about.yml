@@ -14,7 +14,7 @@ hero_cta_url: "/team/"
 
 # Our Story
 story_label: "Our Story"
-story_title: "From a Simple Question to a New Approach"
+story_title: "From a Simple Question<br>to a New Approach"
 story_question: "What happens to an ingredient's identity once it leaves the control of the company that created it?"
 story_body:
   - "Behind every differentiated ingredient is significant investment in research, formulation, manufacturing, intellectual property, and customer trust. Yet once that ingredient enters a wider production network, proving that it is still present, and distinguishing it from generic alternatives, can become increasingly difficult."
@@ -39,7 +39,7 @@ mission_body: "By making authentication practical and commercially scalable, we 
 
 # What Makes Us Different
 different_label: "What Makes Us Different"
-different_title: "Identity That Stays With the Product"
+different_title: ""   # blank on purpose: it repeated the first card below
 different_cards:
   - title: "Identity Built into the Ingredient"
     body: "Traditional authentication relies on packaging, labels or paperwork that can become separated from the product. NaturalTag™ becomes part of the ingredient itself, allowing identity to travel with the product throughout manufacturing and distribution."
@@ -54,19 +54,38 @@ different_cards:
 # CLAIM REVIEW: every bullet in this block was flagged in the 30 July copy review
 # and has NOT been cleared. Do not publish without sign-off. See the change log.
 choose_label: "Why Customers Choose Natural Trace"
-choose_title: "Built for Industry, Built for Confidence"
+choose_title: "Designed for Real-World Manufacturing. Backed by Science."
 choose_groups:
-  - title: "Designed for Industry"
+  - title: "Made for Food & Nutraceutical Manufacturing"
     items:
       - "100% natural, food-grade authentication"          # CLAIM REVIEW
-      - "Compatible with existing manufacturing"
-      - "Added at parts-per-million with no impact on taste, appearance or functionality."   # CLAIM REVIEW
-      - "Validated across 20+ food and ingredient matrices."                                 # CLAIM REVIEW
-  - title: "Built for Confidence"
+      - "Compatible with existing manufacturing processes"
+      - "Added at parts-per-million with no impact on taste, appearance or functionality"    # CLAIM REVIEW
+  - title: "Built on Scientific & Regulatory Foundations"
     items:
       - "Manufactured in ISO 22000, SFA and FDA-registered facilities"   # CLAIM REVIEW
       - "Self-determined FDA GRAS status"                               # CLAIM REVIEW
-      - "Detectable after commercial manufacturing using proprietary PCR methods."
+      - "Detectable after commercial manufacturing using proprietary PCR methods"
+
+# A21 Food matrices, given its own section rather than one bullet inside the
+# card above. Wording is Alex's version, which Kirsty preferred.
+#
+# CLAIM REVIEW: "Validated across 20+" was flagged on 30 July and has not been
+# cleared. It was one bullet before. It is a headline now, so it is more
+# exposed, not less. Do not publish this section without sign-off.
+matrices_label: "Food Matrices"
+matrices_title: "Validated Across 20+ Categories Most at Risk of Fraud"   # CLAIM REVIEW
+matrices_items:
+  - "Nutraceuticals"
+  - "Dietary Supplements"
+  - "Fruit"
+  - "Coffee"
+  - "Honey"
+  - "Nuts"
+  - "Seafood"
+  - "Oils"
+  - "Vinegar"
+  - "Tobacco"
 
 cta_title: "Request a Compatibility Assessment"
 cta_url: "/contact/"

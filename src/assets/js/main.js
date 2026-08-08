@@ -178,8 +178,12 @@ function openTeamModal(idx) {
   var ll = document.getElementById('modalLinkedin');
   if (d.linkedin) { ll.href = d.linkedin; ll.style.display = ''; } else { ll.style.display = 'none'; }
   var eduHtml = '';
-  if (d.education && d.education.length) d.education.forEach(function(e) { eduHtml += '<li>' + e + '</li>'; });
-  document.getElementById('modalEdu').innerHTML = eduHtml || '<li>Details available on LinkedIn</li>';
+  if (d.education && d.education.length) {
+    d.education.forEach(function(e) { eduHtml += '<span class="tm-edu-item">' + e + '</span>'; });
+  }
+  // No placeholder. A profile with no education listed simply shows nothing,
+  // rather than telling the reader to go and look somewhere else.
+  document.getElementById('modalEdu').innerHTML = eduHtml;
   var bioHtml = '';
   if (d.bio && d.bio.length) d.bio.forEach(function(b) { bioHtml += '<li>' + b + '</li>'; });
   document.getElementById('modalBio').innerHTML = bioHtml;

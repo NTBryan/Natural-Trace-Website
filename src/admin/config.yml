@@ -179,7 +179,7 @@ collections:
           - {label: "Final CTA: Text", name: "final_cta_text", widget: "text"}
           - {label: "Final CTA: Primary Button", name: "final_cta_primary", widget: "string"}
           - {label: "Final CTA: Primary URL", name: "final_cta_primary_url", widget: "string"}
-          - {label: "Final CTA: Secondary Button", name: "final_cta_secondary", widget: "string"}
+          - {label: "Final CTA: Secondary Button", name: "final_cta_secondary", widget: "string", required: false, hint: "Leave empty to show only one button."}
           - {label: "Final CTA: Secondary URL", name: "final_cta_secondary_url", widget: "string"}
 
 
@@ -223,7 +223,7 @@ collections:
           - {label: "Hero CTA Text", name: "hero_cta", widget: "string"}
           - {label: "Hero CTA URL", name: "hero_cta_url", widget: "string"}
           - {label: "Story: Label", name: "story_label", widget: "string"}
-          - {label: "Story: Headline", name: "story_title", widget: "string"}
+          - {label: "Story: Headline", name: "story_title", widget: "string", hint: "Type <br> where you want the headline to break onto a new line."}
           - {label: "Story: Opening Question", name: "story_question", widget: "text"}
           - {label: "Story: Paragraphs", name: "story_body", widget: "list", field: {label: "Paragraph", name: "para", widget: "text"}}
           - {label: "Why We Exist: Label", name: "why_label", widget: "string"}
@@ -235,7 +235,7 @@ collections:
           - {label: "Mission Text", name: "mission_text", widget: "text"}
           - {label: "Mission Body", name: "mission_body", widget: "text"}
           - {label: "Different: Label", name: "different_label", widget: "string"}
-          - {label: "Different: Headline", name: "different_title", widget: "string"}
+          - {label: "Different: Sub-headline", name: "different_title", widget: "string", required: false, hint: "Optional. Leave it empty and only the What Makes Us Different heading shows, which is how it reads now."}
           - label: "Different: Cards"
             name: "different_cards"
             widget: "list"
@@ -252,6 +252,9 @@ collections:
             fields:
               - {label: "Group Title", name: "title", widget: "string"}
               - {label: "Items", name: "items", widget: "list", field: {label: "Item", name: "item", widget: "string"}}
+          - {label: "Food Matrices: Label", name: "matrices_label", widget: "string"}
+          - {label: "Food Matrices: Headline", name: "matrices_title", widget: "string", hint: "CLAIM REVIEW: the 20+ figure has not been signed off. Do not publish this section without approval."}
+          - {label: "Food Matrices: Categories", name: "matrices_items", widget: "list", field: {label: "Category", name: "item", widget: "string"}}
           - {label: "CTA Title", name: "cta_title", widget: "string"}
           - {label: "CTA URL", name: "cta_url", widget: "string"}
 
@@ -270,6 +273,7 @@ collections:
           - {label: "Why Items", name: "why_items", widget: "list", field: {label: "Item", name: "item", widget: "string"}}
           - {label: "Features Heading", name: "features_title", widget: "string"}
           - {label: "Features", name: "features", widget: "list", field: {label: "Feature", name: "feature", widget: "string"}}
+          - {label: "Matrices Label", name: "matrices_label", widget: "string"}
           - {label: "Matrices Heading", name: "matrices_title", widget: "string"}
           - label: "Matrices"
             name: "matrices"

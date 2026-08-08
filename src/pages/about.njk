@@ -11,7 +11,7 @@ permalink: /about/
       <div class="challenge-text">
         <span class="section-label">{{ about.label }}</span>
         <h2 class="section-title">{{ about.title }}</h2>
-        <p class="section-subtitle">{{ about.subtitle }}</p>
+        <p class="section-subtitle section-subtitle-strong">{{ about.subtitle }}</p>
         <p class="challenge-lead" style="margin-top:1.5rem">{{ about.intro }}</p>
         <p class="challenge-sub">{{ about.disciplines }}</p>
         <p class="challenge-lead">{{ about.intro_secondary }}</p>
@@ -28,7 +28,7 @@ permalink: /about/
   <div class="container">
     <div class="vp-head">
       <span class="section-label">{{ about.story_label }}</span>
-      <h2 class="section-title">{{ about.story_title }}</h2>
+      <h2 class="section-title">{{ about.story_title | safe }}</h2>
     </div>
     <div style="max-width:780px;margin:0 auto">
       <p class="challenge-close" style="margin-top:0;font-size:1.1rem;font-weight:600">{{ about.story_question }}</p>
@@ -69,13 +69,13 @@ permalink: /about/
 <section class="valueprop" id="different">
   <div class="container">
     <div class="vp-head">
-      <span class="section-label">{{ about.different_label }}</span>
-      <h2 class="section-title">{{ about.different_title }}</h2>
+      <h2 class="section-title">{{ about.different_label }}</h2>
+      {% if about.different_title %}<p class="section-subtitle">{{ about.different_title }}</p>{% endif %}
     </div>
     <div class="vp-grid about-grid-2">
       {% for card in about.different_cards %}
       <article class="vp-card delay-{{ loop.index }}">
-        <span class="vp-num">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+        <span class="vp-mark" aria-hidden="true"></span>
         <h3>{{ card.title }}</h3>
         <div class="vp-block"><p>{{ card.body }}</p></div>
       </article>
@@ -100,6 +100,20 @@ permalink: /about/
       </article>
       {% endfor %}
     </div>
+  </div>
+</section>
+
+{# A21. Split out of the "Why Customers Choose" card at Kirsty's request so the
+   claim carries its own weight. The wording is Alex's version. #}
+<section class="matrices-section" id="food-matrices">
+  <div class="container">
+    <div class="industries-header">
+      <span class="section-label">{{ about.matrices_label }}</span>
+      <h2 class="section-title">{{ about.matrices_title }}</h2>
+    </div>
+    <ul class="matrix-chips">
+      {% for item in about.matrices_items %}<li>{{ item }}</li>{% endfor %}
+    </ul>
   </div>
 </section>
 

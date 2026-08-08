@@ -5,7 +5,7 @@ summary: "NaturalTag™ is a food-grade, in-product authentication tag made from
 permalink: /naturaltag/
 ---
 
-<section class="challenge" style="padding-top:9rem">
+<section class="challenge hero-tag" style="padding-top:9rem">
   <div class="container">
     <div class="challenge-grid">
       <div class="challenge-text">
@@ -67,7 +67,9 @@ permalink: /naturaltag/
 <section class="howitworks">
   <div class="container">
     <div class="how-head">
-      <span class="section-label">{{ naturaltag.matrices_title }}</span>
+      {# The label used to print matrices_title, so the eyebrow and the heading
+         said two unrelated things. #}
+      <span class="section-label">{{ naturaltag.matrices_label }}</span>
       <h2 class="section-title">{{ naturaltag.video_title }}</h2>
       <p  style="color:rgba(255,255,255,.65);font-size:.98rem;line-height:1.8">{{ naturaltag.video_description }}</p>
     </div>

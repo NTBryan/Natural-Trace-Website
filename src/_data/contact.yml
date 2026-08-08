@@ -21,8 +21,8 @@ form:
   company_placeholder: "Your company name"
   job_title_label: "Job Title"
   job_title_placeholder: "Your role"
-  inquiry_type_label: "Inquiry Type"
-  inquiry_type_placeholder: "Select an inquiry type"
+  inquiry_type_label: "Topic"
+  inquiry_type_placeholder: "Select a topic"
   message_label: "Message"
   message_placeholder: "Tell us about your project or requirements..."
   submit_text: "Send Message"
@@ -32,8 +32,6 @@ inquiry_types:
     label: "NaturalTag&trade; Integration"
   - value: "Supply Chain Traceability"
     label: "Supply Chain Traceability"
-  - value: "Custom Strain Tagging"
-    label: "Custom Strain Tagging"
   - value: "Partnership"
     label: "Partnership Inquiry"
   - value: "General"
@@ -60,6 +58,6 @@ cta:
   title: "Start Your First Test Today"
   subtitle: "Schedule a consultation, discuss a compatibility project, or explore our testing capabilities."
   primary_text: "Contact Us"
-  primary_href: "mailto:info@natural-trace.com"
+  primary_href: "#contact-form"   # the form is higher up this same page
   secondary_text: "View Services"
   secondary_href: "/naturaltag/"   # was /services/, which is only a redirect to here

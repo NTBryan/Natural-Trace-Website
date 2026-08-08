@@ -126,7 +126,9 @@
       <p>{{ home.final_cta_text }}</p>
       <div class="finalcta-actions">
         <a href="{{ home.final_cta_primary_url }}" class="btn btn-white" style="cursor:pointer">{{ home.final_cta_primary }}</a>
-        <a href="{{ home.final_cta_secondary_url }}" class="btn btn-ghost" style="cursor:pointer">{{ home.final_cta_secondary }}</a>
+        {# Second button only renders when someone has given it a label, so it
+           can be removed and restored from the CMS without touching code. #}
+        {% if home.final_cta_secondary %}<a href="{{ home.final_cta_secondary_url }}" class="btn btn-ghost" style="cursor:pointer">{{ home.final_cta_secondary }}</a>{% endif %}
       </div>
       <p class="finalcta-alt"><a href="/assess/">Or check your product yourself in 60 seconds</a></p>
     </div>
