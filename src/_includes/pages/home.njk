@@ -5,8 +5,11 @@
   <div class="hero-content">
     <div class="hero-copy">
       <h1>
-        <span class="hero-line"><span class="hero-line-inner">{{ home.hero_title_line1 }}</span></span>
-        <span class="hero-line"><span class="hero-line-inner"><em>{{ home.hero_title_line2 }}</em></span></span>
+        {# data-single-line is read by scripts/layout-audit.mjs. The headline
+           breaking across three lines is the fault this whole hero was rebuilt
+           around; this makes it fail a check rather than wait to be noticed. #}
+        <span class="hero-line"><span class="hero-line-inner" data-single-line>{{ home.hero_title_line1 }}</span></span>
+        <span class="hero-line"><span class="hero-line-inner" data-single-line><em>{{ home.hero_title_line2 }}</em></span></span>
       </h1>
       {# Kirsty's positioning line, verbatim, now opening the lead paragraph.
          It used to sit above the H1 as an eyebrow label. #}

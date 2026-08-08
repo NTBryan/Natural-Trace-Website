@@ -15,6 +15,7 @@
      OVERFLOW  text pushing the page wider than the window, which is what
                causes sideways scrolling on a phone
      OVERLAP   two runs of text physically on top of each other
+     WRAPPED   an element marked data-single-line that has broken onto two
 
    It measures the text itself, not the boxes around it.
 
@@ -28,14 +29,16 @@
    below starts from a Range around the actual characters.
 
    Run with:  node scripts/layout-audit.mjs
-   Needs a built site in _site and playwright installed. Exits non-zero if it
-   finds anything.
+   Needs a built site in _site, playwright, and @fontsource/montserrat, which is
+   how the real webfont is served to the browser without a network call. Exits
+   non-zero if it finds anything.
 --------------------------------------------------------------------------- */
 
 import { chromium } from 'playwright';
 import { createServer } from 'node:http';
 import { extname, join, normalize } from 'node:path';
 import { readFile, stat, readdir } from 'node:fs/promises';
+import { useLocalMontserrat } from './lib/local-fonts.mjs';
 
 const ROOT = '_site';
 const PORT = 8123;
@@ -221,7 +224,25 @@ function inspect() {
     }
   }
 
-  /* 3. Two runs of text on top of each other. Sorted by top edge so the inner
+  /* 3. Anything the design says must hold one line, holding two. Wrapping is
+        normally correct behaviour, so this is opt-in: put data-single-line on
+        the element and the check enforces it at every width. It exists because
+        the hero headline breaking across three lines was a real fault that no
+        general rule would ever have called a fault. */
+  for (const el of document.querySelectorAll('[data-single-line]')) {
+    if (deliberatelyHidden(el)) continue;
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    const rects = [...range.getClientRects()].filter(r => r.width > 1);
+    if (!rects.length) continue;
+    const lines = new Set(rects.map(r => Math.round(r.top))).size;
+    if (lines > 1) {
+      findings.push({ kind: 'WRAPPED', el: describe(el), by: `${lines} lines`,
+        text: (el.textContent || '').trim().slice(0, 60) });
+    }
+  }
+
+  /* 4. Two runs of text on top of each other. Sorted by top edge so the inner
         loop can stop early; otherwise this is quadratic and a long page takes
         minutes. */
   const sorted = runs.slice().sort((a, b) => a.ink.top - b.ink.top);
@@ -255,21 +276,29 @@ const browser = await chromium.launch();
 const findings = [];
 for (const [w, h, name] of VIEWPORTS) {
   const page = await browser.newPage({ viewport: { width: w, height: h } });
-  /* Answer every off-site request straight away rather than waiting for it to
-     time out. Google Fonts, Unsplash and the HubSpot script are not what this
-     checks, and waiting on them took a page load from 0.1s to 12.6s, which
-     turned a two minute run into one that never finished. Fulfilled rather
-     than aborted, because aborting kills the navigation itself. */
-  await page.route('**/*', route => {
-    const u = route.request().url();
-    if (u.startsWith(`http://127.0.0.1:${PORT}`)) return route.continue();
-    return route.fulfill({ status: 204, body: '' });
+  /* Off-site requests are answered locally rather than left to time out.
+     Waiting on Google Fonts, Unsplash and the HubSpot script took a page load
+     from 0.1s to 12.6s, which turned a two minute run into one that never
+     finished.
+
+     Montserrat is the exception and it matters more than the rest of this file
+     put together. An earlier version blocked it along with everything else, so
+     every page was measured in the system fallback, which is around 18%
+     narrower. The run came back clean while the hero headline was wrapping onto
+     three lines on a real machine. The font is served from node_modules now, so
+     what gets measured is what a visitor sees. */
+  await useLocalMontserrat(page, {
+    allowPrefix: `http://127.0.0.1:${PORT}`,
+    origin: `http://127.0.0.1:${PORT}`,
   });
   for (const url of pages) {
     try {
       await page.goto(`http://127.0.0.1:${PORT}${url}`, { waitUntil: 'domcontentloaded', timeout: 15000 });
     } catch { continue; }
-    await page.waitForTimeout(350);
+    /* Nothing is measured until the webfont is actually applied, or the first
+       page of every run gets measured mid-swap. */
+    await page.evaluate(() => document.fonts.ready);
+    await page.waitForTimeout(250);
     await page.evaluate(() => { const c = document.querySelector('.consent'); if (c) c.remove(); });
     for (const f of await page.evaluate(inspect)) {
       findings.push({ ...f, url, viewport: `${w} ${name}` });

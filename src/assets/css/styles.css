@@ -996,28 +996,23 @@ footer{background:var(--teal);color:rgba(255,255,255,.75);padding:4rem 0 2rem}
   background:#fff;
   background-image:radial-gradient(1100px 460px at 78% 12%, rgba(107,114,73,.07), transparent 70%);
 }
-/* The headline sets the column widths, not the other way round. "Protect the
-   Ingredients" is 644px at the old 62px size, so an even split left it 563px
-   and something had to give. Widening the text column and closing the gap
-   gives it 643px, which is enough to keep the line whole at a size close to
-   the original. */
+/* The headline sets the column widths, not the other way round.
+
+   Sizes here are measured with Montserrat actually loaded. An earlier pass
+   measured them with the browser falling back to the system sans, which is
+   around 18% narrower, and every number that came out of it was wrong:
+   "Protect the Ingredients" is roughly 700px at 57.6px, not 594px. */
 .hero.hero-light .hero-content{
   display:grid;
-  grid-template-columns:minmax(0,1.32fr) minmax(0,.88fr);
+  grid-template-columns:minmax(0,1.38fr) minmax(0,.82fr);
   gap:3rem;
   align-items:center;
   padding:10rem 2rem 6rem;
 }
 .hero.hero-light .hero-copy{max-width:none}
-/* Set so the first line stays whole at every width, from a 360px phone up.
-   Measured in a browser rather than guessed: at the 3.6rem cap it is 594px
-   against 643px of column, and at the 1.65rem floor it is 272px against the
-   281px a 360px phone leaves once the two columns stack.
-
-   Below 360px it wraps, and that is the right answer rather than a defect. A
-   23 character headline held on one line at 320px would mean 24px type, which
-   is smaller than the paragraph under it. */
-.hero.hero-light h1{color:var(--dark);max-width:none;margin-bottom:1.5rem;font-size:clamp(1.65rem,4vw,3.6rem)}
+/* Set so "Protect the Ingredients" stays on one line at every width from a
+   360px phone up. Measured in a browser with Montserrat loaded. */
+.hero.hero-light h1{color:var(--dark);max-width:none;margin-bottom:1.5rem;font-size:clamp(1.5rem,3.85vw,3.4rem)}
 /* The gold gradient was picked to glow on a dark ground. On white it washes
    out, so the second line runs sage into gold instead. */
 .hero.hero-light h1 em{background:linear-gradient(120deg,var(--sage),var(--gold));-webkit-background-clip:text;background-clip:text}
@@ -1052,6 +1047,11 @@ footer{background:var(--teal);color:rgba(255,255,255,.75);padding:4rem 0 2rem}
 @media(max-width:900px){
   .hero.hero-light .hero-content{grid-template-columns:1fr;gap:2.5rem;padding:7.5rem 2rem 4rem}
   .hero.hero-light .hero-visual{display:block;max-width:420px}
+}
+/* Small phones get their side padding back as headline width. Without this the
+   line breaks at 375px, which is an iPhone SE and an iPhone mini. */
+@media(max-width:480px){
+  .hero.hero-light .hero-content{padding-left:1.25rem;padding-right:1.25rem}
 }
 
 /* The navigation is transparent until it scrolls, and used the white logo with
