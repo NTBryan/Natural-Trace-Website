@@ -996,19 +996,28 @@ footer{background:var(--teal);color:rgba(255,255,255,.75);padding:4rem 0 2rem}
   background:#fff;
   background-image:radial-gradient(1100px 460px at 78% 12%, rgba(107,114,73,.07), transparent 70%);
 }
+/* The headline sets the column widths, not the other way round. "Protect the
+   Ingredients" is 644px at the old 62px size, so an even split left it 563px
+   and something had to give. Widening the text column and closing the gap
+   gives it 643px, which is enough to keep the line whole at a size close to
+   the original. */
 .hero.hero-light .hero-content{
   display:grid;
-  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
-  gap:4rem;
+  grid-template-columns:minmax(0,1.32fr) minmax(0,.88fr);
+  gap:3rem;
   align-items:center;
   padding:10rem 2rem 6rem;
 }
 .hero.hero-light .hero-copy{max-width:none}
-/* Sized to the column it now sits in rather than to the full page. At the
-   3.1rem cap the first line measures 512px against 563px of column, and at the
-   1.9rem floor it is 306px against the 326px a 390px phone leaves. Measured in
-   a browser, not guessed. */
-.hero.hero-light h1{color:var(--dark);max-width:none;margin-bottom:1.5rem;font-size:clamp(1.9rem,3.4vw,3.1rem)}
+/* Set so the first line stays whole at every width, from a 360px phone up.
+   Measured in a browser rather than guessed: at the 3.6rem cap it is 594px
+   against 643px of column, and at the 1.65rem floor it is 272px against the
+   281px a 360px phone leaves once the two columns stack.
+
+   Below 360px it wraps, and that is the right answer rather than a defect. A
+   23 character headline held on one line at 320px would mean 24px type, which
+   is smaller than the paragraph under it. */
+.hero.hero-light h1{color:var(--dark);max-width:none;margin-bottom:1.5rem;font-size:clamp(1.65rem,4vw,3.6rem)}
 /* The gold gradient was picked to glow on a dark ground. On white it washes
    out, so the second line runs sage into gold instead. */
 .hero.hero-light h1 em{background:linear-gradient(120deg,var(--sage),var(--gold));-webkit-background-clip:text;background-clip:text}
